@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-cpu">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-cpu.top_of_page">cpu</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>cpu</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-cpu.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/cpu.h&gt;
+
+#define             <link linkend="GLIBTOP-CPU-TOTAL--CAPS">GLIBTOP_CPU_TOTAL</link>
+#define             <link linkend="GLIBTOP-CPU-USER--CAPS">GLIBTOP_CPU_USER</link>
+#define             <link linkend="GLIBTOP-CPU-NICE--CAPS">GLIBTOP_CPU_NICE</link>
+#define             <link linkend="GLIBTOP-CPU-SYS--CAPS">GLIBTOP_CPU_SYS</link>
+#define             <link linkend="GLIBTOP-CPU-IDLE--CAPS">GLIBTOP_CPU_IDLE</link>
+#define             <link linkend="GLIBTOP-CPU-FREQUENCY--CAPS">GLIBTOP_CPU_FREQUENCY</link>
+#define             <link linkend="GLIBTOP-XCPU-TOTAL--CAPS">GLIBTOP_XCPU_TOTAL</link>
+#define             <link linkend="GLIBTOP-XCPU-USER--CAPS">GLIBTOP_XCPU_USER</link>
+#define             <link linkend="GLIBTOP-XCPU-NICE--CAPS">GLIBTOP_XCPU_NICE</link>
+#define             <link linkend="GLIBTOP-XCPU-SYS--CAPS">GLIBTOP_XCPU_SYS</link>
+#define             <link linkend="GLIBTOP-XCPU-IDLE--CAPS">GLIBTOP_XCPU_IDLE</link>
+#define             <link linkend="GLIBTOP-XCPU-FLAGS--CAPS">GLIBTOP_XCPU_FLAGS</link>
+#define             <link linkend="GLIBTOP-CPU-IOWAIT--CAPS">GLIBTOP_CPU_IOWAIT</link>
+#define             <link linkend="GLIBTOP-CPU-IRQ--CAPS">GLIBTOP_CPU_IRQ</link>
+#define             <link linkend="GLIBTOP-CPU-SOFTIRQ--CAPS">GLIBTOP_CPU_SOFTIRQ</link>
+#define             <link linkend="GLIBTOP-XCPU-IOWAIT--CAPS">GLIBTOP_XCPU_IOWAIT</link>
+#define             <link linkend="GLIBTOP-XCPU-IRQ--CAPS">GLIBTOP_XCPU_IRQ</link>
+#define             <link linkend="GLIBTOP-XCPU-SOFTIRQ--CAPS">GLIBTOP_XCPU_SOFTIRQ</link>
+#define             <link linkend="GLIBTOP-MAX-CPU--CAPS">GLIBTOP_MAX_CPU</link>
+#define             <link linkend="GLIBTOP-NCPU--CAPS">GLIBTOP_NCPU</link>
+                    <link linkend="glibtop-cpu">glibtop_cpu</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-cpu">glibtop_get_cpu</link>                     (<link linkend="glibtop-cpu">glibtop_cpu</link> *buf);
+#define             <link linkend="glibtop-get-cpu-r">glibtop_get_cpu_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-cpu-l">glibtop_get_cpu_l</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-cpu">glibtop_cpu</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-cpu-p">glibtop_get_cpu_p</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-cpu">glibtop_cpu</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-cpu-s">glibtop_get_cpu_s</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-cpu">glibtop_cpu</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-cpu.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-cpu.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-CPU-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_CPU_TOTAL</title>
+<indexterm zone="GLIBTOP-CPU-TOTAL--CAPS"><primary sortas="GLIBTOP_CPU_TOTAL">GLIBTOP_CPU_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_CPU_TOTAL	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CPU-USER--CAPS" role="macro">
+<title>GLIBTOP_CPU_USER</title>
+<indexterm zone="GLIBTOP-CPU-USER--CAPS"><primary sortas="GLIBTOP_CPU_USER">GLIBTOP_CPU_USER</primary></indexterm><programlisting>#define GLIBTOP_CPU_USER	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CPU-NICE--CAPS" role="macro">
+<title>GLIBTOP_CPU_NICE</title>
+<indexterm zone="GLIBTOP-CPU-NICE--CAPS"><primary sortas="GLIBTOP_CPU_NICE">GLIBTOP_CPU_NICE</primary></indexterm><programlisting>#define GLIBTOP_CPU_NICE	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CPU-SYS--CAPS" role="macro">
+<title>GLIBTOP_CPU_SYS</title>
+<indexterm zone="GLIBTOP-CPU-SYS--CAPS"><primary sortas="GLIBTOP_CPU_SYS">GLIBTOP_CPU_SYS</primary></indexterm><programlisting>#define GLIBTOP_CPU_SYS		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CPU-IDLE--CAPS" role="macro">
+<title>GLIBTOP_CPU_IDLE</title>
+<indexterm zone="GLIBTOP-CPU-IDLE--CAPS"><primary sortas="GLIBTOP_CPU_IDLE">GLIBTOP_CPU_IDLE</primary></indexterm><programlisting>#define GLIBTOP_CPU_IDLE	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CPU-FREQUENCY--CAPS" role="macro">
+<title>GLIBTOP_CPU_FREQUENCY</title>
+<indexterm zone="GLIBTOP-CPU-FREQUENCY--CAPS"><primary sortas="GLIBTOP_CPU_FREQUENCY">GLIBTOP_CPU_FREQUENCY</primary></indexterm><programlisting>#define GLIBTOP_CPU_FREQUENCY	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_XCPU_TOTAL</title>
+<indexterm zone="GLIBTOP-XCPU-TOTAL--CAPS"><primary sortas="GLIBTOP_XCPU_TOTAL">GLIBTOP_XCPU_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_XCPU_TOTAL	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-USER--CAPS" role="macro">
+<title>GLIBTOP_XCPU_USER</title>
+<indexterm zone="GLIBTOP-XCPU-USER--CAPS"><primary sortas="GLIBTOP_XCPU_USER">GLIBTOP_XCPU_USER</primary></indexterm><programlisting>#define GLIBTOP_XCPU_USER	7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-NICE--CAPS" role="macro">
+<title>GLIBTOP_XCPU_NICE</title>
+<indexterm zone="GLIBTOP-XCPU-NICE--CAPS"><primary sortas="GLIBTOP_XCPU_NICE">GLIBTOP_XCPU_NICE</primary></indexterm><programlisting>#define GLIBTOP_XCPU_NICE	8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-SYS--CAPS" role="macro">
+<title>GLIBTOP_XCPU_SYS</title>
+<indexterm zone="GLIBTOP-XCPU-SYS--CAPS"><primary sortas="GLIBTOP_XCPU_SYS">GLIBTOP_XCPU_SYS</primary></indexterm><programlisting>#define GLIBTOP_XCPU_SYS	9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-IDLE--CAPS" role="macro">
+<title>GLIBTOP_XCPU_IDLE</title>
+<indexterm zone="GLIBTOP-XCPU-IDLE--CAPS"><primary sortas="GLIBTOP_XCPU_IDLE">GLIBTOP_XCPU_IDLE</primary></indexterm><programlisting>#define GLIBTOP_XCPU_IDLE	10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-FLAGS--CAPS" role="macro">
+<title>GLIBTOP_XCPU_FLAGS</title>
+<indexterm zone="GLIBTOP-XCPU-FLAGS--CAPS"><primary sortas="GLIBTOP_XCPU_FLAGS">GLIBTOP_XCPU_FLAGS</primary></indexterm><programlisting>#define GLIBTOP_XCPU_FLAGS	11
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CPU-IOWAIT--CAPS" role="macro">
+<title>GLIBTOP_CPU_IOWAIT</title>
+<indexterm zone="GLIBTOP-CPU-IOWAIT--CAPS"><primary sortas="GLIBTOP_CPU_IOWAIT">GLIBTOP_CPU_IOWAIT</primary></indexterm><programlisting>#define GLIBTOP_CPU_IOWAIT	12
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CPU-IRQ--CAPS" role="macro">
+<title>GLIBTOP_CPU_IRQ</title>
+<indexterm zone="GLIBTOP-CPU-IRQ--CAPS"><primary sortas="GLIBTOP_CPU_IRQ">GLIBTOP_CPU_IRQ</primary></indexterm><programlisting>#define GLIBTOP_CPU_IRQ		13
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CPU-SOFTIRQ--CAPS" role="macro">
+<title>GLIBTOP_CPU_SOFTIRQ</title>
+<indexterm zone="GLIBTOP-CPU-SOFTIRQ--CAPS"><primary sortas="GLIBTOP_CPU_SOFTIRQ">GLIBTOP_CPU_SOFTIRQ</primary></indexterm><programlisting>#define GLIBTOP_CPU_SOFTIRQ	14
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-IOWAIT--CAPS" role="macro">
+<title>GLIBTOP_XCPU_IOWAIT</title>
+<indexterm zone="GLIBTOP-XCPU-IOWAIT--CAPS"><primary sortas="GLIBTOP_XCPU_IOWAIT">GLIBTOP_XCPU_IOWAIT</primary></indexterm><programlisting>#define GLIBTOP_XCPU_IOWAIT	15
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-IRQ--CAPS" role="macro">
+<title>GLIBTOP_XCPU_IRQ</title>
+<indexterm zone="GLIBTOP-XCPU-IRQ--CAPS"><primary sortas="GLIBTOP_XCPU_IRQ">GLIBTOP_XCPU_IRQ</primary></indexterm><programlisting>#define GLIBTOP_XCPU_IRQ	16
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-XCPU-SOFTIRQ--CAPS" role="macro">
+<title>GLIBTOP_XCPU_SOFTIRQ</title>
+<indexterm zone="GLIBTOP-XCPU-SOFTIRQ--CAPS"><primary sortas="GLIBTOP_XCPU_SOFTIRQ">GLIBTOP_XCPU_SOFTIRQ</primary></indexterm><programlisting>#define GLIBTOP_XCPU_SOFTIRQ	17
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-CPU--CAPS" role="macro">
+<title>GLIBTOP_MAX_CPU</title>
+<indexterm zone="GLIBTOP-MAX-CPU--CAPS"><primary sortas="GLIBTOP_MAX_CPU">GLIBTOP_MAX_CPU</primary></indexterm><programlisting>#define GLIBTOP_MAX_CPU		18
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NCPU--CAPS" role="macro">
+<title>GLIBTOP_NCPU</title>
+<indexterm zone="GLIBTOP-NCPU--CAPS"><primary sortas="GLIBTOP_NCPU">GLIBTOP_NCPU</primary></indexterm><programlisting>#define GLIBTOP_NCPU		32
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-cpu" role="struct">
+<title>glibtop_cpu</title>
+<indexterm zone="glibtop-cpu"><primary sortas="glibtop_cpu">glibtop_cpu</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 total;				/* GLIBTOP_CPU_TOTAL		*/
+	guint64 user;				/* GLIBTOP_CPU_USER		*/
+	guint64 nice;				/* GLIBTOP_CPU_NICE		*/
+	guint64 sys;				/* GLIBTOP_CPU_SYS		*/
+	guint64 idle;				/* GLIBTOP_CPU_IDLE		*/
+	guint64 iowait;				/* GLIBTOP_CPU_IOWAIT		*/
+	guint64 irq;				/* GLIBTOP_CPU_IRQ		*/
+	guint64 softirq;			/* GLIBTOP_CPU_SOFTIRQ		*/
+	guint64 frequency;			/* GLIBTOP_CPU_FREQUENCY	*/
+	guint64 xcpu_total [GLIBTOP_NCPU];	/* GLIBTOP_XCPU_TOTAL		*/
+	guint64 xcpu_user [GLIBTOP_NCPU];	/* GLIBTOP_XCPU_USER		*/
+	guint64 xcpu_nice [GLIBTOP_NCPU];	/* GLIBTOP_XCPU_NICE		*/
+	guint64 xcpu_sys  [GLIBTOP_NCPU];	/* GLIBTOP_XCPU_SYS		*/
+	guint64 xcpu_idle [GLIBTOP_NCPU];	/* GLIBTOP_XCPU_IDLE		*/
+	guint64 xcpu_iowait [GLIBTOP_NCPU];	/* GLIBTOP_XCPU_IOWAIT		*/
+	guint64 xcpu_irq [GLIBTOP_NCPU];	/* GLIBTOP_XCPU_IRQ		*/
+	guint64 xcpu_softirq  [GLIBTOP_NCPU];	/* GLIBTOP_XCPU_SOFTIRQ		*/
+	guint64 xcpu_flags;	                /* GLIBTOP_XCPU_IDLE		*/
+} glibtop_cpu;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-cpu" role="function">
+<title>glibtop_get_cpu ()</title>
+<indexterm zone="glibtop-get-cpu"><primary sortas="glibtop_get_cpu">glibtop_get_cpu</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_cpu                     (<link linkend="glibtop-cpu">glibtop_cpu</link> *buf);</programlisting>
+<para>
+Get the CPU usage.
+</para>
+<para>
+All CPU units are measured in <type>jiffies</type> which are normally
+1/100th of a second (in which case <type>frequency</type> equals 100),
+but can also be in any other unit. To get seconds, divide them by 
+<type>frequency</type>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> A location to return the CPU usage.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-cpu-r" role="macro">
+<title>glibtop_get_cpu_r</title>
+<indexterm zone="glibtop-get-cpu-r"><primary sortas="glibtop_get_cpu_r">glibtop_get_cpu_r</primary></indexterm><programlisting>#define             glibtop_get_cpu_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-cpu-l" role="function">
+<title>glibtop_get_cpu_l ()</title>
+<indexterm zone="glibtop-get-cpu-l"><primary sortas="glibtop_get_cpu_l">glibtop_get_cpu_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_cpu_l                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-cpu">glibtop_cpu</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-cpu-p" role="function">
+<title>glibtop_get_cpu_p ()</title>
+<indexterm zone="glibtop-get-cpu-p"><primary sortas="glibtop_get_cpu_p">glibtop_get_cpu_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_cpu_p                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-cpu">glibtop_cpu</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-cpu-s" role="function">
+<title>glibtop_get_cpu_s ()</title>
+<indexterm zone="glibtop-get-cpu-s"><primary sortas="glibtop_get_cpu_s">glibtop_get_cpu_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_cpu_s                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-cpu">glibtop_cpu</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

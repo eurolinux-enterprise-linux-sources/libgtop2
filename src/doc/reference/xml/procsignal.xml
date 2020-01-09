@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-procsignal">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-procsignal.top_of_page">procsignal</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>procsignal</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-procsignal.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/procsignal.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-SIGNAL-SIGNAL--CAPS">GLIBTOP_PROC_SIGNAL_SIGNAL</link>
+#define             <link linkend="GLIBTOP-PROC-SIGNAL-BLOCKED--CAPS">GLIBTOP_PROC_SIGNAL_BLOCKED</link>
+#define             <link linkend="GLIBTOP-PROC-SIGNAL-SIGIGNORE--CAPS">GLIBTOP_PROC_SIGNAL_SIGIGNORE</link>
+#define             <link linkend="GLIBTOP-PROC-SIGNAL-SIGCATCH--CAPS">GLIBTOP_PROC_SIGNAL_SIGCATCH</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-SIGNAL--CAPS">GLIBTOP_MAX_PROC_SIGNAL</link>
+                    <link linkend="glibtop-proc-signal">glibtop_proc_signal</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-signal">glibtop_get_proc_signal</link>             (<link linkend="glibtop-proc-signal">glibtop_proc_signal</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-signal-r">glibtop_get_proc_signal_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-signal-l">glibtop_get_proc_signal_l</link>           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-signal">glibtop_proc_signal</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-signal-p">glibtop_get_proc_signal_p</link>           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-signal">glibtop_proc_signal</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-signal-s">glibtop_get_proc_signal_s</link>           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-signal">glibtop_proc_signal</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-procsignal.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-procsignal.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-SIGNAL-SIGNAL--CAPS" role="macro">
+<title>GLIBTOP_PROC_SIGNAL_SIGNAL</title>
+<indexterm zone="GLIBTOP-PROC-SIGNAL-SIGNAL--CAPS"><primary sortas="GLIBTOP_PROC_SIGNAL_SIGNAL">GLIBTOP_PROC_SIGNAL_SIGNAL</primary></indexterm><programlisting>#define GLIBTOP_PROC_SIGNAL_SIGNAL	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SIGNAL-BLOCKED--CAPS" role="macro">
+<title>GLIBTOP_PROC_SIGNAL_BLOCKED</title>
+<indexterm zone="GLIBTOP-PROC-SIGNAL-BLOCKED--CAPS"><primary sortas="GLIBTOP_PROC_SIGNAL_BLOCKED">GLIBTOP_PROC_SIGNAL_BLOCKED</primary></indexterm><programlisting>#define GLIBTOP_PROC_SIGNAL_BLOCKED	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SIGNAL-SIGIGNORE--CAPS" role="macro">
+<title>GLIBTOP_PROC_SIGNAL_SIGIGNORE</title>
+<indexterm zone="GLIBTOP-PROC-SIGNAL-SIGIGNORE--CAPS"><primary sortas="GLIBTOP_PROC_SIGNAL_SIGIGNORE">GLIBTOP_PROC_SIGNAL_SIGIGNORE</primary></indexterm><programlisting>#define GLIBTOP_PROC_SIGNAL_SIGIGNORE	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SIGNAL-SIGCATCH--CAPS" role="macro">
+<title>GLIBTOP_PROC_SIGNAL_SIGCATCH</title>
+<indexterm zone="GLIBTOP-PROC-SIGNAL-SIGCATCH--CAPS"><primary sortas="GLIBTOP_PROC_SIGNAL_SIGCATCH">GLIBTOP_PROC_SIGNAL_SIGCATCH</primary></indexterm><programlisting>#define GLIBTOP_PROC_SIGNAL_SIGCATCH	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-SIGNAL--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_SIGNAL</title>
+<indexterm zone="GLIBTOP-MAX-PROC-SIGNAL--CAPS"><primary sortas="GLIBTOP_MAX_PROC_SIGNAL">GLIBTOP_MAX_PROC_SIGNAL</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_SIGNAL		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-signal" role="struct">
+<title>glibtop_proc_signal</title>
+<indexterm zone="glibtop-proc-signal"><primary sortas="glibtop_proc_signal">glibtop_proc_signal</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 signal [2];		/* mask of pending signals */
+	guint64 blocked [2];		/* mask of blocked signals */
+	guint64 sigignore [2];		/* mask of ignored signals */
+	guint64 sigcatch [2];		/* mask of caught  signals */
+} glibtop_proc_signal;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-signal" role="function">
+<title>glibtop_get_proc_signal ()</title>
+<indexterm zone="glibtop-get-proc-signal"><primary sortas="glibtop_get_proc_signal">glibtop_get_proc_signal</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_signal             (<link linkend="glibtop-proc-signal">glibtop_proc_signal</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-signal-r" role="macro">
+<title>glibtop_get_proc_signal_r</title>
+<indexterm zone="glibtop-get-proc-signal-r"><primary sortas="glibtop_get_proc_signal_r">glibtop_get_proc_signal_r</primary></indexterm><programlisting>#define             glibtop_get_proc_signal_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-signal-l" role="function">
+<title>glibtop_get_proc_signal_l ()</title>
+<indexterm zone="glibtop-get-proc-signal-l"><primary sortas="glibtop_get_proc_signal_l">glibtop_get_proc_signal_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_signal_l           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-signal">glibtop_proc_signal</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-signal-p" role="function">
+<title>glibtop_get_proc_signal_p ()</title>
+<indexterm zone="glibtop-get-proc-signal-p"><primary sortas="glibtop_get_proc_signal_p">glibtop_get_proc_signal_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_signal_p           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-signal">glibtop_proc_signal</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-signal-s" role="function">
+<title>glibtop_get_proc_signal_s ()</title>
+<indexterm zone="glibtop-get-proc-signal-s"><primary sortas="glibtop_get_proc_signal_s">glibtop_get_proc_signal_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_signal_s           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-signal">glibtop_proc_signal</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

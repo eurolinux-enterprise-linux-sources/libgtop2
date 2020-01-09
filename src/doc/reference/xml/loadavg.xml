@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-loadavg">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-loadavg.top_of_page">loadavg</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>loadavg</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-loadavg.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/loadavg.h&gt;
+
+#define             <link linkend="GLIBTOP-LOADAVG-LOADAVG--CAPS">GLIBTOP_LOADAVG_LOADAVG</link>
+#define             <link linkend="GLIBTOP-LOADAVG-NR-RUNNING--CAPS">GLIBTOP_LOADAVG_NR_RUNNING</link>
+#define             <link linkend="GLIBTOP-LOADAVG-NR-TASKS--CAPS">GLIBTOP_LOADAVG_NR_TASKS</link>
+#define             <link linkend="GLIBTOP-LOADAVG-LAST-PID--CAPS">GLIBTOP_LOADAVG_LAST_PID</link>
+#define             <link linkend="GLIBTOP-MAX-LOADAVG--CAPS">GLIBTOP_MAX_LOADAVG</link>
+                    <link linkend="glibtop-loadavg">glibtop_loadavg</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-loadavg">glibtop_get_loadavg</link>                 (<link linkend="glibtop-loadavg">glibtop_loadavg</link> *buf);
+#define             <link linkend="glibtop-get-loadavg-r">glibtop_get_loadavg_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-loadavg-l">glibtop_get_loadavg_l</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-loadavg">glibtop_loadavg</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-loadavg-p">glibtop_get_loadavg_p</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-loadavg">glibtop_loadavg</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-loadavg-s">glibtop_get_loadavg_s</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-loadavg">glibtop_loadavg</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-loadavg.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-loadavg.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-LOADAVG-LOADAVG--CAPS" role="macro">
+<title>GLIBTOP_LOADAVG_LOADAVG</title>
+<indexterm zone="GLIBTOP-LOADAVG-LOADAVG--CAPS"><primary sortas="GLIBTOP_LOADAVG_LOADAVG">GLIBTOP_LOADAVG_LOADAVG</primary></indexterm><programlisting>#define GLIBTOP_LOADAVG_LOADAVG		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-LOADAVG-NR-RUNNING--CAPS" role="macro">
+<title>GLIBTOP_LOADAVG_NR_RUNNING</title>
+<indexterm zone="GLIBTOP-LOADAVG-NR-RUNNING--CAPS"><primary sortas="GLIBTOP_LOADAVG_NR_RUNNING">GLIBTOP_LOADAVG_NR_RUNNING</primary></indexterm><programlisting>#define GLIBTOP_LOADAVG_NR_RUNNING	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-LOADAVG-NR-TASKS--CAPS" role="macro">
+<title>GLIBTOP_LOADAVG_NR_TASKS</title>
+<indexterm zone="GLIBTOP-LOADAVG-NR-TASKS--CAPS"><primary sortas="GLIBTOP_LOADAVG_NR_TASKS">GLIBTOP_LOADAVG_NR_TASKS</primary></indexterm><programlisting>#define GLIBTOP_LOADAVG_NR_TASKS	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-LOADAVG-LAST-PID--CAPS" role="macro">
+<title>GLIBTOP_LOADAVG_LAST_PID</title>
+<indexterm zone="GLIBTOP-LOADAVG-LAST-PID--CAPS"><primary sortas="GLIBTOP_LOADAVG_LAST_PID">GLIBTOP_LOADAVG_LAST_PID</primary></indexterm><programlisting>#define GLIBTOP_LOADAVG_LAST_PID	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-LOADAVG--CAPS" role="macro">
+<title>GLIBTOP_MAX_LOADAVG</title>
+<indexterm zone="GLIBTOP-MAX-LOADAVG--CAPS"><primary sortas="GLIBTOP_MAX_LOADAVG">GLIBTOP_MAX_LOADAVG</primary></indexterm><programlisting>#define GLIBTOP_MAX_LOADAVG		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-loadavg" role="struct">
+<title>glibtop_loadavg</title>
+<indexterm zone="glibtop-loadavg"><primary sortas="glibtop_loadavg">glibtop_loadavg</primary></indexterm><programlisting>typedef struct {
+	guint64 flags;
+	double loadavg [3];		/* GLIBTOP_LOADAVG_LOADAVG	*/
+	guint64 nr_running;		/* GLIBTOP_LOADAVG_NR_RUNNING	*/
+	guint64 nr_tasks;		/* GLIBTOP_LOADAVG_NR_TASKS	*/
+	guint64 last_pid;		/* GLIBTOP_LOADAVG_LAST_PID	*/
+} glibtop_loadavg;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-loadavg" role="function">
+<title>glibtop_get_loadavg ()</title>
+<indexterm zone="glibtop-get-loadavg"><primary sortas="glibtop_get_loadavg">glibtop_get_loadavg</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_loadavg                 (<link linkend="glibtop-loadavg">glibtop_loadavg</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-loadavg-r" role="macro">
+<title>glibtop_get_loadavg_r</title>
+<indexterm zone="glibtop-get-loadavg-r"><primary sortas="glibtop_get_loadavg_r">glibtop_get_loadavg_r</primary></indexterm><programlisting>#define             glibtop_get_loadavg_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-loadavg-l" role="function">
+<title>glibtop_get_loadavg_l ()</title>
+<indexterm zone="glibtop-get-loadavg-l"><primary sortas="glibtop_get_loadavg_l">glibtop_get_loadavg_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_loadavg_l               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-loadavg">glibtop_loadavg</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-loadavg-p" role="function">
+<title>glibtop_get_loadavg_p ()</title>
+<indexterm zone="glibtop-get-loadavg-p"><primary sortas="glibtop_get_loadavg_p">glibtop_get_loadavg_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_loadavg_p               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-loadavg">glibtop_loadavg</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-loadavg-s" role="function">
+<title>glibtop_get_loadavg_s ()</title>
+<indexterm zone="glibtop-get-loadavg-s"><primary sortas="glibtop_get_loadavg_s">glibtop_get_loadavg_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_loadavg_s               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-loadavg">glibtop_loadavg</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

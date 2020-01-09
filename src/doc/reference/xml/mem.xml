@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-mem">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-mem.top_of_page">mem</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>mem</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-mem.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/mem.h&gt;
+
+#define             <link linkend="GLIBTOP-MEM-TOTAL--CAPS">GLIBTOP_MEM_TOTAL</link>
+#define             <link linkend="GLIBTOP-MEM-USED--CAPS">GLIBTOP_MEM_USED</link>
+#define             <link linkend="GLIBTOP-MEM-FREE--CAPS">GLIBTOP_MEM_FREE</link>
+#define             <link linkend="GLIBTOP-MEM-SHARED--CAPS">GLIBTOP_MEM_SHARED</link>
+#define             <link linkend="GLIBTOP-MEM-BUFFER--CAPS">GLIBTOP_MEM_BUFFER</link>
+#define             <link linkend="GLIBTOP-MEM-CACHED--CAPS">GLIBTOP_MEM_CACHED</link>
+#define             <link linkend="GLIBTOP-MEM-USER--CAPS">GLIBTOP_MEM_USER</link>
+#define             <link linkend="GLIBTOP-MEM-LOCKED--CAPS">GLIBTOP_MEM_LOCKED</link>
+#define             <link linkend="GLIBTOP-MAX-MEM--CAPS">GLIBTOP_MAX_MEM</link>
+                    <link linkend="glibtop-mem">glibtop_mem</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-mem">glibtop_get_mem</link>                     (<link linkend="glibtop-mem">glibtop_mem</link> *buf);
+#define             <link linkend="glibtop-get-mem-r">glibtop_get_mem_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-mem-l">glibtop_get_mem_l</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mem">glibtop_mem</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-mem-p">glibtop_get_mem_p</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mem">glibtop_mem</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-mem-s">glibtop_get_mem_s</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mem">glibtop_mem</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-mem.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-mem.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-MEM-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_MEM_TOTAL</title>
+<indexterm zone="GLIBTOP-MEM-TOTAL--CAPS"><primary sortas="GLIBTOP_MEM_TOTAL">GLIBTOP_MEM_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_MEM_TOTAL	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MEM-USED--CAPS" role="macro">
+<title>GLIBTOP_MEM_USED</title>
+<indexterm zone="GLIBTOP-MEM-USED--CAPS"><primary sortas="GLIBTOP_MEM_USED">GLIBTOP_MEM_USED</primary></indexterm><programlisting>#define GLIBTOP_MEM_USED	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MEM-FREE--CAPS" role="macro">
+<title>GLIBTOP_MEM_FREE</title>
+<indexterm zone="GLIBTOP-MEM-FREE--CAPS"><primary sortas="GLIBTOP_MEM_FREE">GLIBTOP_MEM_FREE</primary></indexterm><programlisting>#define GLIBTOP_MEM_FREE	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MEM-SHARED--CAPS" role="macro">
+<title>GLIBTOP_MEM_SHARED</title>
+<indexterm zone="GLIBTOP-MEM-SHARED--CAPS"><primary sortas="GLIBTOP_MEM_SHARED">GLIBTOP_MEM_SHARED</primary></indexterm><programlisting>#define GLIBTOP_MEM_SHARED	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MEM-BUFFER--CAPS" role="macro">
+<title>GLIBTOP_MEM_BUFFER</title>
+<indexterm zone="GLIBTOP-MEM-BUFFER--CAPS"><primary sortas="GLIBTOP_MEM_BUFFER">GLIBTOP_MEM_BUFFER</primary></indexterm><programlisting>#define GLIBTOP_MEM_BUFFER	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MEM-CACHED--CAPS" role="macro">
+<title>GLIBTOP_MEM_CACHED</title>
+<indexterm zone="GLIBTOP-MEM-CACHED--CAPS"><primary sortas="GLIBTOP_MEM_CACHED">GLIBTOP_MEM_CACHED</primary></indexterm><programlisting>#define GLIBTOP_MEM_CACHED	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MEM-USER--CAPS" role="macro">
+<title>GLIBTOP_MEM_USER</title>
+<indexterm zone="GLIBTOP-MEM-USER--CAPS"><primary sortas="GLIBTOP_MEM_USER">GLIBTOP_MEM_USER</primary></indexterm><programlisting>#define GLIBTOP_MEM_USER	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MEM-LOCKED--CAPS" role="macro">
+<title>GLIBTOP_MEM_LOCKED</title>
+<indexterm zone="GLIBTOP-MEM-LOCKED--CAPS"><primary sortas="GLIBTOP_MEM_LOCKED">GLIBTOP_MEM_LOCKED</primary></indexterm><programlisting>#define GLIBTOP_MEM_LOCKED	7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-MEM--CAPS" role="macro">
+<title>GLIBTOP_MAX_MEM</title>
+<indexterm zone="GLIBTOP-MAX-MEM--CAPS"><primary sortas="GLIBTOP_MAX_MEM">GLIBTOP_MAX_MEM</primary></indexterm><programlisting>#define GLIBTOP_MAX_MEM		8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-mem" role="struct">
+<title>glibtop_mem</title>
+<indexterm zone="glibtop-mem"><primary sortas="glibtop_mem">glibtop_mem</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 total;		/* GLIBTOP_MEM_TOTAL	*/
+	guint64 used;		/* GLIBTOP_MEM_USED	*/
+	guint64 free;		/* GLIBTOP_MEM_FREE	*/
+	guint64 shared;		/* GLIBTOP_MEM_SHARED	*/
+	guint64 buffer;		/* GLIBTOP_MEM_BUFFER	*/
+	guint64 cached;		/* GLIBTOP_MEM_CACHED	*/
+	guint64 user;		/* GLIBTOP_MEM_USER	*/
+	guint64 locked;		/* GLIBTOP_MEM_LOCKED	*/
+} glibtop_mem;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-mem" role="function">
+<title>glibtop_get_mem ()</title>
+<indexterm zone="glibtop-get-mem"><primary sortas="glibtop_get_mem">glibtop_get_mem</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_mem                     (<link linkend="glibtop-mem">glibtop_mem</link> *buf);</programlisting>
+<para>
+Get the memory usage. Unless explicitly stated otherwise, all memory
+units are in bytes.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> Buffer where the output will be given.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-mem-r" role="macro">
+<title>glibtop_get_mem_r</title>
+<indexterm zone="glibtop-get-mem-r"><primary sortas="glibtop_get_mem_r">glibtop_get_mem_r</primary></indexterm><programlisting>#define             glibtop_get_mem_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-mem-l" role="function">
+<title>glibtop_get_mem_l ()</title>
+<indexterm zone="glibtop-get-mem-l"><primary sortas="glibtop_get_mem_l">glibtop_get_mem_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_mem_l                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mem">glibtop_mem</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-mem-p" role="function">
+<title>glibtop_get_mem_p ()</title>
+<indexterm zone="glibtop-get-mem-p"><primary sortas="glibtop_get_mem_p">glibtop_get_mem_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_mem_p                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mem">glibtop_mem</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-mem-s" role="function">
+<title>glibtop_get_mem_s ()</title>
+<indexterm zone="glibtop-get-mem-s"><primary sortas="glibtop_get_mem_s">glibtop_get_mem_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_mem_s                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mem">glibtop_mem</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

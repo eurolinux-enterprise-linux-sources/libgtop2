@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-sysinfo">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-sysinfo.top_of_page">sysinfo</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>sysinfo</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-sysinfo.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/sysinfo.h&gt;
+
+#define             <link linkend="GLIBTOP-SYSINFO-NCPU--CAPS">GLIBTOP_SYSINFO_NCPU</link>
+#define             <link linkend="GLIBTOP-SYSINFO-CPUINFO--CAPS">GLIBTOP_SYSINFO_CPUINFO</link>
+#define             <link linkend="GLIBTOP-MAX-SYSINFO--CAPS">GLIBTOP_MAX_SYSINFO</link>
+                    <link linkend="glibtop-sysinfo">glibtop_sysinfo</link>;
+                    <link linkend="glibtop-entry">glibtop_entry</link>;
+#define             <link linkend="glibtop-get-sysinfo-r">glibtop_get_sysinfo_r</link>
+const <link linkend="glibtop-sysinfo">glibtop_sysinfo</link> * <link linkend="glibtop-get-sysinfo-s">glibtop_get_sysinfo_s</link>           (<link linkend="glibtop">glibtop</link> *server);
+const <link linkend="glibtop-sysinfo">glibtop_sysinfo</link> * <link linkend="glibtop-get-sysinfo">glibtop_get_sysinfo</link>             (void);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-sysinfo.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-sysinfo.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-SYSINFO-NCPU--CAPS" role="macro">
+<title>GLIBTOP_SYSINFO_NCPU</title>
+<indexterm zone="GLIBTOP-SYSINFO-NCPU--CAPS"><primary sortas="GLIBTOP_SYSINFO_NCPU">GLIBTOP_SYSINFO_NCPU</primary></indexterm><programlisting>#define GLIBTOP_SYSINFO_NCPU		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-SYSINFO-CPUINFO--CAPS" role="macro">
+<title>GLIBTOP_SYSINFO_CPUINFO</title>
+<indexterm zone="GLIBTOP-SYSINFO-CPUINFO--CAPS"><primary sortas="GLIBTOP_SYSINFO_CPUINFO">GLIBTOP_SYSINFO_CPUINFO</primary></indexterm><programlisting>#define GLIBTOP_SYSINFO_CPUINFO		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-SYSINFO--CAPS" role="macro">
+<title>GLIBTOP_MAX_SYSINFO</title>
+<indexterm zone="GLIBTOP-MAX-SYSINFO--CAPS"><primary sortas="GLIBTOP_MAX_SYSINFO">GLIBTOP_MAX_SYSINFO</primary></indexterm><programlisting>#define GLIBTOP_MAX_SYSINFO		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-sysinfo" role="struct">
+<title>glibtop_sysinfo</title>
+<indexterm zone="glibtop-sysinfo"><primary sortas="glibtop_sysinfo">glibtop_sysinfo</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 ncpu;
+	glibtop_entry cpuinfo [GLIBTOP_NCPU];
+} glibtop_sysinfo;
+</programlisting>
+<para>
+</para>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-entry" role="struct">
+<title>glibtop_entry</title>
+<indexterm zone="glibtop-entry"><primary sortas="glibtop_entry">glibtop_entry</primary></indexterm><programlisting>typedef struct {
+	GPtrArray	*labels;
+	GHashTable	*values; /* key -&gt; description */
+	GHashTable	*descriptions; /* unused */
+} glibtop_entry;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-sysinfo-r" role="macro">
+<title>glibtop_get_sysinfo_r</title>
+<indexterm zone="glibtop-get-sysinfo-r"><primary sortas="glibtop_get_sysinfo_r">glibtop_get_sysinfo_r</primary></indexterm><programlisting>#define glibtop_get_sysinfo_r	glibtop_get_sysinfo_s
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-sysinfo-s" role="function">
+<title>glibtop_get_sysinfo_s ()</title>
+<indexterm zone="glibtop-get-sysinfo-s"><primary sortas="glibtop_get_sysinfo_s">glibtop_get_sysinfo_s</primary></indexterm><programlisting>const <link linkend="glibtop-sysinfo">glibtop_sysinfo</link> * glibtop_get_sysinfo_s           (<link linkend="glibtop">glibtop</link> *server);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-sysinfo" role="function">
+<title>glibtop_get_sysinfo ()</title>
+<indexterm zone="glibtop-get-sysinfo"><primary sortas="glibtop_get_sysinfo">glibtop_get_sysinfo</primary></indexterm><programlisting>const <link linkend="glibtop-sysinfo">glibtop_sysinfo</link> * glibtop_get_sysinfo             (void);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

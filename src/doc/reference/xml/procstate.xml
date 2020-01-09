@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-procstate">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-procstate.top_of_page">procstate</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>procstate</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-procstate.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/procstate.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-STATE-CMD--CAPS">GLIBTOP_PROC_STATE_CMD</link>
+#define             <link linkend="GLIBTOP-PROC-STATE-STATE--CAPS">GLIBTOP_PROC_STATE_STATE</link>
+#define             <link linkend="GLIBTOP-PROC-STATE-UID--CAPS">GLIBTOP_PROC_STATE_UID</link>
+#define             <link linkend="GLIBTOP-PROC-STATE-GID--CAPS">GLIBTOP_PROC_STATE_GID</link>
+#define             <link linkend="GLIBTOP-PROC-STATE-RUID--CAPS">GLIBTOP_PROC_STATE_RUID</link>
+#define             <link linkend="GLIBTOP-PROC-STATE-RGID--CAPS">GLIBTOP_PROC_STATE_RGID</link>
+#define             <link linkend="GLIBTOP-PROC-STATE-HAS-CPU--CAPS">GLIBTOP_PROC_STATE_HAS_CPU</link>
+#define             <link linkend="GLIBTOP-PROC-STATE-PROCESSOR--CAPS">GLIBTOP_PROC_STATE_PROCESSOR</link>
+#define             <link linkend="GLIBTOP-PROC-STATE-LAST-PROCESSOR--CAPS">GLIBTOP_PROC_STATE_LAST_PROCESSOR</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-STATE--CAPS">GLIBTOP_MAX_PROC_STATE</link>
+#define             <link linkend="GLIBTOP-PROCESS-RUNNING--CAPS">GLIBTOP_PROCESS_RUNNING</link>
+#define             <link linkend="GLIBTOP-PROCESS-INTERRUPTIBLE--CAPS">GLIBTOP_PROCESS_INTERRUPTIBLE</link>
+#define             <link linkend="GLIBTOP-PROCESS-UNINTERRUPTIBLE--CAPS">GLIBTOP_PROCESS_UNINTERRUPTIBLE</link>
+#define             <link linkend="GLIBTOP-PROCESS-ZOMBIE--CAPS">GLIBTOP_PROCESS_ZOMBIE</link>
+#define             <link linkend="GLIBTOP-PROCESS-STOPPED--CAPS">GLIBTOP_PROCESS_STOPPED</link>
+#define             <link linkend="GLIBTOP-PROCESS-SWAPPING--CAPS">GLIBTOP_PROCESS_SWAPPING</link>
+#define             <link linkend="GLIBTOP-PROCESS-DEAD--CAPS">GLIBTOP_PROCESS_DEAD</link>
+                    <link linkend="glibtop-proc-state">glibtop_proc_state</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-state">glibtop_get_proc_state</link>              (<link linkend="glibtop-proc-state">glibtop_proc_state</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-state-r">glibtop_get_proc_state_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-state-l">glibtop_get_proc_state_l</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-state">glibtop_proc_state</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-state-p">glibtop_get_proc_state_p</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-state">glibtop_proc_state</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-state-s">glibtop_get_proc_state_s</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-state">glibtop_proc_state</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-procstate.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-procstate.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-STATE-CMD--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_CMD</title>
+<indexterm zone="GLIBTOP-PROC-STATE-CMD--CAPS"><primary sortas="GLIBTOP_PROC_STATE_CMD">GLIBTOP_PROC_STATE_CMD</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_CMD		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-STATE-STATE--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_STATE</title>
+<indexterm zone="GLIBTOP-PROC-STATE-STATE--CAPS"><primary sortas="GLIBTOP_PROC_STATE_STATE">GLIBTOP_PROC_STATE_STATE</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_STATE	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-STATE-UID--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_UID</title>
+<indexterm zone="GLIBTOP-PROC-STATE-UID--CAPS"><primary sortas="GLIBTOP_PROC_STATE_UID">GLIBTOP_PROC_STATE_UID</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_UID		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-STATE-GID--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_GID</title>
+<indexterm zone="GLIBTOP-PROC-STATE-GID--CAPS"><primary sortas="GLIBTOP_PROC_STATE_GID">GLIBTOP_PROC_STATE_GID</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_GID		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-STATE-RUID--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_RUID</title>
+<indexterm zone="GLIBTOP-PROC-STATE-RUID--CAPS"><primary sortas="GLIBTOP_PROC_STATE_RUID">GLIBTOP_PROC_STATE_RUID</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_RUID     4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-STATE-RGID--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_RGID</title>
+<indexterm zone="GLIBTOP-PROC-STATE-RGID--CAPS"><primary sortas="GLIBTOP_PROC_STATE_RGID">GLIBTOP_PROC_STATE_RGID</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_RGID     5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-STATE-HAS-CPU--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_HAS_CPU</title>
+<indexterm zone="GLIBTOP-PROC-STATE-HAS-CPU--CAPS"><primary sortas="GLIBTOP_PROC_STATE_HAS_CPU">GLIBTOP_PROC_STATE_HAS_CPU</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_HAS_CPU  6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-STATE-PROCESSOR--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_PROCESSOR</title>
+<indexterm zone="GLIBTOP-PROC-STATE-PROCESSOR--CAPS"><primary sortas="GLIBTOP_PROC_STATE_PROCESSOR">GLIBTOP_PROC_STATE_PROCESSOR</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_PROCESSOR 7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-STATE-LAST-PROCESSOR--CAPS" role="macro">
+<title>GLIBTOP_PROC_STATE_LAST_PROCESSOR</title>
+<indexterm zone="GLIBTOP-PROC-STATE-LAST-PROCESSOR--CAPS"><primary sortas="GLIBTOP_PROC_STATE_LAST_PROCESSOR">GLIBTOP_PROC_STATE_LAST_PROCESSOR</primary></indexterm><programlisting>#define GLIBTOP_PROC_STATE_LAST_PROCESSOR 8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-STATE--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_STATE</title>
+<indexterm zone="GLIBTOP-MAX-PROC-STATE--CAPS"><primary sortas="GLIBTOP_MAX_PROC_STATE">GLIBTOP_MAX_PROC_STATE</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_STATE		9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCESS-RUNNING--CAPS" role="macro">
+<title>GLIBTOP_PROCESS_RUNNING</title>
+<indexterm zone="GLIBTOP-PROCESS-RUNNING--CAPS"><primary sortas="GLIBTOP_PROCESS_RUNNING">GLIBTOP_PROCESS_RUNNING</primary></indexterm><programlisting>#define GLIBTOP_PROCESS_RUNNING                 1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCESS-INTERRUPTIBLE--CAPS" role="macro">
+<title>GLIBTOP_PROCESS_INTERRUPTIBLE</title>
+<indexterm zone="GLIBTOP-PROCESS-INTERRUPTIBLE--CAPS"><primary sortas="GLIBTOP_PROCESS_INTERRUPTIBLE">GLIBTOP_PROCESS_INTERRUPTIBLE</primary></indexterm><programlisting>#define GLIBTOP_PROCESS_INTERRUPTIBLE           2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCESS-UNINTERRUPTIBLE--CAPS" role="macro">
+<title>GLIBTOP_PROCESS_UNINTERRUPTIBLE</title>
+<indexterm zone="GLIBTOP-PROCESS-UNINTERRUPTIBLE--CAPS"><primary sortas="GLIBTOP_PROCESS_UNINTERRUPTIBLE">GLIBTOP_PROCESS_UNINTERRUPTIBLE</primary></indexterm><programlisting>#define GLIBTOP_PROCESS_UNINTERRUPTIBLE         4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCESS-ZOMBIE--CAPS" role="macro">
+<title>GLIBTOP_PROCESS_ZOMBIE</title>
+<indexterm zone="GLIBTOP-PROCESS-ZOMBIE--CAPS"><primary sortas="GLIBTOP_PROCESS_ZOMBIE">GLIBTOP_PROCESS_ZOMBIE</primary></indexterm><programlisting>#define GLIBTOP_PROCESS_ZOMBIE                  8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCESS-STOPPED--CAPS" role="macro">
+<title>GLIBTOP_PROCESS_STOPPED</title>
+<indexterm zone="GLIBTOP-PROCESS-STOPPED--CAPS"><primary sortas="GLIBTOP_PROCESS_STOPPED">GLIBTOP_PROCESS_STOPPED</primary></indexterm><programlisting>#define GLIBTOP_PROCESS_STOPPED                 16
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCESS-SWAPPING--CAPS" role="macro">
+<title>GLIBTOP_PROCESS_SWAPPING</title>
+<indexterm zone="GLIBTOP-PROCESS-SWAPPING--CAPS"><primary sortas="GLIBTOP_PROCESS_SWAPPING">GLIBTOP_PROCESS_SWAPPING</primary></indexterm><programlisting>#define GLIBTOP_PROCESS_SWAPPING                32
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCESS-DEAD--CAPS" role="macro">
+<title>GLIBTOP_PROCESS_DEAD</title>
+<indexterm zone="GLIBTOP-PROCESS-DEAD--CAPS"><primary sortas="GLIBTOP_PROCESS_DEAD">GLIBTOP_PROCESS_DEAD</primary></indexterm><programlisting>#define GLIBTOP_PROCESS_DEAD                    64
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-state" role="struct">
+<title>glibtop_proc_state</title>
+<indexterm zone="glibtop-proc-state"><primary sortas="glibtop_proc_state">glibtop_proc_state</primary></indexterm><programlisting>typedef struct {
+	guint64 flags;
+	char cmd[40];		/* basename of executable file in
+				 * call to exec(2) */
+	unsigned state;
+	/* NOTE: when porting the library, TRY HARD to implement the
+	 *       following two fields. */
+	/* IMPORTANT NOTICE: For security reasons, it is extremely important
+	 *                   only to set the flags value for those two
+	 *                   fields if their values are corrent ! */
+	int uid;		/* UID of process */
+	int gid;		/* GID of process */
+    int ruid;
+    int rgid;
+    int has_cpu;
+    int processor;
+    int last_processor;
+} glibtop_proc_state;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-state" role="function">
+<title>glibtop_get_proc_state ()</title>
+<indexterm zone="glibtop-get-proc-state"><primary sortas="glibtop_get_proc_state">glibtop_get_proc_state</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_state              (<link linkend="glibtop-proc-state">glibtop_proc_state</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-state-r" role="macro">
+<title>glibtop_get_proc_state_r</title>
+<indexterm zone="glibtop-get-proc-state-r"><primary sortas="glibtop_get_proc_state_r">glibtop_get_proc_state_r</primary></indexterm><programlisting>#define             glibtop_get_proc_state_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-state-l" role="function">
+<title>glibtop_get_proc_state_l ()</title>
+<indexterm zone="glibtop-get-proc-state-l"><primary sortas="glibtop_get_proc_state_l">glibtop_get_proc_state_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_state_l            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-state">glibtop_proc_state</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-state-p" role="function">
+<title>glibtop_get_proc_state_p ()</title>
+<indexterm zone="glibtop-get-proc-state-p"><primary sortas="glibtop_get_proc_state_p">glibtop_get_proc_state_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_state_p            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-state">glibtop_proc_state</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-state-s" role="function">
+<title>glibtop_get_proc_state_s ()</title>
+<indexterm zone="glibtop-get-proc-state-s"><primary sortas="glibtop_get_proc_state_s">glibtop_get_proc_state_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_state_s            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-state">glibtop_proc_state</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

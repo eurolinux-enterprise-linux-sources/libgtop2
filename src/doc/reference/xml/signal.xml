@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-signal">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-signal.top_of_page">signal</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>signal</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-signal.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/signal.h&gt;
+
+                    <link linkend="glibtop-signame">glibtop_signame</link>;
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-signal.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-signal.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="glibtop-signame" role="struct">
+<title>glibtop_signame</title>
+<indexterm zone="glibtop-signame"><primary sortas="glibtop_signame">glibtop_signame</primary></indexterm><programlisting>typedef struct {
+	const int number;
+	const char *name, *label;
+} glibtop_signame;
+</programlisting>
+<para>
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-version">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-version.top_of_page">version</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>version</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-version.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/version.h&gt;
+
+#define             <link linkend="LIBGTOP-VERSION-STRING--CAPS">LIBGTOP_VERSION_STRING</link>
+<link linkend="void">void</link>                <link linkend="glibtop-send-version">glibtop_send_version</link>                (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="int">int</link> fd);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-version.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-version.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="LIBGTOP-VERSION-STRING--CAPS" role="macro">
+<title>LIBGTOP_VERSION_STRING</title>
+<indexterm zone="LIBGTOP-VERSION-STRING--CAPS"><primary sortas="LIBGTOP_VERSION_STRING">LIBGTOP_VERSION_STRING</primary></indexterm><programlisting>#define LIBGTOP_VERSION_STRING "Libgtop %s server version %s (%u,%u,%u,%u)."
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-send-version" role="function">
+<title>glibtop_send_version ()</title>
+<indexterm zone="glibtop-send-version"><primary sortas="glibtop_send_version">glibtop_send_version</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_send_version                (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="int">int</link> fd);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>fd</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-Net-List">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-Net-List.top_of_page">Net List</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Net List</refname>
+<refpurpose>Network Devices List.</refpurpose>
+</refnamediv>
+<refsect1 id="libgtop-Net-List.stability-level">
+<title>Stability Level</title>
+Stable, unless otherwise indicated
+</refsect1>
+
+<refsynopsisdiv id="libgtop-Net-List.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/netlist.h&gt;
+
+#define             <link linkend="GLIBTOP-NETLIST-NUMBER--CAPS">GLIBTOP_NETLIST_NUMBER</link>
+#define             <link linkend="GLIBTOP-MAX-NETLIST--CAPS">GLIBTOP_MAX_NETLIST</link>
+                    <link linkend="glibtop-netlist">glibtop_netlist</link>;
+<link linkend="char">char</link>**              <link linkend="glibtop-get-netlist">glibtop_get_netlist</link>                 (<link linkend="glibtop-netlist">glibtop_netlist</link> *buf);
+#define             <link linkend="glibtop-get-netlist-r">glibtop_get_netlist_r</link>
+<link linkend="char">char</link>**              <link linkend="glibtop-get-netlist-l">glibtop_get_netlist_l</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netlist">glibtop_netlist</link> *buf);
+<link linkend="char">char</link>**              <link linkend="glibtop-get-netlist-p">glibtop_get_netlist_p</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netlist">glibtop_netlist</link> *buf);
+<link linkend="char">char</link>**              <link linkend="glibtop-get-netlist-s">glibtop_get_netlist_s</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netlist">glibtop_netlist</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-Net-List.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The application class handles ...</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-Net-List.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-NETLIST-NUMBER--CAPS" role="macro">
+<title>GLIBTOP_NETLIST_NUMBER</title>
+<indexterm zone="GLIBTOP-NETLIST-NUMBER--CAPS"><primary sortas="GLIBTOP_NETLIST_NUMBER">GLIBTOP_NETLIST_NUMBER</primary></indexterm><programlisting>#define GLIBTOP_NETLIST_NUMBER		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-NETLIST--CAPS" role="macro">
+<title>GLIBTOP_MAX_NETLIST</title>
+<indexterm zone="GLIBTOP-MAX-NETLIST--CAPS"><primary sortas="GLIBTOP_MAX_NETLIST">GLIBTOP_MAX_NETLIST</primary></indexterm><programlisting>#define GLIBTOP_MAX_NETLIST		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-netlist" role="struct">
+<title>glibtop_netlist</title>
+<indexterm zone="glibtop-netlist"><primary sortas="glibtop_netlist">glibtop_netlist</primary></indexterm><programlisting>typedef struct {
+	guint64 flags;
+	guint32 number;
+} glibtop_netlist;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-netlist" role="function">
+<title>glibtop_get_netlist ()</title>
+<indexterm zone="glibtop-get-netlist"><primary sortas="glibtop_get_netlist">glibtop_get_netlist</primary></indexterm><programlisting><link linkend="char">char</link>**              glibtop_get_netlist                 (<link linkend="glibtop-netlist">glibtop_netlist</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-netlist-r" role="macro">
+<title>glibtop_get_netlist_r</title>
+<indexterm zone="glibtop-get-netlist-r"><primary sortas="glibtop_get_netlist_r">glibtop_get_netlist_r</primary></indexterm><programlisting>#define             glibtop_get_netlist_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-netlist-l" role="function">
+<title>glibtop_get_netlist_l ()</title>
+<indexterm zone="glibtop-get-netlist-l"><primary sortas="glibtop_get_netlist_l">glibtop_get_netlist_l</primary></indexterm><programlisting><link linkend="char">char</link>**              glibtop_get_netlist_l               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netlist">glibtop_netlist</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-netlist-p" role="function">
+<title>glibtop_get_netlist_p ()</title>
+<indexterm zone="glibtop-get-netlist-p"><primary sortas="glibtop_get_netlist_p">glibtop_get_netlist_p</primary></indexterm><programlisting><link linkend="char">char</link>**              glibtop_get_netlist_p               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netlist">glibtop_netlist</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-netlist-s" role="function">
+<title>glibtop_get_netlist_s ()</title>
+<indexterm zone="glibtop-get-netlist-s"><primary sortas="glibtop_get_netlist_s">glibtop_get_netlist_s</primary></indexterm><programlisting><link linkend="char">char</link>**              glibtop_get_netlist_s               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netlist">glibtop_netlist</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="libgtop-Net-List.see-also">
+<title>See Also</title>
+#libgtop-netload
+</refsect1>
+
+</refentry>

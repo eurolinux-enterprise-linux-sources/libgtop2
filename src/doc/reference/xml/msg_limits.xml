@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-msg-limits">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-msg-limits.top_of_page">msg_limits</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>msg_limits</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-msg-limits.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/msg_limits.h&gt;
+
+#define             <link linkend="GLIBTOP-IPC-MSGPOOL--CAPS">GLIBTOP_IPC_MSGPOOL</link>
+#define             <link linkend="GLIBTOP-IPC-MSGMAP--CAPS">GLIBTOP_IPC_MSGMAP</link>
+#define             <link linkend="GLIBTOP-IPC-MSGMAX--CAPS">GLIBTOP_IPC_MSGMAX</link>
+#define             <link linkend="GLIBTOP-IPC-MSGMNB--CAPS">GLIBTOP_IPC_MSGMNB</link>
+#define             <link linkend="GLIBTOP-IPC-MSGMNI--CAPS">GLIBTOP_IPC_MSGMNI</link>
+#define             <link linkend="GLIBTOP-IPC-MSGSSZ--CAPS">GLIBTOP_IPC_MSGSSZ</link>
+#define             <link linkend="GLIBTOP-IPC-MSGTQL--CAPS">GLIBTOP_IPC_MSGTQL</link>
+#define             <link linkend="GLIBTOP-MAX-MSG-LIMITS--CAPS">GLIBTOP_MAX_MSG_LIMITS</link>
+                    <link linkend="glibtop-msg-limits">glibtop_msg_limits</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-msg-limits">glibtop_get_msg_limits</link>              (<link linkend="glibtop-msg-limits">glibtop_msg_limits</link> *buf);
+#define             <link linkend="glibtop-get-msg-limits-r">glibtop_get_msg_limits_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-msg-limits-l">glibtop_get_msg_limits_l</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-msg-limits">glibtop_msg_limits</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-msg-limits-p">glibtop_get_msg_limits_p</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-msg-limits">glibtop_msg_limits</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-msg-limits-s">glibtop_get_msg_limits_s</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-msg-limits">glibtop_msg_limits</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-msg-limits.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-msg-limits.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-IPC-MSGPOOL--CAPS" role="macro">
+<title>GLIBTOP_IPC_MSGPOOL</title>
+<indexterm zone="GLIBTOP-IPC-MSGPOOL--CAPS"><primary sortas="GLIBTOP_IPC_MSGPOOL">GLIBTOP_IPC_MSGPOOL</primary></indexterm><programlisting>#define GLIBTOP_IPC_MSGPOOL	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-MSGMAP--CAPS" role="macro">
+<title>GLIBTOP_IPC_MSGMAP</title>
+<indexterm zone="GLIBTOP-IPC-MSGMAP--CAPS"><primary sortas="GLIBTOP_IPC_MSGMAP">GLIBTOP_IPC_MSGMAP</primary></indexterm><programlisting>#define GLIBTOP_IPC_MSGMAP	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-MSGMAX--CAPS" role="macro">
+<title>GLIBTOP_IPC_MSGMAX</title>
+<indexterm zone="GLIBTOP-IPC-MSGMAX--CAPS"><primary sortas="GLIBTOP_IPC_MSGMAX">GLIBTOP_IPC_MSGMAX</primary></indexterm><programlisting>#define GLIBTOP_IPC_MSGMAX	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-MSGMNB--CAPS" role="macro">
+<title>GLIBTOP_IPC_MSGMNB</title>
+<indexterm zone="GLIBTOP-IPC-MSGMNB--CAPS"><primary sortas="GLIBTOP_IPC_MSGMNB">GLIBTOP_IPC_MSGMNB</primary></indexterm><programlisting>#define GLIBTOP_IPC_MSGMNB	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-MSGMNI--CAPS" role="macro">
+<title>GLIBTOP_IPC_MSGMNI</title>
+<indexterm zone="GLIBTOP-IPC-MSGMNI--CAPS"><primary sortas="GLIBTOP_IPC_MSGMNI">GLIBTOP_IPC_MSGMNI</primary></indexterm><programlisting>#define GLIBTOP_IPC_MSGMNI	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-MSGSSZ--CAPS" role="macro">
+<title>GLIBTOP_IPC_MSGSSZ</title>
+<indexterm zone="GLIBTOP-IPC-MSGSSZ--CAPS"><primary sortas="GLIBTOP_IPC_MSGSSZ">GLIBTOP_IPC_MSGSSZ</primary></indexterm><programlisting>#define GLIBTOP_IPC_MSGSSZ	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-MSGTQL--CAPS" role="macro">
+<title>GLIBTOP_IPC_MSGTQL</title>
+<indexterm zone="GLIBTOP-IPC-MSGTQL--CAPS"><primary sortas="GLIBTOP_IPC_MSGTQL">GLIBTOP_IPC_MSGTQL</primary></indexterm><programlisting>#define GLIBTOP_IPC_MSGTQL	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-MSG-LIMITS--CAPS" role="macro">
+<title>GLIBTOP_MAX_MSG_LIMITS</title>
+<indexterm zone="GLIBTOP-MAX-MSG-LIMITS--CAPS"><primary sortas="GLIBTOP_MAX_MSG_LIMITS">GLIBTOP_MAX_MSG_LIMITS</primary></indexterm><programlisting>#define GLIBTOP_MAX_MSG_LIMITS	7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-msg-limits" role="struct">
+<title>glibtop_msg_limits</title>
+<indexterm zone="glibtop-msg-limits"><primary sortas="glibtop_msg_limits">glibtop_msg_limits</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 msgpool;	/* GLIBTOP_IPC_MSGPOOL	*/
+	guint64 msgmap;		/* GLIBTOP_IPC_MSGMAP	*/
+	guint64 msgmax;		/* GLIBTOP_IPC_MSGMAX	*/
+	guint64 msgmnb;		/* GLIBTOP_IPC_MSGMNB	*/
+	guint64 msgmni;		/* GLIBTOP_IPC_MSGMNI	*/
+	guint64 msgssz;		/* GLIBTOP_IPC_MSGSSZ	*/
+	guint64 msgtql;		/* GLIBTOP_IPC_MSGTQL	*/
+} glibtop_msg_limits;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-msg-limits" role="function">
+<title>glibtop_get_msg_limits ()</title>
+<indexterm zone="glibtop-get-msg-limits"><primary sortas="glibtop_get_msg_limits">glibtop_get_msg_limits</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_msg_limits              (<link linkend="glibtop-msg-limits">glibtop_msg_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-msg-limits-r" role="macro">
+<title>glibtop_get_msg_limits_r</title>
+<indexterm zone="glibtop-get-msg-limits-r"><primary sortas="glibtop_get_msg_limits_r">glibtop_get_msg_limits_r</primary></indexterm><programlisting>#define             glibtop_get_msg_limits_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-msg-limits-l" role="function">
+<title>glibtop_get_msg_limits_l ()</title>
+<indexterm zone="glibtop-get-msg-limits-l"><primary sortas="glibtop_get_msg_limits_l">glibtop_get_msg_limits_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_msg_limits_l            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-msg-limits">glibtop_msg_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-msg-limits-p" role="function">
+<title>glibtop_get_msg_limits_p ()</title>
+<indexterm zone="glibtop-get-msg-limits-p"><primary sortas="glibtop_get_msg_limits_p">glibtop_get_msg_limits_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_msg_limits_p            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-msg-limits">glibtop_msg_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-msg-limits-s" role="function">
+<title>glibtop_get_msg_limits_s ()</title>
+<indexterm zone="glibtop-get-msg-limits-s"><primary sortas="glibtop_get_msg_limits_s">glibtop_get_msg_limits_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_msg_limits_s            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-msg-limits">glibtop_msg_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

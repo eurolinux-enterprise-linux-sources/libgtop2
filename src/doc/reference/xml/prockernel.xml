@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-prockernel">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-prockernel.top_of_page">prockernel</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>prockernel</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-prockernel.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/prockernel.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-KERNEL-K-FLAGS--CAPS">GLIBTOP_PROC_KERNEL_K_FLAGS</link>
+#define             <link linkend="GLIBTOP-PROC-KERNEL-MIN-FLT--CAPS">GLIBTOP_PROC_KERNEL_MIN_FLT</link>
+#define             <link linkend="GLIBTOP-PROC-KERNEL-MAJ-FLT--CAPS">GLIBTOP_PROC_KERNEL_MAJ_FLT</link>
+#define             <link linkend="GLIBTOP-PROC-KERNEL-CMIN-FLT--CAPS">GLIBTOP_PROC_KERNEL_CMIN_FLT</link>
+#define             <link linkend="GLIBTOP-PROC-KERNEL-CMAJ-FLT--CAPS">GLIBTOP_PROC_KERNEL_CMAJ_FLT</link>
+#define             <link linkend="GLIBTOP-PROC-KERNEL-KSTK-ESP--CAPS">GLIBTOP_PROC_KERNEL_KSTK_ESP</link>
+#define             <link linkend="GLIBTOP-PROC-KERNEL-KSTK-EIP--CAPS">GLIBTOP_PROC_KERNEL_KSTK_EIP</link>
+#define             <link linkend="GLIBTOP-PROC-KERNEL-NWCHAN--CAPS">GLIBTOP_PROC_KERNEL_NWCHAN</link>
+#define             <link linkend="GLIBTOP-PROC-KERNEL-WCHAN--CAPS">GLIBTOP_PROC_KERNEL_WCHAN</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-KERNEL--CAPS">GLIBTOP_MAX_PROC_KERNEL</link>
+                    <link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-kernel">glibtop_get_proc_kernel</link>             (<link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-kernel-r">glibtop_get_proc_kernel_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-kernel-l">glibtop_get_proc_kernel_l</link>           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-kernel-p">glibtop_get_proc_kernel_p</link>           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-kernel-s">glibtop_get_proc_kernel_s</link>           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-prockernel.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-prockernel.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-KERNEL-K-FLAGS--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_K_FLAGS</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-K-FLAGS--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_K_FLAGS">GLIBTOP_PROC_KERNEL_K_FLAGS</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_K_FLAGS	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-KERNEL-MIN-FLT--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_MIN_FLT</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-MIN-FLT--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_MIN_FLT">GLIBTOP_PROC_KERNEL_MIN_FLT</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_MIN_FLT	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-KERNEL-MAJ-FLT--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_MAJ_FLT</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-MAJ-FLT--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_MAJ_FLT">GLIBTOP_PROC_KERNEL_MAJ_FLT</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_MAJ_FLT	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-KERNEL-CMIN-FLT--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_CMIN_FLT</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-CMIN-FLT--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_CMIN_FLT">GLIBTOP_PROC_KERNEL_CMIN_FLT</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_CMIN_FLT	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-KERNEL-CMAJ-FLT--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_CMAJ_FLT</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-CMAJ-FLT--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_CMAJ_FLT">GLIBTOP_PROC_KERNEL_CMAJ_FLT</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_CMAJ_FLT	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-KERNEL-KSTK-ESP--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_KSTK_ESP</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-KSTK-ESP--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_KSTK_ESP">GLIBTOP_PROC_KERNEL_KSTK_ESP</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_KSTK_ESP	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-KERNEL-KSTK-EIP--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_KSTK_EIP</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-KSTK-EIP--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_KSTK_EIP">GLIBTOP_PROC_KERNEL_KSTK_EIP</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_KSTK_EIP	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-KERNEL-NWCHAN--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_NWCHAN</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-NWCHAN--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_NWCHAN">GLIBTOP_PROC_KERNEL_NWCHAN</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_NWCHAN	7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-KERNEL-WCHAN--CAPS" role="macro">
+<title>GLIBTOP_PROC_KERNEL_WCHAN</title>
+<indexterm zone="GLIBTOP-PROC-KERNEL-WCHAN--CAPS"><primary sortas="GLIBTOP_PROC_KERNEL_WCHAN">GLIBTOP_PROC_KERNEL_WCHAN</primary></indexterm><programlisting>#define GLIBTOP_PROC_KERNEL_WCHAN	8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-KERNEL--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_KERNEL</title>
+<indexterm zone="GLIBTOP-MAX-PROC-KERNEL--CAPS"><primary sortas="GLIBTOP_MAX_PROC_KERNEL">GLIBTOP_MAX_PROC_KERNEL</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_KERNEL		9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-kernel" role="struct">
+<title>glibtop_proc_kernel</title>
+<indexterm zone="glibtop-proc-kernel"><primary sortas="glibtop_proc_kernel">glibtop_proc_kernel</primary></indexterm><programlisting>typedef struct {
+	guint64 flags;
+	guint64 k_flags;	/* kernel flags for the process */
+	guint64 min_flt;	/* number of minor page faults since
+				 * process start */
+	guint64 maj_flt;	/* number of major page faults since
+				 * process start */
+	guint64 cmin_flt;	/* cumulative min_flt of process and
+				 * child processes */
+	guint64 cmaj_flt;	/* cumulative maj_flt of process and
+				 * child processes */
+	guint64 kstk_esp;	/* kernel stack pointer */
+	guint64 kstk_eip;	/* kernel stack pointer */
+	guint64 nwchan;		/* address of kernel wait channel
+				 * proc is sleeping in */
+	char wchan [40];
+} glibtop_proc_kernel;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-kernel" role="function">
+<title>glibtop_get_proc_kernel ()</title>
+<indexterm zone="glibtop-get-proc-kernel"><primary sortas="glibtop_get_proc_kernel">glibtop_get_proc_kernel</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_kernel             (<link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-kernel-r" role="macro">
+<title>glibtop_get_proc_kernel_r</title>
+<indexterm zone="glibtop-get-proc-kernel-r"><primary sortas="glibtop_get_proc_kernel_r">glibtop_get_proc_kernel_r</primary></indexterm><programlisting>#define             glibtop_get_proc_kernel_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-kernel-l" role="function">
+<title>glibtop_get_proc_kernel_l ()</title>
+<indexterm zone="glibtop-get-proc-kernel-l"><primary sortas="glibtop_get_proc_kernel_l">glibtop_get_proc_kernel_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_kernel_l           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-kernel-p" role="function">
+<title>glibtop_get_proc_kernel_p ()</title>
+<indexterm zone="glibtop-get-proc-kernel-p"><primary sortas="glibtop_get_proc_kernel_p">glibtop_get_proc_kernel_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_kernel_p           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-kernel-s" role="function">
+<title>glibtop_get_proc_kernel_s ()</title>
+<indexterm zone="glibtop-get-proc-kernel-s"><primary sortas="glibtop_get_proc_kernel_s">glibtop_get_proc_kernel_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_kernel_s           (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-kernel">glibtop_proc_kernel</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

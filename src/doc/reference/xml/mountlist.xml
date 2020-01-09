@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-mountlist">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-mountlist.top_of_page">mountlist</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>mountlist</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-mountlist.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/mountlist.h&gt;
+
+#define             <link linkend="GLIBTOP-MOUNTLIST-NUMBER--CAPS">GLIBTOP_MOUNTLIST_NUMBER</link>
+#define             <link linkend="GLIBTOP-MOUNTLIST-TOTAL--CAPS">GLIBTOP_MOUNTLIST_TOTAL</link>
+#define             <link linkend="GLIBTOP-MOUNTLIST-SIZE--CAPS">GLIBTOP_MOUNTLIST_SIZE</link>
+#define             <link linkend="GLIBTOP-MAX-MOUNTLIST--CAPS">GLIBTOP_MAX_MOUNTLIST</link>
+                    <link linkend="glibtop-mountentry">glibtop_mountentry</link>;
+                    <link linkend="glibtop-mountlist">glibtop_mountlist</link>;
+<link linkend="glibtop-mountentry">glibtop_mountentry</link> * <link linkend="glibtop-get-mountlist">glibtop_get_mountlist</link>              (<link linkend="glibtop-mountlist">glibtop_mountlist</link> *buf,
+                                                         <link linkend="int">int</link> all_fs);
+#define             <link linkend="glibtop-get-mountlist-r">glibtop_get_mountlist_r</link>
+<link linkend="glibtop-mountentry">glibtop_mountentry</link> * <link linkend="glibtop-get-mountlist-l">glibtop_get_mountlist_l</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mountlist">glibtop_mountlist</link> *buf,
+                                                         <link linkend="int">int</link> all_fs);
+<link linkend="glibtop-mountentry">glibtop_mountentry</link> * <link linkend="glibtop-get-mountlist-s">glibtop_get_mountlist_s</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mountlist">glibtop_mountlist</link> *buf,
+                                                         <link linkend="int">int</link> all_fs);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-mountlist.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-mountlist.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-MOUNTLIST-NUMBER--CAPS" role="macro">
+<title>GLIBTOP_MOUNTLIST_NUMBER</title>
+<indexterm zone="GLIBTOP-MOUNTLIST-NUMBER--CAPS"><primary sortas="GLIBTOP_MOUNTLIST_NUMBER">GLIBTOP_MOUNTLIST_NUMBER</primary></indexterm><programlisting>#define GLIBTOP_MOUNTLIST_NUMBER	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MOUNTLIST-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_MOUNTLIST_TOTAL</title>
+<indexterm zone="GLIBTOP-MOUNTLIST-TOTAL--CAPS"><primary sortas="GLIBTOP_MOUNTLIST_TOTAL">GLIBTOP_MOUNTLIST_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_MOUNTLIST_TOTAL		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MOUNTLIST-SIZE--CAPS" role="macro">
+<title>GLIBTOP_MOUNTLIST_SIZE</title>
+<indexterm zone="GLIBTOP-MOUNTLIST-SIZE--CAPS"><primary sortas="GLIBTOP_MOUNTLIST_SIZE">GLIBTOP_MOUNTLIST_SIZE</primary></indexterm><programlisting>#define GLIBTOP_MOUNTLIST_SIZE		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-MOUNTLIST--CAPS" role="macro">
+<title>GLIBTOP_MAX_MOUNTLIST</title>
+<indexterm zone="GLIBTOP-MAX-MOUNTLIST--CAPS"><primary sortas="GLIBTOP_MAX_MOUNTLIST">GLIBTOP_MAX_MOUNTLIST</primary></indexterm><programlisting>#define GLIBTOP_MAX_MOUNTLIST		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-mountentry" role="struct">
+<title>glibtop_mountentry</title>
+<indexterm zone="glibtop-mountentry"><primary sortas="glibtop_mountentry">glibtop_mountentry</primary></indexterm><programlisting>typedef struct {
+	guint64 dev;
+	char devname [GLIBTOP_MOUNTENTRY_LEN+1];
+	char mountdir [GLIBTOP_MOUNTENTRY_LEN+1];
+	char type [GLIBTOP_MOUNTENTRY_LEN+1];
+} glibtop_mountentry;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-mountlist" role="struct">
+<title>glibtop_mountlist</title>
+<indexterm zone="glibtop-mountlist"><primary sortas="glibtop_mountlist">glibtop_mountlist</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 number;			/* GLIBTOP_MOUNTLIST_NUMBER	*/
+	guint64 total;			/* GLIBTOP_MOUNTLIST_TOTAL	*/
+	guint64 size;			/* GLIBTOP_MOUNTLIST_SIZE	*/
+} glibtop_mountlist;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-mountlist" role="function">
+<title>glibtop_get_mountlist ()</title>
+<indexterm zone="glibtop-get-mountlist"><primary sortas="glibtop_get_mountlist">glibtop_get_mountlist</primary></indexterm><programlisting><link linkend="glibtop-mountentry">glibtop_mountentry</link> * glibtop_get_mountlist              (<link linkend="glibtop-mountlist">glibtop_mountlist</link> *buf,
+                                                         <link linkend="int">int</link> all_fs);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>all_fs</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-mountlist-r" role="macro">
+<title>glibtop_get_mountlist_r</title>
+<indexterm zone="glibtop-get-mountlist-r"><primary sortas="glibtop_get_mountlist_r">glibtop_get_mountlist_r</primary></indexterm><programlisting>#define glibtop_get_mountlist_r		glibtop_get_mountlist_s
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-mountlist-l" role="function">
+<title>glibtop_get_mountlist_l ()</title>
+<indexterm zone="glibtop-get-mountlist-l"><primary sortas="glibtop_get_mountlist_l">glibtop_get_mountlist_l</primary></indexterm><programlisting><link linkend="glibtop-mountentry">glibtop_mountentry</link> * glibtop_get_mountlist_l            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mountlist">glibtop_mountlist</link> *buf,
+                                                         <link linkend="int">int</link> all_fs);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>all_fs</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-mountlist-s" role="function">
+<title>glibtop_get_mountlist_s ()</title>
+<indexterm zone="glibtop-get-mountlist-s"><primary sortas="glibtop_get_mountlist_s">glibtop_get_mountlist_s</primary></indexterm><programlisting><link linkend="glibtop-mountentry">glibtop_mountentry</link> * glibtop_get_mountlist_s            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-mountlist">glibtop_mountlist</link> *buf,
+                                                         <link linkend="int">int</link> all_fs);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>all_fs</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

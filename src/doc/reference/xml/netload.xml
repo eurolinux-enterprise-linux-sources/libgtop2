@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-Net-Load">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-Net-Load.top_of_page">Net Load</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Net Load</refname>
+<refpurpose>Network Load.</refpurpose>
+</refnamediv>
+<refsect1 id="libgtop-Net-Load.stability-level">
+<title>Stability Level</title>
+Stable, unless otherwise indicated
+</refsect1>
+
+<refsynopsisdiv id="libgtop-Net-Load.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/netload.h&gt;
+
+#define             <link linkend="GLIBTOP-NETLOAD-IF-FLAGS--CAPS">GLIBTOP_NETLOAD_IF_FLAGS</link>
+#define             <link linkend="GLIBTOP-NETLOAD-MTU--CAPS">GLIBTOP_NETLOAD_MTU</link>
+#define             <link linkend="GLIBTOP-NETLOAD-SUBNET--CAPS">GLIBTOP_NETLOAD_SUBNET</link>
+#define             <link linkend="GLIBTOP-NETLOAD-ADDRESS--CAPS">GLIBTOP_NETLOAD_ADDRESS</link>
+#define             <link linkend="GLIBTOP-NETLOAD-PACKETS-IN--CAPS">GLIBTOP_NETLOAD_PACKETS_IN</link>
+#define             <link linkend="GLIBTOP-NETLOAD-PACKETS-OUT--CAPS">GLIBTOP_NETLOAD_PACKETS_OUT</link>
+#define             <link linkend="GLIBTOP-NETLOAD-PACKETS-TOTAL--CAPS">GLIBTOP_NETLOAD_PACKETS_TOTAL</link>
+#define             <link linkend="GLIBTOP-NETLOAD-BYTES-IN--CAPS">GLIBTOP_NETLOAD_BYTES_IN</link>
+#define             <link linkend="GLIBTOP-NETLOAD-BYTES-OUT--CAPS">GLIBTOP_NETLOAD_BYTES_OUT</link>
+#define             <link linkend="GLIBTOP-NETLOAD-BYTES-TOTAL--CAPS">GLIBTOP_NETLOAD_BYTES_TOTAL</link>
+#define             <link linkend="GLIBTOP-NETLOAD-ERRORS-IN--CAPS">GLIBTOP_NETLOAD_ERRORS_IN</link>
+#define             <link linkend="GLIBTOP-NETLOAD-ERRORS-OUT--CAPS">GLIBTOP_NETLOAD_ERRORS_OUT</link>
+#define             <link linkend="GLIBTOP-NETLOAD-ERRORS-TOTAL--CAPS">GLIBTOP_NETLOAD_ERRORS_TOTAL</link>
+#define             <link linkend="GLIBTOP-NETLOAD-COLLISIONS--CAPS">GLIBTOP_NETLOAD_COLLISIONS</link>
+#define             <link linkend="GLIBTOP-NETLOAD-ADDRESS6--CAPS">GLIBTOP_NETLOAD_ADDRESS6</link>
+#define             <link linkend="GLIBTOP-NETLOAD-PREFIX6--CAPS">GLIBTOP_NETLOAD_PREFIX6</link>
+#define             <link linkend="GLIBTOP-NETLOAD-SCOPE6--CAPS">GLIBTOP_NETLOAD_SCOPE6</link>
+#define             <link linkend="GLIBTOP-NETLOAD-HWADDRESS--CAPS">GLIBTOP_NETLOAD_HWADDRESS</link>
+#define             <link linkend="GLIBTOP-MAX-NETLOAD--CAPS">GLIBTOP_MAX_NETLOAD</link>
+                    <link linkend="glibtop-netload">glibtop_netload</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-netload">glibtop_get_netload</link>                 (<link linkend="glibtop-netload">glibtop_netload</link> *buf,
+                                                         const <link linkend="char">char</link> *interface);
+#define             <link linkend="glibtop-get-netload-r">glibtop_get_netload_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-netload-l">glibtop_get_netload_l</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netload">glibtop_netload</link> *buf,
+                                                         const <link linkend="char">char</link> *interface);
+<link linkend="void">void</link>                <link linkend="glibtop-get-netload-p">glibtop_get_netload_p</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netload">glibtop_netload</link> *buf,
+                                                         const <link linkend="char">char</link> *interface);
+<link linkend="void">void</link>                <link linkend="glibtop-get-netload-s">glibtop_get_netload_s</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netload">glibtop_netload</link> *buf,
+                                                         const <link linkend="char">char</link> *interface);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-Net-Load.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+The application class handles ...</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-Net-Load.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-NETLOAD-IF-FLAGS--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_IF_FLAGS</title>
+<indexterm zone="GLIBTOP-NETLOAD-IF-FLAGS--CAPS"><primary sortas="GLIBTOP_NETLOAD_IF_FLAGS">GLIBTOP_NETLOAD_IF_FLAGS</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_IF_FLAGS	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-MTU--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_MTU</title>
+<indexterm zone="GLIBTOP-NETLOAD-MTU--CAPS"><primary sortas="GLIBTOP_NETLOAD_MTU">GLIBTOP_NETLOAD_MTU</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_MTU		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-SUBNET--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_SUBNET</title>
+<indexterm zone="GLIBTOP-NETLOAD-SUBNET--CAPS"><primary sortas="GLIBTOP_NETLOAD_SUBNET">GLIBTOP_NETLOAD_SUBNET</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_SUBNET		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-ADDRESS--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_ADDRESS</title>
+<indexterm zone="GLIBTOP-NETLOAD-ADDRESS--CAPS"><primary sortas="GLIBTOP_NETLOAD_ADDRESS">GLIBTOP_NETLOAD_ADDRESS</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_ADDRESS		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-PACKETS-IN--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_PACKETS_IN</title>
+<indexterm zone="GLIBTOP-NETLOAD-PACKETS-IN--CAPS"><primary sortas="GLIBTOP_NETLOAD_PACKETS_IN">GLIBTOP_NETLOAD_PACKETS_IN</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_PACKETS_IN	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-PACKETS-OUT--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_PACKETS_OUT</title>
+<indexterm zone="GLIBTOP-NETLOAD-PACKETS-OUT--CAPS"><primary sortas="GLIBTOP_NETLOAD_PACKETS_OUT">GLIBTOP_NETLOAD_PACKETS_OUT</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_PACKETS_OUT	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-PACKETS-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_PACKETS_TOTAL</title>
+<indexterm zone="GLIBTOP-NETLOAD-PACKETS-TOTAL--CAPS"><primary sortas="GLIBTOP_NETLOAD_PACKETS_TOTAL">GLIBTOP_NETLOAD_PACKETS_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_PACKETS_TOTAL	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-BYTES-IN--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_BYTES_IN</title>
+<indexterm zone="GLIBTOP-NETLOAD-BYTES-IN--CAPS"><primary sortas="GLIBTOP_NETLOAD_BYTES_IN">GLIBTOP_NETLOAD_BYTES_IN</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_BYTES_IN	7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-BYTES-OUT--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_BYTES_OUT</title>
+<indexterm zone="GLIBTOP-NETLOAD-BYTES-OUT--CAPS"><primary sortas="GLIBTOP_NETLOAD_BYTES_OUT">GLIBTOP_NETLOAD_BYTES_OUT</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_BYTES_OUT	8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-BYTES-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_BYTES_TOTAL</title>
+<indexterm zone="GLIBTOP-NETLOAD-BYTES-TOTAL--CAPS"><primary sortas="GLIBTOP_NETLOAD_BYTES_TOTAL">GLIBTOP_NETLOAD_BYTES_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_BYTES_TOTAL	9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-ERRORS-IN--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_ERRORS_IN</title>
+<indexterm zone="GLIBTOP-NETLOAD-ERRORS-IN--CAPS"><primary sortas="GLIBTOP_NETLOAD_ERRORS_IN">GLIBTOP_NETLOAD_ERRORS_IN</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_ERRORS_IN	10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-ERRORS-OUT--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_ERRORS_OUT</title>
+<indexterm zone="GLIBTOP-NETLOAD-ERRORS-OUT--CAPS"><primary sortas="GLIBTOP_NETLOAD_ERRORS_OUT">GLIBTOP_NETLOAD_ERRORS_OUT</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_ERRORS_OUT	11
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-ERRORS-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_ERRORS_TOTAL</title>
+<indexterm zone="GLIBTOP-NETLOAD-ERRORS-TOTAL--CAPS"><primary sortas="GLIBTOP_NETLOAD_ERRORS_TOTAL">GLIBTOP_NETLOAD_ERRORS_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_ERRORS_TOTAL	12
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-COLLISIONS--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_COLLISIONS</title>
+<indexterm zone="GLIBTOP-NETLOAD-COLLISIONS--CAPS"><primary sortas="GLIBTOP_NETLOAD_COLLISIONS">GLIBTOP_NETLOAD_COLLISIONS</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_COLLISIONS	13
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-ADDRESS6--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_ADDRESS6</title>
+<indexterm zone="GLIBTOP-NETLOAD-ADDRESS6--CAPS"><primary sortas="GLIBTOP_NETLOAD_ADDRESS6">GLIBTOP_NETLOAD_ADDRESS6</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_ADDRESS6	14
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-PREFIX6--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_PREFIX6</title>
+<indexterm zone="GLIBTOP-NETLOAD-PREFIX6--CAPS"><primary sortas="GLIBTOP_NETLOAD_PREFIX6">GLIBTOP_NETLOAD_PREFIX6</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_PREFIX6		15
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-SCOPE6--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_SCOPE6</title>
+<indexterm zone="GLIBTOP-NETLOAD-SCOPE6--CAPS"><primary sortas="GLIBTOP_NETLOAD_SCOPE6">GLIBTOP_NETLOAD_SCOPE6</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_SCOPE6		16
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-NETLOAD-HWADDRESS--CAPS" role="macro">
+<title>GLIBTOP_NETLOAD_HWADDRESS</title>
+<indexterm zone="GLIBTOP-NETLOAD-HWADDRESS--CAPS"><primary sortas="GLIBTOP_NETLOAD_HWADDRESS">GLIBTOP_NETLOAD_HWADDRESS</primary></indexterm><programlisting>#define GLIBTOP_NETLOAD_HWADDRESS	17
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-NETLOAD--CAPS" role="macro">
+<title>GLIBTOP_MAX_NETLOAD</title>
+<indexterm zone="GLIBTOP-MAX-NETLOAD--CAPS"><primary sortas="GLIBTOP_MAX_NETLOAD">GLIBTOP_MAX_NETLOAD</primary></indexterm><programlisting>#define GLIBTOP_MAX_NETLOAD		18
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-netload" role="struct">
+<title>glibtop_netload</title>
+<indexterm zone="glibtop-netload"><primary sortas="glibtop_netload">glibtop_netload</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 if_flags;		/* GLIBTOP_NETLOAD_IF_FLAGS	*/
+
+	guint32	mtu;			/* GLIBTOP_NETLOAD_MTU		*/
+	guint32 subnet;			/* GLIBTOP_NETLOAD_SUBNET	*/
+	guint32 address;		/* GLIBTOP_NETLOAD_ADDRESS	*/
+
+	guint64	packets_in;		/* GLIBTOP_NETLOAD_PACKETS_IN	*/
+	guint64 packets_out;		/* GLIBTOP_NETLOAD_PACKETS_OUT	*/
+	guint64 packets_total;		/* GLIBTOP_NETLOAD_PACKETS_TOTAL*/
+	guint64 bytes_in;		/* GLIBTOP_NETLOAD_BYTES_IN	*/
+	guint64 bytes_out;		/* GLIBTOP_NETLOAD_BYTES_OUT	*/
+	guint64 bytes_total;		/* GLIBTOP_NETLOAD_BYTES_TOTAL	*/
+	guint64 errors_in;		/* GLIBTOP_NETLOAD_ERRORS_IN	*/
+	guint64 errors_out;		/* GLIBTOP_NETLOAD_ERRORS_OUT	*/
+	guint64 errors_total;		/* GLIBTOP_NETLOAD_ERRORS_TOTAL	*/
+	guint64 collisions;		/* GLIBTOP_NETLOAD_COLLISIONS	*/
+
+	guint8 address6[16];		/* GLIBTOP_NETLOAD_ADDRESS6     */
+	guint8 prefix6[16];		/* GLIBTOP_NETLOAD_PREXIF6      */
+	guint8 scope6;			/* GLIBTOP_NETLOAD_SCOPE6       */
+
+	guint8 hwaddress[8];		/* GLIBTOP_NETLOAD_HWADDRESS    */
+} glibtop_netload;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-netload" role="function">
+<title>glibtop_get_netload ()</title>
+<indexterm zone="glibtop-get-netload"><primary sortas="glibtop_get_netload">glibtop_get_netload</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_netload                 (<link linkend="glibtop-netload">glibtop_netload</link> *buf,
+                                                         const <link linkend="char">char</link> *interface);</programlisting>
+<para>
+Recolects network statistics for <parameter>interface</parameter>
+(which is the same than in <application>ifconfig</application>).  
+The values are returned into <parameter>buf</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> The variable where the results will be assigned.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>interface</parameter>&#160;:</term>
+<listitem><simpara> The name of the network interface.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-netload-r" role="macro">
+<title>glibtop_get_netload_r</title>
+<indexterm zone="glibtop-get-netload-r"><primary sortas="glibtop_get_netload_r">glibtop_get_netload_r</primary></indexterm><programlisting>#define             glibtop_get_netload_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-netload-l" role="function">
+<title>glibtop_get_netload_l ()</title>
+<indexterm zone="glibtop-get-netload-l"><primary sortas="glibtop_get_netload_l">glibtop_get_netload_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_netload_l               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netload">glibtop_netload</link> *buf,
+                                                         const <link linkend="char">char</link> *interface);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>interface</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-netload-p" role="function">
+<title>glibtop_get_netload_p ()</title>
+<indexterm zone="glibtop-get-netload-p"><primary sortas="glibtop_get_netload_p">glibtop_get_netload_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_netload_p               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netload">glibtop_netload</link> *buf,
+                                                         const <link linkend="char">char</link> *interface);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>interface</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-netload-s" role="function">
+<title>glibtop_get_netload_s ()</title>
+<indexterm zone="glibtop-get-netload-s"><primary sortas="glibtop_get_netload_s">glibtop_get_netload_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_netload_s               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-netload">glibtop_netload</link> *buf,
+                                                         const <link linkend="char">char</link> *interface);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>interface</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="libgtop-Net-Load.see-also">
+<title>See Also</title>
+#libtop-netlist
+</refsect1>
+
+</refentry>

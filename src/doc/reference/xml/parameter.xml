@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-parameter">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-parameter.top_of_page">parameter</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>parameter</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-parameter.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/parameter.h&gt;
+
+#define             <link linkend="GLIBTOP-PARAM-METHOD--CAPS">GLIBTOP_PARAM_METHOD</link>
+#define             <link linkend="GLIBTOP-PARAM-FEATURES--CAPS">GLIBTOP_PARAM_FEATURES</link>
+#define             <link linkend="GLIBTOP-PARAM-COMMAND--CAPS">GLIBTOP_PARAM_COMMAND</link>
+#define             <link linkend="GLIBTOP-PARAM-HOST--CAPS">GLIBTOP_PARAM_HOST</link>
+#define             <link linkend="GLIBTOP-PARAM-PORT--CAPS">GLIBTOP_PARAM_PORT</link>
+#define             <link linkend="GLIBTOP-PARAM-ERROR-METHOD--CAPS">GLIBTOP_PARAM_ERROR_METHOD</link>
+#define             <link linkend="GLIBTOP-PARAM-REQUIRED--CAPS">GLIBTOP_PARAM_REQUIRED</link>
+#define             <link linkend="glibtop-get-parameter">glibtop_get_parameter</link>               (p1,p2,p3)
+#define             <link linkend="glibtop-set-parameter">glibtop_set_parameter</link>               (p1,p2,p3)
+<link linkend="size-t">size_t</link>              <link linkend="glibtop-get-parameter-l">glibtop_get_parameter_l</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-">unsigned </link> parameter,
+                                                         <link linkend="void">void</link> *data_ptr,
+                                                         <link linkend="size-t">size_t</link> data_size);
+<link linkend="void">void</link>                <link linkend="glibtop-set-parameter-l">glibtop_set_parameter_l</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-">unsigned </link> parameter,
+                                                         const <link linkend="void">void</link> *data_ptr,
+                                                         <link linkend="size-t">size_t</link> data_size);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-parameter.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-parameter.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PARAM-METHOD--CAPS" role="macro">
+<title>GLIBTOP_PARAM_METHOD</title>
+<indexterm zone="GLIBTOP-PARAM-METHOD--CAPS"><primary sortas="GLIBTOP_PARAM_METHOD">GLIBTOP_PARAM_METHOD</primary></indexterm><programlisting>#define GLIBTOP_PARAM_METHOD		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PARAM-FEATURES--CAPS" role="macro">
+<title>GLIBTOP_PARAM_FEATURES</title>
+<indexterm zone="GLIBTOP-PARAM-FEATURES--CAPS"><primary sortas="GLIBTOP_PARAM_FEATURES">GLIBTOP_PARAM_FEATURES</primary></indexterm><programlisting>#define GLIBTOP_PARAM_FEATURES		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PARAM-COMMAND--CAPS" role="macro">
+<title>GLIBTOP_PARAM_COMMAND</title>
+<indexterm zone="GLIBTOP-PARAM-COMMAND--CAPS"><primary sortas="GLIBTOP_PARAM_COMMAND">GLIBTOP_PARAM_COMMAND</primary></indexterm><programlisting>#define GLIBTOP_PARAM_COMMAND		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PARAM-HOST--CAPS" role="macro">
+<title>GLIBTOP_PARAM_HOST</title>
+<indexterm zone="GLIBTOP-PARAM-HOST--CAPS"><primary sortas="GLIBTOP_PARAM_HOST">GLIBTOP_PARAM_HOST</primary></indexterm><programlisting>#define GLIBTOP_PARAM_HOST		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PARAM-PORT--CAPS" role="macro">
+<title>GLIBTOP_PARAM_PORT</title>
+<indexterm zone="GLIBTOP-PARAM-PORT--CAPS"><primary sortas="GLIBTOP_PARAM_PORT">GLIBTOP_PARAM_PORT</primary></indexterm><programlisting>#define GLIBTOP_PARAM_PORT		5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PARAM-ERROR-METHOD--CAPS" role="macro">
+<title>GLIBTOP_PARAM_ERROR_METHOD</title>
+<indexterm zone="GLIBTOP-PARAM-ERROR-METHOD--CAPS"><primary sortas="GLIBTOP_PARAM_ERROR_METHOD">GLIBTOP_PARAM_ERROR_METHOD</primary></indexterm><programlisting>#define GLIBTOP_PARAM_ERROR_METHOD	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PARAM-REQUIRED--CAPS" role="macro">
+<title>GLIBTOP_PARAM_REQUIRED</title>
+<indexterm zone="GLIBTOP-PARAM-REQUIRED--CAPS"><primary sortas="GLIBTOP_PARAM_REQUIRED">GLIBTOP_PARAM_REQUIRED</primary></indexterm><programlisting>#define GLIBTOP_PARAM_REQUIRED		7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-parameter" role="macro">
+<title>glibtop_get_parameter()</title>
+<indexterm zone="glibtop-get-parameter"><primary sortas="glibtop_get_parameter">glibtop_get_parameter</primary></indexterm><programlisting>#define glibtop_get_parameter(p1,p2,p3)	glibtop_get_parameter_l(glibtop_global_server,p1,p2,p3)
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>p1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>p2</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>p3</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-set-parameter" role="macro">
+<title>glibtop_set_parameter()</title>
+<indexterm zone="glibtop-set-parameter"><primary sortas="glibtop_set_parameter">glibtop_set_parameter</primary></indexterm><programlisting>#define glibtop_set_parameter(p1,p2,p3) glibtop_set_parameter_l(glibtop_global_server,p1,p2,p3)
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>p1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>p2</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>p3</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-parameter-l" role="function">
+<title>glibtop_get_parameter_l ()</title>
+<indexterm zone="glibtop-get-parameter-l"><primary sortas="glibtop_get_parameter_l">glibtop_get_parameter_l</primary></indexterm><programlisting><link linkend="size-t">size_t</link>              glibtop_get_parameter_l             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-">unsigned </link> parameter,
+                                                         <link linkend="void">void</link> *data_ptr,
+                                                         <link linkend="size-t">size_t</link> data_size);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parameter</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data_ptr</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data_size</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-set-parameter-l" role="function">
+<title>glibtop_set_parameter_l ()</title>
+<indexterm zone="glibtop-set-parameter-l"><primary sortas="glibtop_set_parameter_l">glibtop_set_parameter_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_set_parameter_l             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-">unsigned </link> parameter,
+                                                         const <link linkend="void">void</link> *data_ptr,
+                                                         <link linkend="size-t">size_t</link> data_size);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>parameter</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data_ptr</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>data_size</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

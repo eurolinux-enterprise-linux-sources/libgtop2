@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-fsusage">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-fsusage.top_of_page">fsusage</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>fsusage</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-fsusage.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/fsusage.h&gt;
+
+#define             <link linkend="GLIBTOP-FSUSAGE-BLOCKS--CAPS">GLIBTOP_FSUSAGE_BLOCKS</link>
+#define             <link linkend="GLIBTOP-FSUSAGE-BFREE--CAPS">GLIBTOP_FSUSAGE_BFREE</link>
+#define             <link linkend="GLIBTOP-FSUSAGE-BAVAIL--CAPS">GLIBTOP_FSUSAGE_BAVAIL</link>
+#define             <link linkend="GLIBTOP-FSUSAGE-FILES--CAPS">GLIBTOP_FSUSAGE_FILES</link>
+#define             <link linkend="GLIBTOP-FSUSAGE-FFREE--CAPS">GLIBTOP_FSUSAGE_FFREE</link>
+#define             <link linkend="GLIBTOP-FSUSAGE-BLOCK-SIZE--CAPS">GLIBTOP_FSUSAGE_BLOCK_SIZE</link>
+#define             <link linkend="GLIBTOP-FSUSAGE-READ--CAPS">GLIBTOP_FSUSAGE_READ</link>
+#define             <link linkend="GLIBTOP-FSUSAGE-WRITE--CAPS">GLIBTOP_FSUSAGE_WRITE</link>
+#define             <link linkend="GLIBTOP-MAX-FSUSAGE--CAPS">GLIBTOP_MAX_FSUSAGE</link>
+                    <link linkend="glibtop-fsusage">glibtop_fsusage</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-fsusage">glibtop_get_fsusage</link>                 (<link linkend="glibtop-fsusage">glibtop_fsusage</link> *buf,
+                                                         const <link linkend="char">char</link> *mount_dir);
+#define             <link linkend="glibtop-get-fsusage-r">glibtop_get_fsusage_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-fsusage-l">glibtop_get_fsusage_l</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-fsusage">glibtop_fsusage</link> *buf,
+                                                         const <link linkend="char">char</link> *mount_dir);
+<link linkend="void">void</link>                <link linkend="glibtop-get-fsusage-s">glibtop_get_fsusage_s</link>               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-fsusage">glibtop_fsusage</link> *buf,
+                                                         const <link linkend="char">char</link> *mount_dir);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-fsusage.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-fsusage.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-FSUSAGE-BLOCKS--CAPS" role="macro">
+<title>GLIBTOP_FSUSAGE_BLOCKS</title>
+<indexterm zone="GLIBTOP-FSUSAGE-BLOCKS--CAPS"><primary sortas="GLIBTOP_FSUSAGE_BLOCKS">GLIBTOP_FSUSAGE_BLOCKS</primary></indexterm><programlisting>#define GLIBTOP_FSUSAGE_BLOCKS		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FSUSAGE-BFREE--CAPS" role="macro">
+<title>GLIBTOP_FSUSAGE_BFREE</title>
+<indexterm zone="GLIBTOP-FSUSAGE-BFREE--CAPS"><primary sortas="GLIBTOP_FSUSAGE_BFREE">GLIBTOP_FSUSAGE_BFREE</primary></indexterm><programlisting>#define GLIBTOP_FSUSAGE_BFREE		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FSUSAGE-BAVAIL--CAPS" role="macro">
+<title>GLIBTOP_FSUSAGE_BAVAIL</title>
+<indexterm zone="GLIBTOP-FSUSAGE-BAVAIL--CAPS"><primary sortas="GLIBTOP_FSUSAGE_BAVAIL">GLIBTOP_FSUSAGE_BAVAIL</primary></indexterm><programlisting>#define GLIBTOP_FSUSAGE_BAVAIL		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FSUSAGE-FILES--CAPS" role="macro">
+<title>GLIBTOP_FSUSAGE_FILES</title>
+<indexterm zone="GLIBTOP-FSUSAGE-FILES--CAPS"><primary sortas="GLIBTOP_FSUSAGE_FILES">GLIBTOP_FSUSAGE_FILES</primary></indexterm><programlisting>#define GLIBTOP_FSUSAGE_FILES		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FSUSAGE-FFREE--CAPS" role="macro">
+<title>GLIBTOP_FSUSAGE_FFREE</title>
+<indexterm zone="GLIBTOP-FSUSAGE-FFREE--CAPS"><primary sortas="GLIBTOP_FSUSAGE_FFREE">GLIBTOP_FSUSAGE_FFREE</primary></indexterm><programlisting>#define GLIBTOP_FSUSAGE_FFREE		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FSUSAGE-BLOCK-SIZE--CAPS" role="macro">
+<title>GLIBTOP_FSUSAGE_BLOCK_SIZE</title>
+<indexterm zone="GLIBTOP-FSUSAGE-BLOCK-SIZE--CAPS"><primary sortas="GLIBTOP_FSUSAGE_BLOCK_SIZE">GLIBTOP_FSUSAGE_BLOCK_SIZE</primary></indexterm><programlisting>#define GLIBTOP_FSUSAGE_BLOCK_SIZE	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FSUSAGE-READ--CAPS" role="macro">
+<title>GLIBTOP_FSUSAGE_READ</title>
+<indexterm zone="GLIBTOP-FSUSAGE-READ--CAPS"><primary sortas="GLIBTOP_FSUSAGE_READ">GLIBTOP_FSUSAGE_READ</primary></indexterm><programlisting>#define GLIBTOP_FSUSAGE_READ           6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FSUSAGE-WRITE--CAPS" role="macro">
+<title>GLIBTOP_FSUSAGE_WRITE</title>
+<indexterm zone="GLIBTOP-FSUSAGE-WRITE--CAPS"><primary sortas="GLIBTOP_FSUSAGE_WRITE">GLIBTOP_FSUSAGE_WRITE</primary></indexterm><programlisting>#define GLIBTOP_FSUSAGE_WRITE          7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-FSUSAGE--CAPS" role="macro">
+<title>GLIBTOP_MAX_FSUSAGE</title>
+<indexterm zone="GLIBTOP-MAX-FSUSAGE--CAPS"><primary sortas="GLIBTOP_MAX_FSUSAGE">GLIBTOP_MAX_FSUSAGE</primary></indexterm><programlisting>#define GLIBTOP_MAX_FSUSAGE		8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-fsusage" role="struct">
+<title>glibtop_fsusage</title>
+<indexterm zone="glibtop-fsusage"><primary sortas="glibtop_fsusage">glibtop_fsusage</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 blocks;		/* Total number of blocks. */
+	guint64 bfree;		/* Free blocks available to superuser. */
+	guint64 bavail;		/* Free blocks available to non-superuser. */
+	guint64 files;		/* Total file nodes. */
+	guint64 ffree;		/* Free file nodes. */
+	guint32	block_size;	/* Size of a block in bytes. */
+	guint64 read, write;    /* Total blocks read and written */
+} glibtop_fsusage;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-fsusage" role="function">
+<title>glibtop_get_fsusage ()</title>
+<indexterm zone="glibtop-get-fsusage"><primary sortas="glibtop_get_fsusage">glibtop_get_fsusage</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_fsusage                 (<link linkend="glibtop-fsusage">glibtop_fsusage</link> *buf,
+                                                         const <link linkend="char">char</link> *mount_dir);</programlisting>
+<para>
+Get the file system usage for an specific <parameter>mount_dir</parameter>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> A location to return the file system usage.
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mount_dir</parameter>&#160;:</term>
+<listitem><simpara> mount dir where to get the information of usage.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-fsusage-r" role="macro">
+<title>glibtop_get_fsusage_r</title>
+<indexterm zone="glibtop-get-fsusage-r"><primary sortas="glibtop_get_fsusage_r">glibtop_get_fsusage_r</primary></indexterm><programlisting>#define glibtop_get_fsusage_r		glibtop_get_fsusage_s
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-fsusage-l" role="function">
+<title>glibtop_get_fsusage_l ()</title>
+<indexterm zone="glibtop-get-fsusage-l"><primary sortas="glibtop_get_fsusage_l">glibtop_get_fsusage_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_fsusage_l               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-fsusage">glibtop_fsusage</link> *buf,
+                                                         const <link linkend="char">char</link> *mount_dir);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mount_dir</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-fsusage-s" role="function">
+<title>glibtop_get_fsusage_s ()</title>
+<indexterm zone="glibtop-get-fsusage-s"><primary sortas="glibtop_get_fsusage_s">glibtop_get_fsusage_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_fsusage_s               (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-fsusage">glibtop_fsusage</link> *buf,
+                                                         const <link linkend="char">char</link> *mount_dir);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>mount_dir</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

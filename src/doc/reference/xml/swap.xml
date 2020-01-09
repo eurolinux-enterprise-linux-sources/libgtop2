@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-swap">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-swap.top_of_page">swap</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>swap</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-swap.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/swap.h&gt;
+
+#define             <link linkend="GLIBTOP-SWAP-TOTAL--CAPS">GLIBTOP_SWAP_TOTAL</link>
+#define             <link linkend="GLIBTOP-SWAP-USED--CAPS">GLIBTOP_SWAP_USED</link>
+#define             <link linkend="GLIBTOP-SWAP-FREE--CAPS">GLIBTOP_SWAP_FREE</link>
+#define             <link linkend="GLIBTOP-SWAP-PAGEIN--CAPS">GLIBTOP_SWAP_PAGEIN</link>
+#define             <link linkend="GLIBTOP-SWAP-PAGEOUT--CAPS">GLIBTOP_SWAP_PAGEOUT</link>
+#define             <link linkend="GLIBTOP-MAX-SWAP--CAPS">GLIBTOP_MAX_SWAP</link>
+                    <link linkend="glibtop-swap">glibtop_swap</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-swap">glibtop_get_swap</link>                    (<link linkend="glibtop-swap">glibtop_swap</link> *buf);
+#define             <link linkend="glibtop-get-swap-r">glibtop_get_swap_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-swap-l">glibtop_get_swap_l</link>                  (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-swap">glibtop_swap</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-swap-p">glibtop_get_swap_p</link>                  (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-swap">glibtop_swap</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-swap-s">glibtop_get_swap_s</link>                  (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-swap">glibtop_swap</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-swap.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-swap.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-SWAP-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_SWAP_TOTAL</title>
+<indexterm zone="GLIBTOP-SWAP-TOTAL--CAPS"><primary sortas="GLIBTOP_SWAP_TOTAL">GLIBTOP_SWAP_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_SWAP_TOTAL	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-SWAP-USED--CAPS" role="macro">
+<title>GLIBTOP_SWAP_USED</title>
+<indexterm zone="GLIBTOP-SWAP-USED--CAPS"><primary sortas="GLIBTOP_SWAP_USED">GLIBTOP_SWAP_USED</primary></indexterm><programlisting>#define GLIBTOP_SWAP_USED	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-SWAP-FREE--CAPS" role="macro">
+<title>GLIBTOP_SWAP_FREE</title>
+<indexterm zone="GLIBTOP-SWAP-FREE--CAPS"><primary sortas="GLIBTOP_SWAP_FREE">GLIBTOP_SWAP_FREE</primary></indexterm><programlisting>#define GLIBTOP_SWAP_FREE	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-SWAP-PAGEIN--CAPS" role="macro">
+<title>GLIBTOP_SWAP_PAGEIN</title>
+<indexterm zone="GLIBTOP-SWAP-PAGEIN--CAPS"><primary sortas="GLIBTOP_SWAP_PAGEIN">GLIBTOP_SWAP_PAGEIN</primary></indexterm><programlisting>#define GLIBTOP_SWAP_PAGEIN	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-SWAP-PAGEOUT--CAPS" role="macro">
+<title>GLIBTOP_SWAP_PAGEOUT</title>
+<indexterm zone="GLIBTOP-SWAP-PAGEOUT--CAPS"><primary sortas="GLIBTOP_SWAP_PAGEOUT">GLIBTOP_SWAP_PAGEOUT</primary></indexterm><programlisting>#define GLIBTOP_SWAP_PAGEOUT	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-SWAP--CAPS" role="macro">
+<title>GLIBTOP_MAX_SWAP</title>
+<indexterm zone="GLIBTOP-MAX-SWAP--CAPS"><primary sortas="GLIBTOP_MAX_SWAP">GLIBTOP_MAX_SWAP</primary></indexterm><programlisting>#define GLIBTOP_MAX_SWAP	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-swap" role="struct">
+<title>glibtop_swap</title>
+<indexterm zone="glibtop-swap"><primary sortas="glibtop_swap">glibtop_swap</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 total;		/* GLIBTOP_SWAP_TOTAL	*/
+	guint64 used;		/* GLIBTOP_SWAP_USED	*/
+	guint64 free;		/* GLIBTOP_SWAP_FREE	*/
+	guint64 pagein;		/* GLIBTOP_SWAP_PAGEIN	*/
+	guint64 pageout;	/* GLIBTOP_SWAP_PAGEOUT	*/
+} glibtop_swap;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-swap" role="function">
+<title>glibtop_get_swap ()</title>
+<indexterm zone="glibtop-get-swap"><primary sortas="glibtop_get_swap">glibtop_get_swap</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_swap                    (<link linkend="glibtop-swap">glibtop_swap</link> *buf);</programlisting>
+<para>
+Get the swap usage.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> A location to return a <link linkend="glibtop-swap"><type>glibtop_swap</type></link>.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-swap-r" role="macro">
+<title>glibtop_get_swap_r</title>
+<indexterm zone="glibtop-get-swap-r"><primary sortas="glibtop_get_swap_r">glibtop_get_swap_r</primary></indexterm><programlisting>#define             glibtop_get_swap_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-swap-l" role="function">
+<title>glibtop_get_swap_l ()</title>
+<indexterm zone="glibtop-get-swap-l"><primary sortas="glibtop_get_swap_l">glibtop_get_swap_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_swap_l                  (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-swap">glibtop_swap</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-swap-p" role="function">
+<title>glibtop_get_swap_p ()</title>
+<indexterm zone="glibtop-get-swap-p"><primary sortas="glibtop_get_swap_p">glibtop_get_swap_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_swap_p                  (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-swap">glibtop_swap</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-swap-s" role="function">
+<title>glibtop_get_swap_s ()</title>
+<indexterm zone="glibtop-get-swap-s"><primary sortas="glibtop_get_swap_s">glibtop_get_swap_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_swap_s                  (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-swap">glibtop_swap</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

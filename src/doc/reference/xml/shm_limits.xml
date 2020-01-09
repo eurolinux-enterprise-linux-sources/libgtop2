@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-Shared-Memory-Limits">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-Shared-Memory-Limits.top_of_page">Shared Memory Limits</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Shared Memory Limits</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-Shared-Memory-Limits.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/shm_limits.h&gt;
+
+#define             <link linkend="GLIBTOP-IPC-SHMMAX--CAPS">GLIBTOP_IPC_SHMMAX</link>
+#define             <link linkend="GLIBTOP-IPC-SHMMIN--CAPS">GLIBTOP_IPC_SHMMIN</link>
+#define             <link linkend="GLIBTOP-IPC-SHMMNI--CAPS">GLIBTOP_IPC_SHMMNI</link>
+#define             <link linkend="GLIBTOP-IPC-SHMSEG--CAPS">GLIBTOP_IPC_SHMSEG</link>
+#define             <link linkend="GLIBTOP-IPC-SHMALL--CAPS">GLIBTOP_IPC_SHMALL</link>
+#define             <link linkend="GLIBTOP-MAX-SHM-LIMITS--CAPS">GLIBTOP_MAX_SHM_LIMITS</link>
+                    <link linkend="glibtop-shm-limits">glibtop_shm_limits</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-shm-limits">glibtop_get_shm_limits</link>              (<link linkend="glibtop-shm-limits">glibtop_shm_limits</link> *buf);
+#define             <link linkend="glibtop-get-shm-limits-r">glibtop_get_shm_limits_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-shm-limits-l">glibtop_get_shm_limits_l</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-shm-limits">glibtop_shm_limits</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-shm-limits-p">glibtop_get_shm_limits_p</link>            (<link linkend="glibtop">glibtop</link> *,
+                                                         <link linkend="glibtop-shm-limits">glibtop_shm_limits</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-shm-limits-s">glibtop_get_shm_limits_s</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-shm-limits">glibtop_shm_limits</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-Shared-Memory-Limits.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-Shared-Memory-Limits.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-IPC-SHMMAX--CAPS" role="macro">
+<title>GLIBTOP_IPC_SHMMAX</title>
+<indexterm zone="GLIBTOP-IPC-SHMMAX--CAPS"><primary sortas="GLIBTOP_IPC_SHMMAX">GLIBTOP_IPC_SHMMAX</primary></indexterm><programlisting>#define GLIBTOP_IPC_SHMMAX	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SHMMIN--CAPS" role="macro">
+<title>GLIBTOP_IPC_SHMMIN</title>
+<indexterm zone="GLIBTOP-IPC-SHMMIN--CAPS"><primary sortas="GLIBTOP_IPC_SHMMIN">GLIBTOP_IPC_SHMMIN</primary></indexterm><programlisting>#define GLIBTOP_IPC_SHMMIN	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SHMMNI--CAPS" role="macro">
+<title>GLIBTOP_IPC_SHMMNI</title>
+<indexterm zone="GLIBTOP-IPC-SHMMNI--CAPS"><primary sortas="GLIBTOP_IPC_SHMMNI">GLIBTOP_IPC_SHMMNI</primary></indexterm><programlisting>#define GLIBTOP_IPC_SHMMNI	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SHMSEG--CAPS" role="macro">
+<title>GLIBTOP_IPC_SHMSEG</title>
+<indexterm zone="GLIBTOP-IPC-SHMSEG--CAPS"><primary sortas="GLIBTOP_IPC_SHMSEG">GLIBTOP_IPC_SHMSEG</primary></indexterm><programlisting>#define GLIBTOP_IPC_SHMSEG	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SHMALL--CAPS" role="macro">
+<title>GLIBTOP_IPC_SHMALL</title>
+<indexterm zone="GLIBTOP-IPC-SHMALL--CAPS"><primary sortas="GLIBTOP_IPC_SHMALL">GLIBTOP_IPC_SHMALL</primary></indexterm><programlisting>#define GLIBTOP_IPC_SHMALL	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-SHM-LIMITS--CAPS" role="macro">
+<title>GLIBTOP_MAX_SHM_LIMITS</title>
+<indexterm zone="GLIBTOP-MAX-SHM-LIMITS--CAPS"><primary sortas="GLIBTOP_MAX_SHM_LIMITS">GLIBTOP_MAX_SHM_LIMITS</primary></indexterm><programlisting>#define GLIBTOP_MAX_SHM_LIMITS	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-shm-limits" role="struct">
+<title>glibtop_shm_limits</title>
+<indexterm zone="glibtop-shm-limits"><primary sortas="glibtop_shm_limits">glibtop_shm_limits</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 shmmax;		/* GLIBTOP_IPC_SHMMAX	*/
+	guint64 shmmin;		/* GLIBTOP_IPC_SHMMIN	*/
+	guint64 shmmni;		/* GLIBTOP_IPC_SHMMNI	*/
+	guint64 shmseg;		/* GLIBTOP_IPC_SHMSEG	*/
+	guint64 shmall;		/* GLIBTOP_IPC_SHMALL	*/
+} glibtop_shm_limits;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-shm-limits" role="function">
+<title>glibtop_get_shm_limits ()</title>
+<indexterm zone="glibtop-get-shm-limits"><primary sortas="glibtop_get_shm_limits">glibtop_get_shm_limits</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_shm_limits              (<link linkend="glibtop-shm-limits">glibtop_shm_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-shm-limits-r" role="macro">
+<title>glibtop_get_shm_limits_r</title>
+<indexterm zone="glibtop-get-shm-limits-r"><primary sortas="glibtop_get_shm_limits_r">glibtop_get_shm_limits_r</primary></indexterm><programlisting>#define             glibtop_get_shm_limits_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-shm-limits-l" role="function">
+<title>glibtop_get_shm_limits_l ()</title>
+<indexterm zone="glibtop-get-shm-limits-l"><primary sortas="glibtop_get_shm_limits_l">glibtop_get_shm_limits_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_shm_limits_l            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-shm-limits">glibtop_shm_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-shm-limits-p" role="function">
+<title>glibtop_get_shm_limits_p ()</title>
+<indexterm zone="glibtop-get-shm-limits-p"><primary sortas="glibtop_get_shm_limits_p">glibtop_get_shm_limits_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_shm_limits_p            (<link linkend="glibtop">glibtop</link> *,
+                                                         <link linkend="glibtop-shm-limits">glibtop_shm_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>Param1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-shm-limits-s" role="function">
+<title>glibtop_get_shm_limits_s ()</title>
+<indexterm zone="glibtop-get-shm-limits-s"><primary sortas="glibtop_get_shm_limits_s">glibtop_get_shm_limits_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_shm_limits_s            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-shm-limits">glibtop_shm_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

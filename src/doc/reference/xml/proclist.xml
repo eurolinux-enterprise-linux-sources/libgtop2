@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-proclist">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-proclist.top_of_page">proclist</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>proclist</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-proclist.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/proclist.h&gt;
+
+#define             <link linkend="GLIBTOP-PROCLIST-NUMBER--CAPS">GLIBTOP_PROCLIST_NUMBER</link>
+#define             <link linkend="GLIBTOP-PROCLIST-TOTAL--CAPS">GLIBTOP_PROCLIST_TOTAL</link>
+#define             <link linkend="GLIBTOP-PROCLIST-SIZE--CAPS">GLIBTOP_PROCLIST_SIZE</link>
+#define             <link linkend="GLIBTOP-MAX-PROCLIST--CAPS">GLIBTOP_MAX_PROCLIST</link>
+#define             <link linkend="GLIBTOP-KERN-PROC-ALL--CAPS">GLIBTOP_KERN_PROC_ALL</link>
+#define             <link linkend="GLIBTOP-KERN-PROC-PID--CAPS">GLIBTOP_KERN_PROC_PID</link>
+#define             <link linkend="GLIBTOP-KERN-PROC-PGRP--CAPS">GLIBTOP_KERN_PROC_PGRP</link>
+#define             <link linkend="GLIBTOP-KERN-PROC-SESSION--CAPS">GLIBTOP_KERN_PROC_SESSION</link>
+#define             <link linkend="GLIBTOP-KERN-PROC-TTY--CAPS">GLIBTOP_KERN_PROC_TTY</link>
+#define             <link linkend="GLIBTOP-KERN-PROC-UID--CAPS">GLIBTOP_KERN_PROC_UID</link>
+#define             <link linkend="GLIBTOP-KERN-PROC-RUID--CAPS">GLIBTOP_KERN_PROC_RUID</link>
+#define             <link linkend="GLIBTOP-KERN-PROC-MASK--CAPS">GLIBTOP_KERN_PROC_MASK</link>
+#define             <link linkend="GLIBTOP-EXCLUDE-IDLE--CAPS">GLIBTOP_EXCLUDE_IDLE</link>
+#define             <link linkend="GLIBTOP-EXCLUDE-SYSTEM--CAPS">GLIBTOP_EXCLUDE_SYSTEM</link>
+#define             <link linkend="GLIBTOP-EXCLUDE-NOTTY--CAPS">GLIBTOP_EXCLUDE_NOTTY</link>
+                    <link linkend="glibtop-proclist">glibtop_proclist</link>;
+<link linkend="pid-t">pid_t</link> *             <link linkend="glibtop-get-proclist">glibtop_get_proclist</link>                (<link linkend="glibtop-proclist">glibtop_proclist</link> *buf,
+                                                         <link linkend="gint64">gint64</link> which,
+                                                         <link linkend="gint64">gint64</link> arg);
+#define             <link linkend="glibtop-get-proclist-r">glibtop_get_proclist_r</link>
+<link linkend="pid-t">pid_t</link> *             <link linkend="glibtop-get-proclist-l">glibtop_get_proclist_l</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proclist">glibtop_proclist</link> *buf,
+                                                         <link linkend="gint64">gint64</link> which,
+                                                         <link linkend="gint64">gint64</link> arg);
+<link linkend="pid-t">pid_t</link> *             <link linkend="glibtop-get-proclist-p">glibtop_get_proclist_p</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proclist">glibtop_proclist</link> *buf,
+                                                         <link linkend="gint64">gint64</link> which,
+                                                         <link linkend="gint64">gint64</link> arg);
+<link linkend="pid-t">pid_t</link> *             <link linkend="glibtop-get-proclist-s">glibtop_get_proclist_s</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proclist">glibtop_proclist</link> *buf,
+                                                         <link linkend="gint64">gint64</link> which,
+                                                         <link linkend="gint64">gint64</link> arg);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-proclist.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-proclist.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROCLIST-NUMBER--CAPS" role="macro">
+<title>GLIBTOP_PROCLIST_NUMBER</title>
+<indexterm zone="GLIBTOP-PROCLIST-NUMBER--CAPS"><primary sortas="GLIBTOP_PROCLIST_NUMBER">GLIBTOP_PROCLIST_NUMBER</primary></indexterm><programlisting>#define GLIBTOP_PROCLIST_NUMBER	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCLIST-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_PROCLIST_TOTAL</title>
+<indexterm zone="GLIBTOP-PROCLIST-TOTAL--CAPS"><primary sortas="GLIBTOP_PROCLIST_TOTAL">GLIBTOP_PROCLIST_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_PROCLIST_TOTAL	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROCLIST-SIZE--CAPS" role="macro">
+<title>GLIBTOP_PROCLIST_SIZE</title>
+<indexterm zone="GLIBTOP-PROCLIST-SIZE--CAPS"><primary sortas="GLIBTOP_PROCLIST_SIZE">GLIBTOP_PROCLIST_SIZE</primary></indexterm><programlisting>#define GLIBTOP_PROCLIST_SIZE	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROCLIST--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROCLIST</title>
+<indexterm zone="GLIBTOP-MAX-PROCLIST--CAPS"><primary sortas="GLIBTOP_MAX_PROCLIST">GLIBTOP_MAX_PROCLIST</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROCLIST	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-KERN-PROC-ALL--CAPS" role="macro">
+<title>GLIBTOP_KERN_PROC_ALL</title>
+<indexterm zone="GLIBTOP-KERN-PROC-ALL--CAPS"><primary sortas="GLIBTOP_KERN_PROC_ALL">GLIBTOP_KERN_PROC_ALL</primary></indexterm><programlisting>#define GLIBTOP_KERN_PROC_ALL		0	/* all processes */
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-KERN-PROC-PID--CAPS" role="macro">
+<title>GLIBTOP_KERN_PROC_PID</title>
+<indexterm zone="GLIBTOP-KERN-PROC-PID--CAPS"><primary sortas="GLIBTOP_KERN_PROC_PID">GLIBTOP_KERN_PROC_PID</primary></indexterm><programlisting>#define GLIBTOP_KERN_PROC_PID		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-KERN-PROC-PGRP--CAPS" role="macro">
+<title>GLIBTOP_KERN_PROC_PGRP</title>
+<indexterm zone="GLIBTOP-KERN-PROC-PGRP--CAPS"><primary sortas="GLIBTOP_KERN_PROC_PGRP">GLIBTOP_KERN_PROC_PGRP</primary></indexterm><programlisting>#define GLIBTOP_KERN_PROC_PGRP		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-KERN-PROC-SESSION--CAPS" role="macro">
+<title>GLIBTOP_KERN_PROC_SESSION</title>
+<indexterm zone="GLIBTOP-KERN-PROC-SESSION--CAPS"><primary sortas="GLIBTOP_KERN_PROC_SESSION">GLIBTOP_KERN_PROC_SESSION</primary></indexterm><programlisting>#define GLIBTOP_KERN_PROC_SESSION	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-KERN-PROC-TTY--CAPS" role="macro">
+<title>GLIBTOP_KERN_PROC_TTY</title>
+<indexterm zone="GLIBTOP-KERN-PROC-TTY--CAPS"><primary sortas="GLIBTOP_KERN_PROC_TTY">GLIBTOP_KERN_PROC_TTY</primary></indexterm><programlisting>#define GLIBTOP_KERN_PROC_TTY		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-KERN-PROC-UID--CAPS" role="macro">
+<title>GLIBTOP_KERN_PROC_UID</title>
+<indexterm zone="GLIBTOP-KERN-PROC-UID--CAPS"><primary sortas="GLIBTOP_KERN_PROC_UID">GLIBTOP_KERN_PROC_UID</primary></indexterm><programlisting>#define GLIBTOP_KERN_PROC_UID		5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-KERN-PROC-RUID--CAPS" role="macro">
+<title>GLIBTOP_KERN_PROC_RUID</title>
+<indexterm zone="GLIBTOP-KERN-PROC-RUID--CAPS"><primary sortas="GLIBTOP_KERN_PROC_RUID">GLIBTOP_KERN_PROC_RUID</primary></indexterm><programlisting>#define GLIBTOP_KERN_PROC_RUID		6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-KERN-PROC-MASK--CAPS" role="macro">
+<title>GLIBTOP_KERN_PROC_MASK</title>
+<indexterm zone="GLIBTOP-KERN-PROC-MASK--CAPS"><primary sortas="GLIBTOP_KERN_PROC_MASK">GLIBTOP_KERN_PROC_MASK</primary></indexterm><programlisting>#define GLIBTOP_KERN_PROC_MASK		15
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-EXCLUDE-IDLE--CAPS" role="macro">
+<title>GLIBTOP_EXCLUDE_IDLE</title>
+<indexterm zone="GLIBTOP-EXCLUDE-IDLE--CAPS"><primary sortas="GLIBTOP_EXCLUDE_IDLE">GLIBTOP_EXCLUDE_IDLE</primary></indexterm><programlisting>#define GLIBTOP_EXCLUDE_IDLE		0x1000
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-EXCLUDE-SYSTEM--CAPS" role="macro">
+<title>GLIBTOP_EXCLUDE_SYSTEM</title>
+<indexterm zone="GLIBTOP-EXCLUDE-SYSTEM--CAPS"><primary sortas="GLIBTOP_EXCLUDE_SYSTEM">GLIBTOP_EXCLUDE_SYSTEM</primary></indexterm><programlisting>#define GLIBTOP_EXCLUDE_SYSTEM		0x2000
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-EXCLUDE-NOTTY--CAPS" role="macro">
+<title>GLIBTOP_EXCLUDE_NOTTY</title>
+<indexterm zone="GLIBTOP-EXCLUDE-NOTTY--CAPS"><primary sortas="GLIBTOP_EXCLUDE_NOTTY">GLIBTOP_EXCLUDE_NOTTY</primary></indexterm><programlisting>#define GLIBTOP_EXCLUDE_NOTTY		0x4000
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proclist" role="struct">
+<title>glibtop_proclist</title>
+<indexterm zone="glibtop-proclist"><primary sortas="glibtop_proclist">glibtop_proclist</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 number;			/* GLIBTOP_PROCLIST_NUMBER	*/
+	guint64 total;			/* GLIBTOP_PROCLIST_TOTAL	*/
+	guint64 size;			/* GLIBTOP_PROCLIST_SIZE	*/
+} glibtop_proclist;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proclist" role="function">
+<title>glibtop_get_proclist ()</title>
+<indexterm zone="glibtop-get-proclist"><primary sortas="glibtop_get_proclist">glibtop_get_proclist</primary></indexterm><programlisting><link linkend="pid-t">pid_t</link> *             glibtop_get_proclist                (<link linkend="glibtop-proclist">glibtop_proclist</link> *buf,
+                                                         <link linkend="gint64">gint64</link> which,
+                                                         <link linkend="gint64">gint64</link> arg);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>which</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proclist-r" role="macro">
+<title>glibtop_get_proclist_r</title>
+<indexterm zone="glibtop-get-proclist-r"><primary sortas="glibtop_get_proclist_r">glibtop_get_proclist_r</primary></indexterm><programlisting>#define             glibtop_get_proclist_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proclist-l" role="function">
+<title>glibtop_get_proclist_l ()</title>
+<indexterm zone="glibtop-get-proclist-l"><primary sortas="glibtop_get_proclist_l">glibtop_get_proclist_l</primary></indexterm><programlisting><link linkend="pid-t">pid_t</link> *             glibtop_get_proclist_l              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proclist">glibtop_proclist</link> *buf,
+                                                         <link linkend="gint64">gint64</link> which,
+                                                         <link linkend="gint64">gint64</link> arg);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>which</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proclist-p" role="function">
+<title>glibtop_get_proclist_p ()</title>
+<indexterm zone="glibtop-get-proclist-p"><primary sortas="glibtop_get_proclist_p">glibtop_get_proclist_p</primary></indexterm><programlisting><link linkend="pid-t">pid_t</link> *             glibtop_get_proclist_p              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proclist">glibtop_proclist</link> *buf,
+                                                         <link linkend="gint64">gint64</link> which,
+                                                         <link linkend="gint64">gint64</link> arg);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>which</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proclist-s" role="function">
+<title>glibtop_get_proclist_s ()</title>
+<indexterm zone="glibtop-get-proclist-s"><primary sortas="glibtop_get_proclist_s">glibtop_get_proclist_s</primary></indexterm><programlisting><link linkend="pid-t">pid_t</link> *             glibtop_get_proclist_s              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proclist">glibtop_proclist</link> *buf,
+                                                         <link linkend="gint64">gint64</link> which,
+                                                         <link linkend="gint64">gint64</link> arg);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>which</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>arg</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-open">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-open.top_of_page">open</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>open</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-open.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/open.h&gt;
+
+#define             <link linkend="GLIBTOP-INIT-NO-OPEN--CAPS">GLIBTOP_INIT_NO_OPEN</link>
+#define             <link linkend="GLIBTOP-INIT-NO-INIT--CAPS">GLIBTOP_INIT_NO_INIT</link>
+#define             <link linkend="GLIBTOP-FEATURES-NO-SERVER--CAPS">GLIBTOP_FEATURES_NO_SERVER</link>
+#define             <link linkend="GLIBTOP-FEATURES-EXCEPT--CAPS">GLIBTOP_FEATURES_EXCEPT</link>
+#define             <link linkend="GLIBTOP-METHOD-DIRECT--CAPS">GLIBTOP_METHOD_DIRECT</link>
+#define             <link linkend="GLIBTOP-METHOD-PIPE--CAPS">GLIBTOP_METHOD_PIPE</link>
+#define             <link linkend="GLIBTOP-METHOD-INET--CAPS">GLIBTOP_METHOD_INET</link>
+#define             <link linkend="GLIBTOP-METHOD-UNIX--CAPS">GLIBTOP_METHOD_UNIX</link>
+#define             <link linkend="GLIBTOP-ERROR-METHOD-IGNORE--CAPS">GLIBTOP_ERROR_METHOD_IGNORE</link>
+#define             <link linkend="GLIBTOP-ERROR-METHOD-WARN-ONCE--CAPS">GLIBTOP_ERROR_METHOD_WARN_ONCE</link>
+#define             <link linkend="GLIBTOP-ERROR-METHOD-WARN--CAPS">GLIBTOP_ERROR_METHOD_WARN</link>
+#define             <link linkend="GLIBTOP-ERROR-METHOD-ABORT--CAPS">GLIBTOP_ERROR_METHOD_ABORT</link>
+#define             <link linkend="GLIBTOP-ERROR-METHOD-DEFAULT--CAPS">GLIBTOP_ERROR_METHOD_DEFAULT</link>
+<link linkend="void">void</link>                <link linkend="glibtop-open-l">glibtop_open_l</link>                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         const <link linkend="char">char</link> *program_name,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);
+<link linkend="void">void</link>                <link linkend="glibtop-init-p">glibtop_init_p</link>                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);
+<link linkend="void">void</link>                <link linkend="glibtop-open-p">glibtop_open_p</link>                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         const <link linkend="char">char</link> *program_name,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);
+<link linkend="void">void</link>                <link linkend="glibtop-open-s">glibtop_open_s</link>                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         const <link linkend="char">char</link> *program_name,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-open.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-open.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-INIT-NO-OPEN--CAPS" role="macro">
+<title>GLIBTOP_INIT_NO_OPEN</title>
+<indexterm zone="GLIBTOP-INIT-NO-OPEN--CAPS"><primary sortas="GLIBTOP_INIT_NO_OPEN">GLIBTOP_INIT_NO_OPEN</primary></indexterm><programlisting>#define GLIBTOP_INIT_NO_OPEN		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-INIT-NO-INIT--CAPS" role="macro">
+<title>GLIBTOP_INIT_NO_INIT</title>
+<indexterm zone="GLIBTOP-INIT-NO-INIT--CAPS"><primary sortas="GLIBTOP_INIT_NO_INIT">GLIBTOP_INIT_NO_INIT</primary></indexterm><programlisting>#define GLIBTOP_INIT_NO_INIT		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FEATURES-NO-SERVER--CAPS" role="macro">
+<title>GLIBTOP_FEATURES_NO_SERVER</title>
+<indexterm zone="GLIBTOP-FEATURES-NO-SERVER--CAPS"><primary sortas="GLIBTOP_FEATURES_NO_SERVER">GLIBTOP_FEATURES_NO_SERVER</primary></indexterm><programlisting>#define GLIBTOP_FEATURES_NO_SERVER	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FEATURES-EXCEPT--CAPS" role="macro">
+<title>GLIBTOP_FEATURES_EXCEPT</title>
+<indexterm zone="GLIBTOP-FEATURES-EXCEPT--CAPS"><primary sortas="GLIBTOP_FEATURES_EXCEPT">GLIBTOP_FEATURES_EXCEPT</primary></indexterm><programlisting>#define GLIBTOP_FEATURES_EXCEPT		8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-METHOD-DIRECT--CAPS" role="macro">
+<title>GLIBTOP_METHOD_DIRECT</title>
+<indexterm zone="GLIBTOP-METHOD-DIRECT--CAPS"><primary sortas="GLIBTOP_METHOD_DIRECT">GLIBTOP_METHOD_DIRECT</primary></indexterm><programlisting>#define GLIBTOP_METHOD_DIRECT		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-METHOD-PIPE--CAPS" role="macro">
+<title>GLIBTOP_METHOD_PIPE</title>
+<indexterm zone="GLIBTOP-METHOD-PIPE--CAPS"><primary sortas="GLIBTOP_METHOD_PIPE">GLIBTOP_METHOD_PIPE</primary></indexterm><programlisting>#define GLIBTOP_METHOD_PIPE		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-METHOD-INET--CAPS" role="macro">
+<title>GLIBTOP_METHOD_INET</title>
+<indexterm zone="GLIBTOP-METHOD-INET--CAPS"><primary sortas="GLIBTOP_METHOD_INET">GLIBTOP_METHOD_INET</primary></indexterm><programlisting>#define GLIBTOP_METHOD_INET		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-METHOD-UNIX--CAPS" role="macro">
+<title>GLIBTOP_METHOD_UNIX</title>
+<indexterm zone="GLIBTOP-METHOD-UNIX--CAPS"><primary sortas="GLIBTOP_METHOD_UNIX">GLIBTOP_METHOD_UNIX</primary></indexterm><programlisting>#define GLIBTOP_METHOD_UNIX		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-ERROR-METHOD-IGNORE--CAPS" role="macro">
+<title>GLIBTOP_ERROR_METHOD_IGNORE</title>
+<indexterm zone="GLIBTOP-ERROR-METHOD-IGNORE--CAPS"><primary sortas="GLIBTOP_ERROR_METHOD_IGNORE">GLIBTOP_ERROR_METHOD_IGNORE</primary></indexterm><programlisting>#define GLIBTOP_ERROR_METHOD_IGNORE	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-ERROR-METHOD-WARN-ONCE--CAPS" role="macro">
+<title>GLIBTOP_ERROR_METHOD_WARN_ONCE</title>
+<indexterm zone="GLIBTOP-ERROR-METHOD-WARN-ONCE--CAPS"><primary sortas="GLIBTOP_ERROR_METHOD_WARN_ONCE">GLIBTOP_ERROR_METHOD_WARN_ONCE</primary></indexterm><programlisting>#define GLIBTOP_ERROR_METHOD_WARN_ONCE	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-ERROR-METHOD-WARN--CAPS" role="macro">
+<title>GLIBTOP_ERROR_METHOD_WARN</title>
+<indexterm zone="GLIBTOP-ERROR-METHOD-WARN--CAPS"><primary sortas="GLIBTOP_ERROR_METHOD_WARN">GLIBTOP_ERROR_METHOD_WARN</primary></indexterm><programlisting>#define GLIBTOP_ERROR_METHOD_WARN	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-ERROR-METHOD-ABORT--CAPS" role="macro">
+<title>GLIBTOP_ERROR_METHOD_ABORT</title>
+<indexterm zone="GLIBTOP-ERROR-METHOD-ABORT--CAPS"><primary sortas="GLIBTOP_ERROR_METHOD_ABORT">GLIBTOP_ERROR_METHOD_ABORT</primary></indexterm><programlisting>#define GLIBTOP_ERROR_METHOD_ABORT	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-ERROR-METHOD-DEFAULT--CAPS" role="macro">
+<title>GLIBTOP_ERROR_METHOD_DEFAULT</title>
+<indexterm zone="GLIBTOP-ERROR-METHOD-DEFAULT--CAPS"><primary sortas="GLIBTOP_ERROR_METHOD_DEFAULT">GLIBTOP_ERROR_METHOD_DEFAULT</primary></indexterm><programlisting>#define GLIBTOP_ERROR_METHOD_DEFAULT	GLIBTOP_ERROR_METHOD_WARN_ONCE
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-open-l" role="function">
+<title>glibtop_open_l ()</title>
+<indexterm zone="glibtop-open-l"><primary sortas="glibtop_open_l">glibtop_open_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_open_l                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         const <link linkend="char">char</link> *program_name,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>program_name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>features</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-init-p" role="function">
+<title>glibtop_init_p ()</title>
+<indexterm zone="glibtop-init-p"><primary sortas="glibtop_init_p">glibtop_init_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_init_p                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>features</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-open-p" role="function">
+<title>glibtop_open_p ()</title>
+<indexterm zone="glibtop-open-p"><primary sortas="glibtop_open_p">glibtop_open_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_open_p                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         const <link linkend="char">char</link> *program_name,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>program_name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>features</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-open-s" role="function">
+<title>glibtop_open_s ()</title>
+<indexterm zone="glibtop-open-s"><primary sortas="glibtop_open_s">glibtop_open_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_open_s                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         const <link linkend="char">char</link> *program_name,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>program_name</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>features</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

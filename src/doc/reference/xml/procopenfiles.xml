@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-procopenfiles">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-procopenfiles.top_of_page">procopenfiles</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>procopenfiles</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-procopenfiles.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/procopenfiles.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-OPEN-FILES-NUMBER--CAPS">GLIBTOP_PROC_OPEN_FILES_NUMBER</link>
+#define             <link linkend="GLIBTOP-PROC-OPEN-FILES-TOTAL--CAPS">GLIBTOP_PROC_OPEN_FILES_TOTAL</link>
+#define             <link linkend="GLIBTOP-PROC-OPEN-FILES-SIZE--CAPS">GLIBTOP_PROC_OPEN_FILES_SIZE</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-OPEN-FILES--CAPS">GLIBTOP_MAX_PROC_OPEN_FILES</link>
+#define             <link linkend="GLIBTOP-FILE-ENTRY-FD--CAPS">GLIBTOP_FILE_ENTRY_FD</link>
+#define             <link linkend="GLIBTOP-FILE-ENTRY-NAME--CAPS">GLIBTOP_FILE_ENTRY_NAME</link>
+#define             <link linkend="GLIBTOP-FILE-ENTRY-TYPE--CAPS">GLIBTOP_FILE_ENTRY_TYPE</link>
+#define             <link linkend="GLIBTOP-FILE-ENTRY-INETSOCKET-DST-HOST--CAPS">GLIBTOP_FILE_ENTRY_INETSOCKET_DST_HOST</link>
+#define             <link linkend="GLIBTOP-FILE-ENTRY-INETSOCKET-DST-PORT--CAPS">GLIBTOP_FILE_ENTRY_INETSOCKET_DST_PORT</link>
+#define             <link linkend="GLIBTOP-MAX-OPEN-FILE-ENTRY--CAPS">GLIBTOP_MAX_OPEN_FILE_ENTRY</link>
+#define             <link linkend="GLIBTOP-OPEN-FILENAME-LEN--CAPS">GLIBTOP_OPEN_FILENAME_LEN</link>
+#define             <link linkend="GLIBTOP-OPEN-DEST-HOST-LEN--CAPS">GLIBTOP_OPEN_DEST_HOST_LEN</link>
+                    <link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link>;
+                    <link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link>;
+<link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link> * <link linkend="glibtop-get-proc-open-files">glibtop_get_proc_open_files</link>  (<link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-open-files-r">glibtop_get_proc_open_files_r</link>
+<link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link> * <link linkend="glibtop-get-proc-open-files-l">glibtop_get_proc_open_files_l</link>
+                                                        (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link> * <link linkend="glibtop-get-proc-open-files-p">glibtop_get_proc_open_files_p</link>
+                                                        (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link> * <link linkend="glibtop-get-proc-open-files-s">glibtop_get_proc_open_files_s</link>
+                                                        (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-procopenfiles.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-procopenfiles.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-OPEN-FILES-NUMBER--CAPS" role="macro">
+<title>GLIBTOP_PROC_OPEN_FILES_NUMBER</title>
+<indexterm zone="GLIBTOP-PROC-OPEN-FILES-NUMBER--CAPS"><primary sortas="GLIBTOP_PROC_OPEN_FILES_NUMBER">GLIBTOP_PROC_OPEN_FILES_NUMBER</primary></indexterm><programlisting>#define GLIBTOP_PROC_OPEN_FILES_NUMBER		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-OPEN-FILES-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_PROC_OPEN_FILES_TOTAL</title>
+<indexterm zone="GLIBTOP-PROC-OPEN-FILES-TOTAL--CAPS"><primary sortas="GLIBTOP_PROC_OPEN_FILES_TOTAL">GLIBTOP_PROC_OPEN_FILES_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_PROC_OPEN_FILES_TOTAL		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-OPEN-FILES-SIZE--CAPS" role="macro">
+<title>GLIBTOP_PROC_OPEN_FILES_SIZE</title>
+<indexterm zone="GLIBTOP-PROC-OPEN-FILES-SIZE--CAPS"><primary sortas="GLIBTOP_PROC_OPEN_FILES_SIZE">GLIBTOP_PROC_OPEN_FILES_SIZE</primary></indexterm><programlisting>#define GLIBTOP_PROC_OPEN_FILES_SIZE		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-OPEN-FILES--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_OPEN_FILES</title>
+<indexterm zone="GLIBTOP-MAX-PROC-OPEN-FILES--CAPS"><primary sortas="GLIBTOP_MAX_PROC_OPEN_FILES">GLIBTOP_MAX_PROC_OPEN_FILES</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_OPEN_FILES		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FILE-ENTRY-FD--CAPS" role="macro">
+<title>GLIBTOP_FILE_ENTRY_FD</title>
+<indexterm zone="GLIBTOP-FILE-ENTRY-FD--CAPS"><primary sortas="GLIBTOP_FILE_ENTRY_FD">GLIBTOP_FILE_ENTRY_FD</primary></indexterm><programlisting>#define GLIBTOP_FILE_ENTRY_FD				0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FILE-ENTRY-NAME--CAPS" role="macro">
+<title>GLIBTOP_FILE_ENTRY_NAME</title>
+<indexterm zone="GLIBTOP-FILE-ENTRY-NAME--CAPS"><primary sortas="GLIBTOP_FILE_ENTRY_NAME">GLIBTOP_FILE_ENTRY_NAME</primary></indexterm><programlisting>#define GLIBTOP_FILE_ENTRY_NAME				1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FILE-ENTRY-TYPE--CAPS" role="macro">
+<title>GLIBTOP_FILE_ENTRY_TYPE</title>
+<indexterm zone="GLIBTOP-FILE-ENTRY-TYPE--CAPS"><primary sortas="GLIBTOP_FILE_ENTRY_TYPE">GLIBTOP_FILE_ENTRY_TYPE</primary></indexterm><programlisting>#define GLIBTOP_FILE_ENTRY_TYPE				2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FILE-ENTRY-INETSOCKET-DST-HOST--CAPS" role="macro">
+<title>GLIBTOP_FILE_ENTRY_INETSOCKET_DST_HOST</title>
+<indexterm zone="GLIBTOP-FILE-ENTRY-INETSOCKET-DST-HOST--CAPS"><primary sortas="GLIBTOP_FILE_ENTRY_INETSOCKET_DST_HOST">GLIBTOP_FILE_ENTRY_INETSOCKET_DST_HOST</primary></indexterm><programlisting>#define GLIBTOP_FILE_ENTRY_INETSOCKET_DST_HOST		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-FILE-ENTRY-INETSOCKET-DST-PORT--CAPS" role="macro">
+<title>GLIBTOP_FILE_ENTRY_INETSOCKET_DST_PORT</title>
+<indexterm zone="GLIBTOP-FILE-ENTRY-INETSOCKET-DST-PORT--CAPS"><primary sortas="GLIBTOP_FILE_ENTRY_INETSOCKET_DST_PORT">GLIBTOP_FILE_ENTRY_INETSOCKET_DST_PORT</primary></indexterm><programlisting>#define GLIBTOP_FILE_ENTRY_INETSOCKET_DST_PORT		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-OPEN-FILE-ENTRY--CAPS" role="macro">
+<title>GLIBTOP_MAX_OPEN_FILE_ENTRY</title>
+<indexterm zone="GLIBTOP-MAX-OPEN-FILE-ENTRY--CAPS"><primary sortas="GLIBTOP_MAX_OPEN_FILE_ENTRY">GLIBTOP_MAX_OPEN_FILE_ENTRY</primary></indexterm><programlisting>#define GLIBTOP_MAX_OPEN_FILE_ENTRY		5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-OPEN-FILENAME-LEN--CAPS" role="macro">
+<title>GLIBTOP_OPEN_FILENAME_LEN</title>
+<indexterm zone="GLIBTOP-OPEN-FILENAME-LEN--CAPS"><primary sortas="GLIBTOP_OPEN_FILENAME_LEN">GLIBTOP_OPEN_FILENAME_LEN</primary></indexterm><programlisting>#define GLIBTOP_OPEN_FILENAME_LEN	215
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-OPEN-DEST-HOST-LEN--CAPS" role="macro">
+<title>GLIBTOP_OPEN_DEST_HOST_LEN</title>
+<indexterm zone="GLIBTOP-OPEN-DEST-HOST-LEN--CAPS"><primary sortas="GLIBTOP_OPEN_DEST_HOST_LEN">GLIBTOP_OPEN_DEST_HOST_LEN</primary></indexterm><programlisting>#define GLIBTOP_OPEN_DEST_HOST_LEN	46
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-open-files-entry" role="struct">
+<title>glibtop_open_files_entry</title>
+<indexterm zone="glibtop-open-files-entry"><primary sortas="glibtop_open_files_entry">glibtop_open_files_entry</primary></indexterm><programlisting>typedef struct {
+	int fd;
+	guint16 type; /* An "enum glibtop_file_type" value. */
+	union {
+		/* When type == GLIBTOP_FILE_TYPE_INETSOCKET or
+		 * when type == GLIBTOP_FILE_TYPE_INET6SOCKET */
+		struct {
+			char dest_host[GLIBTOP_OPEN_DEST_HOST_LEN+1];
+			int dest_port;
+		} sock;
+
+		/* When type == GLIBTOP_FILE_TYPE_FILE */
+		struct {
+			char name[GLIBTOP_OPEN_FILENAME_LEN+1];
+		} file;
+
+		/* When type == GLIBTOP_FILE_TYPE_LOCALSOCKET */
+		struct {
+			char name[GLIBTOP_OPEN_FILENAME_LEN+1];
+		} localsock;
+
+	} info;
+} glibtop_open_files_entry;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-open-files" role="struct">
+<title>glibtop_proc_open_files</title>
+<indexterm zone="glibtop-proc-open-files"><primary sortas="glibtop_proc_open_files">glibtop_proc_open_files</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 number;			/* GLIBTOP_PROC_OPEN_FILES_NUMBER */
+	guint64 total;			/* GLIBTOP_PROC_OPEN_FILES_TOTAL  */
+	guint64 size;			/* GLIBTOP_PROC_OPEN_FILES_SIZE   */
+} glibtop_proc_open_files;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-open-files" role="function">
+<title>glibtop_get_proc_open_files ()</title>
+<indexterm zone="glibtop-get-proc-open-files"><primary sortas="glibtop_get_proc_open_files">glibtop_get_proc_open_files</primary></indexterm><programlisting><link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link> * glibtop_get_proc_open_files  (<link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-open-files-r" role="macro">
+<title>glibtop_get_proc_open_files_r</title>
+<indexterm zone="glibtop-get-proc-open-files-r"><primary sortas="glibtop_get_proc_open_files_r">glibtop_get_proc_open_files_r</primary></indexterm><programlisting>#define             glibtop_get_proc_open_files_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-open-files-l" role="function">
+<title>glibtop_get_proc_open_files_l ()</title>
+<indexterm zone="glibtop-get-proc-open-files-l"><primary sortas="glibtop_get_proc_open_files_l">glibtop_get_proc_open_files_l</primary></indexterm><programlisting><link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link> * glibtop_get_proc_open_files_l
+                                                        (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-open-files-p" role="function">
+<title>glibtop_get_proc_open_files_p ()</title>
+<indexterm zone="glibtop-get-proc-open-files-p"><primary sortas="glibtop_get_proc_open_files_p">glibtop_get_proc_open_files_p</primary></indexterm><programlisting><link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link> * glibtop_get_proc_open_files_p
+                                                        (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-open-files-s" role="function">
+<title>glibtop_get_proc_open_files_s ()</title>
+<indexterm zone="glibtop-get-proc-open-files-s"><primary sortas="glibtop_get_proc_open_files_s">glibtop_get_proc_open_files_s</primary></indexterm><programlisting><link linkend="glibtop-open-files-entry">glibtop_open_files_entry</link> * glibtop_get_proc_open_files_s
+                                                        (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-open-files">glibtop_proc_open_files</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

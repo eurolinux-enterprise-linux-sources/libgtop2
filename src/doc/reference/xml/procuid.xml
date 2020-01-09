@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-procuid">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-procuid.top_of_page">procuid</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>procuid</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-procuid.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/procuid.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-UID-UID--CAPS">GLIBTOP_PROC_UID_UID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-EUID--CAPS">GLIBTOP_PROC_UID_EUID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-GID--CAPS">GLIBTOP_PROC_UID_GID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-EGID--CAPS">GLIBTOP_PROC_UID_EGID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-SUID--CAPS">GLIBTOP_PROC_UID_SUID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-SGID--CAPS">GLIBTOP_PROC_UID_SGID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-FSUID--CAPS">GLIBTOP_PROC_UID_FSUID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-FSGID--CAPS">GLIBTOP_PROC_UID_FSGID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-PID--CAPS">GLIBTOP_PROC_UID_PID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-PPID--CAPS">GLIBTOP_PROC_UID_PPID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-PGRP--CAPS">GLIBTOP_PROC_UID_PGRP</link>
+#define             <link linkend="GLIBTOP-PROC-UID-SESSION--CAPS">GLIBTOP_PROC_UID_SESSION</link>
+#define             <link linkend="GLIBTOP-PROC-UID-TTY--CAPS">GLIBTOP_PROC_UID_TTY</link>
+#define             <link linkend="GLIBTOP-PROC-UID-TPGID--CAPS">GLIBTOP_PROC_UID_TPGID</link>
+#define             <link linkend="GLIBTOP-PROC-UID-PRIORITY--CAPS">GLIBTOP_PROC_UID_PRIORITY</link>
+#define             <link linkend="GLIBTOP-PROC-UID-NICE--CAPS">GLIBTOP_PROC_UID_NICE</link>
+#define             <link linkend="GLIBTOP-PROC-UID-NGROUPS--CAPS">GLIBTOP_PROC_UID_NGROUPS</link>
+#define             <link linkend="GLIBTOP-PROC-UID-GROUPS--CAPS">GLIBTOP_PROC_UID_GROUPS</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-UID--CAPS">GLIBTOP_MAX_PROC_UID</link>
+                    <link linkend="glibtop-proc-uid">glibtop_proc_uid</link>;
+#define             <link linkend="GLIBTOP-MAX-GROUPS--CAPS">GLIBTOP_MAX_GROUPS</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-uid">glibtop_get_proc_uid</link>                (<link linkend="glibtop-proc-uid">glibtop_proc_uid</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-uid-r">glibtop_get_proc_uid_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-uid-l">glibtop_get_proc_uid_l</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-uid">glibtop_proc_uid</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-uid-p">glibtop_get_proc_uid_p</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-uid">glibtop_proc_uid</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-uid-s">glibtop_get_proc_uid_s</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-uid">glibtop_proc_uid</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-procuid.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-procuid.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-UID-UID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_UID</title>
+<indexterm zone="GLIBTOP-PROC-UID-UID--CAPS"><primary sortas="GLIBTOP_PROC_UID_UID">GLIBTOP_PROC_UID_UID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_UID		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-EUID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_EUID</title>
+<indexterm zone="GLIBTOP-PROC-UID-EUID--CAPS"><primary sortas="GLIBTOP_PROC_UID_EUID">GLIBTOP_PROC_UID_EUID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_EUID		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-GID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_GID</title>
+<indexterm zone="GLIBTOP-PROC-UID-GID--CAPS"><primary sortas="GLIBTOP_PROC_UID_GID">GLIBTOP_PROC_UID_GID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_GID		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-EGID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_EGID</title>
+<indexterm zone="GLIBTOP-PROC-UID-EGID--CAPS"><primary sortas="GLIBTOP_PROC_UID_EGID">GLIBTOP_PROC_UID_EGID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_EGID		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-SUID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_SUID</title>
+<indexterm zone="GLIBTOP-PROC-UID-SUID--CAPS"><primary sortas="GLIBTOP_PROC_UID_SUID">GLIBTOP_PROC_UID_SUID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_SUID		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-SGID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_SGID</title>
+<indexterm zone="GLIBTOP-PROC-UID-SGID--CAPS"><primary sortas="GLIBTOP_PROC_UID_SGID">GLIBTOP_PROC_UID_SGID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_SGID		5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-FSUID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_FSUID</title>
+<indexterm zone="GLIBTOP-PROC-UID-FSUID--CAPS"><primary sortas="GLIBTOP_PROC_UID_FSUID">GLIBTOP_PROC_UID_FSUID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_FSUID		6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-FSGID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_FSGID</title>
+<indexterm zone="GLIBTOP-PROC-UID-FSGID--CAPS"><primary sortas="GLIBTOP_PROC_UID_FSGID">GLIBTOP_PROC_UID_FSGID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_FSGID		7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-PID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_PID</title>
+<indexterm zone="GLIBTOP-PROC-UID-PID--CAPS"><primary sortas="GLIBTOP_PROC_UID_PID">GLIBTOP_PROC_UID_PID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_PID		8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-PPID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_PPID</title>
+<indexterm zone="GLIBTOP-PROC-UID-PPID--CAPS"><primary sortas="GLIBTOP_PROC_UID_PPID">GLIBTOP_PROC_UID_PPID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_PPID		9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-PGRP--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_PGRP</title>
+<indexterm zone="GLIBTOP-PROC-UID-PGRP--CAPS"><primary sortas="GLIBTOP_PROC_UID_PGRP">GLIBTOP_PROC_UID_PGRP</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_PGRP		10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-SESSION--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_SESSION</title>
+<indexterm zone="GLIBTOP-PROC-UID-SESSION--CAPS"><primary sortas="GLIBTOP_PROC_UID_SESSION">GLIBTOP_PROC_UID_SESSION</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_SESSION	11
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-TTY--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_TTY</title>
+<indexterm zone="GLIBTOP-PROC-UID-TTY--CAPS"><primary sortas="GLIBTOP_PROC_UID_TTY">GLIBTOP_PROC_UID_TTY</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_TTY		12
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-TPGID--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_TPGID</title>
+<indexterm zone="GLIBTOP-PROC-UID-TPGID--CAPS"><primary sortas="GLIBTOP_PROC_UID_TPGID">GLIBTOP_PROC_UID_TPGID</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_TPGID		13
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-PRIORITY--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_PRIORITY</title>
+<indexterm zone="GLIBTOP-PROC-UID-PRIORITY--CAPS"><primary sortas="GLIBTOP_PROC_UID_PRIORITY">GLIBTOP_PROC_UID_PRIORITY</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_PRIORITY	14
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-NICE--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_NICE</title>
+<indexterm zone="GLIBTOP-PROC-UID-NICE--CAPS"><primary sortas="GLIBTOP_PROC_UID_NICE">GLIBTOP_PROC_UID_NICE</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_NICE		15
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-NGROUPS--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_NGROUPS</title>
+<indexterm zone="GLIBTOP-PROC-UID-NGROUPS--CAPS"><primary sortas="GLIBTOP_PROC_UID_NGROUPS">GLIBTOP_PROC_UID_NGROUPS</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_NGROUPS    16
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-UID-GROUPS--CAPS" role="macro">
+<title>GLIBTOP_PROC_UID_GROUPS</title>
+<indexterm zone="GLIBTOP-PROC-UID-GROUPS--CAPS"><primary sortas="GLIBTOP_PROC_UID_GROUPS">GLIBTOP_PROC_UID_GROUPS</primary></indexterm><programlisting>#define GLIBTOP_PROC_UID_GROUPS     17
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-UID--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_UID</title>
+<indexterm zone="GLIBTOP-MAX-PROC-UID--CAPS"><primary sortas="GLIBTOP_MAX_PROC_UID">GLIBTOP_MAX_PROC_UID</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_UID		18
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-uid" role="struct">
+<title>glibtop_proc_uid</title>
+<indexterm zone="glibtop-proc-uid"><primary sortas="glibtop_proc_uid">glibtop_proc_uid</primary></indexterm><programlisting>typedef struct {
+	guint64 flags;
+	gint32 uid;		/* user id */
+	gint32 euid;		/* effective user id */
+	gint32 gid;		/* group id */
+	gint32 egid;		/* effective group id */
+	gint32 suid;       /* set user id */
+	gint32 sgid;       /* set group id */
+	gint32 fsuid;      /* ??? user id */
+	gint32 fsgid;      /* ??? group id */
+	gint32 pid;		/* process id */
+	gint32 ppid;		/* pid of parent process */
+	gint32 pgrp;		/* process group id */
+	gint32 session;	/* session id */
+	gint32 tty;		/* full device number of controlling terminal */
+	gint32 tpgid;		/* terminal process group id */
+	gint32 priority;	/* kernel scheduling priority */
+	gint32 nice;		/* standard unix nice level of process */
+	gint32 ngroups;
+	gint32 groups [GLIBTOP_MAX_GROUPS];
+} glibtop_proc_uid;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-GROUPS--CAPS" role="macro">
+<title>GLIBTOP_MAX_GROUPS</title>
+<indexterm zone="GLIBTOP-MAX-GROUPS--CAPS"><primary sortas="GLIBTOP_MAX_GROUPS">GLIBTOP_MAX_GROUPS</primary></indexterm><programlisting>#define GLIBTOP_MAX_GROUPS          64
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-uid" role="function">
+<title>glibtop_get_proc_uid ()</title>
+<indexterm zone="glibtop-get-proc-uid"><primary sortas="glibtop_get_proc_uid">glibtop_get_proc_uid</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_uid                (<link linkend="glibtop-proc-uid">glibtop_proc_uid</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+Get the process user id and tty information.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> A location to return a <link linkend="glibtop-proc-uid"><type>glibtop_proc_uid</type></link>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara> Process id to get the user and tty information
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-uid-r" role="macro">
+<title>glibtop_get_proc_uid_r</title>
+<indexterm zone="glibtop-get-proc-uid-r"><primary sortas="glibtop_get_proc_uid_r">glibtop_get_proc_uid_r</primary></indexterm><programlisting>#define             glibtop_get_proc_uid_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-uid-l" role="function">
+<title>glibtop_get_proc_uid_l ()</title>
+<indexterm zone="glibtop-get-proc-uid-l"><primary sortas="glibtop_get_proc_uid_l">glibtop_get_proc_uid_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_uid_l              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-uid">glibtop_proc_uid</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-uid-p" role="function">
+<title>glibtop_get_proc_uid_p ()</title>
+<indexterm zone="glibtop-get-proc-uid-p"><primary sortas="glibtop_get_proc_uid_p">glibtop_get_proc_uid_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_uid_p              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-uid">glibtop_proc_uid</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-uid-s" role="function">
+<title>glibtop_get_proc_uid_s ()</title>
+<indexterm zone="glibtop-get-proc-uid-s"><primary sortas="glibtop_get_proc_uid_s">glibtop_get_proc_uid_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_uid_s              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-uid">glibtop_proc_uid</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

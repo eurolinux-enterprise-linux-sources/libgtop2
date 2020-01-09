@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-procmap">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-procmap.top_of_page">procmap</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>procmap</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-procmap.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/procmap.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-MAP-NUMBER--CAPS">GLIBTOP_PROC_MAP_NUMBER</link>
+#define             <link linkend="GLIBTOP-PROC-MAP-TOTAL--CAPS">GLIBTOP_PROC_MAP_TOTAL</link>
+#define             <link linkend="GLIBTOP-PROC-MAP-SIZE--CAPS">GLIBTOP_PROC_MAP_SIZE</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-MAP--CAPS">GLIBTOP_MAX_PROC_MAP</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-START--CAPS">GLIBTOP_MAP_ENTRY_START</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-END--CAPS">GLIBTOP_MAP_ENTRY_END</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-OFFSET--CAPS">GLIBTOP_MAP_ENTRY_OFFSET</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-PERM--CAPS">GLIBTOP_MAP_ENTRY_PERM</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-INODE--CAPS">GLIBTOP_MAP_ENTRY_INODE</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-DEVICE--CAPS">GLIBTOP_MAP_ENTRY_DEVICE</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-FILENAME--CAPS">GLIBTOP_MAP_ENTRY_FILENAME</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-SIZE--CAPS">GLIBTOP_MAP_ENTRY_SIZE</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-RSS--CAPS">GLIBTOP_MAP_ENTRY_RSS</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-SHARED-CLEAN--CAPS">GLIBTOP_MAP_ENTRY_SHARED_CLEAN</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-SHARED-DIRTY--CAPS">GLIBTOP_MAP_ENTRY_SHARED_DIRTY</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-PRIVATE-CLEAN--CAPS">GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN</link>
+#define             <link linkend="GLIBTOP-MAP-ENTRY-PRIVATE-DIRTY--CAPS">GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY</link>
+#define             <link linkend="GLIBTOP-MAX-MAP-ENTRY--CAPS">GLIBTOP_MAX_MAP_ENTRY</link>
+#define             <link linkend="GLIBTOP-MAP-FILENAME-LEN--CAPS">GLIBTOP_MAP_FILENAME_LEN</link>
+#define             <link linkend="GLIBTOP-MAP-PERM-READ--CAPS">GLIBTOP_MAP_PERM_READ</link>
+#define             <link linkend="GLIBTOP-MAP-PERM-WRITE--CAPS">GLIBTOP_MAP_PERM_WRITE</link>
+#define             <link linkend="GLIBTOP-MAP-PERM-EXECUTE--CAPS">GLIBTOP_MAP_PERM_EXECUTE</link>
+#define             <link linkend="GLIBTOP-MAP-PERM-SHARED--CAPS">GLIBTOP_MAP_PERM_SHARED</link>
+#define             <link linkend="GLIBTOP-MAP-PERM-PRIVATE--CAPS">GLIBTOP_MAP_PERM_PRIVATE</link>
+                    <link linkend="glibtop-map-entry">glibtop_map_entry</link>;
+                    <link linkend="glibtop-proc-map">glibtop_proc_map</link>;
+<link linkend="glibtop-map-entry">glibtop_map_entry</link> * <link linkend="glibtop-get-proc-map">glibtop_get_proc_map</link>                (<link linkend="glibtop-proc-map">glibtop_proc_map</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-map-r">glibtop_get_proc_map_r</link>
+<link linkend="glibtop-map-entry">glibtop_map_entry</link> * <link linkend="glibtop-get-proc-map-l">glibtop_get_proc_map_l</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-map">glibtop_proc_map</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="glibtop-map-entry">glibtop_map_entry</link> * <link linkend="glibtop-get-proc-map-p">glibtop_get_proc_map_p</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-map">glibtop_proc_map</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="glibtop-map-entry">glibtop_map_entry</link> * <link linkend="glibtop-get-proc-map-s">glibtop_get_proc_map_s</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-map">glibtop_proc_map</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-procmap.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-procmap.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-MAP-NUMBER--CAPS" role="macro">
+<title>GLIBTOP_PROC_MAP_NUMBER</title>
+<indexterm zone="GLIBTOP-PROC-MAP-NUMBER--CAPS"><primary sortas="GLIBTOP_PROC_MAP_NUMBER">GLIBTOP_PROC_MAP_NUMBER</primary></indexterm><programlisting>#define GLIBTOP_PROC_MAP_NUMBER		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-MAP-TOTAL--CAPS" role="macro">
+<title>GLIBTOP_PROC_MAP_TOTAL</title>
+<indexterm zone="GLIBTOP-PROC-MAP-TOTAL--CAPS"><primary sortas="GLIBTOP_PROC_MAP_TOTAL">GLIBTOP_PROC_MAP_TOTAL</primary></indexterm><programlisting>#define GLIBTOP_PROC_MAP_TOTAL		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-MAP-SIZE--CAPS" role="macro">
+<title>GLIBTOP_PROC_MAP_SIZE</title>
+<indexterm zone="GLIBTOP-PROC-MAP-SIZE--CAPS"><primary sortas="GLIBTOP_PROC_MAP_SIZE">GLIBTOP_PROC_MAP_SIZE</primary></indexterm><programlisting>#define GLIBTOP_PROC_MAP_SIZE		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-MAP--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_MAP</title>
+<indexterm zone="GLIBTOP-MAX-PROC-MAP--CAPS"><primary sortas="GLIBTOP_MAX_PROC_MAP">GLIBTOP_MAX_PROC_MAP</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_MAP		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-START--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_START</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-START--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_START">GLIBTOP_MAP_ENTRY_START</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_START		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-END--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_END</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-END--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_END">GLIBTOP_MAP_ENTRY_END</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_END		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-OFFSET--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_OFFSET</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-OFFSET--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_OFFSET">GLIBTOP_MAP_ENTRY_OFFSET</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_OFFSET	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-PERM--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_PERM</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-PERM--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_PERM">GLIBTOP_MAP_ENTRY_PERM</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_PERM		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-INODE--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_INODE</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-INODE--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_INODE">GLIBTOP_MAP_ENTRY_INODE</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_INODE		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-DEVICE--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_DEVICE</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-DEVICE--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_DEVICE">GLIBTOP_MAP_ENTRY_DEVICE</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_DEVICE	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-FILENAME--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_FILENAME</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-FILENAME--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_FILENAME">GLIBTOP_MAP_ENTRY_FILENAME</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_FILENAME	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-SIZE--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_SIZE</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-SIZE--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_SIZE">GLIBTOP_MAP_ENTRY_SIZE</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_SIZE			 7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-RSS--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_RSS</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-RSS--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_RSS">GLIBTOP_MAP_ENTRY_RSS</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_RSS			 8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-SHARED-CLEAN--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_SHARED_CLEAN</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-SHARED-CLEAN--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_SHARED_CLEAN">GLIBTOP_MAP_ENTRY_SHARED_CLEAN</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_SHARED_CLEAN		 9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-SHARED-DIRTY--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_SHARED_DIRTY</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-SHARED-DIRTY--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_SHARED_DIRTY">GLIBTOP_MAP_ENTRY_SHARED_DIRTY</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_SHARED_DIRTY		10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-PRIVATE-CLEAN--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-PRIVATE-CLEAN--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN">GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN		11
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-ENTRY-PRIVATE-DIRTY--CAPS" role="macro">
+<title>GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY</title>
+<indexterm zone="GLIBTOP-MAP-ENTRY-PRIVATE-DIRTY--CAPS"><primary sortas="GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY">GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY</primary></indexterm><programlisting>#define GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY		12
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-MAP-ENTRY--CAPS" role="macro">
+<title>GLIBTOP_MAX_MAP_ENTRY</title>
+<indexterm zone="GLIBTOP-MAX-MAP-ENTRY--CAPS"><primary sortas="GLIBTOP_MAX_MAP_ENTRY">GLIBTOP_MAX_MAP_ENTRY</primary></indexterm><programlisting>#define GLIBTOP_MAX_MAP_ENTRY		13
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-FILENAME-LEN--CAPS" role="macro">
+<title>GLIBTOP_MAP_FILENAME_LEN</title>
+<indexterm zone="GLIBTOP-MAP-FILENAME-LEN--CAPS"><primary sortas="GLIBTOP_MAP_FILENAME_LEN">GLIBTOP_MAP_FILENAME_LEN</primary></indexterm><programlisting>#define GLIBTOP_MAP_FILENAME_LEN	215
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-PERM-READ--CAPS" role="macro">
+<title>GLIBTOP_MAP_PERM_READ</title>
+<indexterm zone="GLIBTOP-MAP-PERM-READ--CAPS"><primary sortas="GLIBTOP_MAP_PERM_READ">GLIBTOP_MAP_PERM_READ</primary></indexterm><programlisting>#define GLIBTOP_MAP_PERM_READ		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-PERM-WRITE--CAPS" role="macro">
+<title>GLIBTOP_MAP_PERM_WRITE</title>
+<indexterm zone="GLIBTOP-MAP-PERM-WRITE--CAPS"><primary sortas="GLIBTOP_MAP_PERM_WRITE">GLIBTOP_MAP_PERM_WRITE</primary></indexterm><programlisting>#define GLIBTOP_MAP_PERM_WRITE		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-PERM-EXECUTE--CAPS" role="macro">
+<title>GLIBTOP_MAP_PERM_EXECUTE</title>
+<indexterm zone="GLIBTOP-MAP-PERM-EXECUTE--CAPS"><primary sortas="GLIBTOP_MAP_PERM_EXECUTE">GLIBTOP_MAP_PERM_EXECUTE</primary></indexterm><programlisting>#define GLIBTOP_MAP_PERM_EXECUTE	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-PERM-SHARED--CAPS" role="macro">
+<title>GLIBTOP_MAP_PERM_SHARED</title>
+<indexterm zone="GLIBTOP-MAP-PERM-SHARED--CAPS"><primary sortas="GLIBTOP_MAP_PERM_SHARED">GLIBTOP_MAP_PERM_SHARED</primary></indexterm><programlisting>#define GLIBTOP_MAP_PERM_SHARED		8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAP-PERM-PRIVATE--CAPS" role="macro">
+<title>GLIBTOP_MAP_PERM_PRIVATE</title>
+<indexterm zone="GLIBTOP-MAP-PERM-PRIVATE--CAPS"><primary sortas="GLIBTOP_MAP_PERM_PRIVATE">GLIBTOP_MAP_PERM_PRIVATE</primary></indexterm><programlisting>#define GLIBTOP_MAP_PERM_PRIVATE	16
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-map-entry" role="struct">
+<title>glibtop_map_entry</title>
+<indexterm zone="glibtop-map-entry"><primary sortas="glibtop_map_entry">glibtop_map_entry</primary></indexterm><programlisting>typedef struct {
+	guint64 flags; 
+	guint64 start; 
+	guint64 end; 
+	guint64 offset; 
+	guint64 perm; 
+	guint64 inode; 
+	guint64 device;
+	guint64 size;
+	guint64 rss;
+	guint64 shared_clean; 
+	guint64 shared_dirty;
+	guint64 private_clean; 
+	guint64 private_dirty;
+	char filename [GLIBTOP_MAP_FILENAME_LEN+1];
+} glibtop_map_entry;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-map" role="struct">
+<title>glibtop_proc_map</title>
+<indexterm zone="glibtop-proc-map"><primary sortas="glibtop_proc_map">glibtop_proc_map</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 number;			/* GLIBTOP_PROC_MAP_NUMBER	*/
+	guint64 total;			/* GLIBTOP_PROC_MAP_TOTAL	*/
+	guint64 size;			/* GLIBTOP_PROC_MAP_SIZE	*/
+} glibtop_proc_map;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-map" role="function">
+<title>glibtop_get_proc_map ()</title>
+<indexterm zone="glibtop-get-proc-map"><primary sortas="glibtop_get_proc_map">glibtop_get_proc_map</primary></indexterm><programlisting><link linkend="glibtop-map-entry">glibtop_map_entry</link> * glibtop_get_proc_map                (<link linkend="glibtop-proc-map">glibtop_proc_map</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-map-r" role="macro">
+<title>glibtop_get_proc_map_r</title>
+<indexterm zone="glibtop-get-proc-map-r"><primary sortas="glibtop_get_proc_map_r">glibtop_get_proc_map_r</primary></indexterm><programlisting>#define             glibtop_get_proc_map_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-map-l" role="function">
+<title>glibtop_get_proc_map_l ()</title>
+<indexterm zone="glibtop-get-proc-map-l"><primary sortas="glibtop_get_proc_map_l">glibtop_get_proc_map_l</primary></indexterm><programlisting><link linkend="glibtop-map-entry">glibtop_map_entry</link> * glibtop_get_proc_map_l              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-map">glibtop_proc_map</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-map-p" role="function">
+<title>glibtop_get_proc_map_p ()</title>
+<indexterm zone="glibtop-get-proc-map-p"><primary sortas="glibtop_get_proc_map_p">glibtop_get_proc_map_p</primary></indexterm><programlisting><link linkend="glibtop-map-entry">glibtop_map_entry</link> * glibtop_get_proc_map_p              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-map">glibtop_proc_map</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-map-s" role="function">
+<title>glibtop_get_proc_map_s ()</title>
+<indexterm zone="glibtop-get-proc-map-s"><primary sortas="glibtop_get_proc_map_s">glibtop_get_proc_map_s</primary></indexterm><programlisting><link linkend="glibtop-map-entry">glibtop_map_entry</link> * glibtop_get_proc_map_s              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-map">glibtop_proc_map</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

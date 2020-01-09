@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-procmem">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-procmem.top_of_page">procmem</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>procmem</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-procmem.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/procmem.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-MEM-SIZE--CAPS">GLIBTOP_PROC_MEM_SIZE</link>
+#define             <link linkend="GLIBTOP-PROC-MEM-VSIZE--CAPS">GLIBTOP_PROC_MEM_VSIZE</link>
+#define             <link linkend="GLIBTOP-PROC-MEM-RESIDENT--CAPS">GLIBTOP_PROC_MEM_RESIDENT</link>
+#define             <link linkend="GLIBTOP-PROC-MEM-SHARE--CAPS">GLIBTOP_PROC_MEM_SHARE</link>
+#define             <link linkend="GLIBTOP-PROC-MEM-RSS--CAPS">GLIBTOP_PROC_MEM_RSS</link>
+#define             <link linkend="GLIBTOP-PROC-MEM-RSS-RLIM--CAPS">GLIBTOP_PROC_MEM_RSS_RLIM</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-MEM--CAPS">GLIBTOP_MAX_PROC_MEM</link>
+                    <link linkend="glibtop-proc-mem">glibtop_proc_mem</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-mem">glibtop_get_proc_mem</link>                (<link linkend="glibtop-proc-mem">glibtop_proc_mem</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-mem-r">glibtop_get_proc_mem_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-mem-l">glibtop_get_proc_mem_l</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-mem">glibtop_proc_mem</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-mem-p">glibtop_get_proc_mem_p</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-mem">glibtop_proc_mem</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-mem-s">glibtop_get_proc_mem_s</link>              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-mem">glibtop_proc_mem</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-procmem.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-procmem.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-MEM-SIZE--CAPS" role="macro">
+<title>GLIBTOP_PROC_MEM_SIZE</title>
+<indexterm zone="GLIBTOP-PROC-MEM-SIZE--CAPS"><primary sortas="GLIBTOP_PROC_MEM_SIZE">GLIBTOP_PROC_MEM_SIZE</primary></indexterm><programlisting>#define GLIBTOP_PROC_MEM_SIZE		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-MEM-VSIZE--CAPS" role="macro">
+<title>GLIBTOP_PROC_MEM_VSIZE</title>
+<indexterm zone="GLIBTOP-PROC-MEM-VSIZE--CAPS"><primary sortas="GLIBTOP_PROC_MEM_VSIZE">GLIBTOP_PROC_MEM_VSIZE</primary></indexterm><programlisting>#define GLIBTOP_PROC_MEM_VSIZE		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-MEM-RESIDENT--CAPS" role="macro">
+<title>GLIBTOP_PROC_MEM_RESIDENT</title>
+<indexterm zone="GLIBTOP-PROC-MEM-RESIDENT--CAPS"><primary sortas="GLIBTOP_PROC_MEM_RESIDENT">GLIBTOP_PROC_MEM_RESIDENT</primary></indexterm><programlisting>#define GLIBTOP_PROC_MEM_RESIDENT	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-MEM-SHARE--CAPS" role="macro">
+<title>GLIBTOP_PROC_MEM_SHARE</title>
+<indexterm zone="GLIBTOP-PROC-MEM-SHARE--CAPS"><primary sortas="GLIBTOP_PROC_MEM_SHARE">GLIBTOP_PROC_MEM_SHARE</primary></indexterm><programlisting>#define GLIBTOP_PROC_MEM_SHARE		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-MEM-RSS--CAPS" role="macro">
+<title>GLIBTOP_PROC_MEM_RSS</title>
+<indexterm zone="GLIBTOP-PROC-MEM-RSS--CAPS"><primary sortas="GLIBTOP_PROC_MEM_RSS">GLIBTOP_PROC_MEM_RSS</primary></indexterm><programlisting>#define GLIBTOP_PROC_MEM_RSS		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-MEM-RSS-RLIM--CAPS" role="macro">
+<title>GLIBTOP_PROC_MEM_RSS_RLIM</title>
+<indexterm zone="GLIBTOP-PROC-MEM-RSS-RLIM--CAPS"><primary sortas="GLIBTOP_PROC_MEM_RSS_RLIM">GLIBTOP_PROC_MEM_RSS_RLIM</primary></indexterm><programlisting>#define GLIBTOP_PROC_MEM_RSS_RLIM	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-MEM--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_MEM</title>
+<indexterm zone="GLIBTOP-MAX-PROC-MEM--CAPS"><primary sortas="GLIBTOP_MAX_PROC_MEM">GLIBTOP_MAX_PROC_MEM</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_MEM		6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-mem" role="struct">
+<title>glibtop_proc_mem</title>
+<indexterm zone="glibtop-proc-mem"><primary sortas="glibtop_proc_mem">glibtop_proc_mem</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 size;		/* total # of pages of memory */
+	guint64 vsize;		/* number of pages of virtual memory ... */
+	guint64 resident;	/* number of resident set
+				 * (non-swapped) pages (4k) */
+	guint64 share;		/* number of pages of shared (mmap'd) memory */
+	guint64 rss;		/* resident set size */
+	guint64 rss_rlim;	/* current limit (in bytes) of the rss
+				 * of the process; usually 2,147,483,647 */
+} glibtop_proc_mem;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-mem" role="function">
+<title>glibtop_get_proc_mem ()</title>
+<indexterm zone="glibtop-get-proc-mem"><primary sortas="glibtop_get_proc_mem">glibtop_get_proc_mem</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_mem                (<link linkend="glibtop-proc-mem">glibtop_proc_mem</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-mem-r" role="macro">
+<title>glibtop_get_proc_mem_r</title>
+<indexterm zone="glibtop-get-proc-mem-r"><primary sortas="glibtop_get_proc_mem_r">glibtop_get_proc_mem_r</primary></indexterm><programlisting>#define             glibtop_get_proc_mem_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-mem-l" role="function">
+<title>glibtop_get_proc_mem_l ()</title>
+<indexterm zone="glibtop-get-proc-mem-l"><primary sortas="glibtop_get_proc_mem_l">glibtop_get_proc_mem_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_mem_l              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-mem">glibtop_proc_mem</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-mem-p" role="function">
+<title>glibtop_get_proc_mem_p ()</title>
+<indexterm zone="glibtop-get-proc-mem-p"><primary sortas="glibtop_get_proc_mem_p">glibtop_get_proc_mem_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_mem_p              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-mem">glibtop_proc_mem</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-mem-s" role="function">
+<title>glibtop_get_proc_mem_s ()</title>
+<indexterm zone="glibtop-get-proc-mem-s"><primary sortas="glibtop_get_proc_mem_s">glibtop_get_proc_mem_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_mem_s              (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-mem">glibtop_proc_mem</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-proctime">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-proctime.top_of_page">proctime</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>proctime</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-proctime.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/proctime.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-TIME-START-TIME--CAPS">GLIBTOP_PROC_TIME_START_TIME</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-RTIME--CAPS">GLIBTOP_PROC_TIME_RTIME</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-UTIME--CAPS">GLIBTOP_PROC_TIME_UTIME</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-STIME--CAPS">GLIBTOP_PROC_TIME_STIME</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-CUTIME--CAPS">GLIBTOP_PROC_TIME_CUTIME</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-CSTIME--CAPS">GLIBTOP_PROC_TIME_CSTIME</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-TIMEOUT--CAPS">GLIBTOP_PROC_TIME_TIMEOUT</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-IT-REAL-VALUE--CAPS">GLIBTOP_PROC_TIME_IT_REAL_VALUE</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-FREQUENCY--CAPS">GLIBTOP_PROC_TIME_FREQUENCY</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-XCPU-UTIME--CAPS">GLIBTOP_PROC_TIME_XCPU_UTIME</link>
+#define             <link linkend="GLIBTOP-PROC-TIME-XCPU-STIME--CAPS">GLIBTOP_PROC_TIME_XCPU_STIME</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-TIME--CAPS">GLIBTOP_MAX_PROC_TIME</link>
+                    <link linkend="glibtop-proc-time">glibtop_proc_time</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-time">glibtop_get_proc_time</link>               (<link linkend="glibtop-proc-time">glibtop_proc_time</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-time-r">glibtop_get_proc_time_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-time-l">glibtop_get_proc_time_l</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-time">glibtop_proc_time</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-time-p">glibtop_get_proc_time_p</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-time">glibtop_proc_time</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-time-s">glibtop_get_proc_time_s</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-time">glibtop_proc_time</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-proctime.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-proctime.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-TIME-START-TIME--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_START_TIME</title>
+<indexterm zone="GLIBTOP-PROC-TIME-START-TIME--CAPS"><primary sortas="GLIBTOP_PROC_TIME_START_TIME">GLIBTOP_PROC_TIME_START_TIME</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_START_TIME	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-RTIME--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_RTIME</title>
+<indexterm zone="GLIBTOP-PROC-TIME-RTIME--CAPS"><primary sortas="GLIBTOP_PROC_TIME_RTIME">GLIBTOP_PROC_TIME_RTIME</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_RTIME		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-UTIME--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_UTIME</title>
+<indexterm zone="GLIBTOP-PROC-TIME-UTIME--CAPS"><primary sortas="GLIBTOP_PROC_TIME_UTIME">GLIBTOP_PROC_TIME_UTIME</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_UTIME		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-STIME--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_STIME</title>
+<indexterm zone="GLIBTOP-PROC-TIME-STIME--CAPS"><primary sortas="GLIBTOP_PROC_TIME_STIME">GLIBTOP_PROC_TIME_STIME</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_STIME		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-CUTIME--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_CUTIME</title>
+<indexterm zone="GLIBTOP-PROC-TIME-CUTIME--CAPS"><primary sortas="GLIBTOP_PROC_TIME_CUTIME">GLIBTOP_PROC_TIME_CUTIME</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_CUTIME	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-CSTIME--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_CSTIME</title>
+<indexterm zone="GLIBTOP-PROC-TIME-CSTIME--CAPS"><primary sortas="GLIBTOP_PROC_TIME_CSTIME">GLIBTOP_PROC_TIME_CSTIME</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_CSTIME	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-TIMEOUT--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_TIMEOUT</title>
+<indexterm zone="GLIBTOP-PROC-TIME-TIMEOUT--CAPS"><primary sortas="GLIBTOP_PROC_TIME_TIMEOUT">GLIBTOP_PROC_TIME_TIMEOUT</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_TIMEOUT	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-IT-REAL-VALUE--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_IT_REAL_VALUE</title>
+<indexterm zone="GLIBTOP-PROC-TIME-IT-REAL-VALUE--CAPS"><primary sortas="GLIBTOP_PROC_TIME_IT_REAL_VALUE">GLIBTOP_PROC_TIME_IT_REAL_VALUE</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_IT_REAL_VALUE	7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-FREQUENCY--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_FREQUENCY</title>
+<indexterm zone="GLIBTOP-PROC-TIME-FREQUENCY--CAPS"><primary sortas="GLIBTOP_PROC_TIME_FREQUENCY">GLIBTOP_PROC_TIME_FREQUENCY</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_FREQUENCY	8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-XCPU-UTIME--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_XCPU_UTIME</title>
+<indexterm zone="GLIBTOP-PROC-TIME-XCPU-UTIME--CAPS"><primary sortas="GLIBTOP_PROC_TIME_XCPU_UTIME">GLIBTOP_PROC_TIME_XCPU_UTIME</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_XCPU_UTIME	9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-TIME-XCPU-STIME--CAPS" role="macro">
+<title>GLIBTOP_PROC_TIME_XCPU_STIME</title>
+<indexterm zone="GLIBTOP-PROC-TIME-XCPU-STIME--CAPS"><primary sortas="GLIBTOP_PROC_TIME_XCPU_STIME">GLIBTOP_PROC_TIME_XCPU_STIME</primary></indexterm><programlisting>#define GLIBTOP_PROC_TIME_XCPU_STIME	10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-TIME--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_TIME</title>
+<indexterm zone="GLIBTOP-MAX-PROC-TIME--CAPS"><primary sortas="GLIBTOP_MAX_PROC_TIME">GLIBTOP_MAX_PROC_TIME</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_TIME		11
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-time" role="struct">
+<title>glibtop_proc_time</title>
+<indexterm zone="glibtop-proc-time"><primary sortas="glibtop_proc_time">glibtop_proc_time</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 start_time;	/* start time of process --
+				 * seconds since 1-1-70 */
+	guint64 rtime;		/* real time accumulated by process */
+	guint64 utime;		/* user-mode CPU time accumulated by process */
+	guint64 stime;		/* kernel-mode CPU time accumulated by process */
+	guint64 cutime;		/* cumulative utime of process and
+				 * reaped children */
+	guint64 cstime;		/* cumulative stime of process and
+				 * reaped children */
+	guint64 timeout;	/* The time (in jiffies) of the process's
+				 * next timeout */
+	guint64 it_real_value;	/* The time (in jiffies) before the
+				 * next SIGALRM is sent to the process
+				 * due to an interval timer. */
+	guint64 frequency;	/* Tick frequency. */
+	guint64 xcpu_utime [GLIBTOP_NCPU];	/* utime and stime for all CPUs on */
+	guint64 xcpu_stime [GLIBTOP_NCPU];	/* SMP machines. */
+} glibtop_proc_time;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-time" role="function">
+<title>glibtop_get_proc_time ()</title>
+<indexterm zone="glibtop-get-proc-time"><primary sortas="glibtop_get_proc_time">glibtop_get_proc_time</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_time               (<link linkend="glibtop-proc-time">glibtop_proc_time</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+Please note that under Linux, <link linkend="start-time"><type>start_time</type></link> value may be strange.
+Linux kernel defines <type>INITIAL_JIFFIES</type> which implies a time
+shift. Because <type>INITIAL_JIFFIES</type> is not user-space defined,
+we cannot use it to compute accurate <parameter>code</parameter>{start_time}. On Linux2.6,
+<type>INITIAL_JIFFIES</type> is 300 so <type>start_time</type> is 
+always 3s different from real start time of the given process. You 
+may also get shift results if your system clock is not synchronised 
+with your hardware clock. See <command>man hwclock</command>.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara> Process id to get the user and tty information
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-time-r" role="macro">
+<title>glibtop_get_proc_time_r</title>
+<indexterm zone="glibtop-get-proc-time-r"><primary sortas="glibtop_get_proc_time_r">glibtop_get_proc_time_r</primary></indexterm><programlisting>#define             glibtop_get_proc_time_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-time-l" role="function">
+<title>glibtop_get_proc_time_l ()</title>
+<indexterm zone="glibtop-get-proc-time-l"><primary sortas="glibtop_get_proc_time_l">glibtop_get_proc_time_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_time_l             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-time">glibtop_proc_time</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-time-p" role="function">
+<title>glibtop_get_proc_time_p ()</title>
+<indexterm zone="glibtop-get-proc-time-p"><primary sortas="glibtop_get_proc_time_p">glibtop_get_proc_time_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_time_p             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-time">glibtop_proc_time</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-time-s" role="function">
+<title>glibtop_get_proc_time_s ()</title>
+<indexterm zone="glibtop-get-proc-time-s"><primary sortas="glibtop_get_proc_time_s">glibtop_get_proc_time_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_time_s             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-time">glibtop_proc_time</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

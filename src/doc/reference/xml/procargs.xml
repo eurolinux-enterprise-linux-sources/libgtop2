@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-procargs">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-procargs.top_of_page">procargs</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>procargs</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-procargs.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/procargs.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-ARGS-SIZE--CAPS">GLIBTOP_PROC_ARGS_SIZE</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-ARGS--CAPS">GLIBTOP_MAX_PROC_ARGS</link>
+                    <link linkend="glibtop-proc-args">glibtop_proc_args</link>;
+<link linkend="char">char</link> *              <link linkend="glibtop-get-proc-args-l">glibtop_get_proc_args_l</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);
+<link linkend="char">char</link> *              <link linkend="glibtop-get-proc-args">glibtop_get_proc_args</link>               (<link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);
+#define             <link linkend="glibtop-get-proc-args-r">glibtop_get_proc_args_r</link>
+<link linkend="char">char</link> *              <link linkend="glibtop-get-proc-args-p">glibtop_get_proc_args_p</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);
+<link linkend="char">char</link> *              <link linkend="glibtop-get-proc-args-s">glibtop_get_proc_args_s</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);
+<link linkend="char">char</link> **             <link linkend="glibtop-get-proc-argv-l">glibtop_get_proc_argv_l</link>             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);
+<link linkend="char">char</link> **             <link linkend="glibtop-get-proc-argv">glibtop_get_proc_argv</link>               (<link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-procargs.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-procargs.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-ARGS-SIZE--CAPS" role="macro">
+<title>GLIBTOP_PROC_ARGS_SIZE</title>
+<indexterm zone="GLIBTOP-PROC-ARGS-SIZE--CAPS"><primary sortas="GLIBTOP_PROC_ARGS_SIZE">GLIBTOP_PROC_ARGS_SIZE</primary></indexterm><programlisting>#define GLIBTOP_PROC_ARGS_SIZE		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-ARGS--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_ARGS</title>
+<indexterm zone="GLIBTOP-MAX-PROC-ARGS--CAPS"><primary sortas="GLIBTOP_MAX_PROC_ARGS">GLIBTOP_MAX_PROC_ARGS</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_ARGS		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-args" role="struct">
+<title>glibtop_proc_args</title>
+<indexterm zone="glibtop-proc-args"><primary sortas="glibtop_proc_args">glibtop_proc_args</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 size;			/* GLIBTOP_PROC_ARGS_SIZE	*/
+} glibtop_proc_args;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-args-l" role="function">
+<title>glibtop_get_proc_args_l ()</title>
+<indexterm zone="glibtop-get-proc-args-l"><primary sortas="glibtop_get_proc_args_l">glibtop_get_proc_args_l</primary></indexterm><programlisting><link linkend="char">char</link> *              glibtop_get_proc_args_l             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_len</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-args" role="function">
+<title>glibtop_get_proc_args ()</title>
+<indexterm zone="glibtop-get-proc-args"><primary sortas="glibtop_get_proc_args">glibtop_get_proc_args</primary></indexterm><programlisting><link linkend="char">char</link> *              glibtop_get_proc_args               (<link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_len</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-args-r" role="macro">
+<title>glibtop_get_proc_args_r</title>
+<indexterm zone="glibtop-get-proc-args-r"><primary sortas="glibtop_get_proc_args_r">glibtop_get_proc_args_r</primary></indexterm><programlisting>#define             glibtop_get_proc_args_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-args-p" role="function">
+<title>glibtop_get_proc_args_p ()</title>
+<indexterm zone="glibtop-get-proc-args-p"><primary sortas="glibtop_get_proc_args_p">glibtop_get_proc_args_p</primary></indexterm><programlisting><link linkend="char">char</link> *              glibtop_get_proc_args_p             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_len</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-args-s" role="function">
+<title>glibtop_get_proc_args_s ()</title>
+<indexterm zone="glibtop-get-proc-args-s"><primary sortas="glibtop_get_proc_args_s">glibtop_get_proc_args_s</primary></indexterm><programlisting><link linkend="char">char</link> *              glibtop_get_proc_args_s             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_len</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-argv-l" role="function">
+<title>glibtop_get_proc_argv_l ()</title>
+<indexterm zone="glibtop-get-proc-argv-l"><primary sortas="glibtop_get_proc_argv_l">glibtop_get_proc_argv_l</primary></indexterm><programlisting><link linkend="char">char</link> **             glibtop_get_proc_argv_l             (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_len</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-argv" role="function">
+<title>glibtop_get_proc_argv ()</title>
+<indexterm zone="glibtop-get-proc-argv"><primary sortas="glibtop_get_proc_argv">glibtop_get_proc_argv</primary></indexterm><programlisting><link linkend="char">char</link> **             glibtop_get_proc_argv               (<link linkend="glibtop-proc-args">glibtop_proc_args</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid,
+                                                         <link linkend="unsigned-">unsigned </link> max_len);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>max_len</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

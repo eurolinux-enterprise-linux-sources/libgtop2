@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-Command">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-Command.top_of_page">Command</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Command</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-Command.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/command.h&gt;
+
+#define             <link linkend="GLIBTOP-CMND-QUIT--CAPS">GLIBTOP_CMND_QUIT</link>
+#define             <link linkend="GLIBTOP-CMND-SYSDEPS--CAPS">GLIBTOP_CMND_SYSDEPS</link>
+#define             <link linkend="GLIBTOP-CMND-CPU--CAPS">GLIBTOP_CMND_CPU</link>
+#define             <link linkend="GLIBTOP-CMND-MEM--CAPS">GLIBTOP_CMND_MEM</link>
+#define             <link linkend="GLIBTOP-CMND-SWAP--CAPS">GLIBTOP_CMND_SWAP</link>
+#define             <link linkend="GLIBTOP-CMND-UPTIME--CAPS">GLIBTOP_CMND_UPTIME</link>
+#define             <link linkend="GLIBTOP-CMND-LOADAVG--CAPS">GLIBTOP_CMND_LOADAVG</link>
+#define             <link linkend="GLIBTOP-CMND-SHM-LIMITS--CAPS">GLIBTOP_CMND_SHM_LIMITS</link>
+#define             <link linkend="GLIBTOP-CMND-MSG-LIMITS--CAPS">GLIBTOP_CMND_MSG_LIMITS</link>
+#define             <link linkend="GLIBTOP-CMND-SEM-LIMITS--CAPS">GLIBTOP_CMND_SEM_LIMITS</link>
+#define             <link linkend="GLIBTOP-CMND-PROCLIST--CAPS">GLIBTOP_CMND_PROCLIST</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-STATE--CAPS">GLIBTOP_CMND_PROC_STATE</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-UID--CAPS">GLIBTOP_CMND_PROC_UID</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-MEM--CAPS">GLIBTOP_CMND_PROC_MEM</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-TIME--CAPS">GLIBTOP_CMND_PROC_TIME</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-SIGNAL--CAPS">GLIBTOP_CMND_PROC_SIGNAL</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-KERNEL--CAPS">GLIBTOP_CMND_PROC_KERNEL</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-SEGMENT--CAPS">GLIBTOP_CMND_PROC_SEGMENT</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-ARGS--CAPS">GLIBTOP_CMND_PROC_ARGS</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-MAP--CAPS">GLIBTOP_CMND_PROC_MAP</link>
+#define             <link linkend="GLIBTOP-CMND-MOUNTLIST--CAPS">GLIBTOP_CMND_MOUNTLIST</link>
+#define             <link linkend="GLIBTOP-CMND-FSUSAGE--CAPS">GLIBTOP_CMND_FSUSAGE</link>
+#define             <link linkend="GLIBTOP-CMND-NETLOAD--CAPS">GLIBTOP_CMND_NETLOAD</link>
+#define             <link linkend="GLIBTOP-CMND-PPP--CAPS">GLIBTOP_CMND_PPP</link>
+#define             <link linkend="GLIBTOP-CMND-NETLIST--CAPS">GLIBTOP_CMND_NETLIST</link>
+#define             <link linkend="GLIBTOP-CMND-PROC-OPEN-FILES--CAPS">GLIBTOP_CMND_PROC_OPEN_FILES</link>
+#define             <link linkend="GLIBTOP-MAX-CMND--CAPS">GLIBTOP_MAX_CMND</link>
+                    <link linkend="glibtop-command">glibtop_command</link>;
+                    <link linkend="glibtop-response">glibtop_response</link>;
+union               <link linkend="glibtop-response-union">glibtop_response_union</link>;
+#define             <link linkend="glibtop-call">glibtop_call</link>                        (p1, p2, p3, p4)
+<link linkend="void">void</link> *              <link linkend="glibtop-call-l">glibtop_call_l</link>                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-">unsigned </link> command,
+                                                         <link linkend="size-t">size_t</link> send_size,
+                                                         const <link linkend="void">void</link> *send_buf,
+                                                         <link linkend="size-t">size_t</link> recv_size,
+                                                         <link linkend="void">void</link> *recv_buf);
+<link linkend="void">void</link> *              <link linkend="glibtop-call-s">glibtop_call_s</link>                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-">unsigned </link> command,
+                                                         <link linkend="size-t">size_t</link> send_size,
+                                                         const <link linkend="void">void</link> *send_buf,
+                                                         <link linkend="size-t">size_t</link> recv_size,
+                                                         <link linkend="void">void</link> *recv_buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-Command.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-Command.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-CMND-QUIT--CAPS" role="macro">
+<title>GLIBTOP_CMND_QUIT</title>
+<indexterm zone="GLIBTOP-CMND-QUIT--CAPS"><primary sortas="GLIBTOP_CMND_QUIT">GLIBTOP_CMND_QUIT</primary></indexterm><programlisting>#define GLIBTOP_CMND_QUIT		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-SYSDEPS--CAPS" role="macro">
+<title>GLIBTOP_CMND_SYSDEPS</title>
+<indexterm zone="GLIBTOP-CMND-SYSDEPS--CAPS"><primary sortas="GLIBTOP_CMND_SYSDEPS">GLIBTOP_CMND_SYSDEPS</primary></indexterm><programlisting>#define GLIBTOP_CMND_SYSDEPS		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-CPU--CAPS" role="macro">
+<title>GLIBTOP_CMND_CPU</title>
+<indexterm zone="GLIBTOP-CMND-CPU--CAPS"><primary sortas="GLIBTOP_CMND_CPU">GLIBTOP_CMND_CPU</primary></indexterm><programlisting>#define GLIBTOP_CMND_CPU		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-MEM--CAPS" role="macro">
+<title>GLIBTOP_CMND_MEM</title>
+<indexterm zone="GLIBTOP-CMND-MEM--CAPS"><primary sortas="GLIBTOP_CMND_MEM">GLIBTOP_CMND_MEM</primary></indexterm><programlisting>#define GLIBTOP_CMND_MEM		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-SWAP--CAPS" role="macro">
+<title>GLIBTOP_CMND_SWAP</title>
+<indexterm zone="GLIBTOP-CMND-SWAP--CAPS"><primary sortas="GLIBTOP_CMND_SWAP">GLIBTOP_CMND_SWAP</primary></indexterm><programlisting>#define GLIBTOP_CMND_SWAP		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-UPTIME--CAPS" role="macro">
+<title>GLIBTOP_CMND_UPTIME</title>
+<indexterm zone="GLIBTOP-CMND-UPTIME--CAPS"><primary sortas="GLIBTOP_CMND_UPTIME">GLIBTOP_CMND_UPTIME</primary></indexterm><programlisting>#define GLIBTOP_CMND_UPTIME		5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-LOADAVG--CAPS" role="macro">
+<title>GLIBTOP_CMND_LOADAVG</title>
+<indexterm zone="GLIBTOP-CMND-LOADAVG--CAPS"><primary sortas="GLIBTOP_CMND_LOADAVG">GLIBTOP_CMND_LOADAVG</primary></indexterm><programlisting>#define GLIBTOP_CMND_LOADAVG		6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-SHM-LIMITS--CAPS" role="macro">
+<title>GLIBTOP_CMND_SHM_LIMITS</title>
+<indexterm zone="GLIBTOP-CMND-SHM-LIMITS--CAPS"><primary sortas="GLIBTOP_CMND_SHM_LIMITS">GLIBTOP_CMND_SHM_LIMITS</primary></indexterm><programlisting>#define GLIBTOP_CMND_SHM_LIMITS		7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-MSG-LIMITS--CAPS" role="macro">
+<title>GLIBTOP_CMND_MSG_LIMITS</title>
+<indexterm zone="GLIBTOP-CMND-MSG-LIMITS--CAPS"><primary sortas="GLIBTOP_CMND_MSG_LIMITS">GLIBTOP_CMND_MSG_LIMITS</primary></indexterm><programlisting>#define GLIBTOP_CMND_MSG_LIMITS		8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-SEM-LIMITS--CAPS" role="macro">
+<title>GLIBTOP_CMND_SEM_LIMITS</title>
+<indexterm zone="GLIBTOP-CMND-SEM-LIMITS--CAPS"><primary sortas="GLIBTOP_CMND_SEM_LIMITS">GLIBTOP_CMND_SEM_LIMITS</primary></indexterm><programlisting>#define GLIBTOP_CMND_SEM_LIMITS		9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROCLIST--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROCLIST</title>
+<indexterm zone="GLIBTOP-CMND-PROCLIST--CAPS"><primary sortas="GLIBTOP_CMND_PROCLIST">GLIBTOP_CMND_PROCLIST</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROCLIST		10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-STATE--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_STATE</title>
+<indexterm zone="GLIBTOP-CMND-PROC-STATE--CAPS"><primary sortas="GLIBTOP_CMND_PROC_STATE">GLIBTOP_CMND_PROC_STATE</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_STATE		11
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-UID--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_UID</title>
+<indexterm zone="GLIBTOP-CMND-PROC-UID--CAPS"><primary sortas="GLIBTOP_CMND_PROC_UID">GLIBTOP_CMND_PROC_UID</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_UID		12
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-MEM--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_MEM</title>
+<indexterm zone="GLIBTOP-CMND-PROC-MEM--CAPS"><primary sortas="GLIBTOP_CMND_PROC_MEM">GLIBTOP_CMND_PROC_MEM</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_MEM		13
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-TIME--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_TIME</title>
+<indexterm zone="GLIBTOP-CMND-PROC-TIME--CAPS"><primary sortas="GLIBTOP_CMND_PROC_TIME">GLIBTOP_CMND_PROC_TIME</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_TIME		14
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-SIGNAL--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_SIGNAL</title>
+<indexterm zone="GLIBTOP-CMND-PROC-SIGNAL--CAPS"><primary sortas="GLIBTOP_CMND_PROC_SIGNAL">GLIBTOP_CMND_PROC_SIGNAL</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_SIGNAL	15
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-KERNEL--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_KERNEL</title>
+<indexterm zone="GLIBTOP-CMND-PROC-KERNEL--CAPS"><primary sortas="GLIBTOP_CMND_PROC_KERNEL">GLIBTOP_CMND_PROC_KERNEL</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_KERNEL	16
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-SEGMENT--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_SEGMENT</title>
+<indexterm zone="GLIBTOP-CMND-PROC-SEGMENT--CAPS"><primary sortas="GLIBTOP_CMND_PROC_SEGMENT">GLIBTOP_CMND_PROC_SEGMENT</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_SEGMENT	17
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-ARGS--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_ARGS</title>
+<indexterm zone="GLIBTOP-CMND-PROC-ARGS--CAPS"><primary sortas="GLIBTOP_CMND_PROC_ARGS">GLIBTOP_CMND_PROC_ARGS</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_ARGS		18
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-MAP--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_MAP</title>
+<indexterm zone="GLIBTOP-CMND-PROC-MAP--CAPS"><primary sortas="GLIBTOP_CMND_PROC_MAP">GLIBTOP_CMND_PROC_MAP</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_MAP		19
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-MOUNTLIST--CAPS" role="macro">
+<title>GLIBTOP_CMND_MOUNTLIST</title>
+<indexterm zone="GLIBTOP-CMND-MOUNTLIST--CAPS"><primary sortas="GLIBTOP_CMND_MOUNTLIST">GLIBTOP_CMND_MOUNTLIST</primary></indexterm><programlisting>#define GLIBTOP_CMND_MOUNTLIST		20
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-FSUSAGE--CAPS" role="macro">
+<title>GLIBTOP_CMND_FSUSAGE</title>
+<indexterm zone="GLIBTOP-CMND-FSUSAGE--CAPS"><primary sortas="GLIBTOP_CMND_FSUSAGE">GLIBTOP_CMND_FSUSAGE</primary></indexterm><programlisting>#define GLIBTOP_CMND_FSUSAGE		21
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-NETLOAD--CAPS" role="macro">
+<title>GLIBTOP_CMND_NETLOAD</title>
+<indexterm zone="GLIBTOP-CMND-NETLOAD--CAPS"><primary sortas="GLIBTOP_CMND_NETLOAD">GLIBTOP_CMND_NETLOAD</primary></indexterm><programlisting>#define GLIBTOP_CMND_NETLOAD		22
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PPP--CAPS" role="macro">
+<title>GLIBTOP_CMND_PPP</title>
+<indexterm zone="GLIBTOP-CMND-PPP--CAPS"><primary sortas="GLIBTOP_CMND_PPP">GLIBTOP_CMND_PPP</primary></indexterm><programlisting>#define GLIBTOP_CMND_PPP		23
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-NETLIST--CAPS" role="macro">
+<title>GLIBTOP_CMND_NETLIST</title>
+<indexterm zone="GLIBTOP-CMND-NETLIST--CAPS"><primary sortas="GLIBTOP_CMND_NETLIST">GLIBTOP_CMND_NETLIST</primary></indexterm><programlisting>#define GLIBTOP_CMND_NETLIST		24
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-CMND-PROC-OPEN-FILES--CAPS" role="macro">
+<title>GLIBTOP_CMND_PROC_OPEN_FILES</title>
+<indexterm zone="GLIBTOP-CMND-PROC-OPEN-FILES--CAPS"><primary sortas="GLIBTOP_CMND_PROC_OPEN_FILES">GLIBTOP_CMND_PROC_OPEN_FILES</primary></indexterm><programlisting>#define GLIBTOP_CMND_PROC_OPEN_FILES	25
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-CMND--CAPS" role="macro">
+<title>GLIBTOP_MAX_CMND</title>
+<indexterm zone="GLIBTOP-MAX-CMND--CAPS"><primary sortas="GLIBTOP_MAX_CMND">GLIBTOP_MAX_CMND</primary></indexterm><programlisting>#define GLIBTOP_MAX_CMND		28
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-command" role="struct">
+<title>glibtop_command</title>
+<indexterm zone="glibtop-command"><primary sortas="glibtop_command">glibtop_command</primary></indexterm><programlisting>typedef struct {
+	guint64	command;
+	guint64	size, data_size;
+	char		parameter [_GLIBTOP_PARAM_SIZE];
+} glibtop_command;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-response" role="struct">
+<title>glibtop_response</title>
+<indexterm zone="glibtop-response"><primary sortas="glibtop_response">glibtop_response</primary></indexterm><programlisting>typedef struct {
+	gint64 offset;
+	guint64 size, data_size;
+	glibtop_response_union u;
+} glibtop_response;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-response-union" role="union">
+<title>union glibtop_response_union</title>
+<indexterm zone="glibtop-response-union"><primary sortas="glibtop_response_union">glibtop_response_union</primary></indexterm><programlisting>union glibtop_response_union
+{
+	glibtop_union	data;
+	glibtop_sysdeps	sysdeps;
+};
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-call" role="macro">
+<title>glibtop_call()</title>
+<indexterm zone="glibtop-call"><primary sortas="glibtop_call">glibtop_call</primary></indexterm><programlisting>#define glibtop_call(p1, p2, p3, p4)	glibtop_call_r(glibtop_global_server, p1, p2, p3, p4)
+</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>p1</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>p2</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>p3</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>p4</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-call-l" role="function">
+<title>glibtop_call_l ()</title>
+<indexterm zone="glibtop-call-l"><primary sortas="glibtop_call_l">glibtop_call_l</primary></indexterm><programlisting><link linkend="void">void</link> *              glibtop_call_l                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-">unsigned </link> command,
+                                                         <link linkend="size-t">size_t</link> send_size,
+                                                         const <link linkend="void">void</link> *send_buf,
+                                                         <link linkend="size-t">size_t</link> recv_size,
+                                                         <link linkend="void">void</link> *recv_buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>command</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>send_size</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>send_buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>recv_size</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>recv_buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-call-s" role="function">
+<title>glibtop_call_s ()</title>
+<indexterm zone="glibtop-call-s"><primary sortas="glibtop_call_s">glibtop_call_s</primary></indexterm><programlisting><link linkend="void">void</link> *              glibtop_call_s                      (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="unsigned-">unsigned </link> command,
+                                                         <link linkend="size-t">size_t</link> send_size,
+                                                         const <link linkend="void">void</link> *send_buf,
+                                                         <link linkend="size-t">size_t</link> recv_size,
+                                                         <link linkend="void">void</link> *recv_buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>command</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>send_size</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>send_buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>recv_size</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>recv_buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

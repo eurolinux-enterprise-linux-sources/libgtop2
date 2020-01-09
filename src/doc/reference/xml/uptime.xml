@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-Uptime">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-Uptime.top_of_page">Uptime</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>Uptime</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-Uptime.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/uptime.h&gt;
+
+#define             <link linkend="GLIBTOP-UPTIME-UPTIME--CAPS">GLIBTOP_UPTIME_UPTIME</link>
+#define             <link linkend="GLIBTOP-UPTIME-IDLETIME--CAPS">GLIBTOP_UPTIME_IDLETIME</link>
+#define             <link linkend="GLIBTOP-UPTIME-BOOT-TIME--CAPS">GLIBTOP_UPTIME_BOOT_TIME</link>
+#define             <link linkend="GLIBTOP-MAX-UPTIME--CAPS">GLIBTOP_MAX_UPTIME</link>
+                    <link linkend="glibtop-uptime">glibtop_uptime</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-uptime">glibtop_get_uptime</link>                  (<link linkend="glibtop-uptime">glibtop_uptime</link> *buf);
+#define             <link linkend="glibtop-get-uptime-r">glibtop_get_uptime_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-uptime-l">glibtop_get_uptime_l</link>                (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-uptime">glibtop_uptime</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-uptime-p">glibtop_get_uptime_p</link>                (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-uptime">glibtop_uptime</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-uptime-s">glibtop_get_uptime_s</link>                (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-uptime">glibtop_uptime</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-Uptime.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-Uptime.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-UPTIME-UPTIME--CAPS" role="macro">
+<title>GLIBTOP_UPTIME_UPTIME</title>
+<indexterm zone="GLIBTOP-UPTIME-UPTIME--CAPS"><primary sortas="GLIBTOP_UPTIME_UPTIME">GLIBTOP_UPTIME_UPTIME</primary></indexterm><programlisting>#define GLIBTOP_UPTIME_UPTIME		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-UPTIME-IDLETIME--CAPS" role="macro">
+<title>GLIBTOP_UPTIME_IDLETIME</title>
+<indexterm zone="GLIBTOP-UPTIME-IDLETIME--CAPS"><primary sortas="GLIBTOP_UPTIME_IDLETIME">GLIBTOP_UPTIME_IDLETIME</primary></indexterm><programlisting>#define GLIBTOP_UPTIME_IDLETIME		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-UPTIME-BOOT-TIME--CAPS" role="macro">
+<title>GLIBTOP_UPTIME_BOOT_TIME</title>
+<indexterm zone="GLIBTOP-UPTIME-BOOT-TIME--CAPS"><primary sortas="GLIBTOP_UPTIME_BOOT_TIME">GLIBTOP_UPTIME_BOOT_TIME</primary></indexterm><programlisting>#define GLIBTOP_UPTIME_BOOT_TIME    2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-UPTIME--CAPS" role="macro">
+<title>GLIBTOP_MAX_UPTIME</title>
+<indexterm zone="GLIBTOP-MAX-UPTIME--CAPS"><primary sortas="GLIBTOP_MAX_UPTIME">GLIBTOP_MAX_UPTIME</primary></indexterm><programlisting>#define GLIBTOP_MAX_UPTIME		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-uptime" role="struct">
+<title>glibtop_uptime</title>
+<indexterm zone="glibtop-uptime"><primary sortas="glibtop_uptime">glibtop_uptime</primary></indexterm><programlisting>typedef struct {
+	guint64 flags;
+	double uptime;		/* GLIBTOP_UPTIME_UPTIME	*/
+	double idletime;	/* GLIBTOP_UPTIME_IDLETIME	*/
+	guint64 boot_time;
+} glibtop_uptime;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-uptime" role="function">
+<title>glibtop_get_uptime ()</title>
+<indexterm zone="glibtop-get-uptime"><primary sortas="glibtop_get_uptime">glibtop_get_uptime</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_uptime                  (<link linkend="glibtop-uptime">glibtop_uptime</link> *buf);</programlisting>
+<para>
+When porting LibGTop to a new system, you only need to implement 
+<link linkend="uptime"><type>uptime</type></link> and <link linkend="idletime"><type>idletime</type></link> if there's a faster or better way to obtain them
+as using function(glibtop_cpu) for it. Look at 
+<filename>sysdeps/freebsd/uptime.c</filename> for an
+example on how to obtain them using function(glibtop_cpu).</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> A location to return the system uptime
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-uptime-r" role="macro">
+<title>glibtop_get_uptime_r</title>
+<indexterm zone="glibtop-get-uptime-r"><primary sortas="glibtop_get_uptime_r">glibtop_get_uptime_r</primary></indexterm><programlisting>#define             glibtop_get_uptime_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-uptime-l" role="function">
+<title>glibtop_get_uptime_l ()</title>
+<indexterm zone="glibtop-get-uptime-l"><primary sortas="glibtop_get_uptime_l">glibtop_get_uptime_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_uptime_l                (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-uptime">glibtop_uptime</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-uptime-p" role="function">
+<title>glibtop_get_uptime_p ()</title>
+<indexterm zone="glibtop-get-uptime-p"><primary sortas="glibtop_get_uptime_p">glibtop_get_uptime_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_uptime_p                (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-uptime">glibtop_uptime</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-uptime-s" role="function">
+<title>glibtop_get_uptime_s ()</title>
+<indexterm zone="glibtop-get-uptime-s"><primary sortas="glibtop_get_uptime_s">glibtop_get_uptime_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_uptime_s                (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-uptime">glibtop_uptime</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

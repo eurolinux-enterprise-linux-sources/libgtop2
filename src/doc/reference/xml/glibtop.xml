@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-GlibTop">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-GlibTop.top_of_page">GlibTop</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>GlibTop</refname>
+<refpurpose>Server initilization</refpurpose>
+</refnamediv>
+<refsect1 id="libgtop-GlibTop.stability-level">
+<title>Stability Level</title>
+Stable, unless otherwise indicated
+</refsect1>
+
+<refsynopsisdiv id="libgtop-GlibTop.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop.h&gt;
+
+#define             <link linkend="GLIBTOP-MOUNTENTRY-LEN--CAPS">GLIBTOP_MOUNTENTRY_LEN</link>
+#define             <link linkend="LIBGTOP-CHECK-VERSION--CAPS">LIBGTOP_CHECK_VERSION</link>               (major, minor, micro)
+                    <link linkend="glibtop">glibtop</link>;
+extern              glibtop *<link linkend="glibtop-global-server">glibtop_global_server</link>;
+<link linkend="glibtop">glibtop</link> *           <link linkend="glibtop-init">glibtop_init</link>                        (void);
+<link linkend="glibtop">glibtop</link> *           <link linkend="glibtop-init-r">glibtop_init_r</link>                      (<link linkend="glibtop">glibtop</link> **server_ptr,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);
+<link linkend="glibtop">glibtop</link> *           <link linkend="glibtop-init-s">glibtop_init_s</link>                      (<link linkend="glibtop">glibtop</link> **server_ptr,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);
+extern              const unsigned long <link linkend="glibtop-server-features">glibtop_server_features</link>;
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-GlibTop.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+You do not need to worry about the <link linkend="glibtop"><type>glibtop</type></link> * server structure if
+you don't need - the library exports a <link linkend="glibtop-global-server"><type>glibtop_global_server</type></link>
+which you can use everywhere a <link linkend="glibtop"><type>glibtop</type></link> * is expected.
+</para>
+<para>
+Most of the library and all of the sysdeps function also have an alias
+(which is the function name without the <suffix>_l</suffix>, 
+<suffix>_s</suffix> or <suffix>_r</suffix> suffix) which don't 
+take a <link linkend="glibtop"><type>glibtop</type></link> * as argument but uses the <link linkend="glibtop-global-server"><type>glibtop_global_server</type></link> 
+instead.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-GlibTop.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-MOUNTENTRY-LEN--CAPS" role="macro">
+<title>GLIBTOP_MOUNTENTRY_LEN</title>
+<indexterm zone="GLIBTOP-MOUNTENTRY-LEN--CAPS"><primary sortas="GLIBTOP_MOUNTENTRY_LEN">GLIBTOP_MOUNTENTRY_LEN</primary></indexterm><programlisting>#define GLIBTOP_MOUNTENTRY_LEN	79
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="LIBGTOP-CHECK-VERSION--CAPS" role="macro">
+<title>LIBGTOP_CHECK_VERSION()</title>
+<indexterm zone="LIBGTOP-CHECK-VERSION--CAPS"><primary sortas="LIBGTOP_CHECK_VERSION">LIBGTOP_CHECK_VERSION</primary></indexterm><programlisting>#define             LIBGTOP_CHECK_VERSION(major, minor, micro)</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>major</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>minor</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>micro</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop" role="struct">
+<title>glibtop</title>
+<indexterm zone="glibtop"><primary sortas="glibtop">glibtop</primary></indexterm><programlisting>typedef struct {
+	unsigned flags;
+	unsigned method;		/* Server Method */
+	unsigned error_method;		/* Error Method */
+	glibtop_machine machine;	/* Machine dependent data */
+	int input [2];			/* Pipe client &lt;- server */
+	int output [2];			/* Pipe client -&gt; server */
+	int socket;			/* Accepted connection of a socket */
+	int ncpu;			/* Number of CPUs, zero if single-processor */
+	int real_ncpu;			/* Real number of CPUs. Only ncpu are monitored */
+	unsigned long os_version_code;	/* Version code of the operating system */
+	const char *name;		/* Program name for error messages */
+	const char *server_command;	/* Command used to invoke server */
+	const char *server_host;	/* Host the server should run on */
+	const char *server_user;	/* Name of the user on the target host */
+	const char *server_rsh;		/* Command used to connect to the target host */
+	unsigned long features;		/* Server is required for this features */
+	unsigned long server_port;	/* Port on which daemon is listening */
+	glibtop_sysdeps sysdeps;	/* Detailed feature list */
+	glibtop_sysdeps required;	/* Required feature list */
+	pid_t pid;			/* PID of the server */
+} glibtop;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-global-server" role="variable">
+<title>glibtop_global_server</title>
+<indexterm zone="glibtop-global-server"><primary sortas="glibtop_global_server">glibtop_global_server</primary></indexterm><programlisting>extern glibtop *glibtop_global_server;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-init" role="function">
+<title>glibtop_init ()</title>
+<indexterm zone="glibtop-init"><primary sortas="glibtop_init">glibtop_init</primary></indexterm><programlisting><link linkend="glibtop">glibtop</link> *           glibtop_init                        (void);</programlisting>
+<para>
+Server initialization.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara> A <link linkend="glibtop"><type>glibtop</type></link> reference.
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-init-r" role="function">
+<title>glibtop_init_r ()</title>
+<indexterm zone="glibtop-init-r"><primary sortas="glibtop_init_r">glibtop_init_r</primary></indexterm><programlisting><link linkend="glibtop">glibtop</link> *           glibtop_init_r                      (<link linkend="glibtop">glibtop</link> **server_ptr,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server_ptr</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>features</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-init-s" role="function">
+<title>glibtop_init_s ()</title>
+<indexterm zone="glibtop-init-s"><primary sortas="glibtop_init_s">glibtop_init_s</primary></indexterm><programlisting><link linkend="glibtop">glibtop</link> *           glibtop_init_s                      (<link linkend="glibtop">glibtop</link> **server_ptr,
+                                                         <link linkend="unsigned-long-">unsigned long </link> features,
+                                                         <link linkend="unsigned-">unsigned </link> flags);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server_ptr</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>features</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>flags</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><emphasis>Returns</emphasis>&#160;:</term><listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-server-features" role="variable">
+<title>glibtop_server_features</title>
+<indexterm zone="glibtop-server-features"><primary sortas="glibtop_server_features">glibtop_server_features</primary></indexterm><programlisting>extern const unsigned long glibtop_server_features;
+</programlisting>
+<para>
+</para></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

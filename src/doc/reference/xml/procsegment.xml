@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-procsegment">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-procsegment.top_of_page">procsegment</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>procsegment</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-procsegment.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/procsegment.h&gt;
+
+#define             <link linkend="GLIBTOP-PROC-SEGMENT-TEXT-RSS--CAPS">GLIBTOP_PROC_SEGMENT_TEXT_RSS</link>
+#define             <link linkend="GLIBTOP-PROC-SEGMENT-SHLIB-RSS--CAPS">GLIBTOP_PROC_SEGMENT_SHLIB_RSS</link>
+#define             <link linkend="GLIBTOP-PROC-SEGMENT-DATA-RSS--CAPS">GLIBTOP_PROC_SEGMENT_DATA_RSS</link>
+#define             <link linkend="GLIBTOP-PROC-SEGMENT-STACK-RSS--CAPS">GLIBTOP_PROC_SEGMENT_STACK_RSS</link>
+#define             <link linkend="GLIBTOP-PROC-SEGMENT-DIRTY-SIZE--CAPS">GLIBTOP_PROC_SEGMENT_DIRTY_SIZE</link>
+#define             <link linkend="GLIBTOP-PROC-SEGMENT-START-CODE--CAPS">GLIBTOP_PROC_SEGMENT_START_CODE</link>
+#define             <link linkend="GLIBTOP-PROC-SEGMENT-END-CODE--CAPS">GLIBTOP_PROC_SEGMENT_END_CODE</link>
+#define             <link linkend="GLIBTOP-PROC-SEGMENT-START-STACK--CAPS">GLIBTOP_PROC_SEGMENT_START_STACK</link>
+#define             <link linkend="GLIBTOP-MAX-PROC-SEGMENT--CAPS">GLIBTOP_MAX_PROC_SEGMENT</link>
+                    <link linkend="glibtop-proc-segment">glibtop_proc_segment</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-segment">glibtop_get_proc_segment</link>            (<link linkend="glibtop-proc-segment">glibtop_proc_segment</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+#define             <link linkend="glibtop-get-proc-segment-r">glibtop_get_proc_segment_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-segment-l">glibtop_get_proc_segment_l</link>          (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-segment">glibtop_proc_segment</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-segment-p">glibtop_get_proc_segment_p</link>          (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-segment">glibtop_proc_segment</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+<link linkend="void">void</link>                <link linkend="glibtop-get-proc-segment-s">glibtop_get_proc_segment_s</link>          (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-segment">glibtop_proc_segment</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-procsegment.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-procsegment.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PROC-SEGMENT-TEXT-RSS--CAPS" role="macro">
+<title>GLIBTOP_PROC_SEGMENT_TEXT_RSS</title>
+<indexterm zone="GLIBTOP-PROC-SEGMENT-TEXT-RSS--CAPS"><primary sortas="GLIBTOP_PROC_SEGMENT_TEXT_RSS">GLIBTOP_PROC_SEGMENT_TEXT_RSS</primary></indexterm><programlisting>#define GLIBTOP_PROC_SEGMENT_TEXT_RSS		0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SEGMENT-SHLIB-RSS--CAPS" role="macro">
+<title>GLIBTOP_PROC_SEGMENT_SHLIB_RSS</title>
+<indexterm zone="GLIBTOP-PROC-SEGMENT-SHLIB-RSS--CAPS"><primary sortas="GLIBTOP_PROC_SEGMENT_SHLIB_RSS">GLIBTOP_PROC_SEGMENT_SHLIB_RSS</primary></indexterm><programlisting>#define GLIBTOP_PROC_SEGMENT_SHLIB_RSS		1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SEGMENT-DATA-RSS--CAPS" role="macro">
+<title>GLIBTOP_PROC_SEGMENT_DATA_RSS</title>
+<indexterm zone="GLIBTOP-PROC-SEGMENT-DATA-RSS--CAPS"><primary sortas="GLIBTOP_PROC_SEGMENT_DATA_RSS">GLIBTOP_PROC_SEGMENT_DATA_RSS</primary></indexterm><programlisting>#define GLIBTOP_PROC_SEGMENT_DATA_RSS		2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SEGMENT-STACK-RSS--CAPS" role="macro">
+<title>GLIBTOP_PROC_SEGMENT_STACK_RSS</title>
+<indexterm zone="GLIBTOP-PROC-SEGMENT-STACK-RSS--CAPS"><primary sortas="GLIBTOP_PROC_SEGMENT_STACK_RSS">GLIBTOP_PROC_SEGMENT_STACK_RSS</primary></indexterm><programlisting>#define GLIBTOP_PROC_SEGMENT_STACK_RSS		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SEGMENT-DIRTY-SIZE--CAPS" role="macro">
+<title>GLIBTOP_PROC_SEGMENT_DIRTY_SIZE</title>
+<indexterm zone="GLIBTOP-PROC-SEGMENT-DIRTY-SIZE--CAPS"><primary sortas="GLIBTOP_PROC_SEGMENT_DIRTY_SIZE">GLIBTOP_PROC_SEGMENT_DIRTY_SIZE</primary></indexterm><programlisting>#define GLIBTOP_PROC_SEGMENT_DIRTY_SIZE		4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SEGMENT-START-CODE--CAPS" role="macro">
+<title>GLIBTOP_PROC_SEGMENT_START_CODE</title>
+<indexterm zone="GLIBTOP-PROC-SEGMENT-START-CODE--CAPS"><primary sortas="GLIBTOP_PROC_SEGMENT_START_CODE">GLIBTOP_PROC_SEGMENT_START_CODE</primary></indexterm><programlisting>#define GLIBTOP_PROC_SEGMENT_START_CODE		5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SEGMENT-END-CODE--CAPS" role="macro">
+<title>GLIBTOP_PROC_SEGMENT_END_CODE</title>
+<indexterm zone="GLIBTOP-PROC-SEGMENT-END-CODE--CAPS"><primary sortas="GLIBTOP_PROC_SEGMENT_END_CODE">GLIBTOP_PROC_SEGMENT_END_CODE</primary></indexterm><programlisting>#define GLIBTOP_PROC_SEGMENT_END_CODE		6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PROC-SEGMENT-START-STACK--CAPS" role="macro">
+<title>GLIBTOP_PROC_SEGMENT_START_STACK</title>
+<indexterm zone="GLIBTOP-PROC-SEGMENT-START-STACK--CAPS"><primary sortas="GLIBTOP_PROC_SEGMENT_START_STACK">GLIBTOP_PROC_SEGMENT_START_STACK</primary></indexterm><programlisting>#define GLIBTOP_PROC_SEGMENT_START_STACK	7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PROC-SEGMENT--CAPS" role="macro">
+<title>GLIBTOP_MAX_PROC_SEGMENT</title>
+<indexterm zone="GLIBTOP-MAX-PROC-SEGMENT--CAPS"><primary sortas="GLIBTOP_MAX_PROC_SEGMENT">GLIBTOP_MAX_PROC_SEGMENT</primary></indexterm><programlisting>#define GLIBTOP_MAX_PROC_SEGMENT		8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-proc-segment" role="struct">
+<title>glibtop_proc_segment</title>
+<indexterm zone="glibtop-proc-segment"><primary sortas="glibtop_proc_segment">glibtop_proc_segment</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 text_rss;	/* text resident set size */
+	guint64 shlib_rss;	/* shared-lib resident set size */
+	guint64 data_rss;	/* data resident set size */
+	guint64 stack_rss;	/* stack resident set size */
+	guint64 dirty_size;	/* size of dirty pages */
+	guint64 start_code;
+				/* address of beginning of code segment */
+	guint64 end_code;	/* address of end of code segment */
+	guint64 start_stack;	/* address of the bottom of stack segment */
+} glibtop_proc_segment;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-segment" role="function">
+<title>glibtop_get_proc_segment ()</title>
+<indexterm zone="glibtop-get-proc-segment"><primary sortas="glibtop_get_proc_segment">glibtop_get_proc_segment</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_segment            (<link linkend="glibtop-proc-segment">glibtop_proc_segment</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-segment-r" role="macro">
+<title>glibtop_get_proc_segment_r</title>
+<indexterm zone="glibtop-get-proc-segment-r"><primary sortas="glibtop_get_proc_segment_r">glibtop_get_proc_segment_r</primary></indexterm><programlisting>#define             glibtop_get_proc_segment_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-proc-segment-l" role="function">
+<title>glibtop_get_proc_segment_l ()</title>
+<indexterm zone="glibtop-get-proc-segment-l"><primary sortas="glibtop_get_proc_segment_l">glibtop_get_proc_segment_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_segment_l          (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-segment">glibtop_proc_segment</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-segment-p" role="function">
+<title>glibtop_get_proc_segment_p ()</title>
+<indexterm zone="glibtop-get-proc-segment-p"><primary sortas="glibtop_get_proc_segment_p">glibtop_get_proc_segment_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_segment_p          (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-segment">glibtop_proc_segment</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-proc-segment-s" role="function">
+<title>glibtop_get_proc_segment_s ()</title>
+<indexterm zone="glibtop-get-proc-segment-s"><primary sortas="glibtop_get_proc_segment_s">glibtop_get_proc_segment_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_proc_segment_s          (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-proc-segment">glibtop_proc_segment</link> *buf,
+                                                         <link linkend="pid-t">pid_t</link> pid);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>pid</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

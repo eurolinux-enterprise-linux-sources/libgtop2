@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-sem-limits">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-sem-limits.top_of_page">sem_limits</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>sem_limits</refname>
+<refpurpose></refpurpose>
+</refnamediv>
+
+<refsynopsisdiv id="libgtop-sem-limits.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/sem_limits.h&gt;
+
+#define             <link linkend="GLIBTOP-IPC-SEMMAP--CAPS">GLIBTOP_IPC_SEMMAP</link>
+#define             <link linkend="GLIBTOP-IPC-SEMMNI--CAPS">GLIBTOP_IPC_SEMMNI</link>
+#define             <link linkend="GLIBTOP-IPC-SEMMNS--CAPS">GLIBTOP_IPC_SEMMNS</link>
+#define             <link linkend="GLIBTOP-IPC-SEMMNU--CAPS">GLIBTOP_IPC_SEMMNU</link>
+#define             <link linkend="GLIBTOP-IPC-SEMMSL--CAPS">GLIBTOP_IPC_SEMMSL</link>
+#define             <link linkend="GLIBTOP-IPC-SEMOPM--CAPS">GLIBTOP_IPC_SEMOPM</link>
+#define             <link linkend="GLIBTOP-IPC-SEMUME--CAPS">GLIBTOP_IPC_SEMUME</link>
+#define             <link linkend="GLIBTOP-IPC-SEMUSZ--CAPS">GLIBTOP_IPC_SEMUSZ</link>
+#define             <link linkend="GLIBTOP-IPC-SEMVMX--CAPS">GLIBTOP_IPC_SEMVMX</link>
+#define             <link linkend="GLIBTOP-IPC-SEMAEM--CAPS">GLIBTOP_IPC_SEMAEM</link>
+#define             <link linkend="GLIBTOP-MAX-SEM-LIMITS--CAPS">GLIBTOP_MAX_SEM_LIMITS</link>
+                    <link linkend="glibtop-sem-limits">glibtop_sem_limits</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-sem-limits">glibtop_get_sem_limits</link>              (<link linkend="glibtop-sem-limits">glibtop_sem_limits</link> *buf);
+#define             <link linkend="glibtop-get-sem-limits-r">glibtop_get_sem_limits_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-sem-limits-l">glibtop_get_sem_limits_l</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-sem-limits">glibtop_sem_limits</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-sem-limits-p">glibtop_get_sem_limits_p</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-sem-limits">glibtop_sem_limits</link> *buf);
+<link linkend="void">void</link>                <link linkend="glibtop-get-sem-limits-s">glibtop_get_sem_limits_s</link>            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-sem-limits">glibtop_sem_limits</link> *buf);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-sem-limits.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-sem-limits.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-IPC-SEMMAP--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMMAP</title>
+<indexterm zone="GLIBTOP-IPC-SEMMAP--CAPS"><primary sortas="GLIBTOP_IPC_SEMMAP">GLIBTOP_IPC_SEMMAP</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMMAP	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMMNI--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMMNI</title>
+<indexterm zone="GLIBTOP-IPC-SEMMNI--CAPS"><primary sortas="GLIBTOP_IPC_SEMMNI">GLIBTOP_IPC_SEMMNI</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMMNI	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMMNS--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMMNS</title>
+<indexterm zone="GLIBTOP-IPC-SEMMNS--CAPS"><primary sortas="GLIBTOP_IPC_SEMMNS">GLIBTOP_IPC_SEMMNS</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMMNS	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMMNU--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMMNU</title>
+<indexterm zone="GLIBTOP-IPC-SEMMNU--CAPS"><primary sortas="GLIBTOP_IPC_SEMMNU">GLIBTOP_IPC_SEMMNU</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMMNU	3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMMSL--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMMSL</title>
+<indexterm zone="GLIBTOP-IPC-SEMMSL--CAPS"><primary sortas="GLIBTOP_IPC_SEMMSL">GLIBTOP_IPC_SEMMSL</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMMSL	4
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMOPM--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMOPM</title>
+<indexterm zone="GLIBTOP-IPC-SEMOPM--CAPS"><primary sortas="GLIBTOP_IPC_SEMOPM">GLIBTOP_IPC_SEMOPM</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMOPM	5
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMUME--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMUME</title>
+<indexterm zone="GLIBTOP-IPC-SEMUME--CAPS"><primary sortas="GLIBTOP_IPC_SEMUME">GLIBTOP_IPC_SEMUME</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMUME	6
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMUSZ--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMUSZ</title>
+<indexterm zone="GLIBTOP-IPC-SEMUSZ--CAPS"><primary sortas="GLIBTOP_IPC_SEMUSZ">GLIBTOP_IPC_SEMUSZ</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMUSZ	7
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMVMX--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMVMX</title>
+<indexterm zone="GLIBTOP-IPC-SEMVMX--CAPS"><primary sortas="GLIBTOP_IPC_SEMVMX">GLIBTOP_IPC_SEMVMX</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMVMX	8
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-IPC-SEMAEM--CAPS" role="macro">
+<title>GLIBTOP_IPC_SEMAEM</title>
+<indexterm zone="GLIBTOP-IPC-SEMAEM--CAPS"><primary sortas="GLIBTOP_IPC_SEMAEM">GLIBTOP_IPC_SEMAEM</primary></indexterm><programlisting>#define GLIBTOP_IPC_SEMAEM	9
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-SEM-LIMITS--CAPS" role="macro">
+<title>GLIBTOP_MAX_SEM_LIMITS</title>
+<indexterm zone="GLIBTOP-MAX-SEM-LIMITS--CAPS"><primary sortas="GLIBTOP_MAX_SEM_LIMITS">GLIBTOP_MAX_SEM_LIMITS</primary></indexterm><programlisting>#define GLIBTOP_MAX_SEM_LIMITS	10
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-sem-limits" role="struct">
+<title>glibtop_sem_limits</title>
+<indexterm zone="glibtop-sem-limits"><primary sortas="glibtop_sem_limits">glibtop_sem_limits</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 semmap;		/* GLIBTOP_IPC_SEMMAP	*/
+	guint64 semmni;		/* GLIBTOP_IPC_SEMMNI	*/
+	guint64 semmns;		/* GLIBTOP_IPC_SEMMNS	*/
+	guint64 semmnu;		/* GLIBTOP_IPC_SEMMNU	*/
+	guint64 semmsl;		/* GLIBTOP_IPC_SEMMSL	*/
+	guint64 semopm;		/* GLIBTOP_IPC_SEMOPM	*/
+	guint64 semume;		/* GLIBTOP_IPC_SEMUME	*/
+	guint64 semusz;		/* GLIBTOP_IPC_SEMUSZ	*/
+	guint64 semvmx;		/* GLIBTOP_IPC_SEMVMX	*/
+	guint64 semaem;		/* GLIBTOP_IPC_SEMAEM	*/
+} glibtop_sem_limits;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-sem-limits" role="function">
+<title>glibtop_get_sem_limits ()</title>
+<indexterm zone="glibtop-get-sem-limits"><primary sortas="glibtop_get_sem_limits">glibtop_get_sem_limits</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_sem_limits              (<link linkend="glibtop-sem-limits">glibtop_sem_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-sem-limits-r" role="macro">
+<title>glibtop_get_sem_limits_r</title>
+<indexterm zone="glibtop-get-sem-limits-r"><primary sortas="glibtop_get_sem_limits_r">glibtop_get_sem_limits_r</primary></indexterm><programlisting>#define             glibtop_get_sem_limits_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-sem-limits-l" role="function">
+<title>glibtop_get_sem_limits_l ()</title>
+<indexterm zone="glibtop-get-sem-limits-l"><primary sortas="glibtop_get_sem_limits_l">glibtop_get_sem_limits_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_sem_limits_l            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-sem-limits">glibtop_sem_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-sem-limits-p" role="function">
+<title>glibtop_get_sem_limits_p ()</title>
+<indexterm zone="glibtop-get-sem-limits-p"><primary sortas="glibtop_get_sem_limits_p">glibtop_get_sem_limits_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_sem_limits_p            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-sem-limits">glibtop_sem_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-sem-limits-s" role="function">
+<title>glibtop_get_sem_limits_s ()</title>
+<indexterm zone="glibtop-get-sem-limits-s"><primary sortas="glibtop_get_sem_limits_s">glibtop_get_sem_limits_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_sem_limits_s            (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-sem-limits">glibtop_sem_limits</link> *buf);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+
+</refentry>

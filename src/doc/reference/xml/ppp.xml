@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+               "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<refentry id="libgtop-PPP">
+<refmeta>
+<refentrytitle role="top_of_page" id="libgtop-PPP.top_of_page">PPP</refentrytitle>
+<manvolnum>3</manvolnum>
+<refmiscinfo>LIBGTOP Library</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname>PPP</refname>
+<refpurpose>PPP Usage.</refpurpose>
+</refnamediv>
+<refsect1 id="libgtop-PPP.stability-level">
+<title>Stability Level</title>
+Stable, unless otherwise indicated
+</refsect1>
+
+<refsynopsisdiv id="libgtop-PPP.synopsis" role="synopsis">
+<title role="synopsis.title">Synopsis</title>
+
+<synopsis>
+
+#include &lt;glibtop/ppp.h&gt;
+
+#define             <link linkend="GLIBTOP-PPP-STATE--CAPS">GLIBTOP_PPP_STATE</link>
+#define             <link linkend="GLIBTOP-PPP-BYTES-IN--CAPS">GLIBTOP_PPP_BYTES_IN</link>
+#define             <link linkend="GLIBTOP-PPP-BYTES-OUT--CAPS">GLIBTOP_PPP_BYTES_OUT</link>
+#define             <link linkend="GLIBTOP-MAX-PPP--CAPS">GLIBTOP_MAX_PPP</link>
+                    <link linkend="glibtop-ppp">glibtop_ppp</link>;
+<link linkend="void">void</link>                <link linkend="glibtop-get-ppp">glibtop_get_ppp</link>                     (<link linkend="glibtop-ppp">glibtop_ppp</link> *buf,
+                                                         <link linkend="unsigned-short-">unsigned short </link> device);
+#define             <link linkend="glibtop-get-ppp-r">glibtop_get_ppp_r</link>
+<link linkend="void">void</link>                <link linkend="glibtop-get-ppp-l">glibtop_get_ppp_l</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-ppp">glibtop_ppp</link> *buf,
+                                                         <link linkend="unsigned-short-">unsigned short </link> device);
+<link linkend="void">void</link>                <link linkend="glibtop-get-ppp-p">glibtop_get_ppp_p</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-ppp">glibtop_ppp</link> *buf,
+                                                         <link linkend="unsigned-short-">unsigned short </link> device);
+<link linkend="void">void</link>                <link linkend="glibtop-get-ppp-s">glibtop_get_ppp_s</link>                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-ppp">glibtop_ppp</link> *buf,
+                                                         <link linkend="unsigned-short-">unsigned short </link> device);
+</synopsis>
+</refsynopsisdiv>
+
+
+
+
+
+
+
+
+
+<refsect1 id="libgtop-PPP.description" role="desc">
+<title role="desc.title">Description</title>
+<para>
+Management of a PPP device.</para>
+<para>
+</para>
+</refsect1>
+
+<refsect1 id="libgtop-PPP.details" role="details">
+<title role="details.title">Details</title>
+<refsect2 id="GLIBTOP-PPP-STATE--CAPS" role="macro">
+<title>GLIBTOP_PPP_STATE</title>
+<indexterm zone="GLIBTOP-PPP-STATE--CAPS"><primary sortas="GLIBTOP_PPP_STATE">GLIBTOP_PPP_STATE</primary></indexterm><programlisting>#define GLIBTOP_PPP_STATE	0
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PPP-BYTES-IN--CAPS" role="macro">
+<title>GLIBTOP_PPP_BYTES_IN</title>
+<indexterm zone="GLIBTOP-PPP-BYTES-IN--CAPS"><primary sortas="GLIBTOP_PPP_BYTES_IN">GLIBTOP_PPP_BYTES_IN</primary></indexterm><programlisting>#define GLIBTOP_PPP_BYTES_IN	1
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-PPP-BYTES-OUT--CAPS" role="macro">
+<title>GLIBTOP_PPP_BYTES_OUT</title>
+<indexterm zone="GLIBTOP-PPP-BYTES-OUT--CAPS"><primary sortas="GLIBTOP_PPP_BYTES_OUT">GLIBTOP_PPP_BYTES_OUT</primary></indexterm><programlisting>#define GLIBTOP_PPP_BYTES_OUT	2
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="GLIBTOP-MAX-PPP--CAPS" role="macro">
+<title>GLIBTOP_MAX_PPP</title>
+<indexterm zone="GLIBTOP-MAX-PPP--CAPS"><primary sortas="GLIBTOP_MAX_PPP">GLIBTOP_MAX_PPP</primary></indexterm><programlisting>#define GLIBTOP_MAX_PPP		3
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-ppp" role="struct">
+<title>glibtop_ppp</title>
+<indexterm zone="glibtop-ppp"><primary sortas="glibtop_ppp">glibtop_ppp</primary></indexterm><programlisting>typedef struct {
+	guint64	flags;
+	guint64 state;			/* GLIBTOP_PPP_STATE		*/
+	guint64 bytes_in;		/* GLIBTOP_PPP_BYTES_IN		*/
+	guint64 bytes_out;		/* GLIBTOP_PPP_BYTES_OUT	*/
+} glibtop_ppp;
+</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-ppp" role="function">
+<title>glibtop_get_ppp ()</title>
+<indexterm zone="glibtop-get-ppp"><primary sortas="glibtop_get_ppp">glibtop_get_ppp</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_ppp                     (<link linkend="glibtop-ppp">glibtop_ppp</link> *buf,
+                                                         <link linkend="unsigned-short-">unsigned short </link> device);</programlisting>
+<para>
+Get the PPP usage.</para>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara> A location to return the PPP usage
+<parameter>short</parameter> device: The device to ask information
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-ppp-r" role="macro">
+<title>glibtop_get_ppp_r</title>
+<indexterm zone="glibtop-get-ppp-r"><primary sortas="glibtop_get_ppp_r">glibtop_get_ppp_r</primary></indexterm><programlisting>#define             glibtop_get_ppp_r</programlisting>
+<para>
+</para></refsect2>
+<refsect2 id="glibtop-get-ppp-l" role="function">
+<title>glibtop_get_ppp_l ()</title>
+<indexterm zone="glibtop-get-ppp-l"><primary sortas="glibtop_get_ppp_l">glibtop_get_ppp_l</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_ppp_l                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-ppp">glibtop_ppp</link> *buf,
+                                                         <link linkend="unsigned-short-">unsigned short </link> device);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-ppp-p" role="function">
+<title>glibtop_get_ppp_p ()</title>
+<indexterm zone="glibtop-get-ppp-p"><primary sortas="glibtop_get_ppp_p">glibtop_get_ppp_p</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_ppp_p                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-ppp">glibtop_ppp</link> *buf,
+                                                         <link linkend="unsigned-short-">unsigned short </link> device);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+<refsect2 id="glibtop-get-ppp-s" role="function">
+<title>glibtop_get_ppp_s ()</title>
+<indexterm zone="glibtop-get-ppp-s"><primary sortas="glibtop_get_ppp_s">glibtop_get_ppp_s</primary></indexterm><programlisting><link linkend="void">void</link>                glibtop_get_ppp_s                   (<link linkend="glibtop">glibtop</link> *server,
+                                                         <link linkend="glibtop-ppp">glibtop_ppp</link> *buf,
+                                                         <link linkend="unsigned-short-">unsigned short </link> device);</programlisting>
+<para>
+</para><variablelist role="params">
+<varlistentry><term><parameter>server</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>buf</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+<varlistentry><term><parameter>device</parameter>&#160;:</term>
+<listitem><simpara>
+</simpara></listitem></varlistentry>
+</variablelist></refsect2>
+
+</refsect1>
+
+
+
+<refsect1 id="libgtop-PPP.see-also">
+<title>See Also</title>
+#libgtop-netload, <link linkend="libgtop-netlist"><type>libgtop-netlist</type></link>
+</refsect1>
+
+</refentry>

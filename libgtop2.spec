@@ -7,7 +7,7 @@
 Name:		libgtop2
 Summary:        libgtop library (version 2)
 Version: 	2.28.0
-Release: 	3%{?dist}
+Release: 	7%{?dist}
 License: 	GPLv2+
 URL:            http://download.gnome.org/sources/libgtop/2.28
 Group:          System Environment/Libraries
@@ -19,6 +19,8 @@ BuildRequires:  intltool
 
 Patch0:         add-more-cpus.patch
 Patch1:		translation-fixes.patch
+# https://bugzilla.redhat.com/show_bug.cgi?id=990659
+Patch2:		libgtop2-2.28.0-cpu-affinity.patch
 
 %description
 libgtop is a library for portably obtaining information about processes,
@@ -41,6 +43,7 @@ files to allow you to develop with libgtop.
 
 %patch0 -p1 -b .add-more-cpus
 %patch1 -p1 -b .translation-fixes
+%patch2 -p1 -b .cpu-affinity
 
 %build
 %configure --disable-gtk-doc --disable-static
@@ -77,6 +80,18 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_datadir}/info
 
 %changelog
+* Wed Feb 10 2016 David King <dking@redhat.com> - 2.28.0-7
+- Drop problematic disk activity patch (#579818)
+
+* Thu Feb 04 2016 David King <dking@redhat.com> - 2.28.0-6
+- Refresh disk activity patch from upstream (#579818)
+
+* Mon Nov 02 2015 David King <dking@redhat.com> - 2.28.0-5
+- Fix CPU affinity with large number of CPUs (#990659)
+
+* Thu Oct 15 2015 David King <dking@redhat.com> - 2.28.0-4
+- Fix disk activity monitor (#579818)
+
 * Tue Jun 29 2010 Soren Sandmann <ssp@redhat.com> - 2.28.0-3
 - Add translation fixes from bug 589223
 

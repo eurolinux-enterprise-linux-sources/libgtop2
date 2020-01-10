@@ -1,5 +1,3 @@
-/* $OpenBSD: loadavg.c,v 1.2 2011/05/23 19:35:53 jasper Exp $	*/
-
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -34,7 +32,7 @@ static const unsigned long _glibtop_sysdeps_loadavg =
 /* Init function. */
 
 void
-_glibtop_init_loadavg_p (glibtop *server)
+_glibtop_init_loadavg_s (glibtop *server)
 {
 	server->sysdeps.loadavg = _glibtop_sysdeps_loadavg;
 }
@@ -42,7 +40,7 @@ _glibtop_init_loadavg_p (glibtop *server)
 /* Provides load averange. */
 
 void
-glibtop_get_loadavg_p (glibtop *server, glibtop_loadavg *buf)
+glibtop_get_loadavg_s (glibtop *server, glibtop_loadavg *buf)
 {
 	double ldavg[3];
 	int i;

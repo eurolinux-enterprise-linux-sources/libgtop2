@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
 <book xmlns="http://www.devhelp.net/book" title="Libgtop Reference Manual" link="index.html" author="Martin  BauligGermán Poó-Caamaño" name="libgtop" version="2" language="c">
   <chapters>
     <sub name="White paper" link="libgtop-white-paper.html">
@@ -18,7 +17,7 @@
       <sub name="Net List" link="libgtop-Net-List.html"/>
       <sub name="open" link="libgtop-open.html"/>
       <sub name="parameter" link="libgtop-parameter.html"/>
-      <sub name="procargs" link="libgtop-procargs.html"/>
+      <sub name="Process Arguments" link="libgtop-Process-Arguments.html"/>
       <sub name="procmem" link="libgtop-procmem.html"/>
       <sub name="procopenfiles" link="libgtop-procopenfiles.html"/>
       <sub name="procsegment" link="libgtop-procsegment.html"/>
@@ -26,13 +25,13 @@
       <sub name="sysdeps" link="libgtop-sysdeps.html"/>
       <sub name="procstate" link="libgtop-procstate.html"/>
       <sub name="procuid" link="libgtop-procuid.html"/>
-      <sub name="proctime" link="libgtop-proctime.html"/>
+      <sub name="Process Time" link="libgtop-Process-Time.html"/>
       <sub name="signal" link="libgtop-signal.html"/>
       <sub name="procmap" link="libgtop-procmap.html"/>
       <sub name="sysinfo" link="libgtop-sysinfo.html"/>
       <sub name="union" link="libgtop-union.html"/>
       <sub name="version" link="libgtop-version.html"/>
-      <sub name="proclist" link="libgtop-proclist.html"/>
+      <sub name="Process List" link="libgtop-Process-List.html"/>
       <sub name="sem_limits" link="libgtop-sem-limits.html"/>
       <sub name="prockernel" link="libgtop-prockernel.html"/>
       <sub name="fsusage" link="libgtop-fsusage.html"/>
@@ -45,18 +44,21 @@
     </sub>
   </chapters>
   <functions>
-    <keyword type="macro" name="GLIBTOP_MOUNTENTRY_LEN" link="libgtop-GlibTop.html#GLIBTOP-MOUNTENTRY-LEN:CAPS"/>
     <keyword type="macro" name="LIBGTOP_CHECK_VERSION()" link="libgtop-GlibTop.html#LIBGTOP-CHECK-VERSION:CAPS"/>
+    <keyword type="function" name="glibtop_init ()" link="libgtop-GlibTop.html#glibtop-init"/>
+    <keyword type="function" name="glibtop_init_r ()" link="libgtop-GlibTop.html#glibtop-init-r"/>
+    <keyword type="function" name="glibtop_init_s ()" link="libgtop-GlibTop.html#glibtop-init-s"/>
+    <keyword type="macro" name="GLIBTOP_MOUNTENTRY_LEN" link="libgtop-GlibTop.html#GLIBTOP-MOUNTENTRY-LEN:CAPS"/>
     <keyword type="struct" name="struct glibtop" link="libgtop-GlibTop.html#glibtop"/>
     <keyword type="variable" name="glibtop_global_server" link="libgtop-GlibTop.html#glibtop-global-server"/>
-    <keyword type="function" name="glibtop_init ()" link="libgtop-GlibTop.html#glibtop-init"/>
-    <keyword type="function" name="glibtop_init_r ()" link="libgtop-GlibTop.html#glibtop-init-r"/>
-    <keyword type="function" name="glibtop_init_s ()" link="libgtop-GlibTop.html#glibtop-init-s"/>
     <keyword type="variable" name="glibtop_server_features" link="libgtop-GlibTop.html#glibtop-server-features"/>
-    <keyword type="function" name="glibtop_close ()" link="libgtop-Close.html#glibtop-close"/>
-    <keyword type="function" name="glibtop_close_r ()" link="libgtop-Close.html#glibtop-close-r"/>
-    <keyword type="function" name="glibtop_close_s ()" link="libgtop-Close.html#glibtop-close-s"/>
-    <keyword type="function" name="glibtop_close_p ()" link="libgtop-Close.html#glibtop-close-p"/>
+    <keyword type="function" name="glibtop_close ()" link="libgtop-Close.html#glibtop-close"/>
+    <keyword type="function" name="glibtop_close_r ()" link="libgtop-Close.html#glibtop-close-r"/>
+    <keyword type="function" name="glibtop_close_s ()" link="libgtop-Close.html#glibtop-close-s"/>
+    <keyword type="function" name="glibtop_close_p ()" link="libgtop-Close.html#glibtop-close-p"/>
+    <keyword type="macro" name="glibtop_call()" link="libgtop-Command.html#glibtop-call"/>
+    <keyword type="function" name="glibtop_call_l ()" link="libgtop-Command.html#glibtop-call-l"/>
+    <keyword type="function" name="glibtop_call_s ()" link="libgtop-Command.html#glibtop-call-s"/>
     <keyword type="macro" name="GLIBTOP_CMND_QUIT" link="libgtop-Command.html#GLIBTOP-CMND-QUIT:CAPS"/>
     <keyword type="macro" name="GLIBTOP_CMND_SYSDEPS" link="libgtop-Command.html#GLIBTOP-CMND-SYSDEPS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_CMND_CPU" link="libgtop-Command.html#GLIBTOP-CMND-CPU:CAPS"/>
@@ -87,9 +89,10 @@
     <keyword type="struct" name="struct glibtop_command" link="libgtop-Command.html#glibtop-command"/>
     <keyword type="struct" name="struct glibtop_response" link="libgtop-Command.html#glibtop-response"/>
     <keyword type="union" name="union glibtop_response_union" link="libgtop-Command.html#glibtop-response-union"/>
-    <keyword type="macro" name="glibtop_call()" link="libgtop-Command.html#glibtop-call"/>
-    <keyword type="function" name="glibtop_call_l ()" link="libgtop-Command.html#glibtop-call-l"/>
-    <keyword type="function" name="glibtop_call_s ()" link="libgtop-Command.html#glibtop-call-s"/>
+    <keyword type="function" name="glibtop_get_netload ()" link="libgtop-Net-Load.html#glibtop-get-netload"/>
+    <keyword type="function" name="glibtop_get_netload_l ()" link="libgtop-Net-Load.html#glibtop-get-netload-l"/>
+    <keyword type="function" name="glibtop_get_netload_p ()" link="libgtop-Net-Load.html#glibtop-get-netload-p"/>
+    <keyword type="function" name="glibtop_get_netload_s ()" link="libgtop-Net-Load.html#glibtop-get-netload-s"/>
     <keyword type="macro" name="GLIBTOP_NETLOAD_IF_FLAGS" link="libgtop-Net-Load.html#GLIBTOP-NETLOAD-IF-FLAGS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_NETLOAD_MTU" link="libgtop-Net-Load.html#GLIBTOP-NETLOAD-MTU:CAPS"/>
     <keyword type="macro" name="GLIBTOP_NETLOAD_SUBNET" link="libgtop-Net-Load.html#GLIBTOP-NETLOAD-SUBNET:CAPS"/>
@@ -110,21 +113,21 @@
     <keyword type="macro" name="GLIBTOP_NETLOAD_HWADDRESS" link="libgtop-Net-Load.html#GLIBTOP-NETLOAD-HWADDRESS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_NETLOAD" link="libgtop-Net-Load.html#GLIBTOP-MAX-NETLOAD:CAPS"/>
     <keyword type="struct" name="struct glibtop_netload" link="libgtop-Net-Load.html#glibtop-netload"/>
-    <keyword type="function" name="glibtop_get_netload ()" link="libgtop-Net-Load.html#glibtop-get-netload"/>
     <keyword type="macro" name="glibtop_get_netload_r" link="libgtop-Net-Load.html#glibtop-get-netload-r"/>
-    <keyword type="function" name="glibtop_get_netload_l ()" link="libgtop-Net-Load.html#glibtop-get-netload-l"/>
-    <keyword type="function" name="glibtop_get_netload_p ()" link="libgtop-Net-Load.html#glibtop-get-netload-p"/>
-    <keyword type="function" name="glibtop_get_netload_s ()" link="libgtop-Net-Load.html#glibtop-get-netload-s"/>
+    <keyword type="function" name="glibtop_get_ppp ()" link="libgtop-PPP.html#glibtop-get-ppp"/>
+    <keyword type="function" name="glibtop_get_ppp_l ()" link="libgtop-PPP.html#glibtop-get-ppp-l"/>
+    <keyword type="function" name="glibtop_get_ppp_p ()" link="libgtop-PPP.html#glibtop-get-ppp-p"/>
+    <keyword type="function" name="glibtop_get_ppp_s ()" link="libgtop-PPP.html#glibtop-get-ppp-s"/>
     <keyword type="macro" name="GLIBTOP_PPP_STATE" link="libgtop-PPP.html#GLIBTOP-PPP-STATE:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PPP_BYTES_IN" link="libgtop-PPP.html#GLIBTOP-PPP-BYTES-IN:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PPP_BYTES_OUT" link="libgtop-PPP.html#GLIBTOP-PPP-BYTES-OUT:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_PPP" link="libgtop-PPP.html#GLIBTOP-MAX-PPP:CAPS"/>
     <keyword type="struct" name="struct glibtop_ppp" link="libgtop-PPP.html#glibtop-ppp"/>
-    <keyword type="function" name="glibtop_get_ppp ()" link="libgtop-PPP.html#glibtop-get-ppp"/>
     <keyword type="macro" name="glibtop_get_ppp_r" link="libgtop-PPP.html#glibtop-get-ppp-r"/>
-    <keyword type="function" name="glibtop_get_ppp_l ()" link="libgtop-PPP.html#glibtop-get-ppp-l"/>
-    <keyword type="function" name="glibtop_get_ppp_p ()" link="libgtop-PPP.html#glibtop-get-ppp-p"/>
-    <keyword type="function" name="glibtop_get_ppp_s ()" link="libgtop-PPP.html#glibtop-get-ppp-s"/>
+    <keyword type="function" name="glibtop_get_shm_limits ()" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits"/>
+    <keyword type="function" name="glibtop_get_shm_limits_l ()" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits-l"/>
+    <keyword type="function" name="glibtop_get_shm_limits_p ()" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits-p"/>
+    <keyword type="function" name="glibtop_get_shm_limits_s ()" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits-s"/>
     <keyword type="macro" name="GLIBTOP_IPC_SHMMAX" link="libgtop-Shared-Memory-Limits.html#GLIBTOP-IPC-SHMMAX:CAPS"/>
     <keyword type="macro" name="GLIBTOP_IPC_SHMMIN" link="libgtop-Shared-Memory-Limits.html#GLIBTOP-IPC-SHMMIN:CAPS"/>
     <keyword type="macro" name="GLIBTOP_IPC_SHMMNI" link="libgtop-Shared-Memory-Limits.html#GLIBTOP-IPC-SHMMNI:CAPS"/>
@@ -132,29 +135,29 @@
     <keyword type="macro" name="GLIBTOP_IPC_SHMALL" link="libgtop-Shared-Memory-Limits.html#GLIBTOP-IPC-SHMALL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_SHM_LIMITS" link="libgtop-Shared-Memory-Limits.html#GLIBTOP-MAX-SHM-LIMITS:CAPS"/>
     <keyword type="struct" name="struct glibtop_shm_limits" link="libgtop-Shared-Memory-Limits.html#glibtop-shm-limits"/>
-    <keyword type="function" name="glibtop_get_shm_limits ()" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits"/>
     <keyword type="macro" name="glibtop_get_shm_limits_r" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits-r"/>
-    <keyword type="function" name="glibtop_get_shm_limits_l ()" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits-l"/>
-    <keyword type="function" name="glibtop_get_shm_limits_p ()" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits-p"/>
-    <keyword type="function" name="glibtop_get_shm_limits_s ()" link="libgtop-Shared-Memory-Limits.html#glibtop-get-shm-limits-s"/>
+    <keyword type="function" name="glibtop_get_uptime ()" link="libgtop-Uptime.html#glibtop-get-uptime"/>
+    <keyword type="function" name="glibtop_get_uptime_l ()" link="libgtop-Uptime.html#glibtop-get-uptime-l"/>
+    <keyword type="function" name="glibtop_get_uptime_p ()" link="libgtop-Uptime.html#glibtop-get-uptime-p"/>
+    <keyword type="function" name="glibtop_get_uptime_s ()" link="libgtop-Uptime.html#glibtop-get-uptime-s"/>
     <keyword type="macro" name="GLIBTOP_UPTIME_UPTIME" link="libgtop-Uptime.html#GLIBTOP-UPTIME-UPTIME:CAPS"/>
     <keyword type="macro" name="GLIBTOP_UPTIME_IDLETIME" link="libgtop-Uptime.html#GLIBTOP-UPTIME-IDLETIME:CAPS"/>
     <keyword type="macro" name="GLIBTOP_UPTIME_BOOT_TIME" link="libgtop-Uptime.html#GLIBTOP-UPTIME-BOOT-TIME:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_UPTIME" link="libgtop-Uptime.html#GLIBTOP-MAX-UPTIME:CAPS"/>
     <keyword type="struct" name="struct glibtop_uptime" link="libgtop-Uptime.html#glibtop-uptime"/>
-    <keyword type="function" name="glibtop_get_uptime ()" link="libgtop-Uptime.html#glibtop-get-uptime"/>
     <keyword type="macro" name="glibtop_get_uptime_r" link="libgtop-Uptime.html#glibtop-get-uptime-r"/>
-    <keyword type="function" name="glibtop_get_uptime_l ()" link="libgtop-Uptime.html#glibtop-get-uptime-l"/>
-    <keyword type="function" name="glibtop_get_uptime_p ()" link="libgtop-Uptime.html#glibtop-get-uptime-p"/>
-    <keyword type="function" name="glibtop_get_uptime_s ()" link="libgtop-Uptime.html#glibtop-get-uptime-s"/>
+    <keyword type="function" name="glibtop_get_netlist ()" link="libgtop-Net-List.html#glibtop-get-netlist"/>
+    <keyword type="function" name="glibtop_get_netlist_l ()" link="libgtop-Net-List.html#glibtop-get-netlist-l"/>
+    <keyword type="function" name="glibtop_get_netlist_p ()" link="libgtop-Net-List.html#glibtop-get-netlist-p"/>
+    <keyword type="function" name="glibtop_get_netlist_s ()" link="libgtop-Net-List.html#glibtop-get-netlist-s"/>
     <keyword type="macro" name="GLIBTOP_NETLIST_NUMBER" link="libgtop-Net-List.html#GLIBTOP-NETLIST-NUMBER:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_NETLIST" link="libgtop-Net-List.html#GLIBTOP-MAX-NETLIST:CAPS"/>
     <keyword type="struct" name="struct glibtop_netlist" link="libgtop-Net-List.html#glibtop-netlist"/>
-    <keyword type="function" name="glibtop_get_netlist ()" link="libgtop-Net-List.html#glibtop-get-netlist"/>
     <keyword type="macro" name="glibtop_get_netlist_r" link="libgtop-Net-List.html#glibtop-get-netlist-r"/>
-    <keyword type="function" name="glibtop_get_netlist_l ()" link="libgtop-Net-List.html#glibtop-get-netlist-l"/>
-    <keyword type="function" name="glibtop_get_netlist_p ()" link="libgtop-Net-List.html#glibtop-get-netlist-p"/>
-    <keyword type="function" name="glibtop_get_netlist_s ()" link="libgtop-Net-List.html#glibtop-get-netlist-s"/>
+    <keyword type="function" name="glibtop_open_l ()" link="libgtop-open.html#glibtop-open-l"/>
+    <keyword type="function" name="glibtop_init_p ()" link="libgtop-open.html#glibtop-init-p"/>
+    <keyword type="function" name="glibtop_open_p ()" link="libgtop-open.html#glibtop-open-p"/>
+    <keyword type="function" name="glibtop_open_s ()" link="libgtop-open.html#glibtop-open-s"/>
     <keyword type="macro" name="GLIBTOP_INIT_NO_OPEN" link="libgtop-open.html#GLIBTOP-INIT-NO-OPEN:CAPS"/>
     <keyword type="macro" name="GLIBTOP_INIT_NO_INIT" link="libgtop-open.html#GLIBTOP-INIT-NO-INIT:CAPS"/>
     <keyword type="macro" name="GLIBTOP_FEATURES_NO_SERVER" link="libgtop-open.html#GLIBTOP-FEATURES-NO-SERVER:CAPS"/>
@@ -168,10 +171,10 @@
     <keyword type="macro" name="GLIBTOP_ERROR_METHOD_WARN" link="libgtop-open.html#GLIBTOP-ERROR-METHOD-WARN:CAPS"/>
     <keyword type="macro" name="GLIBTOP_ERROR_METHOD_ABORT" link="libgtop-open.html#GLIBTOP-ERROR-METHOD-ABORT:CAPS"/>
     <keyword type="macro" name="GLIBTOP_ERROR_METHOD_DEFAULT" link="libgtop-open.html#GLIBTOP-ERROR-METHOD-DEFAULT:CAPS"/>
-    <keyword type="function" name="glibtop_open_l ()" link="libgtop-open.html#glibtop-open-l"/>
-    <keyword type="function" name="glibtop_init_p ()" link="libgtop-open.html#glibtop-init-p"/>
-    <keyword type="function" name="glibtop_open_p ()" link="libgtop-open.html#glibtop-open-p"/>
-    <keyword type="function" name="glibtop_open_s ()" link="libgtop-open.html#glibtop-open-s"/>
+    <keyword type="macro" name="glibtop_get_parameter()" link="libgtop-parameter.html#glibtop-get-parameter"/>
+    <keyword type="macro" name="glibtop_set_parameter()" link="libgtop-parameter.html#glibtop-set-parameter"/>
+    <keyword type="function" name="glibtop_get_parameter_l ()" link="libgtop-parameter.html#glibtop-get-parameter-l"/>
+    <keyword type="function" name="glibtop_set_parameter_l ()" link="libgtop-parameter.html#glibtop-set-parameter-l"/>
     <keyword type="macro" name="GLIBTOP_PARAM_METHOD" link="libgtop-parameter.html#GLIBTOP-PARAM-METHOD:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PARAM_FEATURES" link="libgtop-parameter.html#GLIBTOP-PARAM-FEATURES:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PARAM_COMMAND" link="libgtop-parameter.html#GLIBTOP-PARAM-COMMAND:CAPS"/>
@@ -179,20 +182,13 @@
     <keyword type="macro" name="GLIBTOP_PARAM_PORT" link="libgtop-parameter.html#GLIBTOP-PARAM-PORT:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PARAM_ERROR_METHOD" link="libgtop-parameter.html#GLIBTOP-PARAM-ERROR-METHOD:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PARAM_REQUIRED" link="libgtop-parameter.html#GLIBTOP-PARAM-REQUIRED:CAPS"/>
-    <keyword type="macro" name="glibtop_get_parameter()" link="libgtop-parameter.html#glibtop-get-parameter"/>
-    <keyword type="macro" name="glibtop_set_parameter()" link="libgtop-parameter.html#glibtop-set-parameter"/>
-    <keyword type="function" name="glibtop_get_parameter_l ()" link="libgtop-parameter.html#glibtop-get-parameter-l"/>
-    <keyword type="function" name="glibtop_set_parameter_l ()" link="libgtop-parameter.html#glibtop-set-parameter-l"/>
-    <keyword type="macro" name="GLIBTOP_PROC_ARGS_SIZE" link="libgtop-procargs.html#GLIBTOP-PROC-ARGS-SIZE:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_MAX_PROC_ARGS" link="libgtop-procargs.html#GLIBTOP-MAX-PROC-ARGS:CAPS"/>
-    <keyword type="struct" name="struct glibtop_proc_args" link="libgtop-procargs.html#glibtop-proc-args"/>
-    <keyword type="function" name="glibtop_get_proc_args_l ()" link="libgtop-procargs.html#glibtop-get-proc-args-l"/>
-    <keyword type="function" name="glibtop_get_proc_args ()" link="libgtop-procargs.html#glibtop-get-proc-args"/>
-    <keyword type="macro" name="glibtop_get_proc_args_r" link="libgtop-procargs.html#glibtop-get-proc-args-r"/>
-    <keyword type="function" name="glibtop_get_proc_args_p ()" link="libgtop-procargs.html#glibtop-get-proc-args-p"/>
-    <keyword type="function" name="glibtop_get_proc_args_s ()" link="libgtop-procargs.html#glibtop-get-proc-args-s"/>
-    <keyword type="function" name="glibtop_get_proc_argv_l ()" link="libgtop-procargs.html#glibtop-get-proc-argv-l"/>
-    <keyword type="function" name="glibtop_get_proc_argv ()" link="libgtop-procargs.html#glibtop-get-proc-argv"/>
+    <keyword type="function" name="glibtop_get_proc_args ()" link="libgtop-Process-Arguments.html#glibtop-get-proc-args"/>
+    <keyword type="function" name="glibtop_get_proc_argv ()" link="libgtop-Process-Arguments.html#glibtop-get-proc-argv"/>
+    <keyword type="struct" name="struct glibtop_proc_args" link="libgtop-Process-Arguments.html#glibtop-proc-args"/>
+    <keyword type="function" name="glibtop_get_proc_mem ()" link="libgtop-procmem.html#glibtop-get-proc-mem"/>
+    <keyword type="function" name="glibtop_get_proc_mem_l ()" link="libgtop-procmem.html#glibtop-get-proc-mem-l"/>
+    <keyword type="function" name="glibtop_get_proc_mem_p ()" link="libgtop-procmem.html#glibtop-get-proc-mem-p"/>
+    <keyword type="function" name="glibtop_get_proc_mem_s ()" link="libgtop-procmem.html#glibtop-get-proc-mem-s"/>
     <keyword type="macro" name="GLIBTOP_PROC_MEM_SIZE" link="libgtop-procmem.html#GLIBTOP-PROC-MEM-SIZE:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_MEM_VSIZE" link="libgtop-procmem.html#GLIBTOP-PROC-MEM-VSIZE:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_MEM_RESIDENT" link="libgtop-procmem.html#GLIBTOP-PROC-MEM-RESIDENT:CAPS"/>
@@ -201,11 +197,11 @@
     <keyword type="macro" name="GLIBTOP_PROC_MEM_RSS_RLIM" link="libgtop-procmem.html#GLIBTOP-PROC-MEM-RSS-RLIM:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_PROC_MEM" link="libgtop-procmem.html#GLIBTOP-MAX-PROC-MEM:CAPS"/>
     <keyword type="struct" name="struct glibtop_proc_mem" link="libgtop-procmem.html#glibtop-proc-mem"/>
-    <keyword type="function" name="glibtop_get_proc_mem ()" link="libgtop-procmem.html#glibtop-get-proc-mem"/>
     <keyword type="macro" name="glibtop_get_proc_mem_r" link="libgtop-procmem.html#glibtop-get-proc-mem-r"/>
-    <keyword type="function" name="glibtop_get_proc_mem_l ()" link="libgtop-procmem.html#glibtop-get-proc-mem-l"/>
-    <keyword type="function" name="glibtop_get_proc_mem_p ()" link="libgtop-procmem.html#glibtop-get-proc-mem-p"/>
-    <keyword type="function" name="glibtop_get_proc_mem_s ()" link="libgtop-procmem.html#glibtop-get-proc-mem-s"/>
+    <keyword type="function" name="glibtop_get_proc_open_files ()" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files"/>
+    <keyword type="function" name="glibtop_get_proc_open_files_l ()" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files-l"/>
+    <keyword type="function" name="glibtop_get_proc_open_files_p ()" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files-p"/>
+    <keyword type="function" name="glibtop_get_proc_open_files_s ()" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files-s"/>
     <keyword type="macro" name="GLIBTOP_PROC_OPEN_FILES_NUMBER" link="libgtop-procopenfiles.html#GLIBTOP-PROC-OPEN-FILES-NUMBER:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_OPEN_FILES_TOTAL" link="libgtop-procopenfiles.html#GLIBTOP-PROC-OPEN-FILES-TOTAL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_OPEN_FILES_SIZE" link="libgtop-procopenfiles.html#GLIBTOP-PROC-OPEN-FILES-SIZE:CAPS"/>
@@ -220,11 +216,11 @@
     <keyword type="macro" name="GLIBTOP_OPEN_DEST_HOST_LEN" link="libgtop-procopenfiles.html#GLIBTOP-OPEN-DEST-HOST-LEN:CAPS"/>
     <keyword type="struct" name="struct glibtop_open_files_entry" link="libgtop-procopenfiles.html#glibtop-open-files-entry"/>
     <keyword type="struct" name="struct glibtop_proc_open_files" link="libgtop-procopenfiles.html#glibtop-proc-open-files"/>
-    <keyword type="function" name="glibtop_get_proc_open_files ()" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files"/>
     <keyword type="macro" name="glibtop_get_proc_open_files_r" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files-r"/>
-    <keyword type="function" name="glibtop_get_proc_open_files_l ()" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files-l"/>
-    <keyword type="function" name="glibtop_get_proc_open_files_p ()" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files-p"/>
-    <keyword type="function" name="glibtop_get_proc_open_files_s ()" link="libgtop-procopenfiles.html#glibtop-get-proc-open-files-s"/>
+    <keyword type="function" name="glibtop_get_proc_segment ()" link="libgtop-procsegment.html#glibtop-get-proc-segment"/>
+    <keyword type="function" name="glibtop_get_proc_segment_l ()" link="libgtop-procsegment.html#glibtop-get-proc-segment-l"/>
+    <keyword type="function" name="glibtop_get_proc_segment_p ()" link="libgtop-procsegment.html#glibtop-get-proc-segment-p"/>
+    <keyword type="function" name="glibtop_get_proc_segment_s ()" link="libgtop-procsegment.html#glibtop-get-proc-segment-s"/>
     <keyword type="macro" name="GLIBTOP_PROC_SEGMENT_TEXT_RSS" link="libgtop-procsegment.html#GLIBTOP-PROC-SEGMENT-TEXT-RSS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_SEGMENT_SHLIB_RSS" link="libgtop-procsegment.html#GLIBTOP-PROC-SEGMENT-SHLIB-RSS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_SEGMENT_DATA_RSS" link="libgtop-procsegment.html#GLIBTOP-PROC-SEGMENT-DATA-RSS:CAPS"/>
@@ -235,22 +231,20 @@
     <keyword type="macro" name="GLIBTOP_PROC_SEGMENT_START_STACK" link="libgtop-procsegment.html#GLIBTOP-PROC-SEGMENT-START-STACK:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_PROC_SEGMENT" link="libgtop-procsegment.html#GLIBTOP-MAX-PROC-SEGMENT:CAPS"/>
     <keyword type="struct" name="struct glibtop_proc_segment" link="libgtop-procsegment.html#glibtop-proc-segment"/>
-    <keyword type="function" name="glibtop_get_proc_segment ()" link="libgtop-procsegment.html#glibtop-get-proc-segment"/>
     <keyword type="macro" name="glibtop_get_proc_segment_r" link="libgtop-procsegment.html#glibtop-get-proc-segment-r"/>
-    <keyword type="function" name="glibtop_get_proc_segment_l ()" link="libgtop-procsegment.html#glibtop-get-proc-segment-l"/>
-    <keyword type="function" name="glibtop_get_proc_segment_p ()" link="libgtop-procsegment.html#glibtop-get-proc-segment-p"/>
-    <keyword type="function" name="glibtop_get_proc_segment_s ()" link="libgtop-procsegment.html#glibtop-get-proc-segment-s"/>
+    <keyword type="function" name="glibtop_get_proc_signal ()" link="libgtop-procsignal.html#glibtop-get-proc-signal"/>
+    <keyword type="function" name="glibtop_get_proc_signal_l ()" link="libgtop-procsignal.html#glibtop-get-proc-signal-l"/>
+    <keyword type="function" name="glibtop_get_proc_signal_p ()" link="libgtop-procsignal.html#glibtop-get-proc-signal-p"/>
+    <keyword type="function" name="glibtop_get_proc_signal_s ()" link="libgtop-procsignal.html#glibtop-get-proc-signal-s"/>
     <keyword type="macro" name="GLIBTOP_PROC_SIGNAL_SIGNAL" link="libgtop-procsignal.html#GLIBTOP-PROC-SIGNAL-SIGNAL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_SIGNAL_BLOCKED" link="libgtop-procsignal.html#GLIBTOP-PROC-SIGNAL-BLOCKED:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_SIGNAL_SIGIGNORE" link="libgtop-procsignal.html#GLIBTOP-PROC-SIGNAL-SIGIGNORE:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_SIGNAL_SIGCATCH" link="libgtop-procsignal.html#GLIBTOP-PROC-SIGNAL-SIGCATCH:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_PROC_SIGNAL" link="libgtop-procsignal.html#GLIBTOP-MAX-PROC-SIGNAL:CAPS"/>
     <keyword type="struct" name="struct glibtop_proc_signal" link="libgtop-procsignal.html#glibtop-proc-signal"/>
-    <keyword type="function" name="glibtop_get_proc_signal ()" link="libgtop-procsignal.html#glibtop-get-proc-signal"/>
     <keyword type="macro" name="glibtop_get_proc_signal_r" link="libgtop-procsignal.html#glibtop-get-proc-signal-r"/>
-    <keyword type="function" name="glibtop_get_proc_signal_l ()" link="libgtop-procsignal.html#glibtop-get-proc-signal-l"/>
-    <keyword type="function" name="glibtop_get_proc_signal_p ()" link="libgtop-procsignal.html#glibtop-get-proc-signal-p"/>
-    <keyword type="function" name="glibtop_get_proc_signal_s ()" link="libgtop-procsignal.html#glibtop-get-proc-signal-s"/>
+    <keyword type="function" name="glibtop_get_sysdeps ()" link="libgtop-sysdeps.html#glibtop-get-sysdeps"/>
+    <keyword type="function" name="glibtop_get_sysdeps_r ()" link="libgtop-sysdeps.html#glibtop-get-sysdeps-r"/>
     <keyword type="macro" name="GLIBTOP_SYSDEPS_FEATURES" link="libgtop-sysdeps.html#GLIBTOP-SYSDEPS-FEATURES:CAPS"/>
     <keyword type="macro" name="GLIBTOP_SYSDEPS_CPU" link="libgtop-sysdeps.html#GLIBTOP-SYSDEPS-CPU:CAPS"/>
     <keyword type="macro" name="GLIBTOP_SYSDEPS_MEM" link="libgtop-sysdeps.html#GLIBTOP-SYSDEPS-MEM:CAPS"/>
@@ -279,8 +273,10 @@
     <keyword type="macro" name="GLIBTOP_MAX_SYSDEPS" link="libgtop-sysdeps.html#GLIBTOP-MAX-SYSDEPS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_SYSDEPS_ALL" link="libgtop-sysdeps.html#GLIBTOP-SYSDEPS-ALL:CAPS"/>
     <keyword type="struct" name="struct glibtop_sysdeps" link="libgtop-sysdeps.html#glibtop-sysdeps"/>
-    <keyword type="function" name="glibtop_get_sysdeps ()" link="libgtop-sysdeps.html#glibtop-get-sysdeps"/>
-    <keyword type="function" name="glibtop_get_sysdeps_r ()" link="libgtop-sysdeps.html#glibtop-get-sysdeps-r"/>
+    <keyword type="function" name="glibtop_get_proc_state ()" link="libgtop-procstate.html#glibtop-get-proc-state"/>
+    <keyword type="function" name="glibtop_get_proc_state_l ()" link="libgtop-procstate.html#glibtop-get-proc-state-l"/>
+    <keyword type="function" name="glibtop_get_proc_state_p ()" link="libgtop-procstate.html#glibtop-get-proc-state-p"/>
+    <keyword type="function" name="glibtop_get_proc_state_s ()" link="libgtop-procstate.html#glibtop-get-proc-state-s"/>
     <keyword type="macro" name="GLIBTOP_PROC_STATE_CMD" link="libgtop-procstate.html#GLIBTOP-PROC-STATE-CMD:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_STATE_STATE" link="libgtop-procstate.html#GLIBTOP-PROC-STATE-STATE:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_STATE_UID" link="libgtop-procstate.html#GLIBTOP-PROC-STATE-UID:CAPS"/>
@@ -299,11 +295,11 @@
     <keyword type="macro" name="GLIBTOP_PROCESS_SWAPPING" link="libgtop-procstate.html#GLIBTOP-PROCESS-SWAPPING:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROCESS_DEAD" link="libgtop-procstate.html#GLIBTOP-PROCESS-DEAD:CAPS"/>
     <keyword type="struct" name="struct glibtop_proc_state" link="libgtop-procstate.html#glibtop-proc-state"/>
-    <keyword type="function" name="glibtop_get_proc_state ()" link="libgtop-procstate.html#glibtop-get-proc-state"/>
     <keyword type="macro" name="glibtop_get_proc_state_r" link="libgtop-procstate.html#glibtop-get-proc-state-r"/>
-    <keyword type="function" name="glibtop_get_proc_state_l ()" link="libgtop-procstate.html#glibtop-get-proc-state-l"/>
-    <keyword type="function" name="glibtop_get_proc_state_p ()" link="libgtop-procstate.html#glibtop-get-proc-state-p"/>
-    <keyword type="function" name="glibtop_get_proc_state_s ()" link="libgtop-procstate.html#glibtop-get-proc-state-s"/>
+    <keyword type="function" name="glibtop_get_proc_uid ()" link="libgtop-procuid.html#glibtop-get-proc-uid"/>
+    <keyword type="function" name="glibtop_get_proc_uid_l ()" link="libgtop-procuid.html#glibtop-get-proc-uid-l"/>
+    <keyword type="function" name="glibtop_get_proc_uid_p ()" link="libgtop-procuid.html#glibtop-get-proc-uid-p"/>
+    <keyword type="function" name="glibtop_get_proc_uid_s ()" link="libgtop-procuid.html#glibtop-get-proc-uid-s"/>
     <keyword type="macro" name="GLIBTOP_PROC_UID_UID" link="libgtop-procuid.html#GLIBTOP-PROC-UID-UID:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_UID_EUID" link="libgtop-procuid.html#GLIBTOP-PROC-UID-EUID:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_UID_GID" link="libgtop-procuid.html#GLIBTOP-PROC-UID-GID:CAPS"/>
@@ -325,30 +321,14 @@
     <keyword type="macro" name="GLIBTOP_MAX_PROC_UID" link="libgtop-procuid.html#GLIBTOP-MAX-PROC-UID:CAPS"/>
     <keyword type="struct" name="struct glibtop_proc_uid" link="libgtop-procuid.html#glibtop-proc-uid"/>
     <keyword type="macro" name="GLIBTOP_MAX_GROUPS" link="libgtop-procuid.html#GLIBTOP-MAX-GROUPS:CAPS"/>
-    <keyword type="function" name="glibtop_get_proc_uid ()" link="libgtop-procuid.html#glibtop-get-proc-uid"/>
     <keyword type="macro" name="glibtop_get_proc_uid_r" link="libgtop-procuid.html#glibtop-get-proc-uid-r"/>
-    <keyword type="function" name="glibtop_get_proc_uid_l ()" link="libgtop-procuid.html#glibtop-get-proc-uid-l"/>
-    <keyword type="function" name="glibtop_get_proc_uid_p ()" link="libgtop-procuid.html#glibtop-get-proc-uid-p"/>
-    <keyword type="function" name="glibtop_get_proc_uid_s ()" link="libgtop-procuid.html#glibtop-get-proc-uid-s"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_START_TIME" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-START-TIME:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_RTIME" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-RTIME:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_UTIME" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-UTIME:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_STIME" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-STIME:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_CUTIME" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-CUTIME:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_CSTIME" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-CSTIME:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_TIMEOUT" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-TIMEOUT:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_IT_REAL_VALUE" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-IT-REAL-VALUE:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_FREQUENCY" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-FREQUENCY:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_XCPU_UTIME" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-XCPU-UTIME:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROC_TIME_XCPU_STIME" link="libgtop-proctime.html#GLIBTOP-PROC-TIME-XCPU-STIME:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_MAX_PROC_TIME" link="libgtop-proctime.html#GLIBTOP-MAX-PROC-TIME:CAPS"/>
-    <keyword type="struct" name="struct glibtop_proc_time" link="libgtop-proctime.html#glibtop-proc-time"/>
-    <keyword type="function" name="glibtop_get_proc_time ()" link="libgtop-proctime.html#glibtop-get-proc-time"/>
-    <keyword type="macro" name="glibtop_get_proc_time_r" link="libgtop-proctime.html#glibtop-get-proc-time-r"/>
-    <keyword type="function" name="glibtop_get_proc_time_l ()" link="libgtop-proctime.html#glibtop-get-proc-time-l"/>
-    <keyword type="function" name="glibtop_get_proc_time_p ()" link="libgtop-proctime.html#glibtop-get-proc-time-p"/>
-    <keyword type="function" name="glibtop_get_proc_time_s ()" link="libgtop-proctime.html#glibtop-get-proc-time-s"/>
+    <keyword type="function" name="glibtop_get_proc_time ()" link="libgtop-Process-Time.html#glibtop-get-proc-time"/>
+    <keyword type="struct" name="struct glibtop_proc_time" link="libgtop-Process-Time.html#glibtop-proc-time"/>
     <keyword type="struct" name="struct glibtop_signame" link="libgtop-signal.html#glibtop-signame"/>
+    <keyword type="function" name="glibtop_get_proc_map ()" link="libgtop-procmap.html#glibtop-get-proc-map"/>
+    <keyword type="function" name="glibtop_get_proc_map_l ()" link="libgtop-procmap.html#glibtop-get-proc-map-l"/>
+    <keyword type="function" name="glibtop_get_proc_map_p ()" link="libgtop-procmap.html#glibtop-get-proc-map-p"/>
+    <keyword type="function" name="glibtop_get_proc_map_s ()" link="libgtop-procmap.html#glibtop-get-proc-map-s"/>
     <keyword type="macro" name="GLIBTOP_PROC_MAP_NUMBER" link="libgtop-procmap.html#GLIBTOP-PROC-MAP-NUMBER:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_MAP_TOTAL" link="libgtop-procmap.html#GLIBTOP-PROC-MAP-TOTAL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_MAP_SIZE" link="libgtop-procmap.html#GLIBTOP-PROC-MAP-SIZE:CAPS"/>
@@ -375,43 +355,35 @@
     <keyword type="macro" name="GLIBTOP_MAP_PERM_PRIVATE" link="libgtop-procmap.html#GLIBTOP-MAP-PERM-PRIVATE:CAPS"/>
     <keyword type="struct" name="struct glibtop_map_entry" link="libgtop-procmap.html#glibtop-map-entry"/>
     <keyword type="struct" name="struct glibtop_proc_map" link="libgtop-procmap.html#glibtop-proc-map"/>
-    <keyword type="function" name="glibtop_get_proc_map ()" link="libgtop-procmap.html#glibtop-get-proc-map"/>
     <keyword type="macro" name="glibtop_get_proc_map_r" link="libgtop-procmap.html#glibtop-get-proc-map-r"/>
-    <keyword type="function" name="glibtop_get_proc_map_l ()" link="libgtop-procmap.html#glibtop-get-proc-map-l"/>
-    <keyword type="function" name="glibtop_get_proc_map_p ()" link="libgtop-procmap.html#glibtop-get-proc-map-p"/>
-    <keyword type="function" name="glibtop_get_proc_map_s ()" link="libgtop-procmap.html#glibtop-get-proc-map-s"/>
+    <keyword type="function" name="glibtop_get_sysinfo_s ()" link="libgtop-sysinfo.html#glibtop-get-sysinfo-s"/>
+    <keyword type="function" name="glibtop_get_sysinfo ()" link="libgtop-sysinfo.html#glibtop-get-sysinfo"/>
     <keyword type="macro" name="GLIBTOP_SYSINFO_NCPU" link="libgtop-sysinfo.html#GLIBTOP-SYSINFO-NCPU:CAPS"/>
     <keyword type="macro" name="GLIBTOP_SYSINFO_CPUINFO" link="libgtop-sysinfo.html#GLIBTOP-SYSINFO-CPUINFO:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_SYSINFO" link="libgtop-sysinfo.html#GLIBTOP-MAX-SYSINFO:CAPS"/>
     <keyword type="struct" name="struct glibtop_sysinfo" link="libgtop-sysinfo.html#glibtop-sysinfo"/>
     <keyword type="struct" name="struct glibtop_entry" link="libgtop-sysinfo.html#glibtop-entry"/>
     <keyword type="macro" name="glibtop_get_sysinfo_r" link="libgtop-sysinfo.html#glibtop-get-sysinfo-r"/>
-    <keyword type="function" name="glibtop_get_sysinfo_s ()" link="libgtop-sysinfo.html#glibtop-get-sysinfo-s"/>
-    <keyword type="function" name="glibtop_get_sysinfo ()" link="libgtop-sysinfo.html#glibtop-get-sysinfo"/>
     <keyword type="union" name="union glibtop_union" link="libgtop-union.html#glibtop-union"/>
+    <keyword type="function" name="glibtop_send_version ()" link="libgtop-version.html#glibtop-send-version"/>
     <keyword type="macro" name="LIBGTOP_VERSION_STRING" link="libgtop-version.html#LIBGTOP-VERSION-STRING:CAPS"/>
-    <keyword type="function" name="glibtop_send_version ()" link="libgtop-version.html#glibtop-send-version"/>
-    <keyword type="macro" name="GLIBTOP_PROCLIST_NUMBER" link="libgtop-proclist.html#GLIBTOP-PROCLIST-NUMBER:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROCLIST_TOTAL" link="libgtop-proclist.html#GLIBTOP-PROCLIST-TOTAL:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_PROCLIST_SIZE" link="libgtop-proclist.html#GLIBTOP-PROCLIST-SIZE:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_MAX_PROCLIST" link="libgtop-proclist.html#GLIBTOP-MAX-PROCLIST:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_KERN_PROC_ALL" link="libgtop-proclist.html#GLIBTOP-KERN-PROC-ALL:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_KERN_PROC_PID" link="libgtop-proclist.html#GLIBTOP-KERN-PROC-PID:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_KERN_PROC_PGRP" link="libgtop-proclist.html#GLIBTOP-KERN-PROC-PGRP:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_KERN_PROC_SESSION" link="libgtop-proclist.html#GLIBTOP-KERN-PROC-SESSION:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_KERN_PROC_TTY" link="libgtop-proclist.html#GLIBTOP-KERN-PROC-TTY:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_KERN_PROC_UID" link="libgtop-proclist.html#GLIBTOP-KERN-PROC-UID:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_KERN_PROC_RUID" link="libgtop-proclist.html#GLIBTOP-KERN-PROC-RUID:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_KERN_PROC_MASK" link="libgtop-proclist.html#GLIBTOP-KERN-PROC-MASK:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_EXCLUDE_IDLE" link="libgtop-proclist.html#GLIBTOP-EXCLUDE-IDLE:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_EXCLUDE_SYSTEM" link="libgtop-proclist.html#GLIBTOP-EXCLUDE-SYSTEM:CAPS"/>
-    <keyword type="macro" name="GLIBTOP_EXCLUDE_NOTTY" link="libgtop-proclist.html#GLIBTOP-EXCLUDE-NOTTY:CAPS"/>
-    <keyword type="struct" name="struct glibtop_proclist" link="libgtop-proclist.html#glibtop-proclist"/>
-    <keyword type="function" name="glibtop_get_proclist ()" link="libgtop-proclist.html#glibtop-get-proclist"/>
-    <keyword type="macro" name="glibtop_get_proclist_r" link="libgtop-proclist.html#glibtop-get-proclist-r"/>
-    <keyword type="function" name="glibtop_get_proclist_l ()" link="libgtop-proclist.html#glibtop-get-proclist-l"/>
-    <keyword type="function" name="glibtop_get_proclist_p ()" link="libgtop-proclist.html#glibtop-get-proclist-p"/>
-    <keyword type="function" name="glibtop_get_proclist_s ()" link="libgtop-proclist.html#glibtop-get-proclist-s"/>
+    <keyword type="function" name="glibtop_get_proclist ()" link="libgtop-Process-List.html#glibtop-get-proclist"/>
+    <keyword type="macro" name="GLIBTOP_KERN_PROC_ALL" link="libgtop-Process-List.html#GLIBTOP-KERN-PROC-ALL:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_KERN_PROC_PID" link="libgtop-Process-List.html#GLIBTOP-KERN-PROC-PID:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_KERN_PROC_PGRP" link="libgtop-Process-List.html#GLIBTOP-KERN-PROC-PGRP:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_KERN_PROC_SESSION" link="libgtop-Process-List.html#GLIBTOP-KERN-PROC-SESSION:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_KERN_PROC_TTY" link="libgtop-Process-List.html#GLIBTOP-KERN-PROC-TTY:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_KERN_PROC_UID" link="libgtop-Process-List.html#GLIBTOP-KERN-PROC-UID:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_KERN_PROC_RUID" link="libgtop-Process-List.html#GLIBTOP-KERN-PROC-RUID:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_KERN_PROC_MASK" link="libgtop-Process-List.html#GLIBTOP-KERN-PROC-MASK:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_EXCLUDE_IDLE" link="libgtop-Process-List.html#GLIBTOP-EXCLUDE-IDLE:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_EXCLUDE_SYSTEM" link="libgtop-Process-List.html#GLIBTOP-EXCLUDE-SYSTEM:CAPS"/>
+    <keyword type="macro" name="GLIBTOP_EXCLUDE_NOTTY" link="libgtop-Process-List.html#GLIBTOP-EXCLUDE-NOTTY:CAPS"/>
+    <keyword type="struct" name="struct glibtop_proclist" link="libgtop-Process-List.html#glibtop-proclist"/>
+    <keyword type="function" name="glibtop_get_sem_limits ()" link="libgtop-sem-limits.html#glibtop-get-sem-limits"/>
+    <keyword type="function" name="glibtop_get_sem_limits_l ()" link="libgtop-sem-limits.html#glibtop-get-sem-limits-l"/>
+    <keyword type="function" name="glibtop_get_sem_limits_p ()" link="libgtop-sem-limits.html#glibtop-get-sem-limits-p"/>
+    <keyword type="function" name="glibtop_get_sem_limits_s ()" link="libgtop-sem-limits.html#glibtop-get-sem-limits-s"/>
     <keyword type="macro" name="GLIBTOP_IPC_SEMMAP" link="libgtop-sem-limits.html#GLIBTOP-IPC-SEMMAP:CAPS"/>
     <keyword type="macro" name="GLIBTOP_IPC_SEMMNI" link="libgtop-sem-limits.html#GLIBTOP-IPC-SEMMNI:CAPS"/>
     <keyword type="macro" name="GLIBTOP_IPC_SEMMNS" link="libgtop-sem-limits.html#GLIBTOP-IPC-SEMMNS:CAPS"/>
@@ -424,11 +396,11 @@
     <keyword type="macro" name="GLIBTOP_IPC_SEMAEM" link="libgtop-sem-limits.html#GLIBTOP-IPC-SEMAEM:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_SEM_LIMITS" link="libgtop-sem-limits.html#GLIBTOP-MAX-SEM-LIMITS:CAPS"/>
     <keyword type="struct" name="struct glibtop_sem_limits" link="libgtop-sem-limits.html#glibtop-sem-limits"/>
-    <keyword type="function" name="glibtop_get_sem_limits ()" link="libgtop-sem-limits.html#glibtop-get-sem-limits"/>
     <keyword type="macro" name="glibtop_get_sem_limits_r" link="libgtop-sem-limits.html#glibtop-get-sem-limits-r"/>
-    <keyword type="function" name="glibtop_get_sem_limits_l ()" link="libgtop-sem-limits.html#glibtop-get-sem-limits-l"/>
-    <keyword type="function" name="glibtop_get_sem_limits_p ()" link="libgtop-sem-limits.html#glibtop-get-sem-limits-p"/>
-    <keyword type="function" name="glibtop_get_sem_limits_s ()" link="libgtop-sem-limits.html#glibtop-get-sem-limits-s"/>
+    <keyword type="function" name="glibtop_get_proc_kernel ()" link="libgtop-prockernel.html#glibtop-get-proc-kernel"/>
+    <keyword type="function" name="glibtop_get_proc_kernel_l ()" link="libgtop-prockernel.html#glibtop-get-proc-kernel-l"/>
+    <keyword type="function" name="glibtop_get_proc_kernel_p ()" link="libgtop-prockernel.html#glibtop-get-proc-kernel-p"/>
+    <keyword type="function" name="glibtop_get_proc_kernel_s ()" link="libgtop-prockernel.html#glibtop-get-proc-kernel-s"/>
     <keyword type="macro" name="GLIBTOP_PROC_KERNEL_K_FLAGS" link="libgtop-prockernel.html#GLIBTOP-PROC-KERNEL-K-FLAGS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_KERNEL_MIN_FLT" link="libgtop-prockernel.html#GLIBTOP-PROC-KERNEL-MIN-FLT:CAPS"/>
     <keyword type="macro" name="GLIBTOP_PROC_KERNEL_MAJ_FLT" link="libgtop-prockernel.html#GLIBTOP-PROC-KERNEL-MAJ-FLT:CAPS"/>
@@ -440,11 +412,10 @@
     <keyword type="macro" name="GLIBTOP_PROC_KERNEL_WCHAN" link="libgtop-prockernel.html#GLIBTOP-PROC-KERNEL-WCHAN:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_PROC_KERNEL" link="libgtop-prockernel.html#GLIBTOP-MAX-PROC-KERNEL:CAPS"/>
     <keyword type="struct" name="struct glibtop_proc_kernel" link="libgtop-prockernel.html#glibtop-proc-kernel"/>
-    <keyword type="function" name="glibtop_get_proc_kernel ()" link="libgtop-prockernel.html#glibtop-get-proc-kernel"/>
     <keyword type="macro" name="glibtop_get_proc_kernel_r" link="libgtop-prockernel.html#glibtop-get-proc-kernel-r"/>
-    <keyword type="function" name="glibtop_get_proc_kernel_l ()" link="libgtop-prockernel.html#glibtop-get-proc-kernel-l"/>
-    <keyword type="function" name="glibtop_get_proc_kernel_p ()" link="libgtop-prockernel.html#glibtop-get-proc-kernel-p"/>
-    <keyword type="function" name="glibtop_get_proc_kernel_s ()" link="libgtop-prockernel.html#glibtop-get-proc-kernel-s"/>
+    <keyword type="function" name="glibtop_get_fsusage ()" link="libgtop-fsusage.html#glibtop-get-fsusage"/>
+    <keyword type="function" name="glibtop_get_fsusage_l ()" link="libgtop-fsusage.html#glibtop-get-fsusage-l"/>
+    <keyword type="function" name="glibtop_get_fsusage_s ()" link="libgtop-fsusage.html#glibtop-get-fsusage-s"/>
     <keyword type="macro" name="GLIBTOP_FSUSAGE_BLOCKS" link="libgtop-fsusage.html#GLIBTOP-FSUSAGE-BLOCKS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_FSUSAGE_BFREE" link="libgtop-fsusage.html#GLIBTOP-FSUSAGE-BFREE:CAPS"/>
     <keyword type="macro" name="GLIBTOP_FSUSAGE_BAVAIL" link="libgtop-fsusage.html#GLIBTOP-FSUSAGE-BAVAIL:CAPS"/>
@@ -455,21 +426,22 @@
     <keyword type="macro" name="GLIBTOP_FSUSAGE_WRITE" link="libgtop-fsusage.html#GLIBTOP-FSUSAGE-WRITE:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_FSUSAGE" link="libgtop-fsusage.html#GLIBTOP-MAX-FSUSAGE:CAPS"/>
     <keyword type="struct" name="struct glibtop_fsusage" link="libgtop-fsusage.html#glibtop-fsusage"/>
-    <keyword type="function" name="glibtop_get_fsusage ()" link="libgtop-fsusage.html#glibtop-get-fsusage"/>
     <keyword type="macro" name="glibtop_get_fsusage_r" link="libgtop-fsusage.html#glibtop-get-fsusage-r"/>
-    <keyword type="function" name="glibtop_get_fsusage_l ()" link="libgtop-fsusage.html#glibtop-get-fsusage-l"/>
-    <keyword type="function" name="glibtop_get_fsusage_s ()" link="libgtop-fsusage.html#glibtop-get-fsusage-s"/>
+    <keyword type="function" name="glibtop_get_loadavg ()" link="libgtop-loadavg.html#glibtop-get-loadavg"/>
+    <keyword type="function" name="glibtop_get_loadavg_l ()" link="libgtop-loadavg.html#glibtop-get-loadavg-l"/>
+    <keyword type="function" name="glibtop_get_loadavg_p ()" link="libgtop-loadavg.html#glibtop-get-loadavg-p"/>
+    <keyword type="function" name="glibtop_get_loadavg_s ()" link="libgtop-loadavg.html#glibtop-get-loadavg-s"/>
     <keyword type="macro" name="GLIBTOP_LOADAVG_LOADAVG" link="libgtop-loadavg.html#GLIBTOP-LOADAVG-LOADAVG:CAPS"/>
     <keyword type="macro" name="GLIBTOP_LOADAVG_NR_RUNNING" link="libgtop-loadavg.html#GLIBTOP-LOADAVG-NR-RUNNING:CAPS"/>
     <keyword type="macro" name="GLIBTOP_LOADAVG_NR_TASKS" link="libgtop-loadavg.html#GLIBTOP-LOADAVG-NR-TASKS:CAPS"/>
     <keyword type="macro" name="GLIBTOP_LOADAVG_LAST_PID" link="libgtop-loadavg.html#GLIBTOP-LOADAVG-LAST-PID:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_LOADAVG" link="libgtop-loadavg.html#GLIBTOP-MAX-LOADAVG:CAPS"/>
     <keyword type="struct" name="struct glibtop_loadavg" link="libgtop-loadavg.html#glibtop-loadavg"/>
-    <keyword type="function" name="glibtop_get_loadavg ()" link="libgtop-loadavg.html#glibtop-get-loadavg"/>
     <keyword type="macro" name="glibtop_get_loadavg_r" link="libgtop-loadavg.html#glibtop-get-loadavg-r"/>
-    <keyword type="function" name="glibtop_get_loadavg_l ()" link="libgtop-loadavg.html#glibtop-get-loadavg-l"/>
-    <keyword type="function" name="glibtop_get_loadavg_p ()" link="libgtop-loadavg.html#glibtop-get-loadavg-p"/>
-    <keyword type="function" name="glibtop_get_loadavg_s ()" link="libgtop-loadavg.html#glibtop-get-loadavg-s"/>
+    <keyword type="function" name="glibtop_get_mem ()" link="libgtop-mem.html#glibtop-get-mem"/>
+    <keyword type="function" name="glibtop_get_mem_l ()" link="libgtop-mem.html#glibtop-get-mem-l"/>
+    <keyword type="function" name="glibtop_get_mem_p ()" link="libgtop-mem.html#glibtop-get-mem-p"/>
+    <keyword type="function" name="glibtop_get_mem_s ()" link="libgtop-mem.html#glibtop-get-mem-s"/>
     <keyword type="macro" name="GLIBTOP_MEM_TOTAL" link="libgtop-mem.html#GLIBTOP-MEM-TOTAL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MEM_USED" link="libgtop-mem.html#GLIBTOP-MEM-USED:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MEM_FREE" link="libgtop-mem.html#GLIBTOP-MEM-FREE:CAPS"/>
@@ -480,21 +452,21 @@
     <keyword type="macro" name="GLIBTOP_MEM_LOCKED" link="libgtop-mem.html#GLIBTOP-MEM-LOCKED:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_MEM" link="libgtop-mem.html#GLIBTOP-MAX-MEM:CAPS"/>
     <keyword type="struct" name="struct glibtop_mem" link="libgtop-mem.html#glibtop-mem"/>
-    <keyword type="function" name="glibtop_get_mem ()" link="libgtop-mem.html#glibtop-get-mem"/>
     <keyword type="macro" name="glibtop_get_mem_r" link="libgtop-mem.html#glibtop-get-mem-r"/>
-    <keyword type="function" name="glibtop_get_mem_l ()" link="libgtop-mem.html#glibtop-get-mem-l"/>
-    <keyword type="function" name="glibtop_get_mem_p ()" link="libgtop-mem.html#glibtop-get-mem-p"/>
-    <keyword type="function" name="glibtop_get_mem_s ()" link="libgtop-mem.html#glibtop-get-mem-s"/>
+    <keyword type="function" name="glibtop_get_mountlist ()" link="libgtop-mountlist.html#glibtop-get-mountlist"/>
+    <keyword type="function" name="glibtop_get_mountlist_l ()" link="libgtop-mountlist.html#glibtop-get-mountlist-l"/>
+    <keyword type="function" name="glibtop_get_mountlist_s ()" link="libgtop-mountlist.html#glibtop-get-mountlist-s"/>
     <keyword type="macro" name="GLIBTOP_MOUNTLIST_NUMBER" link="libgtop-mountlist.html#GLIBTOP-MOUNTLIST-NUMBER:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MOUNTLIST_TOTAL" link="libgtop-mountlist.html#GLIBTOP-MOUNTLIST-TOTAL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MOUNTLIST_SIZE" link="libgtop-mountlist.html#GLIBTOP-MOUNTLIST-SIZE:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_MOUNTLIST" link="libgtop-mountlist.html#GLIBTOP-MAX-MOUNTLIST:CAPS"/>
     <keyword type="struct" name="struct glibtop_mountentry" link="libgtop-mountlist.html#glibtop-mountentry"/>
     <keyword type="struct" name="struct glibtop_mountlist" link="libgtop-mountlist.html#glibtop-mountlist"/>
-    <keyword type="function" name="glibtop_get_mountlist ()" link="libgtop-mountlist.html#glibtop-get-mountlist"/>
     <keyword type="macro" name="glibtop_get_mountlist_r" link="libgtop-mountlist.html#glibtop-get-mountlist-r"/>
-    <keyword type="function" name="glibtop_get_mountlist_l ()" link="libgtop-mountlist.html#glibtop-get-mountlist-l"/>
-    <keyword type="function" name="glibtop_get_mountlist_s ()" link="libgtop-mountlist.html#glibtop-get-mountlist-s"/>
+    <keyword type="function" name="glibtop_get_msg_limits ()" link="libgtop-msg-limits.html#glibtop-get-msg-limits"/>
+    <keyword type="function" name="glibtop_get_msg_limits_l ()" link="libgtop-msg-limits.html#glibtop-get-msg-limits-l"/>
+    <keyword type="function" name="glibtop_get_msg_limits_p ()" link="libgtop-msg-limits.html#glibtop-get-msg-limits-p"/>
+    <keyword type="function" name="glibtop_get_msg_limits_s ()" link="libgtop-msg-limits.html#glibtop-get-msg-limits-s"/>
     <keyword type="macro" name="GLIBTOP_IPC_MSGPOOL" link="libgtop-msg-limits.html#GLIBTOP-IPC-MSGPOOL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_IPC_MSGMAP" link="libgtop-msg-limits.html#GLIBTOP-IPC-MSGMAP:CAPS"/>
     <keyword type="macro" name="GLIBTOP_IPC_MSGMAX" link="libgtop-msg-limits.html#GLIBTOP-IPC-MSGMAX:CAPS"/>
@@ -504,11 +476,11 @@
     <keyword type="macro" name="GLIBTOP_IPC_MSGTQL" link="libgtop-msg-limits.html#GLIBTOP-IPC-MSGTQL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_MSG_LIMITS" link="libgtop-msg-limits.html#GLIBTOP-MAX-MSG-LIMITS:CAPS"/>
     <keyword type="struct" name="struct glibtop_msg_limits" link="libgtop-msg-limits.html#glibtop-msg-limits"/>
-    <keyword type="function" name="glibtop_get_msg_limits ()" link="libgtop-msg-limits.html#glibtop-get-msg-limits"/>
     <keyword type="macro" name="glibtop_get_msg_limits_r" link="libgtop-msg-limits.html#glibtop-get-msg-limits-r"/>
-    <keyword type="function" name="glibtop_get_msg_limits_l ()" link="libgtop-msg-limits.html#glibtop-get-msg-limits-l"/>
-    <keyword type="function" name="glibtop_get_msg_limits_p ()" link="libgtop-msg-limits.html#glibtop-get-msg-limits-p"/>
-    <keyword type="function" name="glibtop_get_msg_limits_s ()" link="libgtop-msg-limits.html#glibtop-get-msg-limits-s"/>
+    <keyword type="function" name="glibtop_get_cpu ()" link="libgtop-cpu.html#glibtop-get-cpu"/>
+    <keyword type="function" name="glibtop_get_cpu_l ()" link="libgtop-cpu.html#glibtop-get-cpu-l"/>
+    <keyword type="function" name="glibtop_get_cpu_p ()" link="libgtop-cpu.html#glibtop-get-cpu-p"/>
+    <keyword type="function" name="glibtop_get_cpu_s ()" link="libgtop-cpu.html#glibtop-get-cpu-s"/>
     <keyword type="macro" name="GLIBTOP_CPU_TOTAL" link="libgtop-cpu.html#GLIBTOP-CPU-TOTAL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_CPU_USER" link="libgtop-cpu.html#GLIBTOP-CPU-USER:CAPS"/>
     <keyword type="macro" name="GLIBTOP_CPU_NICE" link="libgtop-cpu.html#GLIBTOP-CPU-NICE:CAPS"/>
@@ -530,11 +502,11 @@
     <keyword type="macro" name="GLIBTOP_MAX_CPU" link="libgtop-cpu.html#GLIBTOP-MAX-CPU:CAPS"/>
     <keyword type="macro" name="GLIBTOP_NCPU" link="libgtop-cpu.html#GLIBTOP-NCPU:CAPS"/>
     <keyword type="struct" name="struct glibtop_cpu" link="libgtop-cpu.html#glibtop-cpu"/>
-    <keyword type="function" name="glibtop_get_cpu ()" link="libgtop-cpu.html#glibtop-get-cpu"/>
     <keyword type="macro" name="glibtop_get_cpu_r" link="libgtop-cpu.html#glibtop-get-cpu-r"/>
-    <keyword type="function" name="glibtop_get_cpu_l ()" link="libgtop-cpu.html#glibtop-get-cpu-l"/>
-    <keyword type="function" name="glibtop_get_cpu_p ()" link="libgtop-cpu.html#glibtop-get-cpu-p"/>
-    <keyword type="function" name="glibtop_get_cpu_s ()" link="libgtop-cpu.html#glibtop-get-cpu-s"/>
+    <keyword type="function" name="glibtop_get_swap ()" link="libgtop-swap.html#glibtop-get-swap"/>
+    <keyword type="function" name="glibtop_get_swap_l ()" link="libgtop-swap.html#glibtop-get-swap-l"/>
+    <keyword type="function" name="glibtop_get_swap_p ()" link="libgtop-swap.html#glibtop-get-swap-p"/>
+    <keyword type="function" name="glibtop_get_swap_s ()" link="libgtop-swap.html#glibtop-get-swap-s"/>
     <keyword type="macro" name="GLIBTOP_SWAP_TOTAL" link="libgtop-swap.html#GLIBTOP-SWAP-TOTAL:CAPS"/>
     <keyword type="macro" name="GLIBTOP_SWAP_USED" link="libgtop-swap.html#GLIBTOP-SWAP-USED:CAPS"/>
     <keyword type="macro" name="GLIBTOP_SWAP_FREE" link="libgtop-swap.html#GLIBTOP-SWAP-FREE:CAPS"/>
@@ -542,10 +514,26 @@
     <keyword type="macro" name="GLIBTOP_SWAP_PAGEOUT" link="libgtop-swap.html#GLIBTOP-SWAP-PAGEOUT:CAPS"/>
     <keyword type="macro" name="GLIBTOP_MAX_SWAP" link="libgtop-swap.html#GLIBTOP-MAX-SWAP:CAPS"/>
     <keyword type="struct" name="struct glibtop_swap" link="libgtop-swap.html#glibtop-swap"/>
-    <keyword type="function" name="glibtop_get_swap ()" link="libgtop-swap.html#glibtop-get-swap"/>
     <keyword type="macro" name="glibtop_get_swap_r" link="libgtop-swap.html#glibtop-get-swap-r"/>
-    <keyword type="function" name="glibtop_get_swap_l ()" link="libgtop-swap.html#glibtop-get-swap-l"/>
-    <keyword type="function" name="glibtop_get_swap_p ()" link="libgtop-swap.html#glibtop-get-swap-p"/>
-    <keyword type="function" name="glibtop_get_swap_s ()" link="libgtop-swap.html#glibtop-get-swap-s"/>
+    <keyword type="member" name="glibtop-netlist.flags" link="libgtop-Net-List.html#glibtop-netlist.flags"/>
+    <keyword type="member" name="glibtop-netlist.number" link="libgtop-Net-List.html#glibtop-netlist.number"/>
+    <keyword type="member" name="glibtop-proc-time.start-time" link="libgtop-Process-Time.html#glibtop-proc-time.start-time"/>
+    <keyword type="member" name="glibtop-proc-time.rtime" link="libgtop-Process-Time.html#glibtop-proc-time.rtime"/>
+    <keyword type="member" name="glibtop-proc-time.utime" link="libgtop-Process-Time.html#glibtop-proc-time.utime"/>
+    <keyword type="member" name="glibtop-proc-time.stime" link="libgtop-Process-Time.html#glibtop-proc-time.stime"/>
+    <keyword type="member" name="glibtop-proc-time.cutime" link="libgtop-Process-Time.html#glibtop-proc-time.cutime"/>
+    <keyword type="member" name="glibtop-proc-time.cstime" link="libgtop-Process-Time.html#glibtop-proc-time.cstime"/>
+    <keyword type="member" name="glibtop-proc-time.timeout" link="libgtop-Process-Time.html#glibtop-proc-time.timeout"/>
+    <keyword type="member" name="glibtop-proc-time.it-real-value" link="libgtop-Process-Time.html#glibtop-proc-time.it-real-value"/>
+    <keyword type="member" name="glibtop-proc-time.frequency" link="libgtop-Process-Time.html#glibtop-proc-time.frequency"/>
+    <keyword type="member" name="glibtop-proc-time.xcpu-utime" link="libgtop-Process-Time.html#glibtop-proc-time.xcpu-utime"/>
+    <keyword type="member" name="glibtop-proc-time.xcpu-stime" link="libgtop-Process-Time.html#glibtop-proc-time.xcpu-stime"/>
+    <keyword type="member" name="glibtop-sysinfo.flags" link="libgtop-sysinfo.html#glibtop-sysinfo.flags"/>
+    <keyword type="member" name="glibtop-sysinfo.ncpu" link="libgtop-sysinfo.html#glibtop-sysinfo.ncpu"/>
+    <keyword type="member" name="glibtop-sysinfo.cpuinfo" link="libgtop-sysinfo.html#glibtop-sysinfo.cpuinfo"/>
+    <keyword type="member" name="glibtop-proclist.flags" link="libgtop-Process-List.html#glibtop-proclist.flags"/>
+    <keyword type="member" name="glibtop-proclist.number" link="libgtop-Process-List.html#glibtop-proclist.number"/>
+    <keyword type="member" name="glibtop-proclist.total" link="libgtop-Process-List.html#glibtop-proclist.total"/>
+    <keyword type="member" name="glibtop-proclist.size" link="libgtop-Process-List.html#glibtop-proclist.size"/>
   </functions>
 </book>

@@ -3,6 +3,7 @@
 #endif
 
 #include <glibtop.h>
+#include <glibtop/sysinfo.h>
 
 #include <glibtop/union.h>
 
@@ -20,18 +21,59 @@
 #define PPRINT(DATA, FORMAT) printf("\t%4lu B %3lu " #DATA " = " FORMAT "\n", \
 (unsigned long) sizeof buf.DATA, (unsigned long) buf_offsetof(DATA), buf.DATA)
 
-#define PPRINT_ARRAY(ARRAY, SIZE, FORMAT) do { \
+#define PPRINT_ARRAY(ARRAY, SIZE, FORMAT) do {				\
+    size_t i;								\
+    printf("\t%4lu B %3lu " #ARRAY "[%lu] = { ",			\
+	   (unsigned long) sizeof buf.ARRAY,				\
+	   (unsigned long) buf_offsetof(ARRAY),				\
+	   (unsigned long) G_N_ELEMENTS(buf.ARRAY));			\
+    for (i = 0; i < (SIZE); ++i) {					\
+      printf(".%u = " FORMAT ", ", i, buf.ARRAY[i]);			\
+      if (!buf.ARRAY[i] && i < (SIZE - 1) && !buf.ARRAY[i + 1]) {	\
+	do { i++; } while (i < SIZE && !buf.ARRAY[i]);			\
+	printf("..., ");						\
+      }									\
+    }									\
+    printf("}\n");							\
+  } while(0)
+
+#define PPRINT_ENTRY_ARRAY(ARRAY, SIZE) do { \
 size_t i; \
 printf("\t%4lu B %3lu " #ARRAY "[%lu] = { ", \
-(unsigned long) sizeof buf.ARRAY, (unsigned long) buf_offsetof(ARRAY),\
-(unsigned long) G_N_ELEMENTS(buf.ARRAY)); \
-for(i = 0; i < (SIZE - 1); ++i) printf(".%u = " FORMAT ", ", i, buf.ARRAY[i]); \
-printf(".%u = " FORMAT " }\n", SIZE - 1 , buf.ARRAY[SIZE - 1]); \
+(unsigned long) sizeof buf->ARRAY, 0,\
+(unsigned long) G_N_ELEMENTS(buf->ARRAY)); \
+for(i = 0; i < SIZE; ++i) { \
+  if (buf->ARRAY[i].values) {			\
+    printf ("[ ");				\
+    PPRINT_HASHTABLE(buf->ARRAY[i].values);	\
+    printf ("]\n");				\
+  }						\
+} \
+printf("} "); \
+} while(0)
+
+#define PPRINT_HASHTABLE(HASHTABLE) do { \
+g_hash_table_foreach (HASHTABLE, (GHFunc)pprint_hashtable_item, NULL); \
 } while(0)
 
 #define FOOTER_PPRINT() putchar('\n');
 
+static void pprint_hashtable_item(gchar* key, gchar* value, gpointer user_data) 
+{
+  printf ("'%s': '%s', ", key, value);
+}
+static void pprint_get_sysinfo(void)
+{
+  const glibtop_sysinfo *buf;
 
+  buf = glibtop_get_sysinfo();
+
+  HEADER_PPRINT(glibtop_get_sysinfo);
+  //PPRINT(flags, "%#llx");
+  //PPRINT(ncpu, "%llu");
+  PPRINT_ENTRY_ARRAY(cpuinfo, 4);
+  FOOTER_PPRINT();
+}
 
 static void pprint_get_cpu(void)
 {
@@ -286,11 +328,34 @@ static void pprint_get_proc_mem(pid_t pid)
 }
 
 
+static void pprint_get_proc_affinity(pid_t pid)
+{
+  glibtop_proc_affinity buf;
+  guint32 i;
+  guint16* cpus;
+
+  cpus = glibtop_get_proc_affinity(&buf, pid);
+
+  HEADER_PPRINT(glibtop_get_proc_affinity);
+  PPRINT(flags, "%#llx");
+  PPRINT(number, "%u");
+  PPRINT(all, "%d");
+
+  printf("\taffinity=");
+  for (i = 0; i < buf.number; i++) {
+    printf("%d, ", cpus[i]);
+  }
+  putchar('\n');
+
+  FOOTER_PPRINT();
+}
+
 
 int main()
 {
   glibtop_init();
 
+  pprint_get_sysinfo();
   pprint_get_cpu();
 
   pprint_get_fsusage("/");
@@ -317,6 +382,7 @@ int main()
 
   pprint_get_proc_kernel(getpid());
   pprint_get_proc_mem(getpid());
+  pprint_get_proc_affinity(getpid());
 
   glibtop_close();
 

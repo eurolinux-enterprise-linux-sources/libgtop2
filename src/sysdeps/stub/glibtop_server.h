@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_SERVER_H__
@@ -45,6 +45,8 @@ G_BEGIN_DECLS
 #define GLIBTOP_SUID_NETLOAD		0
 #define GLIBTOP_SUID_NETLIST		0
 #define GLIBTOP_SUID_PPP		0
+#define GLIBTOP_SUID_PROC_WD            0
+#define GLIBTOP_SUID_PROC_AFFINITY      0
 
 G_END_DECLS
 

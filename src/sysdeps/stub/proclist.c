@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -42,7 +42,7 @@ _glibtop_init_proclist_s (glibtop *server)
  *   On success, it returnes a pointer to a list of buf->number elements
  *   each buf->size big. The total size is stored in buf->total. */
 
-unsigned *
+pid_t *
 glibtop_get_proclist_s (glibtop *server, glibtop_proclist *buf,
 			gint64 which, gint64 arg)
 {

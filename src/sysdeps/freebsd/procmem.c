@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -60,8 +60,7 @@ static const unsigned long _glibtop_sysdeps_proc_mem_share =
 void
 _glibtop_init_proc_mem_p (glibtop *server)
 {
-	server->sysdeps.proc_mem = _glibtop_sysdeps_proc_mem |
-		_glibtop_sysdeps_proc_mem_share;
+	server->sysdeps.proc_mem = _glibtop_sysdeps_proc_mem;
 }
 
 /* Provides detailed information about a process. */
@@ -76,8 +75,6 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
 	struct vm_object object;
 	int count;
 
-	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_MEM), 0);
-
 	memset (buf, 0, sizeof (glibtop_proc_mem));
 
 	if (server->sysdeps.proc_mem == 0)
@@ -87,7 +84,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
 	if (pid == 0) return;
 
 	/* Get the process data */
-	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
+	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid, &count);
 	if ((pinfo == NULL) || (count < 1)) {
 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
 		return;
@@ -102,9 +99,16 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
        buf->resident = buf->rss = (guint64)
 	       ps_pgtok (pinfo [0].ki_rssize) * 1024;
 
+       buf->flags |= _glibtop_sysdeps_proc_mem;
+
+#if 0
+	/*
+	 * It doesn't make any sense to count as shared each and every mmaped file
+	 */
+
 	/* Now we get the shared memory. */
 
-	if (kvm_read (server->machine.kd,
+	if (kvm_read (server->machine->kd,
 		      (unsigned long) pinfo [0].PROC_VMSPACE,
 		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace)) {
 		glibtop_warn_io_r (server, "kvm_read (vmspace)");
@@ -113,7 +117,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
 
 	first = vmspace.vm_map.header.next;
 
-	if (kvm_read (server->machine.kd,
+	if (kvm_read (server->machine->kd,
 		      (unsigned long) vmspace.vm_map.header.next,
 		      (char *) &entry, sizeof (entry)) != sizeof (entry)) {
 		glibtop_warn_io_r (server, "kvm_read (entry)");
@@ -127,7 +131,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
 	 * to OBJT_DEFAULT so if seems this really works. */
 
 	while (entry.next != first) {
-		if (kvm_read (server->machine.kd,
+		if (kvm_read (server->machine->kd,
 			      (unsigned long) entry.next,
 			      (char *) &entry, sizeof (entry)) != sizeof (entry)) {
 			glibtop_warn_io_r (server, "kvm_read (entry)");
@@ -142,7 +146,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
 
 		/* We're only interested in `vm_object's */
 
-		if (kvm_read (server->machine.kd,
+		if (kvm_read (server->machine->kd,
 			      (unsigned long) entry.object.vm_object,
 			      (char *) &object, sizeof (object)) != sizeof (object)) {
 			glibtop_warn_io_r (server, "kvm_read (object)");
@@ -155,6 +159,6 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
 		buf->share += object.un_pager.vnp.vnp_size;
 	}
 
-	buf->flags = _glibtop_sysdeps_proc_mem |
-		_glibtop_sysdeps_proc_mem_share;
+	buf->flags |= _glibtop_sysdeps_proc_mem_share;
+#endif
 }

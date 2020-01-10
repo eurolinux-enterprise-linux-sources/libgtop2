@@ -12,15 +12,13 @@
 ## Martin <martin@home-of-linux.org>
 ##
 
-LINK				= $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
-
-INCLUDES			= $(LIBGTOP_CFLAGS) @INCLUDES@ -D_BSD \
+AM_CPPFLAGS			= $(LIBGTOP_CFLAGS) @AM_CPPFLAGS@ -D_BSD \
 				  -DLIBGTOP_COMPILE_SYSTEM="\"`uname -s`\"" \
 				  -DLIBGTOP_COMPILE_RELEASE="\"`uname -r`\"" \
 				  -DLIBGTOP_COMPILE_VERSION="\"`uname -v`\"" \
 				  -DLIBGTOP_COMPILE_MACHINE="\"`uname -m`\""
 
-if NEED_LIBGTOP
+if LIBGTOP_NEED_SERVER
 suid_sysdeps			= $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps_suid-2.0.la
 suid_common			= $(top_builddir)/sysdeps/common/libgtop_suid_common-2.0.la
 else
@@ -43,8 +41,13 @@ libgtop_daemon2_LDADD		= $(top_builddir)/lib/libgtop-2.0.la \
 				  @libs_xauth@
 
 libgtop_server2_SOURCES		= server.c slave.c io.c version.c daemon.h
-libgtop_server2_LDADD		= $(GLIB_LIBS) $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps_suid-2.0.la \
-				  $(top_builddir)/sysdeps/common/libgtop_suid_common-2.0.la
+libgtop_server2_LDADD		= $(top_builddir)/lib/libgtop-2.0.la \
+				  $(top_builddir)/sysdeps/common/libgtop_common-2.0.la \
+				  $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps-2.0.la \
+				  @sysdeps_suid_lib@ \
+				  $(suid_sysdeps) $(suid_common) \
+				  $(LIBGTOP_LIBS) \
+				  @libs_xauth@
 
 EXTRA_DIST			= server_config.h.in server_config.pl
 

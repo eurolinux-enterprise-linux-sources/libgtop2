@@ -1,5 +1,5 @@
 # Note that this is NOT a relocatable package
-%define ver      2.28.4
+%define ver      2.34.2
 %define  RELEASE SNAP
 %define  rel     %{?CUSTOM_RELEASE} %{!?CUSTOM_RELEASE:%RELEASE}
 %define prefix   /usr

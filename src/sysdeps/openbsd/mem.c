@@ -1,5 +1,3 @@
-/* $OpenBSD: mem.c,v 1.11 2011/07/10 15:23:01 jasper Exp $	*/
-
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -30,9 +28,7 @@
 
 #include <sys/mount.h>
 #include <sys/sysctl.h>
-#include <sys/vmmeter.h>
 #include <uvm/uvm_extern.h>
-#include <uvm/uvm_param.h>
 
 static const unsigned long _glibtop_sysdeps_mem =
 (1L << GLIBTOP_MEM_TOTAL)  + (1L << GLIBTOP_MEM_USED) +
@@ -50,28 +46,16 @@ static int pageshift;		/* log base 2 of the pagesize */
 /* define pagetok in terms of pageshift */
 #define pagetok(size) ((size) << pageshift)
 
-/* nlist structure for kernel access */
-static struct nlist nlst [] = {
-	{ "_bufpages" },
-	{ 0 }
-};
-
 /* MIB array for sysctl */
-static int vmmeter_mib [] = { CTL_VM, VM_METER };
 static int uvmexp_mib  [] = { CTL_VM, VM_UVMEXP };
 static int bcstats_mib [] = { CTL_VFS, VFS_GENERIC, VFS_BCACHESTAT };
 
 /* Init function. */
 
 void
-_glibtop_init_mem_p (glibtop *server)
+_glibtop_init_mem_s (glibtop *server)
 {
 	register int pagesize;
-
-	if (kvm_nlist (server->machine.kd, nlst) < 0) {
-		glibtop_warn_io_r (server, "kvm_nlist (mem)");
-		return;
-	}
 
 	/* get the page size and calculate pageshift from it */
 	pagesize = sysconf(_SC_PAGESIZE);
@@ -88,14 +72,10 @@ _glibtop_init_mem_p (glibtop *server)
 }
 
 void
-glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
+glibtop_get_mem_s (glibtop *server, glibtop_mem *buf)
 {
-	struct vmtotal vmt;
 	struct uvmexp uvmexp;
 	struct bcachestats bcstats;
-	u_int v_used_count;
-	u_int v_total_count;
-	u_int v_free_count;
 	size_t length;
 
 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_MEM), 0);
@@ -106,13 +86,6 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 		return;
 
 	/* Get the data from sysctl */
-	length = sizeof (vmt);
-	if (sysctl (vmmeter_mib, 2, &vmt, &length, NULL, 0)) {
-		glibtop_warn_io_r (server, "sysctl (vm.vmmeter)");
-		bzero(&vmt, sizeof(length));
-		return;
-	}
-
 	length = sizeof (uvmexp);
 	if (sysctl (uvmexp_mib, 2, &uvmexp, &length, NULL, 0)) {
 		glibtop_warn_io_r (server, "sysctl (vm.uvmexp)");
@@ -127,21 +100,12 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 		return;
 	}
 
-	/*
-	 * t_arm = active real memory
-	 * t_rm = total real memory in use
-	 * t_free = free memory pages
-	 */
-	v_total_count = vmt.t_rm + vmt.t_free;
-	v_used_count = vmt.t_rm;
-	v_free_count = vmt.t_free;
-
 	/* convert memory stats to Kbytes */
-	buf->total = (guint64) pagetok (v_total_count) << LOG1024;
-	buf->used  = (guint64) pagetok (v_used_count) << LOG1024;
-	buf->free  = (guint64) pagetok (v_free_count) << LOG1024;
+	buf->total = (guint64) pagetok (uvmexp.npages) << LOG1024;
+	buf->used  = (guint64) pagetok (uvmexp.npages - uvmexp.free) << LOG1024;
+	buf->free  = (guint64) pagetok (uvmexp.free) << LOG1024;
 	buf->locked = (guint64) pagetok (uvmexp.wired) << LOG1024;
-	buf->shared = (guint64) pagetok (vmt.t_rmshr) << LOG1024;
+	buf->shared = (guint64) pagetok (0 /* XXX */) << LOG1024;
 	buf->cached = (guint64) pagetok (bcstats.numbufpages) << LOG1024;
 	buf->buffer = 0;
 

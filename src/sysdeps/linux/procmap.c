@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -52,6 +52,7 @@ static const unsigned long _glibtop_sysdeps_map_entry =
 
 static const unsigned long _glibtop_sysdeps_map_entry_smaps =
 (1UL << GLIBTOP_MAP_ENTRY_SIZE) + (1UL << GLIBTOP_MAP_ENTRY_RSS) +
+(1UL << GLIBTOP_MAP_ENTRY_PSS) + (1UL << GLIBTOP_MAP_ENTRY_SWAP) +
 (1UL << GLIBTOP_MAP_ENTRY_SHARED_DIRTY) + (1UL << GLIBTOP_MAP_ENTRY_SHARED_CLEAN) +
 (1UL << GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY) + (1UL << GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN);
 
@@ -98,7 +99,7 @@ parse_smaps(glibtop_map_entry *entry, const char* line)
 	if ((colon = is_smap_value(line)) == NULL)
 		return FALSE;
 
-	len = colon - line + 1;
+	len = colon - line;
 	smap = _glibtop_find_smap(line, len);
 
 //		g_debug("smap %s -> %p", line, smap);

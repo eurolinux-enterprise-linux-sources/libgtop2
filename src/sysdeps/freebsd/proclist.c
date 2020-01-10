@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -70,8 +70,7 @@ glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
 	glibtop_proc_state procstate;
 	size_t len;
 	unsigned int i;
-
-	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROCLIST), 0);
+	pid_t prev;
 
 	memset (buf, 0, sizeof (glibtop_proclist));
 
@@ -96,6 +95,17 @@ glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
 		pid_t pid;
 
 		pid = (pid_t) pinfo[i].ki_pid;
+
+		/* If a process has many threads, kern.proc.all reports multiple
+		   times the same pid. So don't look twice at the same pid.
+		   FIXME?: not sure that kern.proc.all reports a partially sorted
+		   list (all pid/threads grouped).
+		*/
+		if (i > 0 && pid == prev) {
+			continue;
+		}
+
+		prev = pid;
 
 		switch (which & GLIBTOP_KERN_PROC_MASK) {
 			case GLIBTOP_KERN_PROC_ALL:
@@ -133,6 +143,9 @@ glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
 			glibtop_get_proc_state_p (server, &procstate, pid);
 			if (procstate.flags & (1L << GLIBTOP_PROC_STATE_STATE))
 				if (procstate.state != GLIBTOP_PROCESS_RUNNING) continue;
+
+			if (pinfo[i].ki_ppid == 0 && !strcmp(pinfo[i].ki_comm, "idle"))
+				continue;
 		}
 
 		if (which & GLIBTOP_EXCLUDE_SYSTEM)

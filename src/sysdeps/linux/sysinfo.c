@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -36,7 +36,7 @@ static glibtop_sysinfo sysinfo = { .flags = 0 };
 static void
 init_sysinfo (glibtop *server)
 {
-	char buffer [16384];
+	char buffer [65536];
 	gchar ** processors;
 
 	if(G_LIKELY(sysinfo.flags)) return;
@@ -51,7 +51,8 @@ init_sysinfo (glibtop *server)
 	    sysinfo.ncpu++) {
 
 		gchar **parts, **p;
-
+        if (g_strrstr (processors[sysinfo.ncpu], "processor" ) == NULL) 
+            continue;
 		glibtop_entry * const cpuinfo = &sysinfo.cpuinfo[sysinfo.ncpu];
 
 		cpuinfo->labels = g_ptr_array_new ();

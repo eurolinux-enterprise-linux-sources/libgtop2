@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -37,11 +37,15 @@ static void set_linux_version(glibtop *server)
 {
 	struct utsname uts;
 	unsigned x = 0, y = 0, z = 0;	/* cleared in case sscanf() < 3 */
+	int version_string_depth;
 
 	if (uname(&uts) == -1) /* failure most likely implies impending death */
 		glibtop_error_r(server, "uname() failed");
 
-	if (sscanf(uts.release, "%u.%u.%u", &x, &y, &z) < 3)
+	version_string_depth = sscanf(uts.release, "%u.%u.%u", &x, &y, &z);
+
+	if ((version_string_depth < 2) ||                /* Non-standard for all known kernels */
+	   ((version_string_depth < 3) && (x < 3)))      /* Non-standard for 2.x.x kernels */
 		glibtop_warn_r(server,
 			       "Non-standard uts for running kernel:\n"
 			       "release %s=%u.%u.%u gives version code %d\n",
@@ -61,13 +65,14 @@ static void set_linux_version(glibtop *server)
 /* Opens pipe to gtop server. Returns 0 on success and -1 on error. */
 
 #define FILENAME	"/proc/stat"
+#define STAT_BUFSIZ     81920
 
 void
 glibtop_open_s (glibtop *server, const char *program_name,
 		const unsigned long features,
 		const unsigned flags)
 {
-	char buffer [BUFSIZ], *p = buffer;
+	char buffer [STAT_BUFSIZ], *p = buffer;
 
 	server->name = program_name;
 

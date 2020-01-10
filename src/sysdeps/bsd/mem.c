@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -92,7 +92,7 @@ _glibtop_init_mem_p (glibtop *server)
 {
 	register int pagesize;
 
-	if (kvm_nlist (server->machine.kd, nlst) < 0) {
+	if (kvm_nlist (server->machine->kd, nlst) < 0) {
 		glibtop_warn_io_r (server, "kvm_nlist (mem)");
 		return;
 	}
@@ -154,14 +154,14 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 	}
 #else
 	/* Get the data from kvm_* */
-	if (kvm_read (server->machine.kd, nlst[1].n_value,
+	if (kvm_read (server->machine->kd, nlst[1].n_value,
 		      &vmm, sizeof (vmm)) != sizeof (vmm)) {
 		glibtop_warn_io_r (server, "kvm_read (cnt)");
 		return;
 	}
 #endif
 
-	if (kvm_read (server->machine.kd, nlst[0].n_value,
+	if (kvm_read (server->machine->kd, nlst[0].n_value,
 		      &bufspace, sizeof (bufspace)) != sizeof (bufspace)) {
 		glibtop_warn_io_r (server, "kvm_read (bufspace)");
 		return;

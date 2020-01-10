@@ -1,5 +1,3 @@
-/* $OpenBSD: procmem.c,v 1.4 2011/05/24 10:40:47 jasper Exp $	*/
-
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -40,6 +38,10 @@
 
 #include <sys/ucred.h>
 #include <sys/sysctl.h>
+
+/* XXX until uvm gets cleaned up */
+#include <sys/mutex.h>
+typedef int boolean_t;
 #include <uvm/uvm.h>
 
 /* Fixme ... */
@@ -96,7 +98,7 @@ void
 glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
 			pid_t pid)
 {
-	struct kinfo_proc2 *pinfo;
+	struct kinfo_proc *pinfo;
 
 	int count;
 
@@ -111,7 +113,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
 	if (pid == 0) return;
 
 	/* Get the process data */
-	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
+	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid,
 			      sizeof (*pinfo), &count);
 	if ((pinfo == NULL) || (count < 1)) {
 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);

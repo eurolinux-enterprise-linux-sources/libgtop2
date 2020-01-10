@@ -1,5 +1,3 @@
-/* $OpenBSD: procargs.c,v 1.3 2011/05/23 19:35:54 jasper Exp $	*/
-
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -49,7 +47,7 @@ char *
 glibtop_get_proc_args_p (glibtop *server, glibtop_proc_args *buf,
 			 pid_t pid, unsigned max_len)
 {
-	struct kinfo_proc2 *pinfo;
+	struct kinfo_proc *pinfo;
 	char *retval, **args, **ptr;
 	size_t size = 0, pos = 0;
 	int count;
@@ -58,21 +56,21 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc_args *buf,
 
 	memset (buf, 0, sizeof (glibtop_proc_args));
 
-	/* swapper, init, pagedaemon, vmdaemon, update - this doen't work. */
-	if (pid < 5) return NULL;
+	/* Ignore init */
+	if (pid < 2) return NULL;
 
 	glibtop_suid_enter (server);
 
 	/* Get the process data */
-	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
+	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid,
 			       sizeof (*pinfo), &count);
-	if ((pinfo == NULL) || (count < 1)) {
+	if (pinfo == NULL) {
 		glibtop_suid_leave (server);
 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
 		return NULL;
 	}
 
-	args = kvm_getargv2 (server->machine.kd, pinfo, max_len);
+	args = kvm_getargv (server->machine->kd, pinfo, max_len);
 	if (args == NULL) {
 		glibtop_suid_leave (server);
 		glibtop_warn_io_r (server, "kvm_getargv (%d)", pid);

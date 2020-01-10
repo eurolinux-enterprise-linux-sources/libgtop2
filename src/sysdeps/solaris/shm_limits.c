@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -50,7 +50,7 @@ _glibtop_init_shm_limits_p (glibtop *server)
 {
 #if GLIBTOP_SOLARIS_RELEASE < 51000
 
-	kvm_t * const kd = server->machine.kd;
+	kvm_t * const kd = server->machine->kd;
 
 	if(kd && !kvm_nlist(kd, nlst))
 		server->sysdeps.shm_limits = _glibtop_sysdeps_shm_limits;
@@ -66,7 +66,7 @@ glibtop_get_shm_limits_p (glibtop *server, glibtop_shm_limits *buf)
 {
 #if GLIBTOP_SOLARIS_RELEASE < 51000
 
-	kvm_t * const kd = server->machine.kd;
+	kvm_t * const kd = server->machine->kd;
         glibtop_shm_limits sinfo;
 
 

@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -53,14 +53,14 @@ _glibtop_init_cpu_s (glibtop *server)
 void
 glibtop_get_cpu_s (glibtop *server, glibtop_cpu *buf)
 {
-    kstat_ctl_t * const kc = server->machine.kc;
+    kstat_ctl_t * const kc = server->machine->kc;
     cpu_stat_t cpu_stat;
     processorid_t cpu;
     int ncpu, found;
 
     memset (buf, 0, sizeof (glibtop_cpu));
 
-    buf->frequency = server->machine.ticks;
+    buf->frequency = server->machine->ticks;
     buf->flags = _glibtop_sysdeps_cpu_freq;
 
     if(!kc)
@@ -77,7 +77,7 @@ glibtop_get_cpu_s (glibtop *server, glibtop_cpu *buf)
 
     for (cpu = 0, found = 0; cpu < GLIBTOP_NCPU && found != ncpu; cpu++)
     {
-	kstat_t * const ksp = server->machine.cpu_stat_kstat [cpu];
+	kstat_t * const ksp = server->machine->cpu_stat_kstat [cpu];
 	if (!ksp) continue;;
 
 	++found;

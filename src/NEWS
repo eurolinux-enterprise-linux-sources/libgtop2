@@ -1,3 +1,122 @@
+16 January 2017: Overview of changes in 2.34.2
+================================================
+
+* Linux:
+  - fill last_processor member
+
+* Updated translations
+* Added more gettext options
+
+20 August 2016: Overview of changes in 2.34.1
+================================================
+
+* FreeBSD:
+  - rewrite netload to use official APIs
+  - mark wireless interfaces as such
+
+* All
+  - rename --with-libgtop-examples to --with-examples
+  - use gettext instead of intltool/glib-gettext
+  - added Language headers to the translations
+
+
+Special thanks to Gleb Smirnoff, Antoine Brodin, Koop Mast and Ting-Wei Lan for
+the FreeBSD fixes, to Javier Jardón for the gettext migration and to Piotr Drąg
+for adding the Language headers.
+
+22 March 2016: Overview of changes in 2.34.0
+================================================
+
+* Stable release
+
+29 February 2016: Overview of changes in 2.33.91
+
+* Updated translations
+* Fix building on must-libc
+
+18 January 2016: Overview of changes in 2.33.4
+
+* On OpenBSD only PID 1 is special
+* Call setlocale in main
+
+14 December: Overview of changes in 2.33.3
+
+* Fixed borken compilation on OpenBSD 
+* Updated translations.
+
+21 September 2015: Overview of changes in 2.32.0
+
+* Stable release
+
+14 September 2015: Overview of changes in 2.31.91
+================================================
+* Darwin:
+  - Fixed build.
+
+* All
+  - GI docs fixes
+  - include fixes
+  - Updated translations
+
+16 August 2015: Overview of changes in 2.31.90
+=============================================
+* ABI changes:
+  - ABI was inconsistent on platforms like FreeBSD which make use of
+    glibtop_machine. The ABI was actually different between the
+    library and the server. Fixed this by simply always defining
+    glibtop_machine in glibtop struct.
+  - Add Pss and Swap members in glibtop_proc_mem.
+  - This is the second ABI breakage in since 2.28 (the first one was
+    bumping NCPU), there were no release for 2.30.
+
+* FreeBSD:
+  - proclist: exclude the "idle" kernel process when GLIBTOP_EXCLUDE_IDLE.
+  - Remove extraneous glibtop_init() calls.
+
+* Linux:
+  - proc_mem: implement Pss and Swap.
+  - Remove extraneous glibtop_init() calls.
+
+* All:
+  - Propagate the change that machine in struct glibtop is now a
+    pointer. Hope that change doesn't break build on other platforms,
+    I can only test Linux and FreeBSD.
+
+
+5 August 2015: Overview of changes in 2.31.4
+=============================================
+* 71 commits !
+* Implement a proper --enable-debug mode.
+* FreeBSD:
+	- procstate: set process name for kernel (pid=0)
+	- procmap: get dev/inode for ZFS (no filename yet)
+	- mem: rework memory usage to something more meaningful
+	- proclist: don't report threads
+	- proctime: fix CPU times
+* Linux:
+	- mem: use MemAvailable when available
+	- mem: match `free`, report Slab as Cached.
+	- support for x.y versionsmemory to match `free`
+* Fix a lot of GI tags: it now works without crashing.
+* Server and daemon binaries are now dynamically linked against their libgtop.
+* Update a lot of examples/.
+* Clean up some very old code.
+* Updated translations.
+
+Special thanks to Ting-Wei Lan for providing patches and feedback on FreeBSD.
+
+22 June 2015: Overview of changes in 2.31.3
+=============================================
+* Numerous OpenBSD backend fixes.
+* Fixed FreeBSD build issues.
+* Implemented procaffinity support for NetBSD.
+* Updated translations
+
+19 August 2013: Overview of changes in 2.28.5
+=============================================
+* Fix numerous bugs in the OpenBSD backend.
+* Updated translations.
+
 30 August 2011: Overview of changes in 2.28.4
 =============================================
 * Fix numerous bugs in the FreeBSD backend.

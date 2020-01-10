@@ -15,46 +15,20 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
 #include "daemon.h"
 
-static glibtop _glibtop_global_server;
-glibtop *glibtop_global_server = &_glibtop_global_server;
-
 #include <glibtop.h>
 #include <glibtop/union.h>
 #include <glibtop/sysdeps.h>
+#include <glibtop/error.h>
+#include <glibtop/machine.h>
 
 #include <sys/utsname.h>
-
-const unsigned long glibtop_server_features =
-GLIBTOP_SUID_CPU +
-GLIBTOP_SUID_MEM +
-GLIBTOP_SUID_SWAP +
-GLIBTOP_SUID_UPTIME +
-GLIBTOP_SUID_LOADAVG +
-GLIBTOP_SUID_SHM_LIMITS +
-GLIBTOP_SUID_MSG_LIMITS +
-GLIBTOP_SUID_SEM_LIMITS +
-GLIBTOP_SUID_PROCLIST +
-GLIBTOP_SUID_PROC_STATE +
-GLIBTOP_SUID_PROC_UID +
-GLIBTOP_SUID_PROC_MEM +
-GLIBTOP_SUID_PROC_TIME +
-GLIBTOP_SUID_PROC_SIGNAL +
-GLIBTOP_SUID_PROC_KERNEL +
-GLIBTOP_SUID_PROC_SEGMENT +
-GLIBTOP_SUID_PROC_ARGS +
-GLIBTOP_SUID_PROC_MAP +
-GLIBTOP_SUID_NETLOAD +
-GLIBTOP_SUID_NETLIST +
-GLIBTOP_SUID_PROC_WD +
-GLIBTOP_SUID_PROC_AFFINITY +
-GLIBTOP_SUID_PPP;
 
 #include <fcntl.h>
 #include <locale.h>
@@ -69,6 +43,8 @@ main(int argc, char *argv[])
 
 	uid = getuid (); euid = geteuid ();
 	gid = getgid (); egid = getegid ();
+
+	glibtop_debug ("uid=%d euid=%d gid=%d egid=%d", getuid(), geteuid(), getgid(), getegid());
 
 	if (uname (&uts) < 0) _exit (1);
 
@@ -90,19 +66,27 @@ main(int argc, char *argv[])
 	if (strcmp (uts.sysname, LIBGTOP_COMPILE_SYSTEM) ||
 	    strcmp (uts.release, LIBGTOP_COMPILE_RELEASE) ||
 	    strcmp (uts.machine, LIBGTOP_COMPILE_MACHINE)) {
-		fprintf (stderr, "Can only run on %s %s %s\n",
+		fprintf (stderr, "This libgtop was compiled on %s %s %s\n",
 			 LIBGTOP_COMPILE_SYSTEM,
 			 LIBGTOP_COMPILE_RELEASE,
 			 LIBGTOP_COMPILE_MACHINE);
-		_exit (1);
+                fprintf (stderr, "If you see strange problems caused by it,\n");
+                fprintf (stderr, "you should recompile libgtop and dependent "
+                         "applications.\n");
 	}
 #endif
 
+	glibtop_machine_new (glibtop_global_server);
+
 	glibtop_init_p (glibtop_global_server, 0, 0);
+
+	glibtop_debug ("uid=%d euid=%d gid=%d egid=%d", getuid(), geteuid(), getgid(), getegid());
 
 	if (setreuid (euid, uid)) _exit (1);
 
 	if (setregid (egid, gid)) _exit (1);
+
+	glibtop_debug ("uid=%d euid=%d gid=%d egid=%d", getuid(), geteuid(), getgid(), getegid());
 
 	/* !!! END OF SUID ROOT PART !!! */
 

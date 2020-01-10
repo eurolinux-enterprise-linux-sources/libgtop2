@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_PROC_MAP_H__
@@ -48,8 +48,10 @@ G_BEGIN_DECLS
 #define GLIBTOP_MAP_ENTRY_SHARED_DIRTY		10
 #define GLIBTOP_MAP_ENTRY_PRIVATE_CLEAN		11
 #define GLIBTOP_MAP_ENTRY_PRIVATE_DIRTY		12
+#define GLIBTOP_MAP_ENTRY_PSS			13
+#define GLIBTOP_MAP_ENTRY_SWAP			14
 
-#define GLIBTOP_MAX_MAP_ENTRY		13
+#define GLIBTOP_MAX_MAP_ENTRY		15
 
 #define GLIBTOP_MAP_FILENAME_LEN	215
 
@@ -78,6 +80,8 @@ struct _glibtop_map_entry
 	guint64 shared_dirty;
 	guint64 private_clean; 
 	guint64 private_dirty;
+	guint64 pss;
+	guint64 swap;
 	char filename [GLIBTOP_MAP_FILENAME_LEN+1];
 };
 
@@ -88,9 +92,45 @@ struct _glibtop_proc_map
 	guint64 total;			/* GLIBTOP_PROC_MAP_TOTAL	*/
 	guint64 size;			/* GLIBTOP_PROC_MAP_SIZE	*/
 };
+
+/**
+ * glibtop_get_proc_map:
+ * @buf:
+ * @pid:
+ *
+ * Returns: (transfer none):
+ */
 glibtop_map_entry *
 glibtop_get_proc_map(glibtop_proc_map *buf, pid_t pid);
 
+
+
+/**
+ * glibtop_get_proc_map_l:
+ * @server:
+ * @buf: (out):
+ * @pid:
+ *
+ * Returns: (transfer none):
+ */
+
+/**
+ * glibtop_get_proc_map_p:
+ * @server:
+ * @buf: (out):
+ * @pid:
+ *
+ * Returns: (transfer none):
+ */
+
+/**
+ * glibtop_get_proc_map_s:
+ * @server:
+ * @buf: (out):
+ * @pid:
+ *
+ * Returns: (transfer none):
+ */
 
 #if GLIBTOP_SUID_PROC_MAP
 #define glibtop_get_proc_map_r		glibtop_get_proc_map_p
@@ -113,6 +153,8 @@ glibtop_map_entry *
 glibtop_get_proc_map_s (glibtop *server, glibtop_proc_map *buf, pid_t pid);
 #endif
 
+GType     glibtop_map_entry_get_type (void) G_GNUC_CONST;
+GType     glibtop_proc_map_get_type (void) G_GNUC_CONST;
 
 G_END_DECLS
 

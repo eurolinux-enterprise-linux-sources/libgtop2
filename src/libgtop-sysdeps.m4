@@ -4,20 +4,16 @@ dnl
 dnl It defines the following variables:
 dnl
 dnl * 'libgtop_sysdeps_dir'    - sysdeps dir for libgtop.
-dnl * 'libgtop_use_machine_h'  - some of system dependend parts of libgtop provide
-dnl                              their own header file. In this case we need to
-dnl                              define 'HAVE_GLIBTOP_MACHINE_H'.
-dnl * 'libgtop_need_server'    - is the server really needed? Defines 'NEED_LIBGTOP'
-dnl                              if true; defines conditional 'NEED_LIBGTOP'.
+dnl * 'libgtop_need_server'    - is the server really needed? Defines 'LIBGTOP_NEED_SERVER'
+dnl                              if true; defines conditional 'LIBGTOP_NEED_SERVER'.
 
 AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
 	AC_REQUIRE([AC_CANONICAL_HOST])
 
 	AC_SUBST(libgtop_sysdeps_dir)
-	AC_SUBST(libgtop_use_machine_h)
 	AC_SUBST(libgtop_need_server)
 
-	AC_ARG_WITH(libgtop-examples,
+	AC_ARG_WITH(examples,
 	AS_HELP_STRING([--with-examples],
 	[Build the libgtop examples @<:@default=yes@:>@]),[
 	build_examples="$withval"], [build_examples=yes])
@@ -31,39 +27,11 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
 
 	AM_CONDITIONAL(HACKER_MODE, test x"$hacker_mode" = xyes)
 
-	AC_ARG_WITH(libgtop-smp,
-	AS_HELP_STRING([--with-libgtop-smp],
-	[Enable SMP support @<:@default-auto@:>@]),[
-	libgtop_smp="$withval"],[libgtop_smp=auto])
-
-	if test $libgtop_smp = auto ; then
-	  AC_MSG_CHECKING(whether to enable SMP support)
-	  case "$host_os" in
-	  linux*)
-	    libgtop_smp=yes
-	    ;;
-	  aix*)
-	    libgtop_smp=yes
-	    ;;
-	  *)
-	    libgtop_smp=no
-	    ;;
-	  esac
-	  AC_MSG_RESULT($libgtop_smp)
-	fi
-
-	if test $libgtop_smp = yes ; then
-	  AC_DEFINE(HAVE_LIBGTOP_SMP, 1, [Define if libgtop supports SMP])
-	fi
-
-	AM_CONDITIONAL(LIBGTOP_SMP, test $libgtop_smp = yes)
-
 	AC_MSG_CHECKING(for libgtop sysdeps directory)
 
 	case "$host_os" in
 	linux*)
 	  libgtop_sysdeps_dir=linux
-	  libgtop_use_machine_h=no
 	  libgtop_have_sysinfo=yes
 	  libgtop_need_server=no
 	  libgtop_sysdeps_private_mountlist=yes
@@ -71,19 +39,18 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
 	  ;;
 	netbsd*|bsdi*)
 	  libgtop_sysdeps_dir=bsd
-	  libgtop_use_machine_h=yes
 	  libgtop_need_server=yes
 	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
 	  ;;
 	openbsd*)
 	  libgtop_sysdeps_dir=openbsd
-	  libgtop_use_machine_h=yes
 	  libgtop_need_server=yes
+	  libgtop_sysdeps_private_mountlist=yes
+	  libgtop_sysdeps_private_fsusage=yes
 	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2555 $(bindir)/libgtop_server2'
 	  ;;
 	freebsd*|kfreebsd*)
 	  libgtop_sysdeps_dir=freebsd
-	  libgtop_use_machine_h=yes
 	  libgtop_need_server=yes
 	  libgtop_sysdeps_private_mountlist=yes
 	  libgtop_sysdeps_private_fsusage=yes
@@ -91,27 +58,23 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
 	  ;;
 	solaris*)
 	  libgtop_sysdeps_dir=solaris
-	  libgtop_use_machine_h=yes
 	  libgtop_need_server=yes
 	  libgtop_postinstall='chgrp sys $(bindir)/libgtop_server && chmod 2755 $(bindir)/libgtop_server'
 	  ;;
 	aix*)
 	  libgtop_sysdeps_dir=aix
-	  libgtop_use_machine_h=yes
 	  libgtop_need_server=yes
 	  libgtop_have_sysinfo=yes
 	  libgtop_postinstall='chgrp system $(bindir)/libgtop_server && chmod g+s $(bindir)/libgtop_server2'
 	  ;;
 	darwin*)
 	  libgtop_sysdeps_dir=darwin
-	  libgtop_use_machine_h=yes
 	  libgtop_need_server=yes
 	  libgtop_have_sysinfo=yes
 	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod g+s $(bindir)/libgtop_server2'
 	  ;;
 	cygwin*)
 	  libgtop_sysdeps_dir=cygwin
-	  libgtop_use_machine_h=no
 	  libgtop_need_server=no
 	  libgtop_have_sysinfo=yes
 	  libgtop_sysdeps_private_mountlist=yes
@@ -123,23 +86,19 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
 	      #Please note that this port is obsolete and not working at
 	      #all. It is only useful for people who want to fix it ... :-)
 	      libgtop_sysdeps_dir=sun4
-	      libgtop_use_machine_h=yes
 	      libgtop_need_server=yes
 	      ;;
 	    osf*)
 	      libgtop_sysdeps_dir=osf1
-	      libgtop_use_machine_h=yes
 	      libgtop_need_server=yes
 	      ;;
 	    *)
 	      libgtop_sysdeps_dir=stub
-	      libgtop_use_machine_h=no
 	      libgtop_need_server=no
 	      ;;
 	    esac
 	  else
 	    libgtop_sysdeps_dir=stub
-	    libgtop_use_machine_h=no
 	    libgtop_need_server=no
 	  fi
 	  ;;
@@ -155,30 +114,13 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
 
 	case "$host_os" in
 	*bsd*)
-		case "$host_os" in
-		*kfreebsd*)
-		AC_CHECK_LIB(kvm, kvm_open, KVM_LIBS="-lkvm -lfreebsd -lbsd", KVM_LIBS=, -lfreebsd -lbsd);;
-		*) 
-	  	AC_CHECK_LIB(kvm, kvm_open, KVM_LIBS=-lkvm, KVM_LIBS=);;
-	  	esac
-	  
+	  AC_CHECK_LIB(kvm, kvm_open, KVM_LIBS=-lkvm, KVM_LIBS=)
 	  AC_SUBST(KVM_LIBS)
 
-	  case "$host_os" in
-	  kfreebsd*)
-	  	EXTRA_SYSDEPS_LIBS="-lgeom -ldevstat"
-		;;
-	  freebsd*)
-	  	osreldate=`sysctl -n kern.osreldate 2>/dev/null`
-		if test -n "${osreldate}" && test ${osreldate} -ge 600000 ; then
-		    EXTRA_SYSDEPS_LIBS="-lgeom -ldevstat"
-		fi
-		;;
-          esac
-
-	  AC_SUBST(EXTRA_SYSDEPS_LIBS)
-
-	  AC_CHECK_HEADERS(net/if_var.h)
+	  AC_CHECK_HEADERS(net/if_var.h,,, [
+#include <net/if.h>
+#include <sys/types.h>
+#include <sys/socket.h>])
 	  AC_MSG_CHECKING([for I4B])
 	  AC_TRY_COMPILE([
 #include <sys/types.h>
@@ -243,10 +185,10 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
 	  fi
 
 	  AC_MSG_CHECKING(what we need to define to get struct msginfo)
-	  AC_CACHE_VAL(msginfo_needs,
-	    msginfo_needs=
+	  AC_CACHE_VAL(msginfo_cv_needs,
+	    msginfo_cv_needs=
 	    for def in nothing KERNEL _KERNEL; do
-	      AC_COMPILE_IFELSE([#define $def
+	      AC_COMPILE_IFELSE([AC_LANG_SOURCE([#define $def
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>
@@ -258,23 +200,23 @@ main (void)
   struct msginfo mi;
   mi.msgmax = 0;
   return 0;
-}],
+}])],
 	        [
-	          msginfo_needs=$def
-	          if test ${msginfo_needs} = KERNEL; then
+	          msginfo_cv_needs=$def
+	          if test ${msginfo_cv_needs} = KERNEL; then
 	            AC_DEFINE(STRUCT_MSGINFO_NEEDS_KERNEL, 1,
 	              [Define to 1 if we need to define KERNEL to get 'struct msginfo'])
-	          elif test ${msginfo_needs} = _KERNEL; then
+	          elif test ${msginfo_cv_needs} = _KERNEL; then
 	            AC_DEFINE(STRUCT_MSGINFO_NEEDS__KERNEL, 1,
 	              [Define to 1 if we need to define _KERNEL to get 'struct msginfo'])
 	          fi
 	        ]
 	      )
-	      test -n "${msginfo_needs}" && break
+	      test -n "${msginfo_cv_needs}" && break
 	    done
 	  )
-	  AC_MSG_RESULT($msginfo_needs)
-	  if test -z "${msginfo_needs}"; then
+	  AC_MSG_RESULT($msginfo_cv_needs)
+	  if test -z "${msginfo_cv_needs}"; then
 	    AC_MSG_ERROR([Could not find the definition of 'struct msginfo'])
 	  fi
 	  ;;
@@ -319,22 +261,14 @@ main (void)
 	  ;;
 	esac
 
-	AC_MSG_CHECKING(for machine.h in libgtop sysdeps dir)
-	AC_MSG_RESULT($libgtop_use_machine_h)
-
 	AC_MSG_CHECKING(whether we need libgtop)
 	AC_MSG_RESULT($libgtop_need_server)
 
 	if test x$libgtop_need_server = xyes ; then
-	  AC_DEFINE(NEED_LIBGTOP, 1, [Define if libgtop is required])
+	  AC_DEFINE(LIBGTOP_NEED_SERVER, 1, [Define if libgtop server is required])
 	fi
 
-	if test x$libgtop_use_machine_h = xyes ; then
-	  AC_DEFINE(HAVE_GLIBTOP_MACHINE_H, 1,
-                    [Define if machine.h in libgtop sysdeps dir])
-	fi
-
-	AM_CONDITIONAL(NEED_LIBGTOP, test x$libgtop_need_server = xyes)
+	AM_CONDITIONAL(LIBGTOP_NEED_SERVER, test x$libgtop_need_server = xyes)
 	AM_CONDITIONAL(LIBGTOP_SYSDEPS_PRIVATE_MOUNTLIST, test x$libgtop_sysdeps_private_mountlist = xyes)
 	AM_CONDITIONAL(LIBGTOP_SYSDEPS_PRIVATE_FSUSAGE, test x$libgtop_sysdeps_private_fsusage = xyes)
 ])

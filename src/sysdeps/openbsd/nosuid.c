@@ -1,5 +1,3 @@
-/* $OpenBSD: nosuid.c,v 1.2 2011/05/23 19:35:54 jasper Exp $	*/
-
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
 
@@ -17,21 +15,13 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
 #include <glibtop.h>
-#include <glibtop/open.h>
 #include <glibtop/close.h>
-
-void
-glibtop_open_s (glibtop *server,
-		const char *program_name,
-		const unsigned long features,
-		const unsigned flags)
-{ }
 
 void
 glibtop_close_s (glibtop *server)

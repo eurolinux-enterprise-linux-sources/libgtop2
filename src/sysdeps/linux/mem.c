@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -52,13 +52,20 @@ glibtop_get_mem_s (glibtop *server, glibtop_mem *buf)
 
 	file_to_buffer(server, buffer, sizeof buffer, FILENAME);
 
+        /* try to match procps's `free` */
 	buf->total  = get_scaled(buffer, "MemTotal:");
 	buf->free   = get_scaled(buffer, "MemFree:");
 	buf->used   = buf->total - buf->free;
-	buf->shared = 0;
+	buf->shared = get_scaled(buffer, "Shmem:");
 	buf->buffer = get_scaled(buffer, "Buffers:");
-	buf->cached = get_scaled(buffer, "Cached:");
+	buf->cached = get_scaled(buffer, "Cached:") + get_scaled(buffer, "Slab:");
 
-	buf->user = buf->total - buf->free - buf->cached - buf->buffer;
+	if (server->os_version_code >= LINUX_VERSION_CODE(3, 14, 0)) {
+		buf->user = buf->total - get_scaled(buffer, "MemAvailable:");
+	}
+	else {
+		buf->user = buf->total - buf->free - buf->cached - buf->buffer;
+	}
+
 	buf->flags = _glibtop_sysdeps_mem;
 }

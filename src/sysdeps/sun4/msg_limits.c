@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -50,7 +50,7 @@ glibtop_get_msg_limits_p (glibtop *server, glibtop_msg_limits *buf)
 
 	/* !!! THE FOLLOWING CODE RUNS SGID KMEM - CHANGE WITH CAUTION !!! */
 
-	setregid (server->machine.gid, server->machine.egid);
+	setregid (server->machine->gid, server->machine->egid);
 
 	/* get the load average array */
 
@@ -58,7 +58,7 @@ glibtop_get_msg_limits_p (glibtop *server, glibtop_msg_limits *buf)
 				 (int *) &msginfo, sizeof (msginfo),
 				 _glibtop_nlist [X_MSGINFO].n_name);
 
-	if (setregid (server->machine.egid, server->machine.gid))
+	if (setregid (server->machine->egid, server->machine->gid))
 		_exit (1);
 
 	/* !!! END OF SGID KMEM PART !!! */

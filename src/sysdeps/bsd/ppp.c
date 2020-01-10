@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -81,7 +81,7 @@ _glibtop_init_ppp_p (glibtop *server)
 #endif
 #endif /* HAVE_I4B */
 
-	if (kvm_nlist (server->machine.kd, nlst) < 0)
+	if (kvm_nlist (server->machine->kd, nlst) < 0)
 		glibtop_error_io_r (server, "kvm_nlist");
 }
 
@@ -102,7 +102,7 @@ glibtop_get_ppp_p (glibtop *server, glibtop_ppp *buf, unsigned short device)
 
 	memset (buf, 0, sizeof (glibtop_ppp));
 
-	if (kvm_read (server->machine.kd, nlst [0].n_value,
+	if (kvm_read (server->machine->kd, nlst [0].n_value,
 		      &data, sizeof (data)) != sizeof (data))
 		glibtop_error_io_r (server, "kvm_read (i4bisppp_softc)");
 

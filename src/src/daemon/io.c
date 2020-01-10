@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -27,10 +27,8 @@ void
 do_output (int s, glibtop_response *resp, off_t offset,
 	   size_t data_size, const void *data)
 {
-#ifdef DEBUG
-	fprintf (stderr, "Really writing %d bytes at offset %lu.\n",
+	glibtop_debug ("Really writing %d bytes at offset %lu.",
 		 sizeof (glibtop_response), offset);
-#endif
 
 	resp->offset = offset;
 	resp->data_size = data_size;
@@ -44,9 +42,7 @@ do_output (int s, glibtop_response *resp, off_t offset,
 	}
 
 	if (resp->data_size) {
-#ifdef DEBUG
-		fprintf (stderr, "Writing %d bytes of data.\n", resp->data_size);
-#endif
+		glibtop_debug ("Writing %d bytes of data.", resp->data_size);
 
 		if (s == 0) {
 			if (write (1, data, resp->data_size) < 0)
@@ -88,10 +84,8 @@ do_read (int s, void *ptr, size_t total_size)
 		tmp_ptr += nread;
 		ptr = tmp_ptr;
 
-#ifdef DEBUG
-		fprintf (stderr, "READ (%d): %d - %d - %d\n",
+		glibtop_debug ("READ (%d): %d - %d - %d",
 			 nread, already_read, remaining, total_size);
-#endif
 	}
 
 	return already_read;

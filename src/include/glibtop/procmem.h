@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_PROCMEM_H__
@@ -53,6 +53,12 @@ struct _glibtop_proc_mem
 				 * of the process; usually 2,147,483,647 */
 };
 
+/**
+ * glibtop_get_proc_map:
+ * @buf:
+ * @pid:
+ *
+ */
 void glibtop_get_proc_mem(glibtop_proc_mem *buf, pid_t pid);
 
 #if GLIBTOP_SUID_PROC_MEM

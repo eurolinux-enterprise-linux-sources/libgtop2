@@ -13,8 +13,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_PROCWD_H__
@@ -30,7 +30,7 @@ typedef struct _glibtop_proc_wd	glibtop_proc_wd;
 #define GLIBTOP_PROC_WD_NUMBER	0
 #define GLIBTOP_PROC_WD_ROOT	1
 #define GLIBTOP_PROC_WD_EXE	2
-#define GLIBTOP_PROC_WD_MAX	3
+#define GLIBTOP_MAX_PROC_WD	3
 
 #define GLIBTOP_PROC_WD_ROOT_LEN 215
 #define GLIBTOP_PROC_WD_EXE_LEN 215
@@ -44,6 +44,13 @@ struct _glibtop_proc_wd
 };
 
 
+/**
+ * glibtop_get_proc_wd:
+ * @buf:
+ * @pid:
+ *
+ * Returns: (transfer full):
+ */
 char ** glibtop_get_proc_wd(glibtop_proc_wd *buf, pid_t pid);
 char ** glibtop_get_proc_wd_l(glibtop *server, glibtop_proc_wd *buf, pid_t pid);
 

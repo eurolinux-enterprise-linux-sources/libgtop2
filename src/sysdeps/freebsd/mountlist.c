@@ -13,7 +13,7 @@
 
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software Foundation,
-   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
 
 #include <config.h>
 
@@ -92,6 +92,7 @@ static gboolean ignore_mount_entry(const struct mount_entry *me)
 	static const char ignored[][17] = {
 		"autofs",
 		"devfs",
+		"fdescfs",
 		"fusectl",
 		"linprocfs",
 		"linsysfs",
@@ -124,8 +125,6 @@ glibtop_get_mountlist_s (glibtop *server, glibtop_mountlist *buf, int all_fs)
 
 	GArray *mount_array = g_array_new(FALSE, FALSE,
 					  sizeof(glibtop_mountentry));
-
-	glibtop_init_r (&server, 0, 0);
 
 	memset (buf, 0, sizeof (glibtop_mountlist));
 

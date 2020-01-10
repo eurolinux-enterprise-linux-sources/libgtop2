@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -97,7 +97,7 @@ solaris_stats(glibtop *server,
 	char	*name = interface;
 	char	*module;
 	char	*ptr;
-    	kstat_ctl_t * const kctl = server->machine.kc;
+    	kstat_ctl_t * const kctl = server->machine->kc;
 	kstat_t			*ksp;
 	kstat_named_t		*kdata;
 	int have_bytes = 1;

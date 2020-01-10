@@ -1,5 +1,3 @@
-/* $OpenBSD: glibtop_suid.h,v 1.2 2011/05/23 19:35:53 jasper Exp $	*/
-
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_SUID_H__
@@ -30,6 +28,8 @@ G_BEGIN_DECLS
 #include <sys/param.h>
 #endif
 
+#include <glibtop_machine.h>
+
 #define KI_PROC(ki) (&(ki))->kp_proc)
 #define KI_EPROC(ki) (&(ki))->kp_eproc)
 
@@ -37,11 +37,11 @@ G_BEGIN_DECLS
 #define UREADOK(ki)	(FORCEUREAD || (KI_PROC(ki)->p_flag & P_INMEM))
 
 static inline void glibtop_suid_enter (glibtop *server) {
-	setregid (server->machine.gid, server->machine.egid);
+	setregid (server->machine->gid, server->machine->egid);
 };
 
 static inline void glibtop_suid_leave (glibtop *server) {
-	if (setregid (server->machine.egid, server->machine.gid))
+	if (setregid (server->machine->egid, server->machine->gid))
 		_exit (1);
 };
 

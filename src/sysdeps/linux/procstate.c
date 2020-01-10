@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -109,6 +109,9 @@ glibtop_get_proc_state_s (glibtop *server, glibtop_proc_state *buf, pid_t pid)
 	    buf->state = GLIBTOP_PROCESS_DEAD;
 	    break;
 	  }
+
+	p = skip_multiple_token (p, 36);
+	buf->last_processor = atoi (p);
 
 	p = skip_token (buffer); /* pid */
 	if (G_UNLIKELY(*p++ != '('))

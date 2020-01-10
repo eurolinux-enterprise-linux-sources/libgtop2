@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -48,22 +48,15 @@ _glibtop_init_loadavg_s (glibtop *server)
 void
 glibtop_get_loadavg_s (glibtop *server, glibtop_loadavg *buf)
 {
-	double ldavg[3];
 	pid_t last_pid;
 	size_t len;
-	int i;
-
-	glibtop_init_s (&server, GLIBTOP_SYSDEPS_LOADAVG, 0);
 
 	memset (buf, 0, sizeof (glibtop_loadavg));
 
-	getloadavg (ldavg, 3);
+	if (getloadavg (buf->loadavg, G_N_ELEMENTS(buf->loadavg)) == -1)
+		return;
 
-	/* fill in the struct */
 	buf->flags = _glibtop_sysdeps_loadavg;
-	for (i = 0; i < 3; i++) {
-		buf->loadavg [i] = ldavg [i];
-	} /* end for */
 
 	len = sizeof (last_pid);
 	if (sysctlbyname ("kern.lastpid", &last_pid, &len, NULL, 0)) {

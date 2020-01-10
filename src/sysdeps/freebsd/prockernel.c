@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -69,8 +69,6 @@ glibtop_get_proc_kernel_p (glibtop *server,
 	struct kinfo_proc *pinfo;
 	int count;
 
-	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_KERNEL), 0);
-
 	memset (buf, 0, sizeof (glibtop_proc_kernel));
 
 	if (server->sysdeps.proc_time == 0)
@@ -82,7 +80,7 @@ glibtop_get_proc_kernel_p (glibtop *server,
 	glibtop_suid_enter (server);
 
 	/* Get the process information */
-	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
+	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid, &count);
 	if ((pinfo == NULL) || (count != 1)) {
 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
 		glibtop_suid_leave (server);

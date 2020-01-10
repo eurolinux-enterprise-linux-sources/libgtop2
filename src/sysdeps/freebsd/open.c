@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -43,10 +43,6 @@ glibtop_open_s (glibtop *server, const char *program_name,
 	server->real_ncpu = ncpus - 1;
 	server->ncpu = MIN(GLIBTOP_NCPU - 1, server->real_ncpu);
 
-#if defined(__FreeBSD_kernel__)
-	server->os_version_code = __FreeBSD_kernel_version;
-#else
 	server->os_version_code = __FreeBSD_version;
-#endif
 
 }

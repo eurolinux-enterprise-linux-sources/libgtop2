@@ -1,5 +1,3 @@
-/* $OpenBSD: proclist.c,v 1.3 2011/05/23 19:35:55 jasper Exp $	*/
-
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -62,7 +60,7 @@ pid_t *
 glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
 			gint64 real_which, gint64 arg)
 {
-	struct kinfo_proc2 *pinfo;
+	struct kinfo_proc *pinfo;
 	unsigned *pids = NULL;
 	int which, count;
 	int i,j;
@@ -74,7 +72,7 @@ glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
 	which = (int)(real_which & GLIBTOP_KERN_PROC_MASK);
 
 	/* Get the process data */
-	pinfo = kvm_getproc2 (server->machine.kd, which, arg,
+	pinfo = kvm_getprocs (server->machine->kd, which, arg,
 			      sizeof (*pinfo), &count);
 	if ((pinfo == NULL) || (count < 1)) {
 		glibtop_warn_io_r (server, "kvm_getprocs (proclist)");

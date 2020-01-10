@@ -1,5 +1,3 @@
-/* $OpenBSD: sem_limits.c,v 1.3 2011/05/23 19:35:56 jasper Exp $	*/
-
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -58,12 +56,12 @@ static struct nlist nlst [] = {
 void
 _glibtop_init_sem_limits_p (glibtop *server)
 {
-	if (kvm_nlist (server->machine.kd, nlst) < 0) {
+	if (kvm_nlist (server->machine->kd, nlst) < 0) {
 		glibtop_warn_io_r (server, "kvm_nlist (sem_limits)");
 		return;
 	}
 
-	if (kvm_read (server->machine.kd, nlst [0].n_value,
+	if (kvm_read (server->machine->kd, nlst [0].n_value,
 		      &_seminfo, sizeof (_seminfo)) != sizeof (_seminfo)) {
 		glibtop_warn_io_r (server, "kvm_read (seminfo)");
 		return;

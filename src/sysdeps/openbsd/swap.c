@@ -1,5 +1,3 @@
-/* $OpenBSD: swap.c,v 1.7 2011/07/10 15:23:01 jasper Exp $	*/
-
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -87,12 +85,12 @@ glibtop_get_swap_p (glibtop *server, glibtop_swap *buf)
 		buf->pagein = 0;
 		buf->pageout = 0;
 	} else {
-		buf->pagein = uvmexp.swapins - swappgsin;
-		buf->pageout = uvmexp.swapouts - swappgsout;
+		buf->pagein = uvmexp.pgswapin - swappgsin;
+		buf->pageout = uvmexp.pgswapout - swappgsout;
 	}
 
-	swappgsin = uvmexp.swapins;
-	swappgsout = uvmexp.swapouts;
+	swappgsin = uvmexp.pgswapin;
+	swappgsout = uvmexp.pgswapout;
 
 	nswap = swapctl (SWAP_NSWAP, 0, 0);
 	if (nswap < 0) {

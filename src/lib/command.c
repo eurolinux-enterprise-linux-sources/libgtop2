@@ -15,11 +15,12 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
+#include <glibtop/error.h>
 #include <glibtop/read.h>
 #include <glibtop/write.h>
 #include <glibtop/read_data.h>
@@ -34,6 +35,43 @@ glibtop_call_l (glibtop *server, unsigned command, size_t send_size,
 	glibtop_response response = {0};
 
 	glibtop_init_r (&server, 0, 0);
+
+	g_assert(command >= GLIBTOP_CMND_QUIT && command < GLIBTOP_MAX_CMND);
+
+	switch (command) {
+#define CHECK_CMND(CMND) case (CMND): glibtop_debug("CALL: command %s sending %lu bytes", #CMND, (unsigned long)send_size); break
+	  CHECK_CMND(GLIBTOP_CMND_QUIT);
+	  CHECK_CMND(GLIBTOP_CMND_SYSDEPS);
+	  CHECK_CMND(GLIBTOP_CMND_CPU);
+	  CHECK_CMND(GLIBTOP_CMND_MEM);
+	  CHECK_CMND(GLIBTOP_CMND_SWAP);
+	  CHECK_CMND(GLIBTOP_CMND_UPTIME);
+	  CHECK_CMND(GLIBTOP_CMND_LOADAVG);
+	  CHECK_CMND(GLIBTOP_CMND_SHM_LIMITS);
+	  CHECK_CMND(GLIBTOP_CMND_MSG_LIMITS);
+	  CHECK_CMND(GLIBTOP_CMND_SEM_LIMITS);
+	  CHECK_CMND(GLIBTOP_CMND_PROCLIST);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_STATE);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_UID);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_MEM);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_TIME);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_SIGNAL);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_KERNEL);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_SEGMENT);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_ARGS);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_MAP);
+	  CHECK_CMND(GLIBTOP_CMND_MOUNTLIST);
+	  CHECK_CMND(GLIBTOP_CMND_FSUSAGE);
+	  CHECK_CMND(GLIBTOP_CMND_NETLOAD);
+	  CHECK_CMND(GLIBTOP_CMND_PPP);
+	  CHECK_CMND(GLIBTOP_CMND_NETLIST);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_OPEN_FILES);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_WD);
+	  CHECK_CMND(GLIBTOP_CMND_PROC_AFFINITY);
+	default:
+	  glibtop_error_r(server, "CALL: command UNKNOWN(%d) sending %lu bytes", command, (unsigned long)send_size); break;
+	}
+#undef CHECK_CMND
 
 	cmnd.command = command;
 
@@ -52,10 +90,8 @@ glibtop_call_l (glibtop *server, unsigned command, size_t send_size,
 
 	glibtop_read_l (server, sizeof (glibtop_response), &response);
 
-#ifdef DEBUG
-	fprintf (stderr, "RESPONSE: %lu - %d\n",
+	glibtop_debug ("RESPONSE: offset=%lu - data_size=%lu",
 		 response.offset, response.data_size);
-#endif
 
 	if (recv_buf)
 		memcpy (recv_buf, ((char *) &response) + response.offset,

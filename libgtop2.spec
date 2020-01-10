@@ -1,62 +1,49 @@
-%define po_package libgtop-2.0
+Name:           libgtop2
+Version:        2.34.2
+Release:        1%{?dist}
+Summary:        LibGTop library (version 2)
 
-Name:     libgtop2
-Summary:  LibGTop library (version 2)
-Version:  2.28.4
-Release:  7%{?dist}
-License:  GPLv2+
-URL:      http://download.gnome.org/sources/libgtop/2.28
-Group:    System Environment/Libraries
-#VCS: git://git.gnome.org/libgtop
-Source:   http://download.gnome.org/sources/libgtop/2.28/libgtop-%{version}.tar.xz
-# Fix fetching rootfs stats (bz 871629)
-Patch1: 0001-fsusage-Fix-fetching-rootfs-stats-on-Fedora-17.patch
-# Show more than 32 CPUs https://bugzilla.redhat.com/show_bug.cgi?id=1082123
-Patch2: libgtop2-increase-cpuinfo-buffer.patch
-Patch3: libgtop2-allow-up-to-1024-CPUs.patch
-Patch4: libgtop2-allow-up-to-1024-CPUs-soversion.patch
-BuildRequires:  glib2-devel
-BuildRequires:  gobject-introspection-devel
-BuildRequires:  libtool gettext
-BuildRequires:  intltool libtool
+License:        GPLv2+
+URL:            http://download.gnome.org/sources/libgtop
+Source0:        http://download.gnome.org/sources/libgtop/2.34/libgtop-%{version}.tar.xz
+
+BuildRequires:  pkgconfig(gobject-2.0)
+BuildRequires:  pkgconfig(gobject-introspection-1.0)
+BuildRequires:  gettext
 
 %description
 LibGTop is a library for portably obtaining information about processes,
 such as their PID, memory usage, etc.
 
-%package devel
-Summary:  Libraries and include files for developing with libgtop
-Group:    Development/Libraries
-Requires: %{name} = %{version}-%{release}
+%package        devel
+Summary:        Libraries and include files for developing with libgtop
+Requires:       %{name}%{?_isa} = %{version}-%{release}
 
-%description devel
+%description    devel
 This package provides the necessary development libraries and include
 files to allow you to develop with LibGTop.
 
 %prep
 %setup -q -n libgtop-%{version}
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
 %configure --disable-gtk-doc --disable-static
 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT INSTALL="install -p"
-find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
+%make_install
+find %{buildroot} -name '*.la' -delete
 
 
-%find_lang %{po_package}
+%find_lang libgtop
 
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
-%files -f %{po_package}.lang
-%doc AUTHORS COPYING NEWS README
+%files -f libgtop.lang
+%doc AUTHORS NEWS README
+%license COPYING
 %{_libdir}/*.so.*
 %dir %{_libdir}/girepository-1.0
 %{_libdir}/girepository-1.0/GTop-2.0.typelib
@@ -74,6 +61,10 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %exclude %{_datadir}/info
 
 %changelog
+* Mon Jan 16 2017 Kalev Lember <klember@redhat.com> - 2.34.2-1
+- Update to 2.34.2
+- Resolves: #1387008
+
 * Fri Mar 28 2014 David King <dking@redhat.com> - 2.28.4-7
 - Allow up to 1024 CPUs (#1082123)
 

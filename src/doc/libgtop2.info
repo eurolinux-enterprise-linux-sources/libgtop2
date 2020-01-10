@@ -1,8 +1,15 @@
-This is libgtop2.info, produced by makeinfo version 4.13 from
+This is libgtop2.info, produced by makeinfo version 6.1 from
 libgtop2.texi.
 
-This is the LibGTop Reference Manual version 2.28.4 (last modified
-1 June 2011).
+INFO-DIR-SECTION Libraries:
+START-INFO-DIR-ENTRY
+* LibGTop2: (libgtop2).			Library to get system specific data
+					such as cpu and memory usage, active
+					processes
+END-INFO-DIR-ENTRY
+
+This is the LibGTop Reference Manual version 2.34.2 (last modified 27
+November 2016).
 
    Copyright 1999 Free Software Foundation, Inc.
 
@@ -22,12 +29,6 @@ manual into another language, under the above conditions for modified
 versions, except that this permission notice may be stated in a
 translation approved by the Free Software Foundation.
 
-INFO-DIR-SECTION Libraries:
-START-INFO-DIR-ENTRY
-* LibGTop2: (libgtop2).			Library to get system specific data
-					such as cpu and memory usage, active
-					processes
-END-INFO-DIR-ENTRY
 
 
 File: libgtop2.info,  Node: Top,  Next: About,  Prev: (dir),  Up: (dir)
@@ -38,7 +39,7 @@ File: libgtop2.info,  Node: Top,  Next: About,  Prev: (dir),  Up: (dir)
 * White Paper::                 LibGTop White Paper
 * Reference Manual::            LibGTop Reference Manual
 
- --- The Detailed Node Listing ---
+ -- The Detailed Node Listing --
 
 About LibGTop
 
@@ -107,9 +108,9 @@ Usage and information about running Processes.
 privileges to get those data, it uses a setuid/setgid server to do so.
 
    Even if LibGTop is a part of the GNOME desktop environment
-(`http://www.gnome.org'), the main interface of LibGTop is totally
-independent from any particular desktop environment, so you can also
-use it as a standalone library in any piece of GPLed software.
+(<http://www.gnome.org>), the main interface of LibGTop is totally
+independent from any particular desktop environment, so you can also use
+it as a standalone library in any piece of GPLed software.
 
 * Menu:
 
@@ -125,17 +126,17 @@ File: libgtop2.info,  Node: Availability,  Next: Supported Platforms,  Prev: Abo
 ================
 
 The master source of LibGTop is the GNOME CVS tree (see
-`http://www.gnome.org' for details), but you can also get the latest
+<http://www.gnome.org> for details), but you can also get the latest
 release tarballs from
 
-     `ftp://ftp.gnome.org/pub/GNOME/sources/libgtop/'
+     <ftp://ftp.gnome.org/pub/GNOME/sources/libgtop/>
 
 or any of its mirror sites.
 
    The latest stable version of LibGTop is 1.0.12 which is also the one
-that comes together with GNOME 1.0. It belongs to `LIBGTOP_STABLE_1_0'
-branch in CVS.  Actual development occurs in the
-`libgtop-GNOME-2-0-port' which is currently versioned 1.90.0.
+that comes together with GNOME 1.0.  It belongs to 'LIBGTOP_STABLE_1_0'
+branch in CVS. Actual development occurs in the 'libgtop-GNOME-2-0-port'
+which is currently versioned 1.90.0.
 
 
 File: libgtop2.info,  Node: Supported Platforms,  Next: Mailing List,  Prev: Availability,  Up: About
@@ -159,7 +160,6 @@ The stable branch currently supports the following platforms:
      LibGTop was tested under FreeBSD 2.2.6 and 3.0, NetBSD 1.3.2 and
      OpenBSD 2.4.  Support for NetBSD 1.4 was added in LibGTop 1.0.2.
 
-
    The platforms listed above are known to be stable and working.
 However, if you're using the latest development version, you can use it
 on the following platforms as well:
@@ -167,23 +167,22 @@ on the following platforms as well:
    * BSD/OS
 
      There is a port for BSD/OS (aka BSDI) 2.x and 3.x from Timur
-     Bakeyev which should also work with 4.x. This isn't tested very
+     Bakeyev which should also work with 4.x.  This isn't tested very
      well, but it should be working.
 
    * Digital Unix
 
      There is some basic support for Digital Unix (formerly DEC OSF/1)
-     V3.2C, but this may still be a bit unstable. I'm currently working
+     V3.2C, but this may still be a bit unstable.  I'm currently working
      on this port as time permits so it should be fully supported soon.
 
    * Solaris
 
      The Solaris port currently works on Solaris 7 and maybe also on
      other releases.  Thanks a lot to Drazen Kacar and everyone who
-     helped working on this port. They have really done excellent work
-     here and I'm pretty sure that this port will be fully functional
-     on most Solaris versions in near future.
-
+     helped working on this port.  They have really done excellent work
+     here and I'm pretty sure that this port will be fully functional on
+     most Solaris versions in near future.
 
 
 File: libgtop2.info,  Node: Mailing List,  Next: Thanks,  Prev: Supported Platforms,  Up: About
@@ -205,7 +204,7 @@ details of the sysdeps code.
 
    You can subscribe to this mailing list and view the mailing list
 archives on the LibGTop Page at
-`http://www.home-of-linux.org/gnome/libgtop'.
+<http://www.home-of-linux.org/gnome/libgtop>.
 
 
 File: libgtop2.info,  Node: Thanks,  Prev: Mailing List,  Up: About
@@ -218,20 +217,13 @@ LibGTop (listed in chronological order):
 
    * Sebastian Wilhelmi who had the initial idea of LibGTop and helped
      me a lot in the early beginning.
-
    * Josh Sled for the initial FreeBSD port.
-
    * Jeremy Lea for his BSD patches.
-
    * Timur Bakeyev for the BSDI port.
-
    * Drazen Kacar and the other people on the LibGTop development
      mailing list for the Solaris port.
-
    * Kevin Vandersloot for the effort to port to GNOME 2.0.
-
    * All people sending me patches, having good ideas, ...
-
    * Everyone I have forgotten in this list ...
 
 
@@ -256,32 +248,32 @@ priviledged processes to read information like CPU and Memory Usage or
 information about running processes.
 
    * BSD, for instance, doesn't have any other way to get those data
-     than reading directly from `/dev/kmem' and you need to be in the
-     `kmem' group to be able to read this.
+     than reading directly from '/dev/kmem' and you need to be in the
+     'kmem' group to be able to read this.
 
    * Other systems, like Digital Unix, allow all users to get things
      like CPU and Memory statistics, but only root may read information
      about any process other than the current one (you may not even get
      information about your own processes if you're not root).
 
-   * Linux has a very nice `/proc' filesystem, but reading and parsing
-     `/proc' is very slow and inefficient.
+   * Linux has a very nice '/proc' filesystem, but reading and parsing
+     '/proc' is very slow and inefficient.
 
-   * Solaris is a bit better, but you still need to be in the `sys'
+   * Solaris is a bit better, but you still need to be in the 'sys'
      group or even root to get some data.
 
-   Because of this system utilities like `ps', `uptime' or `top' often
-are setgid kmem or setuid root. Usually, they're also very specific to
+   Because of this system utilities like 'ps', 'uptime' or 'top' often
+are setgid kmem or setuid root.  Usually, they're also very specific to
 the system they're written for and not easily portable to other systems
 without a lot of work.
 
-   This, of cause, becomes a problem for graphical tools like `gtop' -
+   This, of cause, becomes a problem for graphical tools like 'gtop' -
 making a GTK+ program setgid or even setuid would be a security hole as
-big as you can drive the entire X11 source code through. For the GNOME
+big as you can drive the entire X11 source code through.  For the GNOME
 project, we also needed some kind of library which provides all the
 required information in a portable since there's more than just one
-single program that wants to use them - for instance `gtop' and the
-`multiload', `cpumemusage' and `netload' panel applets.
+single program that wants to use them - for instance 'gtop' and the
+'multiload', 'cpumemusage' and 'netload' panel applets.
 
 
 File: libgtop2.info,  Node: Overview,  Prev: Introduction,  Up: White Paper
@@ -304,22 +296,20 @@ File: libgtop2.info,  Node: Interface Design,  Next: Server Implementation,  Pre
 ----------------------
 
 At the very beginning, it was necessary to collect all the data the
-library part should provide and put them into some C structures. This
-was not that easiy as it might sound since LibGTop should be portable
-to any modern UNIX system with a common library part on all those
-systems, but the data that should be returned vary from system to
-system. For instance some systems support shared memory, but some others
-may not.
+library part should provide and put them into some C structures.  This
+was not that easiy as it might sound since LibGTop should be portable to
+any modern UNIX system with a common library part on all those systems,
+but the data that should be returned vary from system to system.  For
+instance some systems support shared memory, but some others may not.
 
    The header files where we define these C structures (which are
-system-independent) are shared between client and server. This way we
+system-independent) are shared between client and server.  This way we
 can call the system dependent code directly where we do not need any
 special privileges to do so.
 
-   All of those structures contain a `flags' member which is
-interpreted as a bit mask and tells the caller of the library functions
-which of the fields in the returned structure are valid and which are
-not.
+   All of those structures contain a 'flags' member which is interpreted
+as a bit mask and tells the caller of the library functions which of the
+fields in the returned structure are valid and which are not.
 
 
 File: libgtop2.info,  Node: Server Implementation,  Prev: Interface Design,  Up: Overview
@@ -328,9 +318,9 @@ File: libgtop2.info,  Node: Server Implementation,  Prev: Interface Design,  Up:
 ---------------------------
 
 The LibGTop "server" is a setgid/setuid binary which contains all the
-system dependent code which needs special privileges. It is only build
+system dependent code which needs special privileges.  It is only build
 if it's required on the current system (for instance, the Linux kernel
-provides all the required data via its `/proc' filesystem so we do not
+provides all the required data via its '/proc' filesystem so we do not
 need the server at all) and it only contains the "features" which need
 privileges.
 
@@ -382,12 +372,12 @@ File: libgtop2.info,  Node: glibtop_cpu,  Next: glibtop_mem,  Prev: System Depen
 3.1.1 CPU Usage
 ---------------
 
-Library function `glibtop_get_cpu':
+Library function 'glibtop_get_cpu':
 
      void glibtop_get_cpu (glibtop_cpu *buf);
      void glibtop_get_cpu_l (glibtop *server, glibtop_cpu *buf);
 
-   Declaration of `glibtop_cpu' in `<glibtop/cpu.h>':
+   Declaration of 'glibtop_cpu' in '<glibtop/cpu.h>':
 
      typedef struct _glibtop_cpu     glibtop_cpu;
 
@@ -414,52 +404,51 @@ Library function `glibtop_get_cpu':
              xcpu_flags;
      };
 
-   All CPU units are measured in "jiffies" which are normally 1/100th
-of a second (in which case `frequency' equals 100), but can also be in
-any other unit. To get seconds, divide them by `frequency'.
+   All CPU units are measured in "jiffies" which are normally 1/100th of
+a second (in which case 'frequency' equals 100), but can also be in any
+other unit.  To get seconds, divide them by 'frequency'.
 
-`total'
+'total'
      Number of clock ticks since system boot.
 
-`user'
+'user'
      Number of clock ticks the system spent in user mode.
 
-`nice'
+'nice'
      Number of clock ticks the system spent in user mode (nice).
 
-`sys'
+'sys'
      Number of clock ticks the system spent in system mode.
 
-`idle'
+'idle'
      Number of clock ticks the system spent in the idle task.
 
-`iowait'
+'iowait'
      Number of clock ticks the system spent waiting for I/O to complete.
 
-`irq'
+'irq'
      Number of clock ticks the system spent servicing interrupts.
 
-`softirq'
+'softirq'
      Number of clock ticks the system spent servicing softirqs.
 
-`frequency'
+'frequency'
      Tick frequency (default is 100).
 
-
-   The `xcpu_' values are for SMP systems - they are the same than
-`total', `user', `nice', `sys', `idle', `iowait', `irq' and `softirq'
-except that they are arrays of `GLIBTOP_NCPU' (defined in
-`<glibtop/cpu.h>') elements and contain one value for each CPU in the
+   The 'xcpu_' values are for SMP systems - they are the same than
+'total', 'user', 'nice', 'sys', 'idle', 'iowait', 'irq' and 'softirq'
+except that they are arrays of 'GLIBTOP_NCPU' (defined in
+'<glibtop/cpu.h>') elements and contain one value for each CPU in the
 system.
 
-`xcpu_flags'
+'xcpu_flags'
      This is interpreted as a bit-field: on systems like Solaris, not
      all CPUs need to be running all the time, so we set the
      corresponding bit for each CPU that is currently running.
 
    Please note that all of the cpu values are absolute values measured
-in certain units (to get seconds, divide them by `frequency') since
-system boot. To get percentual values, you need to call `glibtop_cpu',
+in certain units (to get seconds, divide them by 'frequency') since
+system boot.  To get percentual values, you need to call 'glibtop_cpu',
 save the result, wait some time and then call it again and divide the
 differences of the two values by the time you have waited.
 
@@ -469,12 +458,12 @@ File: libgtop2.info,  Node: glibtop_mem,  Next: glibtop_swap,  Prev: glibtop_cpu
 3.1.2 Memory Usage
 ------------------
 
-Library function `glibtop_get_mem':
+Library function 'glibtop_get_mem':
 
      void glibtop_get_mem (glibtop_mem *buf);
      void glibtop_get_mem_l (glibtop *server, glibtop_mem *buf);
 
-   Declaration of `glibtop_mem' in `<glibtop/mem.h>':
+   Declaration of 'glibtop_mem' in '<glibtop/mem.h>':
 
      typedef struct _glibtop_mem     glibtop_mem;
 
@@ -493,35 +482,34 @@ Library function `glibtop_get_mem':
 
    Unless explicitly stated otherwise, all memory units are in bytes.
 
-`total'
+'total'
      Total physical memory.
 
-`used'
+'used'
      Used memory size.
 
-`free'
+'free'
      Free memory size.
 
-`shared'
+'shared'
      Shared memory size.
 
-     This are both segments that are `mmap()'ed with `MAP_SHARED' and
+     This are both segments that are 'mmap()'ed with 'MAP_SHARED' and
      IPC Shared Memory segments.
 
-`buffer'
+'buffer'
      Size of buffers.
 
-`cached'
+'cached'
      Size of cached memory.
 
-`user'
+'user'
      Memory used from user processes.
 
-     This is normally `total - free - shared - buffer - cached'.
+     This is normally 'total - free - shared - buffer - cached'.
 
-`locked'
+'locked'
      Memory in locked segments.
-
 
 
 File: libgtop2.info,  Node: glibtop_swap,  Next: glibtop_uptime,  Prev: glibtop_mem,  Up: System Dependent
@@ -529,12 +517,12 @@ File: libgtop2.info,  Node: glibtop_swap,  Next: glibtop_uptime,  Prev: glibtop_
 3.1.3 Swap Usage
 ----------------
 
-Library function `glibtop_get_swap':
+Library function 'glibtop_get_swap':
 
      void glibtop_get_swap (glibtop_swap *buf);
      void glibtop_get_swap_l (glibtop *server, glibtop_swap *buf);
 
-   Declaration of `glibtop_swap' in `<glibtop/swap.h>':
+   Declaration of 'glibtop_swap' in '<glibtop/swap.h>':
 
      typedef struct _glibtop_swap    glibtop_swap;
 
@@ -550,29 +538,28 @@ Library function `glibtop_get_swap':
 
    The following units are in bytes.
 
-`total'
+'total'
      Total swap space in the system.
 
-`used'
+'used'
      Used swap space.
 
-`free'
+'free'
      Free swap space.
 
-   You can use `pagein' and `pageout' to get some measure about how
-much the system is swapping at the moment. They're increased each time
-a page is swapped in or out, so you need to save this values, wait a
+   You can use 'pagein' and 'pageout' to get some measure about how much
+the system is swapping at the moment.  They're increased each time a
+page is swapped in or out, so you need to save this values, wait a
 little bit, get them again and then compare the two results to find out
 how much the system swapped in the meantime.
 
-`pagein'
+'pagein'
      Total number of swap pages that have been brought in since system
      boot
 
-`pageout'
+'pageout'
      Total number of swap pages that have been brought out since system
      boot
-
 
 
 File: libgtop2.info,  Node: glibtop_uptime,  Next: glibtop_loadavg,  Prev: glibtop_swap,  Up: System Dependent
@@ -580,12 +567,12 @@ File: libgtop2.info,  Node: glibtop_uptime,  Next: glibtop_loadavg,  Prev: glibt
 3.1.4 Uptime
 ------------
 
-Library function `glibtop_get_uptime':
+Library function 'glibtop_get_uptime':
 
      void glibtop_get_uptime (glibtop_uptime *buf);
      void glibtop_get_uptime_l (glibtop *server, glibtop_uptime *buf);
 
-   Declaration of `glibtop_uptime' in `<glibtop/uptime.h>':
+   Declaration of 'glibtop_uptime' in '<glibtop/uptime.h>':
 
      typedef struct _glibtop_uptime  glibtop_uptime;
 
@@ -598,23 +585,23 @@ Library function `glibtop_get_uptime':
      };
 
    When porting LibGTop to a new system, you only need to implement
-`uptime' and `idletime' if there's a faster or better way to obtain
-them as using `glibtop_cpu' for it. Look at `sysdeps/freebsd/uptime.c'
-for an example on how to obtain them using `glibtop_cpu'.
+'uptime' and 'idletime' if there's a faster or better way to obtain them
+as using 'glibtop_cpu' for it.  Look at 'sysdeps/freebsd/uptime.c' for
+an example on how to obtain them using 'glibtop_cpu'.
 
-`uptime'
+'uptime'
      Time in seconds since system boot.
 
-`idletime'
+'idletime'
      Time in seconds the system spent in the idle task since system
      boot.
 
-   The following one was from a request on the `linux-kernel' mailing
-list; on a laptop with advanced power management `glibtop_cpu.total'
-may not reflect the correct boot time of the system if the power was
-turned off by means of APM in the meantime.
+   The following one was from a request on the 'linux-kernel' mailing
+list; on a laptop with advanced power management 'glibtop_cpu.total' may
+not reflect the correct boot time of the system if the power was turned
+off by means of APM in the meantime.
 
-`boot_time'
+'boot_time'
      Time of last system boot in seconds since the epoch.
 
 
@@ -623,12 +610,12 @@ File: libgtop2.info,  Node: glibtop_loadavg,  Next: glibtop_proclist,  Prev: gli
 3.1.5 Load Average
 ------------------
 
-Library function `glibtop_get_loadavg':
+Library function 'glibtop_get_loadavg':
 
      void glibtop_get_loadavg (glibtop_loadavg *buf);
      void glibtop_get_loadavg_l (glibtop *server, glibtop_loadavg *buf);
 
-   Declaration of `glibtop_loadavg' in `<glibtop/loadavg.h>':
+   Declaration of 'glibtop_loadavg' in '<glibtop/loadavg.h>':
 
      typedef struct _glibtop_loadavg glibtop_loadavg;
 
@@ -641,22 +628,22 @@ Library function `glibtop_get_loadavg':
              last_pid;
      };
 
-`loadavg'
+'loadavg'
+
      Number of jobs running simultaneously averaged over 1, 5 and 15
      minutes.
 
-
-   The following fields are Linux specific and deprecated. You don't
+   The following fields are Linux specific and deprecated.  You don't
 need to implement them when porting LibGTop to a new system as they may
 be removed in a future version.
 
-`nr_running'
+'nr_running'
      Number of tasks currently running.
 
-`nr_tasks'
+'nr_tasks'
      Total number of tasks.
 
-`last_pid'
+'last_pid'
      Last PID.
 
 
@@ -665,7 +652,7 @@ File: libgtop2.info,  Node: glibtop_proclist,  Next: glibtop_proc_state,  Prev: 
 3.1.6 Process List
 ------------------
 
-Library function `glibtop_get_proclist':
+Library function 'glibtop_get_proclist':
 
      unsigned *
      glibtop_get_proclist (glibtop_proclist *buf,
@@ -675,7 +662,7 @@ Library function `glibtop_get_proclist':
      glibtop_get_proclist_l (glibtop *server, glibtop_proclist *buf,
                              gint64 which, gint64 arg);
 
-   Constants for the `which' argument:
+   Constants for the 'which' argument:
 
      #define GLIBTOP_KERN_PROC_ALL           0
      #define GLIBTOP_KERN_PROC_PID           1
@@ -691,7 +678,7 @@ Library function `glibtop_get_proclist':
      #define GLIBTOP_EXCLUDE_SYSTEM          0x2000
      #define GLIBTOP_EXCLUDE_NOTTY           0x4000
 
-   Declaration of `glibtop_proclist' in `<glibtop/proclist.h>':
+   Declaration of 'glibtop_proclist' in '<glibtop/proclist.h>':
 
      typedef struct _glibtop_proclist        glibtop_proclist;
 
@@ -704,67 +691,64 @@ Library function `glibtop_get_proclist':
      };
 
    This function returns a list of all or a selected subset of all
-running processes. You can use the `which' and `arg' arguments to
+running processes.  You can use the 'which' and 'arg' arguments to
 specify which processes should be returned.
 
-   You can use the following values for the `which' argument:
+   You can use the following values for the 'which' argument:
 
-`GLIBTOP_KERN_PROC_ALL'
-     Return information about all processes (the `arg' argument is
+'GLIBTOP_KERN_PROC_ALL'
+     Return information about all processes (the 'arg' argument is
      ignored).
 
-`GLIBTOP_KERN_PROC_PID'
+'GLIBTOP_KERN_PROC_PID'
      Return information about all process with the pid PID which is
-     passed in `arg'. You can use this to find out whether some process
+     passed in 'arg'.  You can use this to find out whether some process
      still exists.
 
-`GLIBTOP_KERN_PROC_PGRP'
+'GLIBTOP_KERN_PROC_PGRP'
      Return all processes in process group PGRP which is passed in
-     `arg'.
+     'arg'.
 
-`GLIBTOP_KERN_PROC_SESSION'
-     Return all processes in session SESSION which is passed in `arg'.
+'GLIBTOP_KERN_PROC_SESSION'
+     Return all processes in session SESSION which is passed in 'arg'.
 
-`GLIBTOP_KERN_PROC_TTY'
+'GLIBTOP_KERN_PROC_TTY'
      Return all processes which have the controlling tty TTY which is
-     passed in `arg' (TTY is interpreted as device number).
+     passed in 'arg' (TTY is interpreted as device number).
 
-`GLIBTOP_KERN_PROC_UID'
+'GLIBTOP_KERN_PROC_UID'
      Return all processes with effective uid UID which is passed in
-     `arg'.
+     'arg'.
 
-`GLIBTOP_KERN_PROC_RUID'
-     Return all processes with real uid RUID which is passed in `arg'.
-
+'GLIBTOP_KERN_PROC_RUID'
+     Return all processes with real uid RUID which is passed in 'arg'.
 
    You can alter the list of returned processes by using a binary OR of
-`which' and the following constants:
+'which' and the following constants:
 
-`GLIBTOP_EXCLUDE_IDLE'
+'GLIBTOP_EXCLUDE_IDLE'
      Exclude idle processes.
-
-`GLIBTOP_EXCLUDE_SYSTEM'
+'GLIBTOP_EXCLUDE_SYSTEM'
      Exclude system processes.
-
-`GLIBTOP_EXCLUDE_NOTTY'
+'GLIBTOP_EXCLUDE_NOTTY'
      Exclude processes without a controlling terminal.
 
-   The return value of `glibtop_get_proclist' is either `NULL' on error
-or a `unsigned *' list of pids. Additionally, the following fields of
-`glibtop_proclist' are set:
+   The return value of 'glibtop_get_proclist' is either 'NULL' on error
+or a 'unsigned *' list of pids.  Additionally, the following fields of
+'glibtop_proclist' are set:
 
-`number'
+'number'
      Number of entries in the returned list.
 
-`total'
-     Total size of the returned list (this equals `number * size').
+'total'
+     Total size of the returned list (this equals 'number * size').
 
-`size'
-     Size of a single entry in the returned list (this equals `sizeof
+'size'
+     Size of a single entry in the returned list (this equals 'sizeof
      (unsigned)').
 
-   The returned list is allocated using `g_malloc' and must be freed
-using `g_free' to avoid a memory leak.
+   The returned list is allocated using 'g_malloc' and must be freed
+using 'g_free' to avoid a memory leak.
 
 
 File: libgtop2.info,  Node: glibtop_proc_state,  Next: glibtop_proc_uid,  Prev: glibtop_proclist,  Up: System Dependent
@@ -772,7 +756,7 @@ File: libgtop2.info,  Node: glibtop_proc_state,  Next: glibtop_proc_uid,  Prev: 
 3.1.7 Process State
 -------------------
 
-Library function `glibtop_get_proc_state':
+Library function 'glibtop_get_proc_state':
 
      void
      glibtop_get_proc_state (glibtop_proc_state *buf, pid_t pid);
@@ -781,7 +765,7 @@ Library function `glibtop_get_proc_state':
      glibtop_get_proc_state_l (glibtop *server, glibtop_proc_state *buf,
                                pid_t pid);
 
-   Declaration of `glibtop_proc_state' in `<glibtop/procstate.h>':
+   Declaration of 'glibtop_proc_state' in '<glibtop/procstate.h>':
 
      typedef struct _glibtop_proc_state      glibtop_proc_state;
 
@@ -800,66 +784,57 @@ Library function `glibtop_get_proc_state':
 
      };
 
-`cmd'
-     Basename of the executable file in the call to `exec'.
-
-`state'
+'cmd'
+     Basename of the executable file in the call to 'exec'.
+'state'
      Process state ('R' = running, 'S' = sleeping, 'D' =
      uninterruptible, 'Z' = zombie, 'T' = stopped, 'I' = idle).
 
-     This was changed to an `unsigned' bitfield in LibGTop 1.1.x where
+     This was changed to an 'unsigned' bitfield in LibGTop 1.1.x where
      there are also some constants for it.
 
    When porting LibGTop, please _try hard_ to implement the following
-fields. For security reasons, it is *very important* that you *only*
-set the `flags' bits for those fields if their *values are correct*.
+fields.  For security reasons, it is *very important* that you *only*
+set the 'flags' bits for those fields if their *values are correct*.
 
-`uid'
+'uid'
      Effective UID of the process.
-
-`gid'
+'gid'
      Effective GID of the process.
-
-`ruid'
+'ruid'
      Real UID of the process.
-
-`rgid'
+'rgid'
      Read GID of the process.
 
    The following fields are for SMP systems:
 
-`has_cpu'
+'has_cpu'
      This is either 0 or 1 depending on whether the process currently
      has a CPU or not.
 
-`processor'
+'processor'
      This is the processor id of the CPU this process is currently
-     running on (which can be used as index in the `xcpu_' fields of
-     `glibtop_cpu' for instance; since zero is a valid processor id,
-     you must check `has_cpu' in this case to find out whether the
-     process really has a CPU).
+     running on (which can be used as index in the 'xcpu_' fields of
+     'glibtop_cpu' for instance; since zero is a valid processor id, you
+     must check 'has_cpu' in this case to find out whether the process
+     really has a CPU).
 
-`last_processor'
+'last_processor'
      The is the processor id of the CPU the process was last running on.
 
-`GLIBTOP_PROCESS_RUNNING'
+'GLIBTOP_PROCESS_RUNNING'
      The process is currently running.
-
-`GLIBTOP_PROCESS_INTERRUPTIBLE'
+'GLIBTOP_PROCESS_INTERRUPTIBLE'
      The process is currently in an interruptible sleep.
-
-`GLIBTOP_PROCESS_UNINTERRUPTIBLE'
+'GLIBTOP_PROCESS_UNINTERRUPTIBLE'
      The process is currently in uninterruptible sleep (the so-called
      "disk sleep").
-
-`GLIBTOP_PROCESS_ZOMBIE'
+'GLIBTOP_PROCESS_ZOMBIE'
      The process is a zombie.
-
-`GLIBTOP_PROCESS_STOPPED'
-     The process is currently stopped (received `SIGSTOP' or attached
-     to a debugger).
-
-`GLIBTOP_PROCESS_SWAPPING'
+'GLIBTOP_PROCESS_STOPPED'
+     The process is currently stopped (received 'SIGSTOP' or attached to
+     a debugger).
+'GLIBTOP_PROCESS_SWAPPING'
      The process is currently swapping.
 
 
@@ -868,7 +843,7 @@ File: libgtop2.info,  Node: glibtop_proc_uid,  Next: glibtop_proc_mem,  Prev: gl
 3.1.8 Process UID and TTY information
 -------------------------------------
 
-Library function `glibtop_get_proc_uid':
+Library function 'glibtop_get_proc_uid':
 
      void
      glibtop_get_proc_uid (glibtop_proc_uid *buf, pid_t pid);
@@ -877,7 +852,7 @@ Library function `glibtop_get_proc_uid':
      glibtop_get_proc_uid_l (glibtop *server, glibtop_proc_uid *buf,
                              pid_t pid);
 
-   Declaration of `glibtop_proc_uid' in `<glibtop/procuid.h>':
+   Declaration of 'glibtop_proc_uid' in '<glibtop/procuid.h>':
 
      typedef struct _glibtop_proc_uid        glibtop_proc_uid;
 
@@ -904,48 +879,35 @@ Library function `glibtop_get_proc_uid':
              groups [GLIBTOP_MAX_GROUPS];
      };
 
-`uid'
+'uid'
      User ID
-
-`euid'
+'euid'
      Effective User ID
-
-`gid'
+'gid'
      Group ID
-
-`egid'
+'egid'
      Effective Group ID
-
-`pid'
+'pid'
      Process ID
-
-`ppid'
+'ppid'
      PID of parent process
-
-`pgrp'
+'pgrp'
      Process group ID
-
-`session'
+'session'
      Session ID
-
-`tty'
+'tty'
      Full device number of controlling terminal
-
-`tpgid'
+'tpgid'
      Terminal process group ID
-
-`priority'
+'priority'
      Kernel scheduling priority.
-
-`nice'
+'nice'
      Standard unix nice level of process.
-
-`ngroups'
+'ngroups'
      Number of additional process groups.
-
-`groups'
+'groups'
      Array of additional process groups
-     (`GLIBTOP_MAX_GROUPS' is defined in `<glibtop/procuid.h>').
+     ('GLIBTOP_MAX_GROUPS' is defined in '<glibtop/procuid.h>').
 
 
 File: libgtop2.info,  Node: glibtop_proc_mem,  Next: glibtop_proc_time,  Prev: glibtop_proc_uid,  Up: System Dependent
@@ -953,7 +915,7 @@ File: libgtop2.info,  Node: glibtop_proc_mem,  Next: glibtop_proc_time,  Prev: g
 3.1.9 Process Memory information
 --------------------------------
 
-Library function `glibtop_get_proc_mem':
+Library function 'glibtop_get_proc_mem':
 
      void
      glibtop_get_proc_mem (glibtop_proc_mem *buf, pid_t pid);
@@ -962,7 +924,7 @@ Library function `glibtop_get_proc_mem':
      glibtop_get_proc_mem_l (glibtop *server, glibtop_proc_mem *buf,
                              pid_t pid);
 
-   Declaration of `glibtop_proc_mem' in `<glibtop/procmem.h>':
+   Declaration of 'glibtop_proc_mem' in '<glibtop/procmem.h>':
 
      typedef struct _glibtop_proc_mem        glibtop_proc_mem;
 
@@ -977,83 +939,77 @@ Library function `glibtop_get_proc_mem':
              rss_rlim;
      };
 
-`size'
+'size'
      Total number of pages of memory.
-
-`vsize'
+'vsize'
      Number of pages of virtual memory.
-
-`resident'
+'resident'
      Number of residnet set (non-swapped) pages.
-
-`share'
+'share'
      Number of pages of shared (mmap\'d) memory.
-
-`rss'
+'rss'
      Number of pages the process has in real memory, minus 3 for
      administrative purposes.
 
      This is just the pages which count towards text, data, or stack
      space.  This does not include pages which have not been
      demand-loaded in, or which are swapped out.
-
-`rss_rlim'
+'rss_rlim'
      Current limit in bytes on the rss of the process (usually
      2,147,483,647).
 
-   The description above is taken from the manual page of the `/proc'
+   The description above is taken from the manual page of the '/proc'
 filesystem under Linux and is a little bit confusing, so I make this
 clear here.
 
-   *A word for people porting LibGTop to other systems:* Every
-operating system has its own idea about the memory usage of a process
-and also system utilities like `ps' show different things on different
-systems.
+   *A word for people porting LibGTop to other systems:* Every operating
+system has its own idea about the memory usage of a process and also
+system utilities like 'ps' show different things on different systems.
 
    Nevertheless, we should try to make LibGTop as system independent as
-possible, so I give you some hints here how `glibtop_get_proc_mem'
+possible, so I give you some hints here how 'glibtop_get_proc_mem'
 should work.
 
-   * When you use `mmap' with either `MAP_SHARED' or `MAP_PRIVATE',
-     this should only affect the `vsize' of the process and none of its
-     `size', `resident', `shared' and `rss' sizes.
+   * When you use 'mmap' with either 'MAP_SHARED' or 'MAP_PRIVATE', this
+     should only affect the 'vsize' of the process and none of its
+     'size', 'resident', 'shared' and 'rss' sizes.
 
-   * As soon as you read some of the `mmap()'ed pages, they will be
-     demand- oaded and thus count towards the `size' of the process.
+   * As soon as you read some of the 'mmap()'ed pages, they will be
+     demand- oaded and thus count towards the 'size' of the process.
 
-     Also - we assume there is enough free memory - they are resident
-     in memory until they get stolen or swapped out and thus increase
-     the `resident' and `rss' sizes of the process.
+     Also - we assume there is enough free memory - they are resident in
+     memory until they get stolen or swapped out and thus increase the
+     'resident' and 'rss' sizes of the process.
 
-   * If the process has used `MAP_SHARED' and another process attaches
-     the same file also `MAP_SHARED', some of the pages are shared with
-     this process and thus increase the `shared' sizes of both
+   * If the process has used 'MAP_SHARED' and another process attaches
+     the same file also 'MAP_SHARED', some of the pages are shared with
+     this process and thus increase the 'shared' sizes of both
      processes.
 
-   * If the process has used `MAP_PRIVATE' and writes to the `mmap()'ed
+   * If the process has used 'MAP_PRIVATE' and writes to the 'mmap()'ed
      pages, the only difference to reading from them is that they get
      dirty and cannot be stolen any longer but will get swapped out.
 
    * When memory gets rare, clean pages are normally stolen, which
-     decreases the `size', `resident', `shared' and `rss' sizes of the
+     decreases the 'size', 'resident', 'shared' and 'rss' sizes of the
      process.
 
-   * When dirty pages are swapped out, this will not decrease the
-     `size' of the process but only its `resident' and `rss' sizes
-     (dirty pages cannot be shared).
+   * When dirty pages are swapped out, this will not decrease the 'size'
+     of the process but only its 'resident' and 'rss' sizes (dirty pages
+     cannot be shared).
 
-   * The `vsize' of a process can _only_ be changed by the process
+   * The 'vsize' of a process can _only_ be changed by the process
      itself when it requests or frees memory but _never_ due to swapping
      activity of the system.
 
-   * If the `shared' size changes, this _only_ means that the number of
+   * If the 'shared' size changes, this _only_ means that the number of
      pages that are currently shared with other processes has changed;
-     if this happens, this will _never_ affect any of the other sizes
-     of the process.
+     if this happens, this will _never_ affect any of the other sizes of
+     the process.
 
-   The hints above describe how it works under Linux - but we should
-try to make `glibtop_get_proc_mem' show the same behavior under every
-other system.
+   The hints above describe how it works under Linux - but we should try
+to make 'glibtop_get_proc_mem' show the same behavior under every other
+system.
 
 
 File: libgtop2.info,  Node: glibtop_proc_time,  Next: glibtop_proc_signal,  Prev: glibtop_proc_mem,  Up: System Dependent
@@ -1061,7 +1017,7 @@ File: libgtop2.info,  Node: glibtop_proc_time,  Next: glibtop_proc_signal,  Prev
 3.1.10 Process Time information
 -------------------------------
 
-Library function `glibtop_get_proc_time':
+Library function 'glibtop_get_proc_time':
 
      void
      glibtop_get_proc_time (glibtop_proc_time *buf, pid_t pid);
@@ -1070,7 +1026,7 @@ Library function `glibtop_get_proc_time':
      glibtop_get_proc_time_l (glibtop *server, glibtop_proc_time *buf,
                               pid_t pid);
 
-   Declaration of `glibtop_proc_time' in `<glibtop/proctime.h>':
+   Declaration of 'glibtop_proc_time' in '<glibtop/proctime.h>':
 
      typedef struct _glibtop_proc_time       glibtop_proc_time;
 
@@ -1091,47 +1047,37 @@ Library function `glibtop_get_proc_time':
              xcpu_flags;
      };
 
-`start_time'
+'start_time'
      Start time of process in seconds since the epoch
-
-`rtime'
-     Real time accumulated by process (should be `utime' + `stime')
-
-`utime'
+'rtime'
+     Real time accumulated by process (should be 'utime' + 'stime')
+'utime'
      User-mode CPU time accumulated by process
-
-`stime'
+'stime'
      Kernel-mode CPU time accumulated by process
-
-`cutime'
+'cutime'
      Cumulative utime of process and reaped children
-
-`cstime'
+'cstime'
      Cumulative stime of process and reaped children
-
-`timeout'
+'timeout'
      The time (in jiffies) of the process's next timeout
-
-`it_real_value'
+'it_real_value'
      The time (in jiffies) before the next SIGALRM is sent to the
      process due to an interval timer.
-
-`frequency'
+'frequency'
      Tick frequency
-
-`xcpu_utime'
+'xcpu_utime'
      SMP user-mode CPU time accumulated by process
-
-`xcpu_stime'
+'xcpu_stime'
      SMP kernel-mode CPU time accumulated by process
 
-   Please note that under Linux, `start_time' value may be strange.
-Linux kernel defines `INITIAL_JIFFIES' which implies a time shift.
-Because `INITIAL_JIFFIES' is not user-space defined, we cannot use it
-to compute accurate `start_time'. On Linux2.6, `INITIAL_JIFFIES' is 300
-so `start_time' is always 3s different from real start time of the
-given process. You may also get shift results if your system clock is
-not synchronised with your hardware clock. See `man hwclock'.
+   Please note that under Linux, 'start_time' value may be strange.
+Linux kernel defines 'INITIAL_JIFFIES' which implies a time shift.
+Because 'INITIAL_JIFFIES' is not user-space defined, we cannot use it to
+compute accurate 'start_time'.  On Linux2.6, 'INITIAL_JIFFIES' is 300 so
+'start_time' is always 3s different from real start time of the given
+process.  You may also get shift results if your system clock is not
+synchronised with your hardware clock.  See 'man hwclock'.
 
 
 File: libgtop2.info,  Node: glibtop_proc_signal,  Next: glibtop_proc_kernel,  Prev: glibtop_proc_time,  Up: System Dependent
@@ -1139,7 +1085,7 @@ File: libgtop2.info,  Node: glibtop_proc_signal,  Next: glibtop_proc_kernel,  Pr
 3.1.11 Process Signal information
 ---------------------------------
 
-Library function `glibtop_get_proc_signal':
+Library function 'glibtop_get_proc_signal':
 
      void
      glibtop_get_proc_signal (glibtop_proc_signal *buf, pid_t pid);
@@ -1148,7 +1094,7 @@ Library function `glibtop_get_proc_signal':
      glibtop_get_proc_signal_l (glibtop *server, glibtop_proc_signal *buf,
                                 pid_t pid);
 
-   Declaration of `glibtop_proc_signal' in `<glibtop/procsignal.h>':
+   Declaration of 'glibtop_proc_signal' in '<glibtop/procsignal.h>':
 
      typedef struct _glibtop_proc_signal     glibtop_proc_signal;
 
@@ -1161,20 +1107,17 @@ Library function `glibtop_get_proc_signal':
              sigcatch [2];
      };
 
-`signal'
+'signal'
      Mask of pending signals
-
-`blocked'
+'blocked'
      Mask of blocked signals
-
-`sigignore'
+'sigignore'
      Mask of ignored signals
-
-`sigcatch'
+'sigcatch'
      Mask of caught signals
 
    All signal masks are interpreted as bit mask; it is an array of two
-`guint64''s so we can save 128 signals there.
+'guint64''s so we can save 128 signals there.
 
 
 File: libgtop2.info,  Node: glibtop_proc_kernel,  Next: glibtop_proc_segment,  Prev: glibtop_proc_signal,  Up: System Dependent
@@ -1182,7 +1125,7 @@ File: libgtop2.info,  Node: glibtop_proc_kernel,  Next: glibtop_proc_segment,  P
 3.1.12 Process Kernel Data information
 --------------------------------------
 
-Library function `glibtop_get_proc_kernel':
+Library function 'glibtop_get_proc_kernel':
 
      void
      glibtop_get_proc_kernel (glibtop_proc_kernel *buf, pid_t pid);
@@ -1191,7 +1134,7 @@ Library function `glibtop_get_proc_kernel':
      glibtop_get_proc_kernel_l (glibtop *server, glibtop_proc_kernel *buf,
                                 pid_t pid);
 
-   Declaration of `glibtop_proc_kernel' in `<glibtop/prockernel.h>':
+   Declaration of 'glibtop_proc_kernel' in '<glibtop/prockernel.h>':
 
      typedef struct _glibtop_proc_kernel     glibtop_proc_kernel;
 
@@ -1209,43 +1152,34 @@ Library function `glibtop_get_proc_kernel':
          char wchan [40];
      };
 
-`k_flags'
-     Kernel flags of the process. See the constants defined below.
-
-`min_flt'
+'k_flags'
+     Kernel flags of the process.  See the constants defined below.
+'min_flt'
      The number of minor faults the process has made, those which have
      not required loading a memory page from disk.
-
-`maj_flt'
+'maj_flt'
      The number of major faults the process has made, those which have
      required loading a memory page from disk.
-
-`cmin_flt'
+'cmin_flt'
      The number of minor faults that the process and its children have
      made.
-
-`cmaj_flt'
+'cmaj_flt'
      The number of major faults that the process and its children have
      made.
-
-`kstk_esp'
-     The current value of `esp' (32-bit stack pointer), as found in the
+'kstk_esp'
+     The current value of 'esp' (32-bit stack pointer), as found in the
      kernel stack page for the process.
+'kstk_eip'
+     The current 'eip' (32-bit instruction pointer).
+'nwchan'
+     This is the "channel" in which the process is waiting.  This is the
+     address of a system call, and can be looked up in a namelist if you
+     need a textual name.  (If you have an up-to-date '/etc/psdatabase',
+     then try 'ps -l' to see the WCHAN field in action).
+'wchan'
+     This is the textual name of the 'nwchan' field.
 
-`kstk_eip'
-     The current `eip' (32-bit instruction pointer).
-
-`nwchan'
-     This is the "channel" in which the process is waiting. This is the
-     address of a system call, and can be looked up in a namelist if
-     you need a textual name.  (If you have an up-to-date
-     `/etc/psdatabase', then try `ps -l' to see the WCHAN field in
-     action).
-
-`wchan'
-     This is the textual name of the `nwchan' field.
-
-   There are some constants for the `k_flags' field:
+   There are some constants for the 'k_flags' field:
 
      #define GLIBTOP_KFLAGS_STARTING         1
      #define GLIBTOP_KFLAGS_EXITING          2
@@ -1256,28 +1190,21 @@ Library function `glibtop_get_proc_kernel':
      #define GLIBTOP_KFLAGS_DUMPEDCORE       64
      #define GLIBTOP_KFLAGS_SIGNALED         128
 
-`GLIBTOP_KFLAGS_STARTING'
+'GLIBTOP_KFLAGS_STARTING'
      Process is being created.
-
-`GLIBTOP_KFLAGS_EXITING'
+'GLIBTOP_KFLAGS_EXITING'
      Process is exiting.
-
-`GLIBTOP_KFLAGS_PTRACED'
-     Process is being traced (via `ptrace ()').
-
-`GLIBTOP_KFLAGS_TRACESYS'
+'GLIBTOP_KFLAGS_PTRACED'
+     Process is being traced (via 'ptrace ()').
+'GLIBTOP_KFLAGS_TRACESYS'
      Process is tracing system calls.
-
-`GLIBTOP_KFLAGS_FORKNOEXEC'
-     Process `fork()'ed, but didn't `exec()' yet.
-
-`GLIBTOP_KFLAGS_SUPERPRIV'
+'GLIBTOP_KFLAGS_FORKNOEXEC'
+     Process 'fork()'ed, but didn't 'exec()' yet.
+'GLIBTOP_KFLAGS_SUPERPRIV'
      Process used super-user privileges.
-
-`GLIBTOP_KFLAGS_DUMPEDCORE'
+'GLIBTOP_KFLAGS_DUMPEDCORE'
      Process dumped core.
-
-`GLIBTOP_KFLAGS_SIGNALED'
+'GLIBTOP_KFLAGS_SIGNALED'
      Process was killed by a signal.
 
 
@@ -1286,7 +1213,7 @@ File: libgtop2.info,  Node: glibtop_proc_segment,  Next: glibtop_proc_args,  Pre
 3.1.13 Process Segment information
 ----------------------------------
 
-Library function `glibtop_get_proc_segment':
+Library function 'glibtop_get_proc_segment':
 
      void
      glibtop_get_proc_segment (glibtop_proc_segment *buf, pid_t pid);
@@ -1295,7 +1222,7 @@ Library function `glibtop_get_proc_segment':
      glibtop_get_proc_segment_l (glibtop *server, glibtop_proc_segment *buf,
                                  pid_t pid);
 
-   Declaration of `glibtop_proc_segment' in `<glibtop/procsegment.h>':
+   Declaration of 'glibtop_proc_segment' in '<glibtop/procsegment.h>':
 
      typedef struct _glibtop_proc_segment    glibtop_proc_segment;
 
@@ -1312,28 +1239,21 @@ Library function `glibtop_get_proc_segment':
              start_stack;
      };
 
-`text_rss'
+'text_rss'
      Text resident set size
-
-`shlib_rss'
+'shlib_rss'
      Shared-Lib resident set size
-
-`data_rss'
+'data_rss'
      Data resident set size
-
-`stack_rss'
+'stack_rss'
      Stack resident set size
-
-`dirty_size'
+'dirty_size'
      Total size of dirty pages
-
-`start_code'
+'start_code'
      Address of beginning of code segment
-
-`end_code'
+'end_code'
      Address of end of code segment
-
-`start_stack'
+'start_stack'
      Address of the bottom of stack segmen
 
 
@@ -1342,7 +1262,7 @@ File: libgtop2.info,  Node: glibtop_proc_args,  Next: glibtop_proc_map,  Prev: g
 3.1.14 Process Arguments
 ------------------------
 
-Library function `glibtop_get_proc_args':
+Library function 'glibtop_get_proc_args':
 
      char *
      glibtop_get_proc_args(glibtop_proc_args *buf, pid_t pid,
@@ -1352,7 +1272,7 @@ Library function `glibtop_get_proc_args':
      glibtop_get_proc_args_l (glibtop *server, glibtop_proc_args *buf,
                               pid_t pid, unsigned max_len);
 
-   Declaration of `glibtop_proc_args' in `<glibtop/procargs.h>':
+   Declaration of 'glibtop_proc_args' in '<glibtop/procargs.h>':
 
      typedef struct _glibtop_proc_args       glibtop_proc_args;
 
@@ -1362,13 +1282,13 @@ Library function `glibtop_get_proc_args':
              size;
      };
 
-   Returns a string with all command line arguments of process `pid'
-(up to `max_len' characters, use zero to get all arguments).
+   Returns a string with all command line arguments of process 'pid' (up
+to 'max_len' characters, use zero to get all arguments).
 
    The command line arguments in the returned string are separated by
-zero bytes; the lenght of this string is returned in the `size' field.
+zero bytes; the lenght of this string is returned in the 'size' field.
 
-   Remember to `g_free' the returned string to avoid a memory leak.
+   Remember to 'g_free' the returned string to avoid a memory leak.
 
    *New functions*
 
@@ -1381,13 +1301,13 @@ zero bytes; the lenght of this string is returned in the `size' field.
                               pid_t pid, unsigned max_len);
 
    Returns a NULL-terminated array of strings with all arguments of
-process `pid' (up to `max_len' characters, use zero to get all
-arguments). `glibtop_get_proc_argv()' and `glibtop_get_proc_argv_l()'
-are wrappers to `glibtop_get_proc_args()' and
-`glibtop_get_proc_args_l()' that return process' arguments like the C
-`argv'.
+process 'pid' (up to 'max_len' characters, use zero to get all
+arguments).  'glibtop_get_proc_argv()' and 'glibtop_get_proc_argv_l()'
+are wrappers to 'glibtop_get_proc_args()' and
+'glibtop_get_proc_args_l()' that return process' arguments like the C
+'argv'.
 
-   Remember to `g_strfreev' the returned array to avoid a memory leak.
+   Remember to 'g_strfreev' the returned array to avoid a memory leak.
 
 
 File: libgtop2.info,  Node: glibtop_proc_map,  Next: glibtop_netload,  Prev: glibtop_proc_args,  Up: System Dependent
@@ -1395,7 +1315,7 @@ File: libgtop2.info,  Node: glibtop_proc_map,  Next: glibtop_netload,  Prev: gli
 3.1.15 Process Memory Maps
 --------------------------
 
-Library function `glibtop_get_proc_map':
+Library function 'glibtop_get_proc_map':
 
      glibtop_map_entry *
      glibtop_get_proc_map (glibtop_proc_map *buf, pid_t pid);
@@ -1404,7 +1324,7 @@ Library function `glibtop_get_proc_map':
      glibtop_get_proc_map_l (glibtop *server, glibtop_proc_map *buf,
                              pid_t pid);
 
-   Declaration of `glibtop_proc_map' in `<glibtop/procmap.h>':
+   Declaration of 'glibtop_proc_map' in '<glibtop/procmap.h>':
 
      typedef struct _glibtop_proc_map        glibtop_proc_map;
 
@@ -1416,17 +1336,17 @@ Library function `glibtop_get_proc_map':
              size;
      };
 
-   Returns a `glibtop_map_entry *' list (which needs to be freed with
-`g_free') of memory maps of process `pid'.
+   Returns a 'glibtop_map_entry *' list (which needs to be freed with
+'g_free') of memory maps of process 'pid'.
 
-`number'
+'number'
      Number of entries in the returned list.
 
-`total'
-     Total size of the returned list (this equals `number * size').
+'total'
+     Total size of the returned list (this equals 'number * size').
 
-`size'
-     Size of a single entry in the returned list (this equals `sizeof
+'size'
+     Size of a single entry in the returned list (this equals 'sizeof
      (glibtop_map_entry)').
 
      typedef struct _glibtop_map_entry       glibtop_map_entry;
@@ -1437,7 +1357,7 @@ Library function `glibtop_get_proc_map':
          char filename [GLIBTOP_MAP_FILENAME_LEN+1];
      };
 
-   The `flags' member is a bit field and specifies which of the other
+   The 'flags' member is a bit field and specifies which of the other
 fields are valid:
 
      #define GLIBTOP_MAP_ENTRY_START         0
@@ -1448,7 +1368,7 @@ fields are valid:
      #define GLIBTOP_MAP_ENTRY_DEVICE        5
      #define GLIBTOP_MAP_ENTRY_FILENAME      6
 
-   Constants for the `perm' member:
+   Constants for the 'perm' member:
 
      #define GLIBTOP_MAP_PERM_READ           1
      #define GLIBTOP_MAP_PERM_WRITE          2
@@ -1462,7 +1382,7 @@ File: libgtop2.info,  Node: glibtop_netload,  Next: glibtop_ppp,  Prev: glibtop_
 3.1.16 Network Load
 -------------------
 
-Library function `glibtop_get_netload':
+Library function 'glibtop_get_netload':
 
      void
      glibtop_get_netload (glibtop_netload *buf, const char *interface);
@@ -1471,7 +1391,7 @@ Library function `glibtop_get_netload':
      glibtop_get_netload_l (glibtop *server, glibtop_netload *buf,
                             const char *interface);
 
-   Declaration of `glibtop_netload' in `<glibtop/netload.h>':
+   Declaration of 'glibtop_netload' in '<glibtop/netload.h>':
 
      typedef struct _glibtop_netload glibtop_netload;
 
@@ -1494,56 +1414,43 @@ Library function `glibtop_get_netload':
              collisions;
      };
 
-   Returns network statistics for interface `interface' (which is the
-same than in `ifconfig').
+   Returns network statistics for interface 'interface' (which is the
+same than in 'ifconfig').
 
-`if_flags'
-     Interface flags. See the contants defined below.
-
-`mtu'
+'if_flags'
+     Interface flags.  See the contants defined below.
+'mtu'
      Maximum Transfer Unit (MTU)
-
-`subnet'
+'subnet'
      Subnet Address
-
-`address'
+'address'
      Interface Address
-
-`packets_in'
+'packets_in'
      Total number of incoming packets
-
-`packets_out'
+'packets_out'
      Total number of outgoing packets
-
-`packets_total'
+'packets_total'
      Total number of packets
-
-`bytes_in'
+'bytes_in'
      Total number of incoming bytes
-
-`bytes_out'
+'bytes_out'
      Total number of outgoing bytes
-
-`bytes_total'
+'bytes_total'
      Total number of bytes
-
-`errors_in'
+'errors_in'
      Total number of errors in incoming direction
-
-`errors_out'
+'errors_out'
      Total number of errors in outgoing direction
-
-`errors_total'
+'errors_total'
      Total number of errors
-
-`collisions'
+'collisions'
      Total number of collisions
 
    Please note that not all operating systems distinguish between
-incoming/outgoing bytes/packets/errors - in this case only the `_total'
-fields are valid.  Otherwise, they're just `_in' plus `_out'.
+incoming/outgoing bytes/packets/errors - in this case only the '_total'
+fields are valid.  Otherwise, they're just '_in' plus '_out'.
 
-   Constants for `if_flags':
+   Constants for 'if_flags':
 
      enum {
          GLIBTOP_IF_FLAGS_UP = 1,
@@ -1570,7 +1477,7 @@ File: libgtop2.info,  Node: glibtop_ppp,  Prev: glibtop_netload,  Up: System Dep
 3.1.17 PPP Statistics
 ---------------------
 
-Library function `glibtop_get_ppp':
+Library function 'glibtop_get_ppp':
 
      void
      glibtop_get_ppp_l (glibtop *server, glibtop_ppp *buf,
@@ -1579,7 +1486,7 @@ Library function `glibtop_get_ppp':
      void
      glibtop_get_ppp (glibtop_ppp *buf, unsigned short device);
 
-   Declaration of `glibtop_ppp' in `<glibtop/ppp.h>':
+   Declaration of 'glibtop_ppp' in '<glibtop/ppp.h>':
 
      typedef struct _glibtop_ppp     glibtop_ppp;
 
@@ -1591,13 +1498,12 @@ Library function `glibtop_get_ppp':
              bytes_out;
      };
 
-`bytes_in'
+'bytes_in'
      Number of input bytes
-
-`bytes_out'
+'bytes_out'
      Number of output bytes
 
-   There are some constants for `state':
+   There are some constants for 'state':
 
      enum {
          GLIBTOP_PPP_STATE_UNKNOWN = 0,
@@ -1605,13 +1511,11 @@ Library function `glibtop_get_ppp':
          GLIBTOP_PPP_STATE_ONLINE
      };
 
-`GLIBTOP_PPP_STATE_UNKNOWN'
+'GLIBTOP_PPP_STATE_UNKNOWN'
      LibGTop was unable to determine the current ppp state.
-
-`GLIBTOP_PPP_STATE_HANGUP'
+'GLIBTOP_PPP_STATE_HANGUP'
      We're currently offline.
-
-`GLIBTOP_PPP_STATE_ONLINE'
+'GLIBTOP_PPP_STATE_ONLINE'
      We're currently online.
 
 
@@ -1636,7 +1540,7 @@ File: libgtop2.info,  Node: glibtop_mountlist,  Next: glibtop_fsusage,  Prev: Co
 3.2.1 Mount List
 ----------------
 
-Library function `glibtop_get_mountlist':
+Library function 'glibtop_get_mountlist':
 
      glibtop_mountentry *
      glibtop_get_mountlist_l (glibtop *server, glibtop_mountlist *buf,
@@ -1645,12 +1549,12 @@ Library function `glibtop_get_mountlist':
      glibtop_mountentry *
      glibtop_get_mountlist (glibtop_mountlist *buf, int all_fs);
 
-   The `all_fs' parameter specifies whether information about all
+   The 'all_fs' parameter specifies whether information about all
 filesystems should be returned; this will include filesystem types like
-`autofs' and `procfs'. You should not use this in disk usage programs,
+'autofs' and 'procfs'.  You should not use this in disk usage programs,
 but it can be useful to get a list of all currently mounted filesystems.
 
-   Declaration of `glibtop_proc_map' in `<glibtop/procmap.h>':
+   Declaration of 'glibtop_proc_map' in '<glibtop/procmap.h>':
 
      typedef struct _glibtop_mountlist       glibtop_mountlist;
 
@@ -1662,17 +1566,17 @@ but it can be useful to get a list of all currently mounted filesystems.
              size;
      };
 
-   Returns a `glibtop_mountentry *' list (which needs to be freed with
-`g_free') of mounted filesystems.
+   Returns a 'glibtop_mountentry *' list (which needs to be freed with
+'g_free') of mounted filesystems.
 
-`number'
+'number'
      Number of entries in the returned list.
 
-`total'
-     Total size of the returned list (this equals `number * size').
+'total'
+     Total size of the returned list (this equals 'number * size').
 
-`size'
-     Size of a single entry in the returned list (this equals `sizeof
+'size'
+     Size of a single entry in the returned list (this equals 'sizeof
      (glibtop_mountentry)').
 
      typedef struct _glibtop_mountentry      glibtop_mountentry;
@@ -1685,18 +1589,16 @@ but it can be useful to get a list of all currently mounted filesystems.
          char type [GLIBTOP_MOUNTENTRY_LEN+1];
      };
 
-   `GLIBTOP_MOUNTENTRY_LEN' is defined in `<glibtop.h>'.
+   'GLIBTOP_MOUNTENTRY_LEN' is defined in '<glibtop.h>'.
 
-`devname'
-     Full pathname (such as `/dev/sdb1' for instance) to the mounted
+'devname'
+     Full pathname (such as '/dev/sdb1' for instance) to the mounted
      device.
-
-`mountdir'
-     Full pathname of the mountpoint (such as `/usr/local' for
+'mountdir'
+     Full pathname of the mountpoint (such as '/usr/local' for
      instance).
-
-`type'
-     Filesystem type as a textual string (such as `ext2fs').
+'type'
+     Filesystem type as a textual string (such as 'ext2fs').
 
 
 File: libgtop2.info,  Node: glibtop_fsusage,  Prev: glibtop_mountlist,  Up: Common Functions
@@ -1704,7 +1606,7 @@ File: libgtop2.info,  Node: glibtop_fsusage,  Prev: glibtop_mountlist,  Up: Comm
 3.2.2 File System Usage
 -----------------------
 
-Library function `glibtop_get_fsusage':
+Library function 'glibtop_get_fsusage':
 
      void
      glibtop_get_fsusage_l (glibtop *server, glibtop_fsusage *buf,
@@ -1713,7 +1615,7 @@ Library function `glibtop_get_fsusage':
      void
      glibtop_get_fsusage (glibtop_fsusage *buf, const char *mount_dir);
 
-   Declaration of `glibtop_fsusage' in `<glibtop/fsusage.h>':
+   Declaration of 'glibtop_fsusage' in '<glibtop/fsusage.h>':
 
      typedef struct _glibtop_fsusage         glibtop_fsusage;
 
@@ -1730,28 +1632,21 @@ Library function `glibtop_get_fsusage':
              write;
      };
 
-`blocks'
+'blocks'
      Total blocks in the filesystem.
-
-`bfree'
+'bfree'
      Free blocks available to the superuser.
-
-`bavail'
+'bavail'
      Free blocks available to ordinary users.
-
-`files'
+'files'
      Total file nodes.
-
-`ffree'
+'ffree'
      Free file nodes.
-
-`block_size'
+'block_size'
      Block size in bytes.
-
-`read'
+'read'
      Total blocks read.
-
-`write'
+'write'
      Total blocks written.
 
 
@@ -1775,18 +1670,18 @@ File: libgtop2.info,  Node: glibtop_init,  Next: glibtop_sysdeps,  Prev: Library
 3.3.1 Server Initialization
 ---------------------------
 
-You do not need to worry about the `glibtop *' server structure if you
-don't need - the library exports a `glibtop_global_server' which you
-can use everywhere a `glibtop *' is expected.
+You do not need to worry about the 'glibtop *' server structure if you
+don't need - the library exports a 'glibtop_global_server' which you can
+use everywhere a 'glibtop *' is expected.
 
    Most of the library and all of the sysdeps function also have an
-alias (which is the function name without the `_l', `_s' or `_r'
-suffix) which don't take a `glibtop *' as argument but uses the
-`glibtop_global_server' instead.
+alias (which is the function name without the '_l', '_s' or '_r' suffix)
+which don't take a 'glibtop *' as argument but uses the
+'glibtop_global_server' instead.
 
      extern glibtop *glibtop_global_server;
 
-   Library function `glibtop_init':
+   Library function 'glibtop_init':
 
      glibtop *
      glibtop_init_r (glibtop **server_ptr, unsigned long features,
@@ -1795,11 +1690,11 @@ suffix) which don't take a `glibtop *' as argument but uses the
      void
      glibtop_init (void);
 
-   This function initializes a LibGTop server. It is automatically
-called when you use any of the LibGTop functions and will use the
-global server in this case.
+   This function initializes a LibGTop server.  It is automatically
+called when you use any of the LibGTop functions and will use the global
+server in this case.
 
-   However, it's appreciated to call `glibtop_init' during the
+   However, it's appreciated to call 'glibtop_init' during the
 initialization of your application.
 
    You can for instance use
@@ -1810,42 +1705,40 @@ which is equivalent to
 
      glibtop_init_r (&glibtop_global_server, 0, 0);
 
-   Please note that the `server_ptr' argument is a pointer to a pointer
-(and thus is of type `glibtop **').
+   Please note that the 'server_ptr' argument is a pointer to a pointer
+(and thus is of type 'glibtop **').
 
-   To control what `glibtop_init' should actually do, you can use the
-`features' and `flags' arguments.
+   To control what 'glibtop_init' should actually do, you can use the
+'features' and 'flags' arguments.
 
-   The `features' argument is a bit-mask (interpreted in the same way
-than `sysdeps.features') and tells the library which features you're
-interested in. The library will only start the server if this is
+   The 'features' argument is a bit-mask (interpreted in the same way
+than 'sysdeps.features') and tells the library which features you're
+interested in.  The library will only start the server if this is
 required for any of those features.
 
-   You can use the following constants for the `flags' parameter to
+   You can use the following constants for the 'flags' parameter to
 control the behavior of the library:
 
-`GLIBTOP_INIT_NO_INIT'
-     Tells the library to do nothing. If the value pointed to by the
-     `server_ptr' argument is `NULL', it will set it to the
-     `glibtop_global_server' and then return.
-
-`GLIBTOP_INIT_NO_OPEN'
+'GLIBTOP_INIT_NO_INIT'
+     Tells the library to do nothing.  If the value pointed to by the
+     'server_ptr' argument is 'NULL', it will set it to the
+     'glibtop_global_server' and then return.
+'GLIBTOP_INIT_NO_OPEN'
      Do the initialization, but do not start the server.
 
-   To modify the way the `features' are interpretet, you can use the
-following constants for `flags' (as a bit mask):
+   To modify the way the 'features' are interpretet, you can use the
+following constants for 'flags' (as a bit mask):
 
-`GLIBTOP_FEATURES_NO_SERVER'
+'GLIBTOP_FEATURES_NO_SERVER'
      Never use the server, always call the sysdeps code directly.  If
      you require any privileges to get them and you don't have those
      privileges, the this will obviously not work and the library will
      fail to return some or all of the requested values.
-
-`GLIBTOP_FEATURES_EXCEPT'
-     Inverts the matching of the `features' parameter, i.e. if you use
-     this flag this means that `features' are all the features you are
-     _not_ interested in.  Might be useful to say something like "I
-     want everything but ppp".
+'GLIBTOP_FEATURES_EXCEPT'
+     Inverts the matching of the 'features' parameter, i.e.  if you use
+     this flag this means that 'features' are all the features you are
+     _not_ interested in.  Might be useful to say something like "I want
+     everything but ppp".
 
 
 File: libgtop2.info,  Node: glibtop_sysdeps,  Next: Library Parameters,  Prev: glibtop_init,  Up: Library Functions
@@ -1853,7 +1746,7 @@ File: libgtop2.info,  Node: glibtop_sysdeps,  Next: Library Parameters,  Prev: g
 3.3.2 Server Sysdeps
 --------------------
 
-Library function `glibtop_get_sysdeps':
+Library function 'glibtop_get_sysdeps':
 
      void
      glibtop_get_sysdeps_r (glibtop *server, glibtop_sysdeps *buf);
@@ -1861,7 +1754,7 @@ Library function `glibtop_get_sysdeps':
      void
      glibtop_get_sysdeps (glibtop_sysdeps *buf);
 
-   Declaration of `glibtop_sysdeps' in `<glibtop/sysdeps.h>':
+   Declaration of 'glibtop_sysdeps' in '<glibtop/sysdeps.h>':
 
      typedef struct _glibtop_sysdeps         glibtop_sysdeps;
 
@@ -1894,18 +1787,17 @@ Library function `glibtop_get_sysdeps':
              ppp;
      };
 
-`features'
+'features'
      This is a bit field (the so-called "server features") stating for
      which features we need to use the server.
-
-`pointer_size'
+'pointer_size'
      This was added in LibGTop 1.1.0 and tells you the number of bits a
-     `void*' has in the server (this may be different from the size on
+     'void*' has in the server (this may be different from the size on
      the client machine if we're talking over the daemon to a remove
      machine).
 
-   The following constants from `<glibtop/sysdeps.h>' serve as
-bit-indices for the `features' field:
+   The following constants from '<glibtop/sysdeps.h>' serve as
+bit-indices for the 'features' field:
 
      #define GLIBTOP_SYSDEPS_CPU             0
      #define GLIBTOP_SYSDEPS_MEM             1
@@ -1936,7 +1828,7 @@ File: libgtop2.info,  Node: Library Parameters,  Prev: glibtop_sysdeps,  Up: Lib
 3.3.3 Library Parameters
 ------------------------
 
-Library function `glibtop_get_parameter':
+Library function 'glibtop_get_parameter':
 
      size_t
      glibtop_get_parameter_l (glibtop *server, const unsigned parameter,
@@ -1947,23 +1839,21 @@ Library function `glibtop_get_parameter':
                             size_t data_size);
 
    This function is used to retrieve a library parameter (see below for
-a more detailed description). It returns the size of the retrieved
+a more detailed description).  It returns the size of the retrieved
 parameter on success, zero on failure or minus the actual size of the
-parameter if `data_size' was too small.
+parameter if 'data_size' was too small.
 
-   You may call this function with `data_ptr' set to `NULL' to get the
+   You may call this function with 'data_ptr' set to 'NULL' to get the
 actual size of a parameter (as a negative value).
 
-`parameter'
+'parameter'
      The parameter you want to retrieve (see below for constants).
-
-`data_ptr'
+'data_ptr'
      Pointer to a place where the parameter should be stored.
-
-`data_size'
+'data_size'
      Maximum size of the parameter.
 
-   Library function `glibtop_set_parameter':
+   Library function 'glibtop_set_parameter':
 
      void
      glibtop_set_parameter_l (glibtop *server, const unsigned parameter,
@@ -1973,95 +1863,88 @@ actual size of a parameter (as a negative value).
      glibtop_set_parameter (const unsigned parameter, const void *data_ptr,
                             size_t data_size);
 
-   This function is used to modify a library parameter. Please not that
+   This function is used to modify a library parameter.  Please not that
 you may not set all parameters since some of them are read-only.
 
-`parameter'
+'parameter'
      The parameter you want to modify (see below for constants).
-
-`data_ptr'
+'data_ptr'
      Pointer to the value which should be set.
-
-`data_size'
-     Size of the new value. For fixed-size parameters, this must match
+'data_size'
+     Size of the new value.  For fixed-size parameters, this must match
      the exact size of the parameter or you'll get an error.
 
-   The following parameters are defined in `<glibtop/parameter.h>':
+   The following parameters are defined in '<glibtop/parameter.h>':
 
-`GLIBTOP_PARAM_FEATURES'
-     This is a read-only `unsigned long' representing the `features'
-     field of `glibtop_sysdeps'.
-
-`GLIBTOP_PARAM_REQUIRED'
-     This is a `glibtop_sysdeps' structure specifying which features the
-     client requires the library return. If it fails to get any of
+'GLIBTOP_PARAM_FEATURES'
+     This is a read-only 'unsigned long' representing the 'features'
+     field of 'glibtop_sysdeps'.
+'GLIBTOP_PARAM_REQUIRED'
+     This is a 'glibtop_sysdeps' structure specifying which features the
+     client requires the library return.  If it fails to get any of
      them, you'll get an error.
-
-`GLIBTOP_PARAM_ERROR_METHOD'
-     This is an `unsigned' telling the library what to do if it fails to
+'GLIBTOP_PARAM_ERROR_METHOD'
+     This is an 'unsigned' telling the library what to do if it fails to
      get any of the features that are marked as required via the
-     `GLIBTOP_PARAM_REQUIRED' parameter (see below for constants).
+     'GLIBTOP_PARAM_REQUIRED' parameter (see below for constants).
 
-   You can use the following constants for `GLIBTOP_PARAM_ERROR_METHOD'
-(defined in `<glibtop/open.h>'):
+   You can use the following constants for 'GLIBTOP_PARAM_ERROR_METHOD'
+(defined in '<glibtop/open.h>'):
 
-`GLIBTOP_ERROR_METHOD_IGNORE'
+'GLIBTOP_ERROR_METHOD_IGNORE'
      Ignore the error condition.
-
-`GLIBTOP_ERROR_METHOD_WARN_ONCE'
+'GLIBTOP_ERROR_METHOD_WARN_ONCE'
      Warn once about the absense of some of the required features, then
-     modify `GLIBTOP_PARAM_REQUIRED' so that the missing ones are no
-     longer required. This is the prefered value for applications since
-     it'll only print out the warning message once and not each time
-     the library tries to get one of those features.
-
-`GLIBTOP_ERROR_METHOD_WARN'
+     modify 'GLIBTOP_PARAM_REQUIRED' so that the missing ones are no
+     longer required.  This is the prefered value for applications since
+     it'll only print out the warning message once and not each time the
+     library tries to get one of those features.
+'GLIBTOP_ERROR_METHOD_WARN'
      Warn each time the library fails to get some of the required
      features.
-
-`GLIBTOP_ERROR_METHOD_ABORT'
+'GLIBTOP_ERROR_METHOD_ABORT'
      Abort if the library fails to get some of the required features.
      This should not be used by applications.
 
 
 
 Tag Table:
-Node: Top1201
-Node: About3354
-Node: Availability4232
-Node: Supported Platforms4852
-Node: Mailing List6462
-Node: Thanks7234
-Node: White Paper7951
-Node: Introduction8184
-Node: Overview9897
-Node: Interface Design10264
-Node: Server Implementation11288
-Node: Reference Manual12004
-Node: System Dependent12308
-Node: glibtop_cpu13383
-Node: glibtop_mem16009
-Node: glibtop_swap17172
-Node: glibtop_uptime18404
-Node: glibtop_loadavg19698
-Node: glibtop_proclist20705
-Node: glibtop_proc_state23912
-Node: glibtop_proc_uid26486
-Node: glibtop_proc_mem28071
-Node: glibtop_proc_time31771
-Node: glibtop_proc_signal33930
-Node: glibtop_proc_kernel34978
-Node: glibtop_proc_segment37881
-Node: glibtop_proc_args39126
-Node: glibtop_proc_map40867
-Node: glibtop_netload42844
-Node: glibtop_ppp45364
-Node: Common Functions46425
-Node: glibtop_mountlist46850
-Node: glibtop_fsusage48767
-Node: Library Functions49867
-Node: glibtop_init50294
-Node: glibtop_sysdeps53043
-Node: Library Parameters55655
+Node: Top1206
+Node: About3357
+Node: Availability4235
+Node: Supported Platforms4855
+Node: Mailing List6466
+Node: Thanks7238
+Node: White Paper7948
+Node: Introduction8181
+Node: Overview9896
+Node: Interface Design10263
+Node: Server Implementation11290
+Node: Reference Manual12007
+Node: System Dependent12311
+Node: glibtop_cpu13386
+Node: glibtop_mem16013
+Node: glibtop_swap17175
+Node: glibtop_uptime18407
+Node: glibtop_loadavg19702
+Node: glibtop_proclist20710
+Node: glibtop_proc_state23917
+Node: glibtop_proc_uid26483
+Node: glibtop_proc_mem28055
+Node: glibtop_proc_time31750
+Node: glibtop_proc_signal33902
+Node: glibtop_proc_kernel34947
+Node: glibtop_proc_segment37832
+Node: glibtop_proc_args39070
+Node: glibtop_proc_map40812
+Node: glibtop_netload42789
+Node: glibtop_ppp45297
+Node: Common Functions46355
+Node: glibtop_mountlist46780
+Node: glibtop_fsusage48696
+Node: Library Functions49789
+Node: glibtop_init50216
+Node: glibtop_sysdeps52967
+Node: Library Parameters55578
 
 End Tag Table

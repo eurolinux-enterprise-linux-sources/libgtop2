@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -34,7 +34,7 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
-#if !defined (_LIBC) && defined (__GNU_LIBRARY__) && __GNU_LIBRARY__ > 1
+#if !defined (__GLIBC__) || __GNU_LIBRARY__ > 1
 /* GNU LibC */
 #include <net/if.h>
 #include <netinet/ip_icmp.h>
@@ -43,7 +43,7 @@
 #include <netinet/tcp.h>
 #include <netinet/udp.h>
 #include <net/if.h>
-#else /* Libc 5 */
+#elif defined (__GLIBC__) /* Libc 5 */
 #include <linux/if.h>
 #include <linux/in.h>
 #include <linux/ip.h>

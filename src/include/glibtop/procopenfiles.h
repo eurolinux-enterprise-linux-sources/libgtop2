@@ -18,8 +18,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_PROC_OPEN_FILES_H__
@@ -94,6 +94,14 @@ struct _glibtop_proc_open_files
 	guint64 size;			/* GLIBTOP_PROC_OPEN_FILES_SIZE   */
 };
 
+/**
+ * glibtop_get_proc_open_files:
+ * @buf:
+ * @pid:
+ *
+ * Returns: (transfer none):
+ */
+
 glibtop_open_files_entry *
 glibtop_get_proc_open_files(glibtop_proc_open_files *buf, pid_t pid);
 
@@ -103,11 +111,31 @@ glibtop_get_proc_open_files(glibtop_proc_open_files *buf, pid_t pid);
 #define glibtop_get_proc_open_files_r		glibtop_get_proc_open_files_s
 #endif
 
+
+/**
+ * glibtop_get_proc_open_files_l:
+ * @server:
+ * @buf: (out):
+ * @pid:
+ *
+ * Returns: (transfer none):
+ */
+
 glibtop_open_files_entry *
 glibtop_get_proc_open_files_l (glibtop *server, glibtop_proc_open_files *buf, pid_t pid);
 
 #if GLIBTOP_SUID_PROC_FILE
 void _glibtop_init_proc_open_files_p (glibtop *server);
+
+
+/**
+ * glibtop_get_proc_open_files_p:
+ * @server:
+ * @buf: (out):
+ * @pid:
+ *
+ * Returns: (transfer none):
+ */
 
 glibtop_open_files_entry *
 glibtop_get_proc_open_files_p (glibtop *server, glibtop_proc_open_files *buf, pid_t pid);
@@ -117,6 +145,9 @@ void _glibtop_init_proc_open_files_s (glibtop *server);
 glibtop_open_files_entry *
 glibtop_get_proc_open_files_s (glibtop *server, glibtop_proc_open_files *buf, pid_t pid);
 #endif
+
+GType     glibtop_open_files_entry_get_type (void) G_GNUC_CONST;
+GType     glibtop_proc_open_files_get_type (void) G_GNUC_CONST;
 
 G_END_DECLS
 

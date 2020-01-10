@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -25,6 +25,7 @@
 #include <glibtop/cpu.h>
 #include <glibtop/open.h>
 #include <glibtop/init_hooks.h>
+#include <glibtop/machine.h>
 
 
 /* !!! THIS FUNCTION RUNS SUID ROOT - CHANGE WITH CAUTION !!! */
@@ -56,28 +57,30 @@ glibtop_open_p (glibtop *server, const char *program_name,
 		const unsigned flags)
 {
 	char errbuf[_POSIX2_LINE_MAX];
-#ifdef DEBUG
-	fprintf (stderr, "DEBUG (%d): glibtop_open_p ()\n", getpid ());
-#endif
+	glibtop_debug ("glibtop_open_p ()");
 
 	/* !!! WE ARE ROOT HERE - CHANGE WITH CAUTION !!! */
-	server->machine.uid = getuid ();
-	server->machine.euid = geteuid ();
-	server->machine.gid = getgid ();
-	server->machine.egid = getegid ();
+	server->machine->uid = getuid ();
+	server->machine->euid = geteuid ();
+	server->machine->gid = getgid ();
+	server->machine->egid = getegid ();
 	/* Setup machine-specific data */
-	server->machine.kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, errbuf);
+	server->machine->kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, errbuf);
 
-	if (server->machine.kd == NULL)
+	if (server->machine->kd == NULL)
 		glibtop_error_io_r (server, "kvm_open");
 
 	/* Drop priviledges. */
 
-	if (setreuid (server->machine.euid, server->machine.uid))
+	glibtop_debug ("uid=%d euid=%d gid=%d egid=%d", getuid(), geteuid(), getgid(), getegid());
+
+	if (setreuid (server->machine->euid, server->machine->uid))
 		_exit (1);
 
-	if (setregid (server->machine.egid, server->machine.gid))
+	if (setregid (server->machine->egid, server->machine->gid))
 		_exit (1);
+
+	glibtop_debug ("uid=%d euid=%d gid=%d egid=%d", getuid(), geteuid(), getgid(), getegid());
 
 	/* !!! END OF SUID ROOT PART !!! */
 

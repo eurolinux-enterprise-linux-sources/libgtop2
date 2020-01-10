@@ -11,7 +11,7 @@
 #include <sys/param.h>
 #include <sys/mount.h>
 #include <sys/statvfs.h>
-#if __FreeBSD_version >= 600000 || defined(__FreeBSD_kernel__)
+#if 0
 #include <libgeom.h>
 #include <sys/resource.h>
 #include <devstat.h>
@@ -32,7 +32,7 @@ _glibtop_get_fsusage_read_write (glibtop *server, glibtop_fsusage *buf, const ch
 {
         int result;
         struct statfs sfs;
-#if __FreeBSD_version >= 600000 || defined(__FreeBSD_kernel__)
+#if 0
         struct devstat *ds;
         void *sc;
         struct timespec ts;
@@ -49,7 +49,7 @@ _glibtop_get_fsusage_read_write (glibtop *server, glibtop_fsusage *buf, const ch
                 glibtop_warn_io_r (server, "statfs");
                 return;
         }
-#if __FreeBSD_version >= 600000 || defined(__FreeBSD_kernel__)
+#if 0
         ld[0] = 0;
         ld[1] = 0;
         result = geom_gettree (&gmp);
@@ -132,15 +132,15 @@ _glibtop_get_fsusage_read_write (glibtop *server, glibtop_fsusage *buf, const ch
         buf->read = sfs.f_syncreads + sfs.f_asyncreads;
         buf->write = sfs.f_syncwrites + sfs.f_asyncwrites;
 #endif
-        buf->flags |= (1 << GLIBTOP_FSUSAGE_READ) | (1 << GLIBTOP_FSUSAGE_WRITE);
+	if (buf->read || buf->write) {
+                buf->flags |= (1 << GLIBTOP_FSUSAGE_READ) | (1 << GLIBTOP_FSUSAGE_WRITE);
+	}
 }
 
 void
 glibtop_get_fsusage_s(glibtop *server, glibtop_fsusage *buf, const char *path)
 {
 	struct statvfs fsd;
-
-	glibtop_init_r (&server, 0, 0);
 
 	memset (buf, 0, sizeof (glibtop_fsusage));
 

@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -61,7 +61,7 @@ void
 _glibtop_init_cpu_p (glibtop *server)
 {
 #ifndef KERN_CP_TIME
-	if (kvm_nlist (server->machine.kd, nlst) < 0) {
+	if (kvm_nlist (server->machine->kd, nlst) < 0) {
 		glibtop_warn_io_r (server, "kvm_nlist (cpu)");
 		return;
 	}
@@ -100,7 +100,7 @@ glibtop_get_cpu_p (glibtop *server, glibtop_cpu *buf)
 		return;
 	}
 #else
-	if (kvm_read (server->machine.kd, nlst [0].n_value,
+	if (kvm_read (server->machine->kd, nlst [0].n_value,
 		      &cpts, sizeof (cpts)) != sizeof (cpts)) {
 		glibtop_warn_io_r (server, "kvm_read (cp_time)");
 		return;

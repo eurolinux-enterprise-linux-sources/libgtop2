@@ -1,20 +1,25 @@
 # libgtop's Portuguese Translation
-# Copyright © 2001, 2002, 2003, 2004, 2005, 2007 libgtop
+# Copyright © 2001, 2002, 2003, 2004, 2005, 2007, 2013 libgtop
 # Distributed under the same licence as the libgtop package
-# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2007.
+# Duarte Loreto <happyguy_pt@hotmail.com>, 2001, 2002, 2003, 2004, 2005, 2007, 2013.
+# 
+# Pedro Albuquerque <palbuquerque73@openmailbox.com>, 2015.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.20\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-08 01:57+0100\n"
-"PO-Revision-Date: 2007-09-08 02:00+0000\n"
-"Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
+"Project-Id-Version: 3.8\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=libgtop&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-08 10:53+0000\n"
+"PO-Revision-Date: 2015-06-25 09:38+0100\n"
+"Last-Translator: Pedro Albuquerque <palbuquerque73@openmailbox.com>\n"
+"Language-Team: Português <palbuquerque73@openmailbox.com>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../lib/read.c:51
 #, c-format
@@ -31,8 +36,8 @@ msgstr "tamanho dos dados lidos"
 #, c-format
 msgid "read %lu byte of data"
 msgid_plural "read %lu bytes of data"
-msgstr[0] "%lu byte lido"
-msgstr[1] "%lu bytes lidos"
+msgstr[0] "%lu byte de dados lido"
+msgstr[1] "%lu bytes de dados lidos"
 
 #: ../lib/write.c:51
 #, c-format
@@ -41,23 +46,23 @@ msgid_plural "wrote %d bytes"
 msgstr[0] "%d byte escrito"
 msgstr[1] "%d bytes escritos"
 
-#: ../src/daemon/gnuserv.c:458
+#: ../src/daemon/gnuserv.c:455
 msgid "Enable debugging"
-msgstr "Activar depuração"
+msgstr "Ativar depuração"
 
-#: ../src/daemon/gnuserv.c:460
+#: ../src/daemon/gnuserv.c:457
 msgid "Enable verbose output"
-msgstr "Activar resultados extensos"
+msgstr "Ativar resultados extensos"
 
-#: ../src/daemon/gnuserv.c:462
+#: ../src/daemon/gnuserv.c:459
 msgid "Don't fork into background"
-msgstr "Não efectuar fork em fundo"
+msgstr "Não efetuar fork em fundo"
 
-#: ../src/daemon/gnuserv.c:464
+#: ../src/daemon/gnuserv.c:461
 msgid "Invoked from inetd"
 msgstr "Invocado pelo inetd"
 
-#: ../src/daemon/gnuserv.c:498
+#: ../src/daemon/gnuserv.c:495
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options.\n"
 msgstr ""
@@ -82,7 +87,7 @@ msgstr "Instrução ilegal"
 
 #: ../sysdeps/osf1/siglist.c:31 ../sysdeps/sun4/siglist.c:31
 msgid "Trace trap"
-msgstr "Armadilha de trace"
+msgstr "Armadilha de rasto"
 
 #: ../sysdeps/osf1/siglist.c:32 ../sysdeps/sun4/siglist.c:32
 msgid "Abort"
@@ -94,7 +99,7 @@ msgstr "Erro EMT"
 
 #: ../sysdeps/osf1/siglist.c:34 ../sysdeps/sun4/siglist.c:34
 msgid "Floating-point exception"
-msgstr "Excepção de vírgula flutuante"
+msgstr "Exceção de vírgula flutuante"
 
 #: ../sysdeps/osf1/siglist.c:35 ../sysdeps/sun4/siglist.c:35
 msgid "Kill"
@@ -122,7 +127,7 @@ msgstr "Alarme"
 
 #: ../sysdeps/osf1/siglist.c:41 ../sysdeps/sun4/siglist.c:41
 msgid "Termination"
-msgstr "Terminar"
+msgstr "Terminação"
 
 #: ../sysdeps/osf1/siglist.c:42 ../sysdeps/sun4/siglist.c:42
 msgid "Urgent condition on socket"
@@ -154,7 +159,7 @@ msgstr "Escrita em fundo para a tty"
 
 #: ../sysdeps/osf1/siglist.c:49 ../sysdeps/sun4/siglist.c:49
 msgid "I/O now possible"
-msgstr "I/O agora possível"
+msgstr "E/S agora possível"
 
 #: ../sysdeps/osf1/siglist.c:50 ../sysdeps/sun4/siglist.c:50
 msgid "CPU limit exceeded"
@@ -170,7 +175,7 @@ msgstr "Alarme virtual"
 
 #: ../sysdeps/osf1/siglist.c:53 ../sysdeps/sun4/siglist.c:53
 msgid "Profiling alarm clock"
-msgstr "Alarme de optimização"
+msgstr "Alarme de otimização"
 
 #: ../sysdeps/osf1/siglist.c:54 ../sysdeps/sun4/siglist.c:54
 msgid "Window size change"

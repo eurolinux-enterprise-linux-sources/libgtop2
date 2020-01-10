@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -35,16 +35,14 @@ glibtop_send_version (glibtop *server, int fd)
 
 	sprintf (buffer, LIBGTOP_VERSION_STRING,
 		 LIBGTOP_VERSION, LIBGTOP_SERVER_VERSION,
-		 sizeof (glibtop_command),
-		 sizeof (glibtop_response),
-		 sizeof (glibtop_union),
-		 sizeof (glibtop_sysdeps));
+		 (unsigned) sizeof (glibtop_command),
+		 (unsigned) sizeof (glibtop_response),
+		 (unsigned) sizeof (glibtop_union),
+		 (unsigned) sizeof (glibtop_sysdeps));
 
 	size = strlen (buffer) + 1;
 
-#ifdef DEBUG
-	fprintf (stderr, "SERVER ID: |%s|\n", buffer);
-#endif
+	glibtop_debug ("SERVER ID: |%s|", buffer);
 
 	if (fd == 0) {
 		if (write (1, (const void *) &size, sizeof (size)) < 0)

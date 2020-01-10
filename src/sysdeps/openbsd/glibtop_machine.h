@@ -1,5 +1,3 @@
-/* $OpenBSD: glibtop_machine.h,v 1.3 2011/05/23 19:35:53 jasper Exp $	*/
-
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
 
@@ -17,27 +15,26 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_MACHINE_H__
 #define __GLIBTOP_MACHINE_H__
 
 #include <sys/param.h>
+#include <sys/sched.h>
 #include <nlist.h>
 #include <kvm.h>
-#include <sys/dkstat.h>
 #include <time.h>
 #include <sys/user.h>
 #include <sys/types.h>
+#include <sys/proc.h>
 #include <sys/sysctl.h>
 
 #include <fcntl.h>
 
 G_BEGIN_DECLS
-
-typedef struct _glibtop_machine glibtop_machine;
 
 struct _glibtop_machine
 {

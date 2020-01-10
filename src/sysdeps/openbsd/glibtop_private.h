@@ -1,5 +1,3 @@
-/* $OpenBSD: glibtop_private.h,v 1.2 2011/05/23 19:35:53 jasper Exp $	*/
-
 /* Copyright (C) 2007 Joe Marcus Clarke
    This file is part of LibGTop 2.0.
 
@@ -15,8 +13,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __OPENBSD__GLIBTOP_PRIVATE_H__
@@ -34,7 +32,6 @@
 
 G_BEGIN_DECLS
 
-char *execute_lsof(pid_t pid);
 gboolean safe_readlink(const char *path, char *buf, int bufsiz);
 
 G_END_DECLS

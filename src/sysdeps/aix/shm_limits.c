@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -44,7 +44,7 @@ _glibtop_init_shm_limits_p (glibtop *server)
 		return;
 	}
 
-	server->machine.shminfo_offset = result;
+	server->machine->shminfo_offset = result;
 
 	server->sysdeps.shm_limits = _glibtop_sysdeps_shm_limits;
 }
@@ -62,7 +62,7 @@ glibtop_get_shm_limits_p (glibtop *server, glibtop_shm_limits *buf)
 
 	memset (buf, 0, sizeof (glibtop_shm_limits));
 
-	result = _glibtop_get_kmem_info(server, server->machine.shminfo_offset,
+	result = _glibtop_get_kmem_info(server, server->machine->shminfo_offset,
 					&shminfo, sizeof(struct shminfo));
 	if (result <= 0)
 	{

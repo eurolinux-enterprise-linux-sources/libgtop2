@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -55,7 +55,7 @@ glibtop_get_cpu_p (glibtop *server, glibtop_cpu *buf)
 #ifdef MULTIPROCESSOR
 	/* get the mp_time array as well */
 
-	if (server->machine.ncpu > 1) {
+	if (server->machine->ncpu > 1) {
 		(void) _glibtop_getkval (server, _glibtop_nlist [X_MP_TIME].n_value,
 					 (int *) mp_time, sizeof (mp_time),
 					 _glibtop_nlist [X_MP_TIME].n_name);
@@ -73,8 +73,8 @@ glibtop_get_cpu_p (glibtop *server, glibtop_cpu *buf)
 	/* [FIXME]: I had no machine with more than one processor to test
 	 *          this code !!! */
 
-	if (server->machine.ncpu > 1) {
-		for (i = 0; i < server->machine.ncpu; i++) {
+	if (server->machine->ncpu > 1) {
+		for (i = 0; i < server->machine->ncpu; i++) {
 			buf->user += mp_time [i][CP_USER];
 			buf->nice += mp_time [i][CP_NICE];
 			buf->sys  += mp_time [i][CP_SYS];

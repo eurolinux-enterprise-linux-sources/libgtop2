@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_PROC_ARGS_H__
@@ -78,6 +78,15 @@ glibtop_get_proc_args (glibtop_proc_args *buf, pid_t pid, unsigned max_len);
 char **
 glibtop_get_proc_argv_l (glibtop *server, glibtop_proc_args *buf,
 			 pid_t pid, unsigned max_len);
+
+/**
+ * glibtop_get_proc_argv:
+ * @buf:
+ * @pid:
+ * @max_len:
+ *
+ * Returns: (transfer full):
+ */
 
 char **
 glibtop_get_proc_argv (glibtop_proc_args *buf, pid_t pid, unsigned max_len);

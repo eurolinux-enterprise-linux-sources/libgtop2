@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -62,7 +62,7 @@ glibtop_get_loadavg_s (glibtop *server, glibtop_loadavg *buf)
 		return;
 
 #else
-	if(!(kc = server->machine.kc))
+	if(!(kc = server->machine->kc))
 	    return;
 
 	switch(kstat_chain_update(kc))
@@ -72,7 +72,7 @@ glibtop_get_loadavg_s (glibtop *server, glibtop_loadavg *buf)
 	    default: glibtop_get_kstats(server);
 	}
 
-	if(!(ksp = server->machine.system))
+	if(!(ksp = server->machine->system))
 	    return;
 
 	if(kstat_read(kc, ksp, NULL) < 0)

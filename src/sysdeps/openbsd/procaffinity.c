@@ -1,6 +1,5 @@
 /*
- * $OpenBSD: procaffinity.c,v 1.1 2009/10/16 10:56:04 jasper Exp $
- * procaffinity stub.
+ * TODO (procaffinity stub)
  */
 
 #include <config.h>

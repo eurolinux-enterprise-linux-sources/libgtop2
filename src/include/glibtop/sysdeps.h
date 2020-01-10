@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_SYSDEPS_H__
@@ -55,6 +55,9 @@ G_BEGIN_DECLS
 #define GLIBTOP_SYSDEPS_PROC_AFFINITY	26
 
 #define GLIBTOP_MAX_SYSDEPS		27
+
+/* The 'features' args to glibtop_init_* is an unsigned long */
+G_STATIC_ASSERT((1UL << (GLIBTOP_MAX_SYSDEPS - 1)) <= ULONG_MAX);
 
 #define GLIBTOP_SYSDEPS_ALL		((1 << GLIBTOP_MAX_SYSDEPS) - 1)
 

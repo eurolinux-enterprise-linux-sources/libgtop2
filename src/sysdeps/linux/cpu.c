@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -66,11 +66,12 @@ _glibtop_init_cpu_s (glibtop *server)
 /* Provides information about cpu usage. */
 
 #define FILENAME	"/proc/stat"
+#define STAT_BUFSIZ     81920
 
 void
 glibtop_get_cpu_s (glibtop *server, glibtop_cpu *buf)
 {
-	char buffer [BUFSIZ], *p;
+	char buffer [STAT_BUFSIZ], *p;
 	int i;
 
 	memset (buf, 0, sizeof (glibtop_cpu));

@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifdef HAVE_CONFIG_H
@@ -42,14 +42,12 @@ output (pid_t pid)
 	char *args;
 	unsigned i;
 
-#if HAVE_LIBGTOP_SMP
 	unsigned long total;
 	double p_total, p_utime, p_stime;
 	double b_total, b_utime, b_stime;
 	double s_total, s_utime, s_stime;
 	double my_utime, my_stime;
 	unsigned int ncpu;
-#endif
 
 	printf ("\n");
 
@@ -158,7 +156,6 @@ output (pid_t pid)
 
 	printf ("\n");
 
-#if HAVE_LIBGTOP_SMP
 	ncpu = glibtop_global_server->ncpu;
 
 	glibtop_get_proc_time (&data.proc_time, pid);
@@ -231,7 +228,6 @@ output (pid_t pid)
 		s_utime * 100.0 / my_utime, s_stime * 100.0 / my_stime);
 
 	printf ("\n");
-#endif
 }
 
 int

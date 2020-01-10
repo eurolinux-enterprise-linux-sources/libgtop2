@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -38,11 +38,8 @@
 #include <sys/vnode.h>
 #undef _KVM_VNODE
 
-#define _KERNEL
-#include <sys/pipe.h>
 #include <sys/conf.h>
-#undef _KERNEL
-#if __FreeBSD_version >= 800038
+#if (__FreeBSD_version >= 800038) || (__FreeBSD_kernel_version >= 800038)
 #define _WANT_FILE
 #include <sys/file.h>
 #undef _WANT_FILE
@@ -83,6 +80,8 @@ _glibtop_sysdeps_freebsd_dev_inode (glibtop *server, struct vnode *vnode,
 {
         char *tagptr;
         char tagstr[12];
+        enum FS_TYPE { UNKNOWN, IS_UFS, IS_ZFS };
+        int fs_type = UNKNOWN;
         struct inode inode;
         struct cdev_priv priv;
 #if __FreeBSD_version < 800039
@@ -92,9 +91,9 @@ _glibtop_sysdeps_freebsd_dev_inode (glibtop *server, struct vnode *vnode,
         *inum = 0;
         *dev = 0;
 
-        if (kvm_read (server->machine.kd, (gulong) &vnode->v_tag,
+        if (kvm_read (server->machine->kd, (gulong) &vnode->v_tag,
  	             (char *) &tagptr, sizeof (tagptr)) != sizeof (tagptr) ||
-            kvm_read (server->machine.kd, (gulong) tagptr,
+            kvm_read (server->machine->kd, (gulong) tagptr,
 		     (char *) tagstr, sizeof (tagstr)) != sizeof (tagstr))
         {
                 glibtop_warn_io_r (server, "kvm_read (tagptr)");
@@ -103,23 +102,77 @@ _glibtop_sysdeps_freebsd_dev_inode (glibtop *server, struct vnode *vnode,
 
         tagstr[sizeof(tagstr) - 1] = '\0';
 
-        if (strcmp (tagstr, "ufs"))
+        if (!strcmp(tagstr, "ufs")) {
+                fs_type = IS_UFS;
+        } else if (!strcmp(tagstr, "zfs")) {
+                fs_type = IS_ZFS;
+        } else {
+                glibtop_warn_io_r (server, "ignoring fstype %s", tagstr);
                 return;
+        }
 
-        if (kvm_read (server->machine.kd, (gulong) VTOI(vn), (char *) &inode,
+        if (kvm_read (server->machine->kd, (gulong) VTOI(vn), (char *) &inode,
  	              sizeof (inode)) != sizeof (inode))
         {
                 glibtop_warn_io_r (server, "kvm_read (inode)");
                 return;
         }
 
-#if __FreeBSD_version >= 800039
-        if (kvm_read (server->machine.kd, (gulong) cdev2priv(inode.i_dev), (char *) &priv,
+
+        if (fs_type == IS_ZFS) {
+		/* FIXME: I have no idea about what is the actual layout of what we've read
+		   but the inode number is definitely at offset 16, 8 bytes of amd64.
+		   *inum = *(guint64*) ((unsigned char*)&inode + 16);
+		   So this is really hugly, but I don't have anything better for now.
+
+                   Actually, this looks like a znode_t as described in kernel's zfs_znode.h.
+                   I don't have that header file, so let's just mimic that.
+                */
+
+                struct my_zfsvfs {
+                        /* vfs_t */ void *z_vfs;
+                        /* zfsvfs_t */ void *z_parent;
+                        /* objset_t */ void *z_os;
+                        uint64_t z_root;
+                        /* ... */
+                };
+
+                typedef struct my_znode {
+                        struct my_zfsvfs *z_zfsvfs;
+                        /* vnode_t */ void *z_vnode;
+                        uint64_t z_id;
+                        /* ... */
+                } my_znode_t;
+
+                G_STATIC_ASSERT(sizeof(my_znode_t) <= sizeof(struct inode));
+
+                my_znode_t* znode = (my_znode_t*)&inode;
+                *inum = znode->z_id;
+
+                struct my_zfsvfs zvfs;
+
+                if (kvm_read(server->machine->kd,
+                             (unsigned long)(znode->z_zfsvfs),
+                             &zvfs, sizeof zvfs) != sizeof zvfs) {
+                        glibtop_warn_io_r(server, "kvm_read (z_zfsvfs)");
+                        return;
+                }
+
+                *dev = zvfs.z_root;
+        }
+        else if (fs_type == IS_UFS) {
+		/* Set inum as soon as possible, so that if the next kvm_reads fail
+		   we still have something */
+                *inum = inode.i_number;
+
+
+#if (__FreeBSD_version >= 800039) || (__FreeBSD_kernel_version >= 800039)
+        if (kvm_read (server->machine->kd, (gulong) cdev2priv(inode.i_dev), (char *) &priv,
 		      sizeof (priv))
 #else
-        if (kvm_read (server->machine.kd, (gulong) inode.i_dev, (char *) &si,
+        if (kvm_read (server->machine->kd, (gulong) inode.i_dev, (char *) &si,
 	              sizeof (si)) != sizeof (si) ||
-            kvm_read (server->machine.kd, (gulong) si.si_priv, (char *) &priv,
+            kvm_read (server->machine->kd, (gulong) si.si_priv, (char *) &priv,
 		      sizeof (priv))
 #endif
 	    != sizeof (priv))
@@ -128,8 +181,8 @@ _glibtop_sysdeps_freebsd_dev_inode (glibtop *server, struct vnode *vnode,
                 return;
         }
 
-        *inum = (guint64) inode.i_number;
         *dev = (guint64) priv.cdp_inode;
+	    } /* end-if IS_UFS */
 }
 #endif
 
@@ -156,8 +209,6 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
         int count;
         int update = 0;
 
-        glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_MAP), 0);
-
         memset (buf, 0, sizeof (glibtop_proc_map));
 
         /* It does not work for the swapper task. */
@@ -168,7 +219,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
         glibtop_suid_enter (server);
 
         /* Get the process data */
-        pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
+        pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid, &count);
         if ((pinfo == NULL) || (count < 1)) {
                 glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
 		glibtop_suid_leave (server);
@@ -177,7 +228,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
 
         /* Now we get the memory maps. */
 
-        if (kvm_read (server->machine.kd,
+        if (kvm_read (server->machine->kd,
                         (gulong) pinfo [0].ki_vmspace,
                         (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace)) {
                 glibtop_warn_io_r (server, "kvm_read (vmspace)");
@@ -187,7 +238,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
 
         first = vmspace.vm_map.header.next;
 
-        if (kvm_read (server->machine.kd,
+        if (kvm_read (server->machine->kd,
                         (gulong) vmspace.vm_map.header.next,
                         (char *) &entry, sizeof (entry)) != sizeof (entry)) {
                 glibtop_warn_io_r (server, "kvm_read (entry)");
@@ -210,7 +261,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
                 guint len;
 
                 if (update) {
-                        if (kvm_read (server->machine.kd,
+                        if (kvm_read (server->machine->kd,
                                         (gulong) entry.next,
                                         (char *) &entry, sizeof (entry)) != sizeof (entry)) {
                                 glibtop_warn_io_r (server, "kvm_read (entry)");
@@ -228,7 +279,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
 
                 /* We're only interested in `vm_object's */
 
-                if (kvm_read (server->machine.kd,
+                if (kvm_read (server->machine->kd,
                                 (gulong) entry.object.vm_object,
                                 (char *) &object, sizeof (object)) != sizeof (object)) {
                         glibtop_warn_io_r (server, "kvm_read (object)");
@@ -243,7 +294,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
                 if (!object.handle)
                         continue;
 
-                if (kvm_read (server->machine.kd,
+                if (kvm_read (server->machine->kd,
                                 (gulong) object.handle,
                                 (char *) &vnode, sizeof (vnode)) != sizeof (vnode)) {
                         glibtop_warn_io_r (server, "kvm_read (vnode)");

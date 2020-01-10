@@ -1,5 +1,3 @@
-/* $OpenBSD: open.c,v 1.4 2011/05/23 19:35:54 jasper Exp $	*/
-
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
 
@@ -17,79 +15,44 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
+#include <sys/types.h>
+#include <sys/sysctl.h>
 #include <glibtop.h>
-#include <glibtop/error.h>
 #include <glibtop/open.h>
-#include <glibtop/init_hooks.h>
+#include <glibtop/cpu.h>
+#include <glibtop/error.h>
 
-/* !!! THIS FUNCTION RUNS SUID ROOT - CHANGE WITH CAUTION !!! */
+#include <glibtop_private.h>
 
-void
-glibtop_init_p (glibtop *server, const unsigned long features,
-		const unsigned flags)
-{
-	const _glibtop_init_func_t *init_fkt;
-
-	if (server == NULL)
-		glibtop_error_r (NULL, "glibtop_init_p (server == NULL)");
-
-	/* Do the initialization, but only if not already initialized. */
-
-	if ((server->flags & _GLIBTOP_INIT_STATE_SYSDEPS) == 0) {
-		glibtop_open_p (server, "glibtop", features, flags);
-
-		for (init_fkt = _glibtop_init_hook_p; *init_fkt; init_fkt++)
-			(*init_fkt) (server);
-
-		server->flags |= _GLIBTOP_INIT_STATE_SYSDEPS;
-	}
-}
 
 void
-glibtop_open_p (glibtop *server, const char *program_name,
+glibtop_open_s (glibtop *server, const char *program_name,
 		const unsigned long features,
 		const unsigned flags)
 {
-#ifdef DEBUG
-	fprintf (stderr, "DEBUG (%d): glibtop_open_p ()\n", getpid ());
-#endif
+	int ncpus = 1;
+	int mib[2] = { CTL_HW, HW_NCPU };
+	size_t len;
 
-	/* !!! WE ARE ROOT HERE - CHANGE WITH CAUTION !!! */
+	len = sizeof(ncpus);
+	if (sysctl(mib, 2, &ncpus, &len, NULL, 0) != 0)
+		printf("Couldn't determine hw.ncpu.\n");
 
-	server->machine.uid = getuid ();
-	server->machine.euid = geteuid ();
-	server->machine.gid = getgid ();
-	server->machine.egid = getegid ();
+	server->real_ncpu = ncpus - 1;
+	server->ncpu = MIN(GLIBTOP_NCPU - 1, server->real_ncpu);
 
 	server->os_version_code = OpenBSD;
 
-	/* Setup machine-specific data */
-	server->machine.kd = kvm_open (NULL, NULL, NULL, O_RDONLY, "kvm_open");
-
-	if (server->machine.kd == NULL)
-		glibtop_error_io_r (server, "kvm_open");
-
-	/* Drop priviledges. */
-
-	if (setreuid (server->machine.euid, server->machine.uid))
-		_exit (1);
-
-	if (setregid (server->machine.egid, server->machine.gid))
-		_exit (1);
-
-	/* !!! END OF SUID ROOT PART !!! */
-
-	/* Our effective uid is now those of the user invoking the server,
-	 * so we do no longer have any priviledges. */
-
-	/* NOTE: On FreeBSD, we do not need to be suid root, we just need to
-	 * be sgid kmem.
-	 *
-	 * The server will only use setegid() to get back it's priviledges,
-	 * so it will fail if it is suid root and not sgid kmem. */
+	if (server->real_ncpu != server->ncpu) {
+		glibtop_warn_r(server,
+			"This machine has %d CPUs, "
+			"%d are being monitored.",
+			server->real_ncpu + 1,
+			server->ncpu + 1);
+	}
 }

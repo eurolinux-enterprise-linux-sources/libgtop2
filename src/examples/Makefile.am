@@ -1,16 +1,17 @@
 ## Process this file with automake to produce Makefile.in
 
-LINK			= $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+AM_CPPFLAGS = \
+	-I$(top_srcdir) \
+	-I$(top_srcdir)/include \
+	-I$(top_srcdir)/sysdeps/$(sysdeps_dir) \
+	-DGTOPLOCALEDIR=\"$(localedir)\" \
+	$(GLIB_CFLAGS)
 
-INCLUDES		= @INCLUDES@
-
-DEFS			= @DEFS@
-
-LDFLAGS			= $(LIBGTOP_EXTRA_LIBS)
+AM_LDFLAGS			= $(LIBGTOP_EXTRA_LIBS)
 
 noinst_PROGRAMS	= 	first second pprint procargs df netlist \
 			  mountlist procmap netload sysdeps timings \
-			  openfiles smp proclist mem wd affinity
+			  openfiles smp proclist free wd affinity
 
 first_SOURCES		= first.c
 first_LDADD		= $(top_builddir)/lib/libgtop-2.0.la
@@ -57,8 +58,8 @@ proclist_LDADD		= $(top_builddir)/lib/libgtop-2.0.la
 wd_SOURCES	= wd.c
 wd_LDADD	= $(top_builddir)/lib/libgtop-2.0.la
 
-mem_SOURCE	= mem.c
-mem_LDADD	= $(top_builddir)/lib/libgtop-2.0.la
+free_SOURCE	= mem.c
+free_LDADD	= $(top_builddir)/lib/libgtop-2.0.la
 
 affinity_SOURCES	= affinity.c
 affinity_LDADD	= $(top_builddir)/lib/libgtop-2.0.la

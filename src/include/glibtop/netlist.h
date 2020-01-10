@@ -13,8 +13,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_NETLIST_H__
@@ -31,12 +31,23 @@ G_BEGIN_DECLS
 
 typedef struct _glibtop_netlist	glibtop_netlist;
 
+/**
+ * glibtop_netlist:
+ * @number: Number of entries in the returned list.
+ */
 struct _glibtop_netlist
 {
 	guint64 flags;
 	guint32 number;
 };
 
+/**
+ * glibtop_get_netlist:
+ * @buf: a #glibtop_netlist
+ *
+ * Returns: (array zero-terminated=1) (transfer none): an array of network
+ *          interface names.
+ */
 char** glibtop_get_netlist(glibtop_netlist *buf);
 
 #if GLIBTOP_SUID_NETLIST
@@ -45,13 +56,39 @@ char** glibtop_get_netlist(glibtop_netlist *buf);
 #define glibtop_get_netlist_r		glibtop_get_netlist_s
 #endif
 
+/**
+ * glibtop_get_netlist_l:
+ * @server: a #glibtop server
+ * @buf: a #glibtop_netlist
+ *
+ * Returns: (array zero-terminated=1) (transfer none): an array of network
+ *          interface names.
+ */
 char** glibtop_get_netlist_l (glibtop *server, glibtop_netlist *buf);
 
 #if GLIBTOP_SUID_NETLIST
 void _glibtop_init_netlist_p (glibtop *server);
+
+/**
+ * glibtop_get_netlist_p:
+ * @server: a #glibtop server
+ * @buf: a #glibtop_netlist
+ *
+ * Returns: (array zero-terminated=1) (transfer none): an array of network
+ *          interface names.
+ */
 char** glibtop_get_netlist_p (glibtop *server, glibtop_netlist *buf);
 #else
 void _glibtop_init_netlist_s (glibtop *server);
+
+/**
+ * glibtop_get_netlist_s:
+ * @server: a #glibtop server
+ * @buf: a #glibtop_netlist
+ *
+ * Returns: (array zero-terminated=1) (transfer none): an array of network
+ *          interface names.
+ */
 char** glibtop_get_netlist_s (glibtop *server, glibtop_netlist *buf);
 #endif
 

@@ -1,5 +1,3 @@
-/* $OpenBSD: netload.c,v 1.4 2011/06/20 09:50:04 jasper Exp $	*/
-
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
 
@@ -17,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -36,12 +34,13 @@
 
 #include <sys/ioctl.h>
 
-#ifdef HAVE_NET_IF_VAR_H
 #include <net/if_var.h>
-#endif
 
 #include <netinet/in.h>
+#define _KERNEL
 #include <netinet/in_var.h>
+#undef _KERNEL
+#include <netinet6/in6_var.h>
 
 static const unsigned long _glibtop_sysdeps_netload =
 (1L << GLIBTOP_NETLOAD_IF_FLAGS) +
@@ -74,7 +73,7 @@ _glibtop_init_netload_p (glibtop *server)
 {
     server->sysdeps.netload = _glibtop_sysdeps_netload;
 
-    if (kvm_nlist (server->machine.kd, nlst) < 0)
+    if (kvm_nlist (server->machine->kd, nlst) < 0)
 	glibtop_error_io_r (server, "kvm_nlist");
 }
 
@@ -98,7 +97,7 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 
     memset (buf, 0, sizeof (glibtop_netload));
 
-    if (kvm_read (server->machine.kd, nlst [0].n_value,
+    if (kvm_read (server->machine->kd, nlst [0].n_value,
 		  &ifnetaddr, sizeof (ifnetaddr)) != sizeof (ifnetaddr))
 	glibtop_error_io_r (server, "kvm_read (ifnet)");
 
@@ -110,7 +109,7 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 	{
 	    ifnetfound = ifnetaddr;
 
-	    if (kvm_read (server->machine.kd, ifnetaddr, &ifnet,
+	    if (kvm_read (server->machine->kd, ifnetaddr, &ifnet,
 			  sizeof (ifnet)) != sizeof (ifnet))
 		    glibtop_error_io_r (server, "kvm_read (ifnetaddr)");
 
@@ -177,7 +176,7 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 	buf->flags = _glibtop_sysdeps_netload;
 
 	while (ifaddraddr) {
-	    if ((kvm_read (server->machine.kd, ifaddraddr, &ifaddr,
+	    if ((kvm_read (server->machine->kd, ifaddraddr, &ifaddr,
 			   sizeof (ifaddr)) != sizeof (ifaddr)))
 		glibtop_error_io_r (server, "kvm_read (ifaddraddr)");
 

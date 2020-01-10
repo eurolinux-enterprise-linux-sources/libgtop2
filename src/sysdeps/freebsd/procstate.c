@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -50,15 +50,10 @@ glibtop_get_proc_state_p (glibtop *server,
 	struct kinfo_proc *pinfo;
 	int count = 0;
 
-	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_STATE), 0);
-
 	memset (buf, 0, sizeof (glibtop_proc_state));
 
-	/* It does not work for the swapper task. */
-	if (pid == 0) return;
-
 	/* Get the process information */
-	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
+	pinfo = kvm_getprocs (server->machine->kd, KERN_PROC_PID, pid, &count);
 	if ((pinfo == NULL) || (count != 1)) {
 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
 		return;

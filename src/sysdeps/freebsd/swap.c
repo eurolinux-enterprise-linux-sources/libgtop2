@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -56,12 +56,10 @@ glibtop_get_swap_p (glibtop *server, glibtop_swap *buf)
 	int nswdev;
 	struct kvm_swap kvmsw[16];
 
-	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_SWAP), 0);
-
 	memset (buf, 0, sizeof (glibtop_swap));
 	memset (kvmsw, 0, sizeof (kvmsw));
 
-	nswdev = kvm_getswapinfo (server->machine.kd, kvmsw, 16, 0);
+	nswdev = kvm_getswapinfo (server->machine->kd, kvmsw, 16, 0);
 	if (nswdev < 1) return;
 
 	buf->flags = _glibtop_sysdeps_swap;

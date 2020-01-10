@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifndef __GLIBTOP_CPU_H__
@@ -54,7 +54,7 @@ G_BEGIN_DECLS
    Yes we are :)
    Nobody should really be using more than 32 processors.
 */
-#define GLIBTOP_NCPU		32
+#define GLIBTOP_NCPU		1024
 
 typedef struct _glibtop_cpu	glibtop_cpu;
 

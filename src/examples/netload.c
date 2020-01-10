@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifdef HAVE_CONFIG_H
@@ -51,7 +51,7 @@ static char* hwaddress_format_for_display(glibtop_netload *buf)
 
 	for(i = 0; i < sizeof buf->hwaddress; ++i)
 		g_string_append_printf(repr, "%02X:",
-				       (unsigned) ((char*)buf->hwaddress)[i]);
+				       ((unsigned char*)buf->hwaddress)[i]);
 
 	repr->str [ repr->len - 1] = ' ';
 	str = g_string_free(repr, FALSE);

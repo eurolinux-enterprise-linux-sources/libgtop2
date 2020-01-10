@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #ifdef HAVE_CONFIG_H
@@ -39,9 +39,35 @@
 #include <sys/resource.h>
 #include <sys/mman.h>
 
+#include <fcntl.h>
+
 #ifndef PROFILE_COUNT
 #define PROFILE_COUNT	1
 #endif
+
+static void
+try_mmap(const char *path)
+{
+	struct stat buf;
+	int fd;
+
+	if ((fd = open(path, O_RDONLY)) < 0)
+		goto out;
+
+	if (fstat(fd, &buf) < 0)
+		goto out;
+
+	if (mmap(NULL, buf.st_size, PROT_READ, MAP_PRIVATE, fd, 0) == MAP_FAILED)
+		goto out;
+
+	close(fd);
+
+	return;
+
+out:
+	fprintf(stderr, "Failed to test mmap with '%s'\n", path);
+}
+
 
 int
 main (int argc, char *argv [])
@@ -78,8 +104,18 @@ main (int argc, char *argv [])
 
 	glibtop_init_r (&glibtop_global_server, 0, 0);
 
-	if ((argc != 2) || (sscanf (argv [1], "%d", (int *) &pid) != 1))
-		g_error ("Usage: %s pid", argv [0]);
+	if (argc == 1) {
+		pid = getpid();
+	}
+	else if ((argc != 2) || (sscanf (argv [1], "%d", (int *) &pid) != 1))
+		g_error ("Usage: %s [pid]", argv [0]);
+
+	if (pid == getpid()) {
+		/* let's map something for a try */
+		try_mmap("/etc/passwd");
+		try_mmap("/etc/resolv.conf");
+		try_mmap(argv[0]);
+	}
 
 	fprintf (stderr, "Getting memory maps for pid %d.\n\n", (int) pid);
 
@@ -87,6 +123,7 @@ main (int argc, char *argv [])
 
 	for (i = 0; i < procmap.number; i++) {
 		const char *filename = NULL;
+		char * format;
 		unsigned device, device_major, device_minor;
 		char perm [5];
 
@@ -103,42 +140,27 @@ main (int argc, char *argv [])
 		device_minor = (device & 255);
 		device_major = ((device >> 8) & 255);
 
+		if (sizeof (void*) == 8)
+			format = "%016lx-%016lx +%016lx (%8lu bytes mapped) - "
+				 "%02x:%02x % 8lu - %.*s";
+		else
+			format = "%08lx-%08lx +%08lx (%8lu bytes mapped) - "
+				 "%02x:%02x % 8lu - %.*s";
+
+		fprintf (stderr, format,
+			 (unsigned long) maps [i].start,
+			 (unsigned long) maps [i].end,
+			 (unsigned long) maps [i].offset,
+			 (unsigned long) (maps [i].end - (maps [i].start + maps [i].offset)),
+			 device_major, device_minor,
+			 (unsigned long) maps [i].inode,
+			 sizeof perm, perm);
+
 		if (filename) {
-			char *format;
-
-			if (sizeof (void*) == 8)
-				format = "%016lx-%016lx %016lx - "
-					 "%02x:%02x %08lu - %5.5s - %s\n";
-			else
-				format = "%08lx-%08lx %08lx - "
-					 "%02x:%02x %08lu - %5.5s - %s\n";
-
-			fprintf (stderr, format,
-				 (unsigned long) maps [i].start,
-				 (unsigned long) maps [i].end,
-				 (unsigned long) maps [i].offset,
-				 device_major, device_minor,
-				 (unsigned long) maps [i].inode,
-				 perm, filename);
-		} else {
-			char * format;
-
-			if (sizeof (void*) == 8)
-				format = "%016lx-%016lx %016lx - "
-					 "%02x:%02x %08lu - %4s\n";
-			else
-				format = "%08lx-%08lx %08lx - "
-					 "%02x:%02x %08lu - %4s\n";
-
-			fprintf (stderr, format,
-				 (unsigned long) maps [i].start,
-				 (unsigned long) maps [i].end,
-				 (unsigned long) maps [i].offset,
-				 device_major, device_minor,
-				 (unsigned long) maps [i].inode,
-				 perm);
+			fprintf(stderr, " - %s", filename);
 		}
 
+		fputc('\n', stderr);
 
 		g_print("smaps flags:%#llx size:%lluKiB rss:%lluKiB "
 			"shared_clean:%lluKib shared_dirty:%lluKiB "

@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -26,12 +26,14 @@
 #include <glibtop/open.h>
 #include <glibtop/parameter.h>
 #include <glibtop/init_hooks.h>
+#include <glibtop/machine.h>
+
 
 #ifndef DEFAULT_PORT
 #define DEFAULT_PORT 42800
 #endif
 
-static glibtop _glibtop_global_server = { 0 };
+static glibtop _glibtop_global_server;
 glibtop *glibtop_global_server = &_glibtop_global_server;
 
 static void
@@ -141,7 +143,7 @@ _init_server (glibtop *server, const unsigned features)
 
 		/* Open pipe to server. */
 		server->method = GLIBTOP_METHOD_PIPE;
-
+		server->server_command = g_strdup(LIBGTOP_SERVER);
 	} else {
 
 		glibtop_error_r (server, "Unknown server method '%s'",
@@ -173,6 +175,9 @@ glibtop_init_r (glibtop **server_ptr, unsigned long features, unsigned flags)
 	/* Do the initialization, but only if not already initialized. */
 
 	if ((server->flags & _GLIBTOP_INIT_STATE_INIT) == 0) {
+
+		glibtop_machine_new (server);
+
 		if (flags & GLIBTOP_FEATURES_EXCEPT)
 			features = ~features & GLIBTOP_SYSDEPS_ALL;
 
@@ -209,7 +214,7 @@ glibtop_init_r (glibtop **server_ptr, unsigned long features, unsigned flags)
 	/* Open server, but only if not already opened. */
 
 	if ((server->flags & _GLIBTOP_INIT_STATE_OPEN) == 0)
-		glibtop_open_l (glibtop_global_server, "glibtop",
+		glibtop_open_l (server, "glibtop",
 				features, flags);
 
 	return server;
@@ -220,6 +225,8 @@ glibtop_init_s (glibtop **server_ptr, unsigned long features, unsigned flags)
 {
 	glibtop *server;
 	const _glibtop_init_func_t *init_fkt;
+
+	glibtop_debug("init_s with features=%#0lx and flags=%#0x", features, flags);
 
 	if (server_ptr == NULL)
 		return NULL;

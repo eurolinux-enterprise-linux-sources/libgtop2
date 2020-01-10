@@ -15,8 +15,8 @@
 
    You should have received a copy of the GNU General Public License
    along with LibGTop; see the file COPYING. If not, write to the
-   Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-   Boston, MA 02111-1307, USA.
+   Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
 */
 
 #include <config.h>
@@ -27,11 +27,12 @@ void
 handle_slave_connection (int input, int output)
 {
 	glibtop *server G_GNUC_UNUSED = glibtop_global_server;
-	gint64 *param_ptr G_GNUC_UNUSED;
 	const void *ptr G_GNUC_UNUSED;
 
 	unsigned short max_len G_GNUC_UNUSED;
 	pid_t pid G_GNUC_UNUSED;
+	gint64 proc_which G_GNUC_UNUSED;
+	gint64 proc_arg G_GNUC_UNUSED;
 
 	glibtop_response _resp, *resp = &_resp;
 	glibtop_command _cmnd, *cmnd = &_cmnd;
@@ -40,10 +41,8 @@ handle_slave_connection (int input, int output)
 	glibtop_send_version (glibtop_global_server, output);
 
 	while (do_read (input, cmnd, sizeof (glibtop_command))) {
-#ifdef SLAVE_DEBUG
-		fprintf (stderr, "Slave %d received command "
-			 "%llu from client.\n", getpid (), cmnd->command);
-#endif
+		glibtop_debug ("Slave %d received command "
+			 "%llu from client.", getpid (), cmnd->command);
 
 		if (cmnd->data_size >= BUFSIZ)
 			glibtop_error ("Client sent %llu bytes, "
@@ -55,10 +54,8 @@ handle_slave_connection (int input, int output)
 		memset (parameter, 0, sizeof (parameter));
 
 		if (cmnd->data_size) {
-#ifdef SLAVE_DEBUG
-			fprintf (stderr, "Client has %llu bytes of data.\n",
+			glibtop_debug ("Client has %llu bytes of data.",
 				 cmnd->data_size);
-#endif
 
 			do_read (input, parameter, cmnd->data_size);
 
@@ -72,10 +69,11 @@ handle_slave_connection (int input, int output)
 			return;
 #if GLIBTOP_SUID_PROCLIST
 		case GLIBTOP_CMND_PROCLIST:
-			param_ptr = (gint64 *) parameter;
+			memcpy(&proc_which, parameter, sizeof proc_which);
+			memcpy(&proc_arg, parameter + sizeof proc_which, sizeof proc_arg);
 			ptr = glibtop_get_proclist_p
 				(server, &resp->u.data.proclist,
-				 param_ptr [0], param_ptr [1]);
+				 proc_which, proc_arg);
 			do_output (output, resp, _offset_data (proclist),
 				   resp->u.data.proclist.total, ptr);
 			g_free (ptr);

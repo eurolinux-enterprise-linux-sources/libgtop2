@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <errno.h>
 #include <mntent.h>
 
 
@@ -41,6 +42,10 @@ get_device(glibtop* server, const char *mountpoint,
 
 	while ((mnt = getmntent(fp)))
 	{
+		/* There can be multiple root mount entries, skip the unuseful one */
+		if (!strcmp(mnt->mnt_fsname, "rootfs"))
+			continue;
+
 		if (!strcmp(mountpoint, mnt->mnt_dir)) {
 			if (!strncmp(mnt->mnt_fsname, "/dev/", 5)) {
 				g_strlcpy(device, mnt->mnt_fsname + 5, device_size);
@@ -189,11 +194,10 @@ glibtop_get_fsusage_s(glibtop *server, glibtop_fsusage *buf, const char *path)
 {
   struct statvfs fsd;
 
-  glibtop_init_r(&server, 0, 0);
   memset(buf, 0, sizeof(glibtop_fsusage));
 
   if (statvfs(path, &fsd) < 0) {
-    glibtop_warn_r(server, "statvfs '%s' failed", path);
+    glibtop_warn_r(server, "statvfs '%s' failed: %s", path, strerror (errno));
     return;
   }
 

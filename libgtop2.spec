@@ -1,11 +1,12 @@
 Name:           libgtop2
 Version:        2.34.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        LibGTop library (version 2)
 
 License:        GPLv2+
 URL:            http://download.gnome.org/sources/libgtop
 Source0:        http://download.gnome.org/sources/libgtop/2.34/libgtop-%{version}.tar.xz
+Patch0:         libgtop2-2.34.2-dynamic-cpuinfo-buffer.patch
 
 BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
@@ -25,6 +26,7 @@ files to allow you to develop with LibGTop.
 
 %prep
 %setup -q -n libgtop-%{version}
+%patch0 -p1
 
 %build
 %configure --disable-gtk-doc --disable-static
@@ -61,6 +63,9 @@ find %{buildroot} -name '*.la' -delete
 %exclude %{_datadir}/info
 
 %changelog
+* Wed Oct 25 2017 David King <dking@redhat.com> - 2.34.2-2
+- Fix detection of large numbers of CPUs (#1424938)
+
 * Mon Jan 16 2017 Kalev Lember <klember@redhat.com> - 2.34.2-1
 - Update to 2.34.2
 - Resolves: #1387008

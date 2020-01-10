@@ -1,0 +1,76 @@
+From efaaf6eb77e01f1ea002c19a261e4f3ac4788d25 Mon Sep 17 00:00:00 2001
+From: Jason Xing <xinggang861@gmail.com>
+Date: Thu, 12 Dec 2013 20:36:10 +0000
+Subject: Extending the cpu number from 32 to 1024 (bgo #323354, bgo #681632)
+
+From: Jason Xing <xinggang861@gmail.com>
+
+In 'Bug 323354 - Support a dynamic number of CPUs', there will be a
+solution which can dynamically allocate memory for large number of
+CPUs. As libgtop supports multiple operating systems, this work
+may take some time.
+
+This patch is a temporary patch, which worked before the whole
+solution comes out. It only supports linux platform with CPU number
+up to 1024.
+
+There are two Macroes which limit the statistics of CPU. One is
+GLIBTOP_NCPU. The other is a buffer size. This buffer used to read
+/proc/stat contents into.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=323354
+https://bugzilla.gnome.org/show_bug.cgi?id=681632
+---
+diff --git a/include/glibtop/cpu.h b/include/glibtop/cpu.h
+index 1d673e9..1566b29 100644
+--- a/include/glibtop/cpu.h
++++ b/include/glibtop/cpu.h
+@@ -54,7 +54,7 @@ G_BEGIN_DECLS
+    Yes we are :)
+    Nobody should really be using more than 32 processors.
+ */
+-#define GLIBTOP_NCPU		32
++#define GLIBTOP_NCPU		1024
+ 
+ typedef struct _glibtop_cpu	glibtop_cpu;
+ 
+diff --git a/sysdeps/linux/cpu.c b/sysdeps/linux/cpu.c
+index bedeab5..f2cbb4e 100644
+--- a/sysdeps/linux/cpu.c
++++ b/sysdeps/linux/cpu.c
+@@ -66,11 +66,12 @@ _glibtop_init_cpu_s (glibtop *server)
+ /* Provides information about cpu usage. */
+ 
+ #define FILENAME	"/proc/stat"
++#define STAT_BUFSIZ     81920
+ 
+ void
+ glibtop_get_cpu_s (glibtop *server, glibtop_cpu *buf)
+ {
+-	char buffer [BUFSIZ], *p;
++	char buffer [STAT_BUFSIZ], *p;
+ 	int i;
+ 
+ 	memset (buf, 0, sizeof (glibtop_cpu));
+diff --git a/sysdeps/linux/open.c b/sysdeps/linux/open.c
+index b39b99e..61c3d58 100644
+--- a/sysdeps/linux/open.c
++++ b/sysdeps/linux/open.c
+@@ -61,13 +61,14 @@ static void set_linux_version(glibtop *server)
+ /* Opens pipe to gtop server. Returns 0 on success and -1 on error. */
+ 
+ #define FILENAME	"/proc/stat"
++#define STAT_BUFSIZ     81920
+ 
+ void
+ glibtop_open_s (glibtop *server, const char *program_name,
+ 		const unsigned long features,
+ 		const unsigned flags)
+ {
+-	char buffer [BUFSIZ], *p = buffer;
++	char buffer [STAT_BUFSIZ], *p = buffer;
+ 
+ 	server->name = program_name;
+ 
+--
+cgit v0.9.2

@@ -3,7 +3,7 @@
 Name:     libgtop2
 Summary:  LibGTop library (version 2)
 Version:  2.28.4
-Release:  6%{?dist}
+Release:  7%{?dist}
 License:  GPLv2+
 URL:      http://download.gnome.org/sources/libgtop/2.28
 Group:    System Environment/Libraries
@@ -11,6 +11,10 @@ Group:    System Environment/Libraries
 Source:   http://download.gnome.org/sources/libgtop/2.28/libgtop-%{version}.tar.xz
 # Fix fetching rootfs stats (bz 871629)
 Patch1: 0001-fsusage-Fix-fetching-rootfs-stats-on-Fedora-17.patch
+# Show more than 32 CPUs https://bugzilla.redhat.com/show_bug.cgi?id=1082123
+Patch2: libgtop2-increase-cpuinfo-buffer.patch
+Patch3: libgtop2-allow-up-to-1024-CPUs.patch
+Patch4: libgtop2-allow-up-to-1024-CPUs-soversion.patch
 BuildRequires:  glib2-devel
 BuildRequires:  gobject-introspection-devel
 BuildRequires:  libtool gettext
@@ -32,6 +36,9 @@ files to allow you to develop with LibGTop.
 %prep
 %setup -q -n libgtop-%{version}
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
 
 %build
 %configure --disable-gtk-doc --disable-static
@@ -67,6 +74,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %exclude %{_datadir}/info
 
 %changelog
+* Fri Mar 28 2014 David King <dking@redhat.com> - 2.28.4-7
+- Allow up to 1024 CPUs (#1082123)
+
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 2.28.4-6
 - Mass rebuild 2014-01-24
 

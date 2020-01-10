@@ -53,8 +53,9 @@ G_BEGIN_DECLS
 #define GLIBTOP_SYSDEPS_PROC_OPEN_FILES	24
 #define GLIBTOP_SYSDEPS_PROC_WD		25
 #define GLIBTOP_SYSDEPS_PROC_AFFINITY	26
+#define GLIBTOP_SYSDEPS_PROC_IO	27
 
-#define GLIBTOP_MAX_SYSDEPS		27
+#define GLIBTOP_MAX_SYSDEPS		28
 
 /* The 'features' args to glibtop_init_* is an unsigned long */
 G_STATIC_ASSERT((1UL << (GLIBTOP_MAX_SYSDEPS - 1)) <= ULONG_MAX);
@@ -93,6 +94,15 @@ struct _glibtop_sysdeps
 	guint64 ppp;			/* glibtop_ppp		*/
 	guint64	proc_wd;		/* glibtop_proc_wd	*/
 	guint64	proc_affinity;		/* glibtop_proc_affinity */
+	guint64	proc_io;		/* glibtop_proc_io */
+	guint64	reserved0;
+	guint64	reserved1;
+	guint64	reserved2;
+	guint64	reserved3;
+	guint64	reserved4;
+	guint64	reserved5;
+	guint64	reserved6;
+	guint64	reserved7;
 };
 
 void glibtop_get_sysdeps (glibtop_sysdeps *buf);

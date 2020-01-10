@@ -117,8 +117,8 @@ am_libgtop_sysdeps_2_0_la_OBJECTS = open.lo close.lo cpu.lo mem.lo \
 	sem_limits.lo proclist.lo procstate.lo procuid.lo proctime.lo \
 	procmem.lo procsignal.lo prockernel.lo procsegment.lo \
 	procargs.lo procmap.lo siglist.lo sysinfo.lo netload.lo ppp.lo \
-	glibtop_private.lo mountlist.lo procaffinity.lo fsusage.lo \
-	netlist.lo procopenfiles.lo procwd.lo
+	glibtop_private.lo mountlist.lo procaffinity.lo procio.lo \
+	fsusage.lo netlist.lo procopenfiles.lo procwd.lo
 libgtop_sysdeps_2_0_la_OBJECTS = $(am_libgtop_sysdeps_2_0_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -410,7 +410,7 @@ libgtop_sysdeps_2_0_la_SOURCES = open.c close.c cpu.c mem.c swap.c \
 				  proctime.c procmem.c procsignal.c prockernel.c \
 				  procsegment.c procargs.c procmap.c siglist.c \
 				  sysinfo.c netload.c ppp.c glibtop_private.c \
-				  mountlist.c  procaffinity.c \
+				  mountlist.c  procaffinity.c procio.c \
 				  fsusage.c netlist.c procopenfiles.c procwd.c
 
 libgtop_sysdeps_2_0_la_LIBADD = @GLIB_LIBS@
@@ -487,6 +487,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ppp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procaffinity.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procargs.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procio.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prockernel.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/proclist.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procmap.Plo@am__quote@

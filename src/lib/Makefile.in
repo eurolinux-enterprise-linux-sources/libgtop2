@@ -429,7 +429,7 @@ INTROSPECTION_COMPILER_ARGS =
 @HAVE_INTROSPECTION_TRUE@			../include/glibtop/procsignal.h ../include/glibtop/union.h ../include/glibtop/gnuserv.h \
 @HAVE_INTROSPECTION_TRUE@			../include/glibtop/parameter.h ../include/glibtop/mountlist.h ../include/glibtop/fsusage.h ../include/glibtop/procmap.h ../include/glibtop/signal.h \
 @HAVE_INTROSPECTION_TRUE@			../include/glibtop/sysinfo.h ../include/glibtop/ppp.h ../include/glibtop/procargs.h ../include/glibtop/netload.h \
-@HAVE_INTROSPECTION_TRUE@			../include/glibtop/procwd.h ../include/glibtop/procaffinity.h \
+@HAVE_INTROSPECTION_TRUE@			../include/glibtop/procwd.h ../include/glibtop/procaffinity.h ../include/glibtop/procio.h \
 @HAVE_INTROSPECTION_TRUE@			../include/glibtop/netlist.h ../include/glibtop/procopenfiles.h ../include/glibtop/open.h
 
 @HAVE_INTROSPECTION_TRUE@GTop_2_0_gir_AM_CPPFLAGS = GObject-2.0

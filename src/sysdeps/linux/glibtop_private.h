@@ -37,7 +37,7 @@ G_BEGIN_DECLS
 static inline char*
 next_token(const char *p)
 {
-	while (isspace(*p)) p++;
+	while (g_ascii_isspace(*p)) p++;
 	return (char*) p;
 }
 
@@ -120,10 +120,6 @@ proc_stat_after_cmd (char *p)
 
 unsigned long
 get_boot_time(glibtop *server);
-
-
-size_t
-get_page_size(void);
 
 
 gboolean

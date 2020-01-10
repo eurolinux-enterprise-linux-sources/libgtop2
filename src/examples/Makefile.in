@@ -93,7 +93,7 @@ noinst_PROGRAMS = first$(EXEEXT) second$(EXEEXT) pprint$(EXEEXT) \
 	mountlist$(EXEEXT) procmap$(EXEEXT) netload$(EXEEXT) \
 	sysdeps$(EXEEXT) timings$(EXEEXT) openfiles$(EXEEXT) \
 	smp$(EXEEXT) proclist$(EXEEXT) free$(EXEEXT) wd$(EXEEXT) \
-	affinity$(EXEEXT)
+	affinity$(EXEEXT) diskio$(EXEEXT)
 subdir = examples
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
@@ -125,6 +125,9 @@ am__v_lt_1 =
 am_df_OBJECTS = df.$(OBJEXT)
 df_OBJECTS = $(am_df_OBJECTS)
 df_DEPENDENCIES = $(top_builddir)/lib/libgtop-2.0.la
+am_diskio_OBJECTS = diskio.$(OBJEXT)
+diskio_OBJECTS = $(am_diskio_OBJECTS)
+diskio_DEPENDENCIES = $(top_builddir)/lib/libgtop-2.0.la
 am_first_OBJECTS = first.$(OBJEXT)
 first_OBJECTS = $(am_first_OBJECTS)
 first_DEPENDENCIES = $(top_builddir)/lib/libgtop-2.0.la
@@ -204,18 +207,18 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(affinity_SOURCES) $(df_SOURCES) $(first_SOURCES) free.c \
-	$(mountlist_SOURCES) $(netlist_SOURCES) $(netload_SOURCES) \
-	$(openfiles_SOURCES) $(pprint_SOURCES) $(procargs_SOURCES) \
-	$(proclist_SOURCES) $(procmap_SOURCES) $(second_SOURCES) \
-	$(smp_SOURCES) $(sysdeps_SOURCES) $(timings_SOURCES) \
-	$(wd_SOURCES)
-DIST_SOURCES = $(affinity_SOURCES) $(df_SOURCES) $(first_SOURCES) \
-	free.c $(mountlist_SOURCES) $(netlist_SOURCES) \
-	$(netload_SOURCES) $(openfiles_SOURCES) $(pprint_SOURCES) \
-	$(procargs_SOURCES) $(proclist_SOURCES) $(procmap_SOURCES) \
-	$(second_SOURCES) $(smp_SOURCES) $(sysdeps_SOURCES) \
-	$(timings_SOURCES) $(wd_SOURCES)
+SOURCES = $(affinity_SOURCES) $(df_SOURCES) $(diskio_SOURCES) \
+	$(first_SOURCES) free.c $(mountlist_SOURCES) \
+	$(netlist_SOURCES) $(netload_SOURCES) $(openfiles_SOURCES) \
+	$(pprint_SOURCES) $(procargs_SOURCES) $(proclist_SOURCES) \
+	$(procmap_SOURCES) $(second_SOURCES) $(smp_SOURCES) \
+	$(sysdeps_SOURCES) $(timings_SOURCES) $(wd_SOURCES)
+DIST_SOURCES = $(affinity_SOURCES) $(df_SOURCES) $(diskio_SOURCES) \
+	$(first_SOURCES) free.c $(mountlist_SOURCES) \
+	$(netlist_SOURCES) $(netload_SOURCES) $(openfiles_SOURCES) \
+	$(pprint_SOURCES) $(procargs_SOURCES) $(proclist_SOURCES) \
+	$(procmap_SOURCES) $(second_SOURCES) $(smp_SOURCES) \
+	$(sysdeps_SOURCES) $(timings_SOURCES) $(wd_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -470,6 +473,8 @@ free_SOURCE = mem.c
 free_LDADD = $(top_builddir)/lib/libgtop-2.0.la
 affinity_SOURCES = affinity.c
 affinity_LDADD = $(top_builddir)/lib/libgtop-2.0.la
+diskio_SOURCES = diskio.c
+diskio_LDADD = $(top_builddir)/lib/libgtop-2.0.la
 all: all-am
 
 .SUFFIXES:
@@ -520,6 +525,10 @@ affinity$(EXEEXT): $(affinity_OBJECTS) $(affinity_DEPENDENCIES) $(EXTRA_affinity
 df$(EXEEXT): $(df_OBJECTS) $(df_DEPENDENCIES) $(EXTRA_df_DEPENDENCIES) 
 	@rm -f df$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(df_OBJECTS) $(df_LDADD) $(LIBS)
+
+diskio$(EXEEXT): $(diskio_OBJECTS) $(diskio_DEPENDENCIES) $(EXTRA_diskio_DEPENDENCIES) 
+	@rm -f diskio$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(diskio_OBJECTS) $(diskio_LDADD) $(LIBS)
 
 first$(EXEEXT): $(first_OBJECTS) $(first_DEPENDENCIES) $(EXTRA_first_DEPENDENCIES) 
 	@rm -f first$(EXEEXT)
@@ -589,6 +598,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/affinity.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/df.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/diskio.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/first.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/free.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mountlist.Po@am__quote@

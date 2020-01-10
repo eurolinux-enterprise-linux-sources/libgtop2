@@ -1052,3 +1052,43 @@ glibtop_get_proc_affinity_l (glibtop *server, glibtop_proc_affinity *buf,
 	return retval;
 }
 
+void
+glibtop_get_proc_io_l (glibtop *server, glibtop_proc_io *buf,
+                       pid_t pid)
+{
+	glibtop_init_r (&server, (1 << GLIBTOP_SYSDEPS_PROC_IO), 0);
+
+	/* If neccessary, we ask the server for the requested
+	 * feature. If not, we call the sysdeps function. */
+
+	if ((server->flags & _GLIBTOP_INIT_STATE_SERVER) &&
+	    (server->features & (1 << GLIBTOP_SYSDEPS_PROC_IO)))
+	{
+		struct {
+			pid_t buf_pid;
+		} param_buf;
+
+		param_buf.buf_pid = pid;
+
+		const void *send_ptr = &param_buf;
+		const size_t send_size = sizeof param_buf;
+
+		glibtop_call_l (server, GLIBTOP_CMND_PROC_IO,
+				send_size, send_ptr,
+				sizeof (glibtop_proc_io), buf);
+	} else {
+#if (!GLIBTOP_SUID_PROC_IO)
+		glibtop_get_proc_io_s (server, buf, pid);
+#else
+		errno = ENOSYS;
+		glibtop_error_io_r (server, "glibtop_get_proc_io");
+#endif
+	}
+
+	/* Make sure that all required fields are present. */
+
+	if (buf->flags & server->required.proc_io)
+		_glibtop_missing_feature (server, "proc_io", buf->flags,
+					  &server->required.proc_io);
+}
+

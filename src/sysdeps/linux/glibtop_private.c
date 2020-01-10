@@ -51,7 +51,7 @@ char *
 skip_token (const char *p)
 {
 	p = next_token(p);
-	while (*p && !isspace(*p)) p++;
+	while (*p && !g_ascii_isspace(*p)) p++;
 	p = next_token(p);
 	return (char *)p;
 }
@@ -175,20 +175,6 @@ get_boot_time(glibtop *server)
 	}
 
 	return boot_time;
-}
-
-
-size_t
-get_page_size(void)
-{
-	static size_t pagesize = 0;
-
-	if(G_UNLIKELY(!pagesize))
-	{
-		pagesize = getpagesize();
-	}
-
-	return pagesize;
 }
 
 

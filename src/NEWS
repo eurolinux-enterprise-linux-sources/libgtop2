@@ -1,3 +1,53 @@
+11 September 2017: Overview of changes in 2.38.0
+================================================
+
+* Updated translations
+
+04 September 2017: Overview of changes in 2.37.92
+================================================
+
+* Updated translations
+* Code cleanup
+
+07 August 2017: Overview of changes in 2.37.90
+================================================
+
+* Added reserved fields to the sysdeps struct
+* Updated translations
+* Fixed build failure in FreeBSD 11
+
+22 May 2017: Overview of changes in 2.37.2
+================================================
+
+* Added support for per-process io monitoring
+  * Linux
+  * FreeBSD
+* Updated translations
+* Added nullpointer check
+* Use unicode in translatable strings
+
+20 March 2017: Overview of changes in 2.36.0
+================================================
+
+* Version bumped
+
+13 March 2017: Overview of changes in 2.35.92
+================================================
+
+* Better output format for arrays
+
+13 February 2017: Overview of changes in 2.35.90
+================================================
+
+* Linux:
+  - Use dynamically allocated cpu buffer
+  - Do not cache getpagesize()
+  - Use faster g_ascii_isspace in tokenization
+  - Ignore paragraphs not describing a CPU/core
+
+* Updated translations
+* Added more gettext options
+
 16 January 2017: Overview of changes in 2.34.2
 ================================================
 

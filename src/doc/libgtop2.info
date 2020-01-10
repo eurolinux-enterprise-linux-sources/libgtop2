@@ -1,4 +1,4 @@
-This is libgtop2.info, produced by makeinfo version 6.1 from
+This is libgtop2.info, produced by makeinfo version 6.3 from
 libgtop2.texi.
 
 INFO-DIR-SECTION Libraries:
@@ -8,7 +8,7 @@ START-INFO-DIR-ENTRY
 					processes
 END-INFO-DIR-ENTRY
 
-This is the LibGTop Reference Manual version 2.34.2 (last modified 27
+This is the LibGTop Reference Manual version 2.38.0 (last modified 27
 November 2016).
 
    Copyright 1999 Free Software Foundation, Inc.

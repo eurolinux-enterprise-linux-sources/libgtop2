@@ -1,12 +1,11 @@
 Name:           libgtop2
-Version:        2.34.2
-Release:        2%{?dist}
+Version:        2.38.0
+Release:        3%{?dist}
 Summary:        LibGTop library (version 2)
 
 License:        GPLv2+
 URL:            http://download.gnome.org/sources/libgtop
-Source0:        http://download.gnome.org/sources/libgtop/2.34/libgtop-%{version}.tar.xz
-Patch0:         libgtop2-2.34.2-dynamic-cpuinfo-buffer.patch
+Source0:        http://download.gnome.org/sources/libgtop/2.38/libgtop-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
@@ -26,11 +25,10 @@ files to allow you to develop with LibGTop.
 
 %prep
 %setup -q -n libgtop-%{version}
-%patch0 -p1
 
 %build
 %configure --disable-gtk-doc --disable-static
-make %{?_smp_mflags}
+make %{?_smp_mflags} CFLAGS="$CFLAGS -std=c99"
 
 %install
 %make_install
@@ -46,12 +44,12 @@ find %{buildroot} -name '*.la' -delete
 %files -f libgtop.lang
 %doc AUTHORS NEWS README
 %license COPYING
-%{_libdir}/*.so.*
+%{_libdir}/libgtop-2.0.so.11*
 %dir %{_libdir}/girepository-1.0
 %{_libdir}/girepository-1.0/GTop-2.0.typelib
 
 %files devel
-%{_libdir}/*.so
+%{_libdir}/libgtop-2.0.so
 %{_includedir}/libgtop-2.0
 %{_libdir}/pkgconfig/*.pc
 %dir %{_datadir}/gir-1.0
@@ -63,6 +61,10 @@ find %{buildroot} -name '*.la' -delete
 %exclude %{_datadir}/info
 
 %changelog
+* Fri Jun 01 2018 Richard Hughes <rhughes@redhat.com> - 2.38.0-3
+- Update to 2.38.0
+- Resolves: #1569294
+
 * Wed Oct 25 2017 David King <dking@redhat.com> - 2.34.2-2
 - Fix detection of large numbers of CPUs (#1424938)
 
